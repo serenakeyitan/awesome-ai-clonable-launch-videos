@@ -54,7 +54,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/34.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-34",
-    "remakePrompt": "Create an original 11.3-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. A black circular mascot and one green payment-card graphic sit on a white canvas.\n2. Large captions tell one shopping feature in about eleven seconds using flat 2D shapes.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/bot/status/2093419921007108385"
   },
   {
     "id": 35,
@@ -110,7 +110,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/35.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-35",
-    "remakePrompt": "Create an original 12.2-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion.\n\nAdapt this observed structure:\n1. A blue question bubble opens into three tweet cards arranged as a fan.\n2. An answer bubble and an orange keyword highlight complete a compact search-and-summary story.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/bot/status/2107949161878606089"
   },
   {
     "id": 2,
@@ -160,7 +160,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/02.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-2",
-    "remakePrompt": "Create an original 45-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Image collage.\n\nAdapt this observed structure:\n1. Alternate black and white title frames with a clean voice-input interface.\n2. AI-generated image collages expand into a visual demonstration of voice edits.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/lovart_ai/status/2033904987277774951"
   },
   {
     "id": 32,
@@ -218,7 +218,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/32.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-32",
-    "remakePrompt": "Create an original 42.9-second, 4:3 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. Pan and zoom through an iMessage inbox, chat bubbles, maps and calendar cards.\n2. Memoji, rising feature cards and a closing app-icon grid create a product story without live-action scenes.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/interaction/status/2062575428213285352"
   },
   {
     "id": 3,
@@ -276,7 +276,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/03.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-3",
-    "remakePrompt": "Create an original 31.2-second, 1:1 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Pink-purple gradients frame iMessage inboxes, chat bubbles, Memoji and floating app icons.\n2. An oversized cursor introduces a new feature every three to four seconds.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/maximusgrave/status/2102800008982777902"
   },
   {
     "id": 27,
@@ -334,7 +334,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/27.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-27",
-    "remakePrompt": "Create an original 12.7-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. A cursor selects an app icon on a stylized iPhone; the icon flies into the Action Button with a ripple.\n2. Camera pans and an expanding Dynamic Island turn device interactions into a story, followed by kinetic type and a logo reveal.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/bot/status/2112252507762368684"
   },
   {
     "id": 36,
@@ -391,7 +391,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/36.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-36",
-    "remakePrompt": "Create an original 18.9-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. Login forms, password fields and a vault settings screen become clean UI cards.\n2. Orange and green full-screen gradients separate the scenes and keep the hierarchy clear.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/bot/status/2113717946019397910"
   },
   {
     "id": 7,
@@ -441,7 +441,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/07.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-7",
-    "remakePrompt": "Create an original 61-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Kinetic type, Mixed media.\n\nAdapt this observed structure:\n1. The video is presented as an AI-generated Syren demo.\n2. Kinetic typography and brand cards mix with an AI presenter and a logo reveal.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nUse only supplied or newly created footage for the mixed-media scenes.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/vriparbelli/status/2107850981614489957"
   },
   {
     "id": 9,
@@ -491,7 +491,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/09.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-9",
-    "remakePrompt": "Create an original 35-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. White and pale-gray scenes, a giant blue cursor and floating image cards.\n2. Pair “4x faster” charts and an Arena ranking with a precise-editing demonstration.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/krea_ai/status/2112567020353102324"
   },
   {
     "id": 10,
@@ -541,7 +541,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/10.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-10",
-    "remakePrompt": "Create an original 62-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Mixed media.\n\nAdapt this observed structure:\n1. A short laptop shot introduces desktop windows, floating prompts and a large number counter.\n2. Caption-led storytelling moves from screen chaos to an agent doing useful work.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nUse only supplied or newly created footage for the mixed-media scenes.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/vida_agent/status/2069718855551955194"
   },
   {
     "id": 11,
@@ -599,7 +599,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/11.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-11",
-    "remakePrompt": "Create an original 90-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Cartoon characters and large kinetic titles lead into LinkedIn, calendar and meeting UI.\n2. Frequent zooms and quick scene changes create a dense product-story rhythm; the included file is a 35-second excerpt.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/charles_maddock/status/2114659351470247986"
   },
   {
     "id": 12,
@@ -649,7 +649,7 @@
     "readmeCategory": "typography-abstract-motion",
     "watchUrl": "https://serenatan.org/launchvideo/assets/12.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-12",
-    "remakePrompt": "Create an original 33-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Kinetic type, UI motion.\n\nAdapt this observed structure:\n1. Cream and dark frames alternate around a “Stop burning your budget” hook.\n2. Counters, social-post UI, comment bubbles and an icon grid build toward the logo.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/aiscwork/status/2090862009008984574"
   },
   {
     "id": 13,
@@ -699,7 +699,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/13.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-13",
-    "remakePrompt": "Create an original 68-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 50 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Dark, glowing interface cards: competitor scraping, suggestions and a mascot.\n2. Large cursor clicks and ad thumbnails combine a product reveal with a funding announcement.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/arcads_ai/status/2084611105528115415"
   },
   {
     "id": 14,
@@ -748,7 +748,7 @@
     "readmeCategory": "typography-abstract-motion",
     "watchUrl": "https://serenatan.org/launchvideo/assets/14.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-14",
-    "remakePrompt": "Create an original 64-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 50 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Kinetic type.\n\nAdapt this observed structure:\n1. Minimal white frames with “Give your agent taste” and editorial image accents.\n2. Typography drives the story, closing on a black installation-command frame.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/LexnLin/status/2110122106537050584"
   },
   {
     "id": 15,
@@ -797,7 +797,7 @@
     "readmeCategory": "typography-abstract-motion",
     "watchUrl": "https://serenatan.org/launchvideo/assets/15.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-15",
-    "remakePrompt": "Create an original 47-second, 1:1 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Abstract motion.\n\nAdapt this observed structure:\n1. Black canvas with rough, glowing outlines and hand-drawn-looking cards.\n2. Identity → model provider → skills → MCPs → review, in a square composition.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/NousResearch/status/2064760263224504719"
   },
   {
     "id": 45,
@@ -855,7 +855,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/45.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-45",
-    "remakePrompt": "Create an original 16.9-second, 1:1 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. A floating phone switches between an app launch screen, a toggle, a lock-screen notification and a reward result.\n2. A fluid multicolor gradient supplies atmosphere; much of the phone content resembles actual app footage.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/CashApp/status/2103207687127466307"
   },
   {
     "id": 16,
@@ -905,7 +905,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/16.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-16",
-    "remakePrompt": "Create an original 85-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Mixed media.\n\nAdapt this observed structure:\n1. A founder introduction gives way to web-design windows, terminal scenes and a bold “DOMINATE” frame.\n2. Finish with a green gradient and the AI design engineer proposition.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nUse only supplied or newly created footage for the mixed-media scenes.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/Dipanjan_Dey/status/2061825199247614316"
   },
   {
     "id": 17,
@@ -954,7 +954,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/17.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-17",
-    "remakePrompt": "Create an original 26-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion.\n\nAdapt this observed structure:\n1. Dark trading terminals sit over warm gradients.\n2. Notification cards deliver a specific market signal before a “Trade with superhuman” close.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/instinct_xyz/status/2110439790961442825"
   },
   {
     "id": 30,
@@ -1013,7 +1013,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/30.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-30",
-    "remakePrompt": "Create an original 21.1-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. White title frames introduce computer use, followed by an orange-gradient product scene.\n2. A Cursor window and iPhone simulator sit side by side as the cursor demonstrates the workflow, ending on the cube logo.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/cursor_ai/status/2113661506634305834"
   },
   {
     "id": 18,
@@ -1063,7 +1063,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/18.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-18",
-    "remakePrompt": "Create an original 31-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Image collage, Mixed media.\n\nAdapt this observed structure:\n1. White, red and blue frames; TikTok cards, meme-like cutouts and big conversational captions.\n2. Fast collage pacing supports a creator-discovery demonstration.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nUse only supplied or newly created footage for the mixed-media scenes.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/Jibran_05/status/2033589137018917027"
   },
   {
     "id": 19,
@@ -1113,7 +1113,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/19.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-19",
-    "remakePrompt": "Create an original 38-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Pale gray and purple full-screen frames introduce the job-search problem.\n2. Small type and an input UI carry a restrained demo, ending on the Actify logo.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/ActifyAI/status/2080331695560274183"
   },
   {
     "id": 20,
@@ -1162,7 +1162,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/20.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-20",
-    "remakePrompt": "Create an original 58-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion.\n\nAdapt this observed structure:\n1. White UI with app icons, an “Opportunity Missed!” alert, tables and an oversized cursor.\n2. Conversational title frames lead into a workflow diagram and a soft-gradient close.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/CrowdReply_io/status/2105312058451570973"
   },
   {
     "id": 21,
@@ -1212,7 +1212,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/21.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-21",
-    "remakePrompt": "Create an original 33-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Kinetic type, UI motion.\n\nAdapt this observed structure:\n1. Cream canvas and big red type introduce “Your next 100 customers are waiting.”\n2. Strike through manual, tedious and expensive; reveal tables and counters, then a logo close.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/samuel_spitz/status/2041198900791714278"
   },
   {
     "id": 22,
@@ -1262,7 +1262,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/22.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-22",
-    "remakePrompt": "Create an original 38-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Mixed media.\n\nAdapt this observed structure:\n1. Dark title frames mix photo collage with an editing timeline.\n2. Later product-demo scenes include people in podcast footage.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nUse only supplied or newly created footage for the mixed-media scenes.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/RiversidedotFM/status/2077770308992258493"
   },
   {
     "id": 23,
@@ -1312,7 +1312,7 @@
     "readmeCategory": "typography-abstract-motion",
     "watchUrl": "https://serenatan.org/launchvideo/assets/23.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-23",
-    "remakePrompt": "Create an original 71-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Abstract motion, Kinetic type.\n\nAdapt this observed structure:\n1. Minimal black, white and gray; spheres, rings, waveforms and dialogue captions.\n2. Abstract motion and model-tier labels carry a voice-product story.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/ElevenLabs/status/2112550782063247521"
   },
   {
     "id": 41,
@@ -1370,7 +1370,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/41.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-41",
-    "remakePrompt": "Create an original 51-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Muted peach and cream scenes give each feature its own full-screen color.\n2. Large titles, scrolling model names and cursor clicks create a compact sequence of AI updates.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/NotionHQ/status/2112269722075242887"
   },
   {
     "id": 26,
@@ -1420,7 +1420,7 @@
     "readmeCategory": "pastel-ui-cursor-demos",
     "watchUrl": "https://serenatan.org/launchvideo/assets/26.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-26",
-    "remakePrompt": "Create an original 64-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Kinetic type.\n\nAdapt this observed structure:\n1. Cream and pink-orange gradients with slow-moving titles, calendar UI and meeting windows.\n2. Expanding rings link “Google Meet” to “Your PAL,” ending on Tavus branding.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/tavus/status/2074894605125026072"
   },
   {
     "id": 44,
@@ -1477,7 +1477,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/44.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-44",
-    "remakePrompt": "Create an original 19.7-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Terminal, Kinetic type.\n\nAdapt this observed structure:\n1. Type code into a white snippet card and highlight individual lines.\n2. A short, restrained sequence uses typography and code motion to explain the SDK method.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/cursor_ai/status/2107141004482793827"
   },
   {
     "id": 40,
@@ -1533,7 +1533,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/40.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-40",
-    "remakePrompt": "Create an original 12.1-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Abstract motion.\n\nAdapt this observed structure:\n1. White wireframe triangles and cubes animate on a black canvas.\n2. Small frontend/backend labels keep the twelve-second geometric story precise and restrained.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/vercel/status/2110786348131258456"
   },
   {
     "id": 33,
@@ -1591,7 +1591,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/33.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-33",
-    "remakePrompt": "Create an original 8.6-second, 1.54:1 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. A folding phone opens into a wider display while the interface rearranges to match.\n2. Keep the short film focused on one device transformation, then add scrolling and keyboard interactions.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/NotionHQ/status/2113694972339986860"
   },
   {
     "id": 42,
@@ -1648,7 +1648,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/42.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-42",
-    "remakePrompt": "Create an original 23.7-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Logo motion.\n\nAdapt this observed structure:\n1. A white canvas and orange accents connect search, phone UI, two-dot eyes and a thinking state.\n2. Logo blocks spring into a stack, making the personal-assistant toolkit visible as a simple metaphor.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/browserbase/status/2114777924335554605"
   },
   {
     "id": 37,
@@ -1706,7 +1706,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/37.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-37",
-    "remakePrompt": "Create an original 30.1-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Charts.\n\nAdapt this observed structure:\n1. A blue logo frame gives way to green/red probability pills, a moving point on a chart and a countdown.\n2. Limit each scene to one focal element, then reveal a phone chart and return to the blue logo frame.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/coinbase/status/2114148184285143349"
   },
   {
     "id": 43,
@@ -1763,7 +1763,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/43.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-43",
-    "remakePrompt": "Create an original 27.4-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Charts.\n\nAdapt this observed structure:\n1. Type /visualize into a minimal off-white chat interface.\n2. Draw a line chart, show hover/filter interactions, then turn a follow-up question into a growing bar chart.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/cursor_ai/status/2108289748628566496"
   },
   {
     "id": 38,
@@ -1821,7 +1821,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/38.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-38",
-    "remakePrompt": "Create an original 25.6-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Abstract motion, Charts.\n\nAdapt this observed structure:\n1. Blue concentric circles become a row of colored dots, then a ring and an asset-allocation pie chart.\n2. Simple geometric morphs connect the story before the chart resolves inside a phone interface.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/coinbase/status/2114718467610022208"
   },
   {
     "id": 28,
@@ -1880,7 +1880,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/28.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-28",
-    "remakePrompt": "Create an original 60-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. Floating, tilted phones on white alternate with full-screen orange gradients.\n2. Camera pans and close-ups connect reading, chat and highlighting interfaces; large captions punctuate the sequence.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/readwise/status/2079973992077902283"
   },
   {
     "id": 47,
@@ -1938,7 +1938,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/47.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-47",
-    "remakePrompt": "Create an original 20.9-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. A phone interface floats at an angle against black.\n2. Code diffs and a keyboard appear in sequence before the Linear logo; perspective supplies most of the atmosphere.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/linear/status/2082856036977803595"
   },
   {
     "id": 46,
@@ -1996,7 +1996,7 @@
     "readmeCategory": "dark-gradient-mixed-media",
     "watchUrl": "https://serenatan.org/launchvideo/assets/46.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-46",
-    "remakePrompt": "Create an original 37.1-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion, Terminal.\n\nAdapt this observed structure:\n1. Deep purple and magenta gradients frame an iPhone conversation and large title statements.\n2. Alternate phone UI with typography, ending on a terminal command and logo; the source notes a brief tweet screenshot.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/readwise/status/2037536421414653965"
   },
   {
     "id": 39,
@@ -2053,7 +2053,7 @@
     "readmeCategory": "clean-ui-data-graphics",
     "watchUrl": "https://serenatan.org/launchvideo/assets/39.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-39",
-    "remakePrompt": "Create an original 23-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Logo motion.\n\nAdapt this observed structure:\n1. Brand icons float above white UI cards with soft shadows.\n2. Large title frames and straightforward 2D transitions introduce bot-building across messaging platforms.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/chddaniel/status/2048402359110557714"
   },
   {
     "id": 29,
@@ -2111,7 +2111,7 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/29.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-29",
-    "remakePrompt": "Create an original 10-second, 1:1 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: Device motion, UI motion.\n\nAdapt this observed structure:\n1. Move from an app screen to its home-screen icon, then down to a lock-screen live-score card.\n2. Device perspective and camera motion carry a single feature; the rendered phone may need more than flat UI animation to match.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/golo_app/status/2087584902984155632"
   },
   {
     "id": 31,
@@ -2169,6 +2169,6 @@
     "readmeCategory": "device-ui-transformations",
     "watchUrl": "https://serenatan.org/launchvideo/assets/31.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-31",
-    "remakePrompt": "Create an original 19.3-second, 16:9 launch video for [YOUR PRODUCT].\n\nAudience: [WHO IT IS FOR]\nMain benefit: [THE CHANGE YOUR PRODUCT MAKES]\nBrand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]\nFinal CTA: [ONE NEXT STEP]\n\nVisual language: UI motion, Device motion.\n\nAdapt this observed structure:\n1. Click Install in a floating macOS window, then transform the window into a Dock icon.\n2. Spotlight, app switching and multiple windows make each click produce a visible system response.\n\nRebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.\n\nDeliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed."
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/ManusAI/status/2115110045977583909"
   }
 ]

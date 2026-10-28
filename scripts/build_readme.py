@@ -20,32 +20,7 @@ def compact(number):
     return f'{number / 1_000_000:.2f}M' if number >= 1_000_000 else f'{number / 1000:.1f}K' if number >= 1000 else str(number)
 
 def prompt(video):
-    v = video
-    timing = f"Create an original {v['originalSeconds']:g}-second, {v['ratio']} launch video for [YOUR PRODUCT]."
-    if v['excerpt']:
-        timing += f" The supplied reference contains only its first {v['clipSeconds']:g} seconds; plan an original ending."
-    scenes = '\n'.join(f'{i}. {note}' for i, note in enumerate(v['notes'], 1))
-    media = ''
-    if 'Mixed media' in v['styles']:
-        media = '\nUse only supplied or newly created footage for the mixed-media scenes.'
-    elif 'Device motion' in v['styles']:
-        media = '\nBuild device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.'
-    audio = 'Propose original audio separately; the reference soundtrack has not been independently reviewed.' if v['hasAudio'] else 'The reference is silent; propose any new soundtrack separately.'
-    return f'''{timing}
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: {', '.join(v['styles'])}.
-
-Adapt this observed structure:
-{scenes}
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.{media}
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. {audio}'''
+    return f"clone this video 1:1 for my product\n{video['source']}"
 
 def stats(video):
     v = video
@@ -73,7 +48,7 @@ parts = [f'''# Awesome AI Clonable Launch Videos
 [![References](https://img.shields.io/badge/video_references-{len(VIDEOS)}-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to remake their structure with AI.
+> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
@@ -125,12 +100,9 @@ for key, title, description in GROUPS:
 
 parts.append('''## How to use these prompts
 
-1. Pick a reference close to the story you want to tell.
-2. Watch the clip and copy its prompt into your AI coding or video tool.
-3. Supply your product, audience, branding, UI, proof points, and CTA.
-4. Review the storyboard before rendering. Check the final MP4 for timing, readable type, audio, and the closing frame.
-
-The prompts are creative starting points, not verified frame-accurate clones. Rebuild the structure with your own assets and messaging.
+1. Pick a video and copy its prompt, including the Twitter/X source link.
+2. Paste it into your AI coding or video tool.
+3. Add your product details and assets.
 
 ## Data & source notes
 
@@ -138,7 +110,7 @@ The prompts are creative starting points, not verified frame-accurate clones. Re
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
 - Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
-- Style notes are based on sampled frames and supplied metadata. Suggested prompts and style categories are editorial judgments.
+- Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 
 ## Contributing

@@ -8,7 +8,7 @@
 [![References](https://img.shields.io/badge/video_references-40-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to remake their structure with AI.
+> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
@@ -94,22 +94,8 @@ Phones, floating windows, camera moves, and interfaces that change shape.
 A black circular mascot and one green payment-card graphic sit on a white canvas. Large captions tell one shopping feature in about eleven seconds using flat 2D shapes.
 
 ```text
-Create an original 11.3-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. A black circular mascot and one green payment-card graphic sit on a white canvas.
-2. Large captions tell one shopping feature in about eleven seconds using flat 2D shapes.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/bot/status/2093419921007108385
 ```
 
 *Source: [@bot](https://x.com/bot/status/2093419921007108385) · 2026-08-28*
@@ -153,22 +139,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A blue question bubble opens into three tweet cards arranged as a fan. An answer bubble and an orange keyword highlight complete a compact search-and-summary story.
 
 ```text
-Create an original 12.2-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion.
-
-Adapt this observed structure:
-1. A blue question bubble opens into three tweet cards arranged as a fan.
-2. An answer bubble and an orange keyword highlight complete a compact search-and-summary story.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/bot/status/2107949161878606089
 ```
 
 *Source: [@bot](https://x.com/bot/status/2107949161878606089) · 2026-10-07*
@@ -212,23 +184,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Pan and zoom through an iMessage inbox, chat bubbles, maps and calendar cards. Memoji, rising feature cards and a closing app-icon grid create a product story without live-action scenes.
 
 ```text
-Create an original 42.9-second, 4:3 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. Pan and zoom through an iMessage inbox, chat bubbles, maps and calendar cards.
-2. Memoji, rising feature cards and a closing app-icon grid create a product story without live-action scenes.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/interaction/status/2062575428213285352
 ```
 
 *Source: [@interaction](https://x.com/interaction/status/2062575428213285352) · 2026-06-04*
@@ -272,23 +229,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A cursor selects an app icon on a stylized iPhone; the icon flies into the Action Button with a ripple. Camera pans and an expanding Dynamic Island turn device interactions into a story, followed by kinetic type and a logo reveal.
 
 ```text
-Create an original 12.7-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. A cursor selects an app icon on a stylized iPhone; the icon flies into the Action Button with a ripple.
-2. Camera pans and an expanding Dynamic Island turn device interactions into a story, followed by kinetic type and a logo reveal.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/bot/status/2112252507762368684
 ```
 
 *Source: [@bot](https://x.com/bot/status/2112252507762368684) · 2026-10-19*
@@ -332,23 +274,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Login forms, password fields and a vault settings screen become clean UI cards. Orange and green full-screen gradients separate the scenes and keep the hierarchy clear.
 
 ```text
-Create an original 18.9-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. Login forms, password fields and a vault settings screen become clean UI cards.
-2. Orange and green full-screen gradients separate the scenes and keep the hierarchy clear.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/bot/status/2113717946019397910
 ```
 
 *Source: [@bot](https://x.com/bot/status/2113717946019397910) · 2026-10-23*
@@ -392,23 +319,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 White title frames introduce computer use, followed by an orange-gradient product scene. A Cursor window and iPhone simulator sit side by side as the cursor demonstrates the workflow, ending on the cube logo.
 
 ```text
-Create an original 21.1-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. White title frames introduce computer use, followed by an orange-gradient product scene.
-2. A Cursor window and iPhone simulator sit side by side as the cursor demonstrates the workflow, ending on the cube logo.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/cursor_ai/status/2113661506634305834
 ```
 
 *Source: [@cursor_ai](https://x.com/cursor_ai/status/2113661506634305834) · 2026-10-23*
@@ -452,23 +364,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A folding phone opens into a wider display while the interface rearranges to match. Keep the short film focused on one device transformation, then add scrolling and keyboard interactions.
 
 ```text
-Create an original 8.6-second, 1.54:1 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. A folding phone opens into a wider display while the interface rearranges to match.
-2. Keep the short film focused on one device transformation, then add scrolling and keyboard interactions.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/NotionHQ/status/2113694972339986860
 ```
 
 *Source: [@NotionHQ](https://x.com/NotionHQ/status/2113694972339986860) · 2026-10-23*
@@ -512,23 +409,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Floating, tilted phones on white alternate with full-screen orange gradients. Camera pans and close-ups connect reading, chat and highlighting interfaces; large captions punctuate the sequence.
 
 ```text
-Create an original 60-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. Floating, tilted phones on white alternate with full-screen orange gradients.
-2. Camera pans and close-ups connect reading, chat and highlighting interfaces; large captions punctuate the sequence.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/readwise/status/2079973992077902283
 ```
 
 *Source: [@readwise](https://x.com/readwise/status/2079973992077902283) · 2026-07-22*
@@ -572,23 +454,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Move from an app screen to its home-screen icon, then down to a lock-screen live-score card. Device perspective and camera motion carry a single feature; the rendered phone may need more than flat UI animation to match.
 
 ```text
-Create an original 10-second, 1:1 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. Move from an app screen to its home-screen icon, then down to a lock-screen live-score card.
-2. Device perspective and camera motion carry a single feature; the rendered phone may need more than flat UI animation to match.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/golo_app/status/2087584902984155632
 ```
 
 *Source: [@golo_app](https://x.com/golo_app/status/2087584902984155632) · 2026-08-12*
@@ -632,23 +499,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Click Install in a floating macOS window, then transform the window into a Dock icon. Spotlight, app switching and multiple windows make each click produce a visible system response.
 
 ```text
-Create an original 19.3-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Device motion.
-
-Adapt this observed structure:
-1. Click Install in a floating macOS window, then transform the window into a Dock icon.
-2. Spotlight, app switching and multiple windows make each click produce a visible system response.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/ManusAI/status/2115110045977583909
 ```
 
 *Source: [@ManusAI](https://x.com/ManusAI/status/2115110045977583909) · 2026-10-27*
@@ -698,22 +550,8 @@ One focal point per scene: charts, code cards, simple geometry, and useful produ
 Muted peach and cream scenes give each feature its own full-screen color. Large titles, scrolling model names and cursor clicks create a compact sequence of AI updates.
 
 ```text
-Create an original 51-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Muted peach and cream scenes give each feature its own full-screen color.
-2. Large titles, scrolling model names and cursor clicks create a compact sequence of AI updates.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/NotionHQ/status/2112269722075242887
 ```
 
 *Source: [@NotionHQ](https://x.com/NotionHQ/status/2112269722075242887) · 2026-10-19*
@@ -757,22 +595,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Type code into a white snippet card and highlight individual lines. A short, restrained sequence uses typography and code motion to explain the SDK method.
 
 ```text
-Create an original 19.7-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Terminal, Kinetic type.
-
-Adapt this observed structure:
-1. Type code into a white snippet card and highlight individual lines.
-2. A short, restrained sequence uses typography and code motion to explain the SDK method.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/cursor_ai/status/2107141004482793827
 ```
 
 *Source: [@cursor_ai](https://x.com/cursor_ai/status/2107141004482793827) · 2026-10-05*
@@ -816,22 +640,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 White wireframe triangles and cubes animate on a black canvas. Small frontend/backend labels keep the twelve-second geometric story precise and restrained.
 
 ```text
-Create an original 12.1-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Abstract motion.
-
-Adapt this observed structure:
-1. White wireframe triangles and cubes animate on a black canvas.
-2. Small frontend/backend labels keep the twelve-second geometric story precise and restrained.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/vercel/status/2110786348131258456
 ```
 
 *Source: [@vercel](https://x.com/vercel/status/2110786348131258456) · 2026-10-15*
@@ -875,22 +685,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A white canvas and orange accents connect search, phone UI, two-dot eyes and a thinking state. Logo blocks spring into a stack, making the personal-assistant toolkit visible as a simple metaphor.
 
 ```text
-Create an original 23.7-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Logo motion.
-
-Adapt this observed structure:
-1. A white canvas and orange accents connect search, phone UI, two-dot eyes and a thinking state.
-2. Logo blocks spring into a stack, making the personal-assistant toolkit visible as a simple metaphor.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/browserbase/status/2114777924335554605
 ```
 
 *Source: [@browserbase](https://x.com/browserbase/status/2114777924335554605) · 2026-10-26*
@@ -934,22 +730,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A blue logo frame gives way to green/red probability pills, a moving point on a chart and a countdown. Limit each scene to one focal element, then reveal a phone chart and return to the blue logo frame.
 
 ```text
-Create an original 30.1-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Charts.
-
-Adapt this observed structure:
-1. A blue logo frame gives way to green/red probability pills, a moving point on a chart and a countdown.
-2. Limit each scene to one focal element, then reveal a phone chart and return to the blue logo frame.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/coinbase/status/2114148184285143349
 ```
 
 *Source: [@coinbase](https://x.com/coinbase/status/2114148184285143349) · 2026-10-24*
@@ -993,22 +775,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Type /visualize into a minimal off-white chat interface. Draw a line chart, show hover/filter interactions, then turn a follow-up question into a growing bar chart.
 
 ```text
-Create an original 27.4-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Charts.
-
-Adapt this observed structure:
-1. Type /visualize into a minimal off-white chat interface.
-2. Draw a line chart, show hover/filter interactions, then turn a follow-up question into a growing bar chart.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/cursor_ai/status/2108289748628566496
 ```
 
 *Source: [@cursor_ai](https://x.com/cursor_ai/status/2108289748628566496) · 2026-10-08*
@@ -1052,22 +820,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Blue concentric circles become a row of colored dots, then a ring and an asset-allocation pie chart. Simple geometric morphs connect the story before the chart resolves inside a phone interface.
 
 ```text
-Create an original 25.6-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Abstract motion, Charts.
-
-Adapt this observed structure:
-1. Blue concentric circles become a row of colored dots, then a ring and an asset-allocation pie chart.
-2. Simple geometric morphs connect the story before the chart resolves inside a phone interface.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/coinbase/status/2114718467610022208
 ```
 
 *Source: [@coinbase](https://x.com/coinbase/status/2114718467610022208) · 2026-10-26*
@@ -1111,22 +865,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Brand icons float above white UI cards with soft shadows. Large title frames and straightforward 2D transitions introduce bot-building across messaging platforms.
 
 ```text
-Create an original 23-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Logo motion.
-
-Adapt this observed structure:
-1. Brand icons float above white UI cards with soft shadows.
-2. Large title frames and straightforward 2D transitions introduce bot-building across messaging platforms.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/chddaniel/status/2048402359110557714
 ```
 
 *Source: [@chddaniel](https://x.com/chddaniel/status/2048402359110557714) · 2026-04-26*
@@ -1176,22 +916,8 @@ Product stories driven by clear interfaces, oversized cursors, and quick visual 
 Alternate black and white title frames with a clean voice-input interface. AI-generated image collages expand into a visual demonstration of voice edits.
 
 ```text
-Create an original 45-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Image collage.
-
-Adapt this observed structure:
-1. Alternate black and white title frames with a clean voice-input interface.
-2. AI-generated image collages expand into a visual demonstration of voice edits.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/lovart_ai/status/2033904987277774951
 ```
 
 *Source: [@lovart_ai](https://x.com/lovart_ai/status/2033904987277774951) · 2026-03-17*
@@ -1235,22 +961,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Pink-purple gradients frame iMessage inboxes, chat bubbles, Memoji and floating app icons. An oversized cursor introduces a new feature every three to four seconds.
 
 ```text
-Create an original 31.2-second, 1:1 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Pink-purple gradients frame iMessage inboxes, chat bubbles, Memoji and floating app icons.
-2. An oversized cursor introduces a new feature every three to four seconds.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/maximusgrave/status/2102800008982777902
 ```
 
 *Source: [@maximusgrave](https://x.com/maximusgrave/status/2102800008982777902) · 2026-09-23*
@@ -1294,22 +1006,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 White and pale-gray scenes, a giant blue cursor and floating image cards. Pair “4x faster” charts and an Arena ranking with a precise-editing demonstration.
 
 ```text
-Create an original 35-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. White and pale-gray scenes, a giant blue cursor and floating image cards.
-2. Pair “4x faster” charts and an Arena ranking with a precise-editing demonstration.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/krea_ai/status/2112567020353102324
 ```
 
 *Source: [@krea_ai](https://x.com/krea_ai/status/2112567020353102324) · 2026-10-20*
@@ -1353,22 +1051,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Cartoon characters and large kinetic titles lead into LinkedIn, calendar and meeting UI. Frequent zooms and quick scene changes create a dense product-story rhythm; the included file is a 35-second excerpt.
 
 ```text
-Create an original 90-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 35 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Cartoon characters and large kinetic titles lead into LinkedIn, calendar and meeting UI.
-2. Frequent zooms and quick scene changes create a dense product-story rhythm; the included file is a 35-second excerpt.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/charles_maddock/status/2114659351470247986
 ```
 
 *Source: [@charles_maddock](https://x.com/charles_maddock/status/2114659351470247986) · 2026-10-26*
@@ -1412,22 +1096,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Pale gray and purple full-screen frames introduce the job-search problem. Small type and an input UI carry a restrained demo, ending on the Actify logo.
 
 ```text
-Create an original 38-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Pale gray and purple full-screen frames introduce the job-search problem.
-2. Small type and an input UI carry a restrained demo, ending on the Actify logo.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/ActifyAI/status/2080331695560274183
 ```
 
 *Source: [@ActifyAI](https://x.com/ActifyAI/status/2080331695560274183) · 2026-07-23*
@@ -1471,22 +1141,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 White UI with app icons, an “Opportunity Missed!” alert, tables and an oversized cursor. Conversational title frames lead into a workflow diagram and a soft-gradient close.
 
 ```text
-Create an original 58-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion.
-
-Adapt this observed structure:
-1. White UI with app icons, an “Opportunity Missed!” alert, tables and an oversized cursor.
-2. Conversational title frames lead into a workflow diagram and a soft-gradient close.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/CrowdReply_io/status/2105312058451570973
 ```
 
 *Source: [@CrowdReply_io](https://x.com/CrowdReply_io/status/2105312058451570973) · 2026-09-30*
@@ -1530,22 +1186,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Cream canvas and big red type introduce “Your next 100 customers are waiting.” Strike through manual, tedious and expensive; reveal tables and counters, then a logo close.
 
 ```text
-Create an original 33-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Kinetic type, UI motion.
-
-Adapt this observed structure:
-1. Cream canvas and big red type introduce “Your next 100 customers are waiting.”
-2. Strike through manual, tedious and expensive; reveal tables and counters, then a logo close.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/samuel_spitz/status/2041198900791714278
 ```
 
 *Source: [@samuel_spitz](https://x.com/samuel_spitz/status/2041198900791714278) · 2026-04-06*
@@ -1589,22 +1231,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Cream and pink-orange gradients with slow-moving titles, calendar UI and meeting windows. Expanding rings link “Google Meet” to “Your PAL,” ending on Tavus branding.
 
 ```text
-Create an original 64-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Cream and pink-orange gradients with slow-moving titles, calendar UI and meeting windows.
-2. Expanding rings link “Google Meet” to “Your PAL,” ending on Tavus branding.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/tavus/status/2074894605125026072
 ```
 
 *Source: [@tavus](https://x.com/tavus/status/2074894605125026072) · 2026-07-08*
@@ -1654,22 +1282,8 @@ Kinetic type, counters, glowing outlines, rings, and waveform-led product storie
 Cream and dark frames alternate around a “Stop burning your budget” hook. Counters, social-post UI, comment bubbles and an icon grid build toward the logo.
 
 ```text
-Create an original 33-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Kinetic type, UI motion.
-
-Adapt this observed structure:
-1. Cream and dark frames alternate around a “Stop burning your budget” hook.
-2. Counters, social-post UI, comment bubbles and an icon grid build toward the logo.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/aiscwork/status/2090862009008984574
 ```
 
 *Source: [@aiscwork](https://x.com/aiscwork/status/2090862009008984574) · 2026-08-21*
@@ -1713,22 +1327,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Minimal white frames with “Give your agent taste” and editorial image accents. Typography drives the story, closing on a black installation-command frame.
 
 ```text
-Create an original 64-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 50 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Kinetic type.
-
-Adapt this observed structure:
-1. Minimal white frames with “Give your agent taste” and editorial image accents.
-2. Typography drives the story, closing on a black installation-command frame.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/LexnLin/status/2110122106537050584
 ```
 
 *Source: [@LexnLin](https://x.com/LexnLin/status/2110122106537050584) · 2026-10-13*
@@ -1772,22 +1372,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Black canvas with rough, glowing outlines and hand-drawn-looking cards. Identity → model provider → skills → MCPs → review, in a square composition.
 
 ```text
-Create an original 47-second, 1:1 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Abstract motion.
-
-Adapt this observed structure:
-1. Black canvas with rough, glowing outlines and hand-drawn-looking cards.
-2. Identity → model provider → skills → MCPs → review, in a square composition.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/NousResearch/status/2064760263224504719
 ```
 
 *Source: [@NousResearch](https://x.com/NousResearch/status/2064760263224504719) · 2026-06-10*
@@ -1831,22 +1417,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Minimal black, white and gray; spheres, rings, waveforms and dialogue captions. Abstract motion and model-tier labels carry a voice-product story.
 
 ```text
-Create an original 71-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Abstract motion, Kinetic type.
-
-Adapt this observed structure:
-1. Minimal black, white and gray; spheres, rings, waveforms and dialogue captions.
-2. Abstract motion and model-tier labels carry a voice-product story.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/ElevenLabs/status/2112550782063247521
 ```
 
 *Source: [@ElevenLabs](https://x.com/ElevenLabs/status/2112550782063247521) · 2026-10-20*
@@ -1896,23 +1468,8 @@ Dark interfaces, floating devices, image collage, and product demos mixed with p
 The video is presented as an AI-generated Syren demo. Kinetic typography and brand cards mix with an AI presenter and a logo reveal.
 
 ```text
-Create an original 61-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Kinetic type, Mixed media.
-
-Adapt this observed structure:
-1. The video is presented as an AI-generated Syren demo.
-2. Kinetic typography and brand cards mix with an AI presenter and a logo reveal.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Use only supplied or newly created footage for the mixed-media scenes.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/vriparbelli/status/2107850981614489957
 ```
 
 *Source: [@vriparbelli](https://x.com/vriparbelli/status/2107850981614489957) · 2026-10-07*
@@ -1956,23 +1513,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A short laptop shot introduces desktop windows, floating prompts and a large number counter. Caption-led storytelling moves from screen chaos to an agent doing useful work.
 
 ```text
-Create an original 62-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Mixed media.
-
-Adapt this observed structure:
-1. A short laptop shot introduces desktop windows, floating prompts and a large number counter.
-2. Caption-led storytelling moves from screen chaos to an agent doing useful work.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Use only supplied or newly created footage for the mixed-media scenes.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/vida_agent/status/2069718855551955194
 ```
 
 *Source: [@vida_agent](https://x.com/vida_agent/status/2069718855551955194) · 2026-06-24*
@@ -2016,22 +1558,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Dark, glowing interface cards: competitor scraping, suggestions and a mascot. Large cursor clicks and ad thumbnails combine a product reveal with a funding announcement.
 
 ```text
-Create an original 68-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 50 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Kinetic type.
-
-Adapt this observed structure:
-1. Dark, glowing interface cards: competitor scraping, suggestions and a mascot.
-2. Large cursor clicks and ad thumbnails combine a product reveal with a funding announcement.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/arcads_ai/status/2084611105528115415
 ```
 
 *Source: [@arcads_ai](https://x.com/arcads_ai/status/2084611105528115415) · 2026-08-04*
@@ -2075,23 +1603,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A floating phone switches between an app launch screen, a toggle, a lock-screen notification and a reward result. A fluid multicolor gradient supplies atmosphere; much of the phone content resembles actual app footage.
 
 ```text
-Create an original 16.9-second, 1:1 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. A floating phone switches between an app launch screen, a toggle, a lock-screen notification and a reward result.
-2. A fluid multicolor gradient supplies atmosphere; much of the phone content resembles actual app footage.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. The reference is silent; propose any new soundtrack separately.
+clone this video 1:1 for my product
+https://x.com/CashApp/status/2103207687127466307
 ```
 
 *Source: [@CashApp](https://x.com/CashApp/status/2103207687127466307) · 2026-09-24*
@@ -2135,23 +1648,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A founder introduction gives way to web-design windows, terminal scenes and a bold “DOMINATE” frame. Finish with a green gradient and the AI design engineer proposition.
 
 ```text
-Create an original 85-second, 16:9 launch video for [YOUR PRODUCT]. The supplied reference contains only its first 45 seconds; plan an original ending.
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Mixed media.
-
-Adapt this observed structure:
-1. A founder introduction gives way to web-design windows, terminal scenes and a bold “DOMINATE” frame.
-2. Finish with a green gradient and the AI design engineer proposition.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Use only supplied or newly created footage for the mixed-media scenes.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/Dipanjan_Dey/status/2061825199247614316
 ```
 
 *Source: [@Dipanjan_Dey](https://x.com/Dipanjan_Dey/status/2061825199247614316) · 2026-06-02*
@@ -2195,22 +1693,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Dark trading terminals sit over warm gradients. Notification cards deliver a specific market signal before a “Trade with superhuman” close.
 
 ```text
-Create an original 26-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion.
-
-Adapt this observed structure:
-1. Dark trading terminals sit over warm gradients.
-2. Notification cards deliver a specific market signal before a “Trade with superhuman” close.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/instinct_xyz/status/2110439790961442825
 ```
 
 *Source: [@instinct_xyz](https://x.com/instinct_xyz/status/2110439790961442825) · 2026-10-14*
@@ -2254,23 +1738,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 White, red and blue frames; TikTok cards, meme-like cutouts and big conversational captions. Fast collage pacing supports a creator-discovery demonstration.
 
 ```text
-Create an original 31-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Image collage, Mixed media.
-
-Adapt this observed structure:
-1. White, red and blue frames; TikTok cards, meme-like cutouts and big conversational captions.
-2. Fast collage pacing supports a creator-discovery demonstration.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Use only supplied or newly created footage for the mixed-media scenes.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/Jibran_05/status/2033589137018917027
 ```
 
 *Source: [@Jibran_05](https://x.com/Jibran_05/status/2033589137018917027) · 2026-03-16*
@@ -2314,23 +1783,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Dark title frames mix photo collage with an editing timeline. Later product-demo scenes include people in podcast footage.
 
 ```text
-Create an original 38-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: UI motion, Mixed media.
-
-Adapt this observed structure:
-1. Dark title frames mix photo collage with an editing timeline.
-2. Later product-demo scenes include people in podcast footage.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Use only supplied or newly created footage for the mixed-media scenes.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/RiversidedotFM/status/2077770308992258493
 ```
 
 *Source: [@RiversidedotFM](https://x.com/RiversidedotFM/status/2077770308992258493) · 2026-07-16*
@@ -2374,23 +1828,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 A phone interface floats at an angle against black. Code diffs and a keyboard appear in sequence before the Linear logo; perspective supplies most of the atmosphere.
 
 ```text
-Create an original 20.9-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion.
-
-Adapt this observed structure:
-1. A phone interface floats at an angle against black.
-2. Code diffs and a keyboard appear in sequence before the Linear logo; perspective supplies most of the atmosphere.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/linear/status/2082856036977803595
 ```
 
 *Source: [@linear](https://x.com/linear/status/2082856036977803595) · 2026-07-30*
@@ -2434,23 +1873,8 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 Deep purple and magenta gradients frame an iPhone conversation and large title statements. Alternate phone UI with typography, ending on a terminal command and logo; the source notes a brief tweet screenshot.
 
 ```text
-Create an original 37.1-second, 16:9 launch video for [YOUR PRODUCT].
-
-Audience: [WHO IT IS FOR]
-Main benefit: [THE CHANGE YOUR PRODUCT MAKES]
-Brand: [YOUR COLORS, FONTS, LOGO, AND PRODUCT UI]
-Final CTA: [ONE NEXT STEP]
-
-Visual language: Device motion, UI motion, Terminal.
-
-Adapt this observed structure:
-1. Deep purple and magenta gradients frame an iPhone conversation and large title statements.
-2. Alternate phone UI with typography, ending on a terminal command and logo; the source notes a brief tweet screenshot.
-
-Rebuild every scene around my own product, copy, UI, and assets. Keep one clear action or message per scene. Use only real proof points I provide.
-Build device mockups with CSS/SVG and perspective transforms where possible; identify any shot that needs a separate 3D asset.
-
-Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP source and a rendered MP4. Propose original audio separately; the reference soundtrack has not been independently reviewed.
+clone this video 1:1 for my product
+https://x.com/readwise/status/2037536421414653965
 ```
 
 *Source: [@readwise](https://x.com/readwise/status/2037536421414653965) · 2026-03-27*
@@ -2483,12 +1907,9 @@ Deliver a timed storyboard first, then editable Remotion or HTML/CSS + GSAP sour
 
 ## How to use these prompts
 
-1. Pick a reference close to the story you want to tell.
-2. Watch the clip and copy its prompt into your AI coding or video tool.
-3. Supply your product, audience, branding, UI, proof points, and CTA.
-4. Review the storyboard before rendering. Check the final MP4 for timing, readable type, audio, and the closing frame.
-
-The prompts are creative starting points, not verified frame-accurate clones. Rebuild the structure with your own assets and messaging.
+1. Pick a video and copy its prompt, including the Twitter/X source link.
+2. Paste it into your AI coding or video tool.
+3. Add your product details and assets.
 
 ## Data & source notes
 
@@ -2496,7 +1917,7 @@ The prompts are creative starting points, not verified frame-accurate clones. Re
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
 - Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
-- Style notes are based on sampled frames and supplied metadata. Suggested prompts and style categories are editorial judgments.
+- Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 
 ## Contributing
