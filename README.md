@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-40-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-41-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 40 compressed reference files are also included in [videos/](videos/).
+**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 41 compressed reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -26,6 +26,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 - [Grok Bot — Action Button](#grok-bot-action-button)
 - [Grok Bot — Vault](#grok-bot-vault)
 - [Cursor — Computer Use](#cursor-computer-use)
+- [Allo — Grok Bot Gets a Phone](#allo-grok-bot-gets-a-phone)
 - [Notion — iPhone Duo](#notion-iphone-duo)
 - [Readwise 2.0](#readwise-2-0)
 - [Go-lo — Live Scores](#go-lo-live-scores)
@@ -343,6 +344,51 @@ https://x.com/cursor_ai/status/2113661506634305834
 | Account followers | 494,611 |
 | Original duration | 0:21 |
 | Included file | 0:21 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 960 × 540 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="allo-grok-bot-gets-a-phone"></a>
+
+### Allo — Grok Bot Gets a Phone
+
+[![Allo — Grok Bot Gets a Phone preview](previews/allo-grok-bot-gets-a-phone.jpg)](https://serenatan.org/launchvideo/assets/48.mp4)
+
+**0:20 · 16:9 · 172.4K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/48.mp4) · [MP4 file](videos/allo-grok-bot-gets-a-phone.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-48)
+
+A black circular mascot gains a green headset, then moves into an iPhone call interface on a pale background. Large captions connect answering calls, preparing callbacks and chat bubbles, before a dark green Allo logo and integration reveal.
+
+```text
+clone this video 1:1 for my product
+https://x.com/allophonesystem/status/2115793573589258279
+```
+
+*Source: [@allophonesystem](https://x.com/allophonesystem/status/2115793573589258279) · 2026-10-29*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @allophonesystem |
+| Post date | 2026-10-29 |
+| Stats snapshot (PT) | 2026-10-29 |
+| Post impressions | 172,418 |
+| Video plays | — |
+| Likes | 1,237 |
+| Bookmarks | 764 |
+| Reposts | 74 |
+| Replies | 93 |
+| Quotes | 29 |
+| Account followers | 371 |
+| Original duration | 0:20 |
+| Included file | 0:20 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 960 × 540 |
 | Audio track | Present |
@@ -1913,7 +1959,7 @@ https://x.com/readwise/status/2037536421414653965
 
 ## Data & source notes
 
-- Metrics are historical snapshots from **October 27–28, 2026 (Pacific time)**. Each entry records its own date; counts are not live.
+- Metrics are historical snapshots (Pacific time). Each entry records its own date; counts are not live. Unavailable counts appear as —.
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
 - Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.

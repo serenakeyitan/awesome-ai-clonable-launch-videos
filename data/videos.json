@@ -1373,6 +1373,58 @@
     "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/NotionHQ/status/2112269722075242887"
   },
   {
+    "id": 48,
+    "title": "Allo — Grok Bot Gets a Phone",
+    "originalTitle": "Allo — Grok Bot Gets a Phone",
+    "account": "@allophonesystem",
+    "followers": 371,
+    "category": "Feature clip",
+    "seed": false,
+    "impressions": 172418,
+    "views": null,
+    "likes": 1237,
+    "bookmarks": 764,
+    "reposts": 74,
+    "replies": 93,
+    "quotes": 29,
+    "originalSeconds": 20.233,
+    "clipSeconds": 20.29,
+    "excerpt": false,
+    "ratio": "16:9",
+    "date": "2026-10-29",
+    "width": 960,
+    "height": 540,
+    "hasAudio": true,
+    "source": "https://x.com/allophonesystem/status/2115793573589258279",
+    "quote": "We decided to give Grok Bot a phone.",
+    "styles": [
+      "Device motion",
+      "UI motion",
+      "Kinetic type",
+      "Logo motion"
+    ],
+    "notes": [
+      "A black circular mascot gains a green headset, then moves into an iPhone call interface on a pale background.",
+      "Large captions connect answering calls, preparing callbacks and chat bubbles, before a dark green Allo logo and integration reveal."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/allo-grok-bot-gets-a-phone.mp4",
+    "poster": "previews/allo-grok-bot-gets-a-phone.jpg",
+    "snapshotDate": "2026-10-29",
+    "collectionSource": "https://x.com/allophonesystem/status/2115793573589258279",
+    "metricSources": [
+      "https://cdn.syndication.twimg.com/tweet-result?id=2115793573589258279&lang=en&token=1",
+      "https://api.fxtwitter.com/status/2115793573589258279"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot.",
+    "slug": "allo-grok-bot-gets-a-phone",
+    "readmeCategory": "device-ui-transformations",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/48.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-48",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/allophonesystem/status/2115793573589258279"
+  },
+  {
     "id": 26,
     "title": "Tavus PAL",
     "originalTitle": "Tavus PAL — 加入 Google Meet",

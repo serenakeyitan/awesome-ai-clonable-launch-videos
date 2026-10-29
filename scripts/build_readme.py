@@ -16,7 +16,12 @@ def duration(seconds):
     total = round(seconds)
     return f'{total // 60}:{total % 60:02d}'
 
+def metric(number):
+    return f'{number:,}' if number is not None else '—'
+
 def compact(number):
+    if number is None:
+        return '—'
     return f'{number / 1_000_000:.2f}M' if number >= 1_000_000 else f'{number / 1000:.1f}K' if number >= 1000 else str(number)
 
 def prompt(video):
@@ -26,11 +31,11 @@ def stats(video):
     v = video
     rows = [
         ('Posting account', v['account']), ('Post date', v['date']),
-        ('Stats snapshot (PT)', v['snapshotDate']), ('Post impressions', f"{v['impressions']:,}"),
-        ('Video plays', f"{v['views']:,}"), ('Likes', f"{v['likes']:,}"),
-        ('Bookmarks', f"{v['bookmarks']:,}"), ('Reposts', f"{v['reposts']:,}"),
-        ('Replies', f"{v['replies']:,}"), ('Quotes', f"{v['quotes']:,}"),
-        ('Account followers', f"{v['followers']:,}"),
+        ('Stats snapshot (PT)', v['snapshotDate']), ('Post impressions', metric(v['impressions'])),
+        ('Video plays', metric(v['views'])), ('Likes', metric(v['likes'])),
+        ('Bookmarks', metric(v['bookmarks'])), ('Reposts', metric(v['reposts'])),
+        ('Replies', metric(v['replies'])), ('Quotes', metric(v['quotes'])),
+        ('Account followers', metric(v['followers'])),
         ('Original duration', duration(v['originalSeconds'])),
         ('Included file', duration(v['clipSeconds']) + (' — excerpt' if v['excerpt'] else ' — full clip')),
         ('Aspect ratio', v['ratio']), ('Reference resolution', f"{v['width']} × {v['height']}"),
@@ -106,7 +111,7 @@ parts.append('''## How to use these prompts
 
 ## Data & source notes
 
-- Metrics are historical snapshots from **October 27–28, 2026 (Pacific time)**. Each entry records its own date; counts are not live.
+- Metrics are historical snapshots (Pacific time). Each entry records its own date; counts are not live. Unavailable counts appear as —.
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
 - Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
@@ -126,8 +131,8 @@ python3 scripts/build_readme.py
 Original curation, prompts, and repository code are [MIT licensed](LICENSE). Third-party videos, previews, product UI, logos, and branding remain with their respective owners; the MIT license does not grant rights to those assets. Every video links to its original post.
 ''')
 
-assert len(VIDEOS) == len({v['slug'] for v in VIDEOS}) == 40
-assert len([v for key, _, _ in GROUPS for v in VIDEOS if v['readmeCategory'] == key]) == 40
+assert VIDEOS and len(VIDEOS) == len({v['slug'] for v in VIDEOS})
+assert len([v for key, _, _ in GROUPS for v in VIDEOS if v['readmeCategory'] == key]) == len(VIDEOS)
 for video in VIDEOS:
     assert (ROOT / video['video']).is_file(), video['video']
     assert (ROOT / video['poster']).is_file(), video['poster']
