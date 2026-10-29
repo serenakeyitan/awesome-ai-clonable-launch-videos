@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-41-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-42-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 41 compressed reference files are also included in [videos/](videos/).
+**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 42 compressed reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -73,6 +73,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 - [Riverside — Agentic Editor](#riverside-agentic-editor)
 - [Linear — Mobile Coding Sessions](#linear-mobile-coding-sessions)
 - [Readwise for OpenClaw](#readwise-for-openclaw)
+- [Studiyo — Grok Bot Widget](#studiyo-grok-bot-widget)
 
 ---
 
@@ -1946,6 +1947,51 @@ https://x.com/readwise/status/2037536421414653965
 | Aspect ratio | 16:9 |
 | Reference resolution | 640 × 360 |
 | Audio track | Present |
+
+</details>
+
+---
+
+<a id="studiyo-grok-bot-widget"></a>
+
+### Studiyo — Grok Bot Widget
+
+[![Studiyo — Grok Bot Widget preview](previews/studiyo-grok-bot-widget.jpg)](https://serenatan.org/launchvideo/assets/49.mp4)
+
+**0:15 · 1:1 · 48.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/49.mp4) · [MP4 file](videos/studiyo-grok-bot-widget.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-49)
+
+An iPhone home-screen widget introduces a round mascot, then cycles through expressive agent characters on a dark interface. The widget switches from loading files to a task-progress view, where a small mascot hammers an anvil above a growing progress bar.
+
+```text
+clone this video 1:1 for my product
+https://x.com/Studiyoco/status/2101329629701443613
+```
+
+*Source: [@Studiyoco](https://x.com/Studiyoco/status/2101329629701443613) · 2026-09-19*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Studiyoco |
+| Post date | 2026-09-19 |
+| Stats snapshot (PT) | 2026-10-29 |
+| Post impressions | 48,461 |
+| Video plays | — |
+| Likes | 455 |
+| Bookmarks | 213 |
+| Reposts | 19 |
+| Replies | 25 |
+| Quotes | 2 |
+| Account followers | 3,739 |
+| Original duration | 0:15 |
+| Included file | 0:15 — full clip |
+| Aspect ratio | 1:1 |
+| Reference resolution | 540 × 540 |
+| Audio track | None |
 
 </details>
 

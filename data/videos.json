@@ -2108,6 +2108,55 @@
     "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/chddaniel/status/2048402359110557714"
   },
   {
+    "id": 49,
+    "title": "Studiyo — Grok Bot Widget",
+    "originalTitle": "Studiyo — Grok Bot Widget",
+    "account": "@Studiyoco",
+    "followers": 3739,
+    "category": "Feature clip",
+    "seed": false,
+    "impressions": 48461,
+    "views": null,
+    "likes": 455,
+    "bookmarks": 213,
+    "reposts": 19,
+    "replies": 25,
+    "quotes": 2,
+    "originalSeconds": 14.933,
+    "clipSeconds": 14.93,
+    "excerpt": false,
+    "ratio": "1:1",
+    "date": "2026-09-19",
+    "width": 540,
+    "height": 540,
+    "hasAudio": false,
+    "source": "https://x.com/Studiyoco/status/2101329629701443613",
+    "quote": "We gave Grok @bot  its own widget.\n\nNow it lives on your screen. \n\nAnd yes, it hammers when it’s working.",
+    "styles": [
+      "UI motion"
+    ],
+    "notes": [
+      "An iPhone home-screen widget introduces a round mascot, then cycles through expressive agent characters on a dark interface.",
+      "The widget switches from loading files to a task-progress view, where a small mascot hammers an anvil above a growing progress bar."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/studiyo-grok-bot-widget.mp4",
+    "poster": "previews/studiyo-grok-bot-widget.jpg",
+    "snapshotDate": "2026-10-29",
+    "collectionSource": "https://x.com/Studiyoco/status/2101329629701443613",
+    "metricSources": [
+      "https://cdn.syndication.twimg.com/tweet-result?id=2101329629701443613&lang=en&token=1",
+      "https://api.fxtwitter.com/status/2101329629701443613"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot.",
+    "slug": "studiyo-grok-bot-widget",
+    "readmeCategory": "dark-gradient-mixed-media",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/49.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-49",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/Studiyoco/status/2101329629701443613"
+  },
+  {
     "id": 29,
     "title": "Go-lo — Live Scores",
     "originalTitle": "Go-lo：比赛比分直达锁屏",
