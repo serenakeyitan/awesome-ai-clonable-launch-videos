@@ -37,7 +37,7 @@ The canonical source is this repository's `main` branch:
 - Edit `agent/workflow.md` to change the current remake workflow.
 - Run `python3 scripts/build_readme.py` and merge the changes to `main`.
 
-The remote service fetches these files on every call and computes a content hash. New and existing connections see the published changes on their next tool call without editing the plugin or reinstalling. Website/media publication is still a separate deployment; use the current publishing workflow to keep its playable files in sync. Historical statistics do not become live merely because the catalog is refreshed.
+The remote service resolves the current main commit through Git’s uncached ref advertisement, reads all three files at that same immutable revision, and computes a content hash. This avoids stale raw branch URLs and mixed revisions. New and existing connections see the published changes on their next tool call without editing the plugin or reinstalling. Website/media publication is still a separate deployment; use the current publishing workflow to keep its playable files in sync. Historical statistics do not become live merely because the catalog is refreshed.
 
 The plugin contains only a stable setup/refresh bootstrap and endpoint. Changes to permissions, transport, tool contracts, or client UI capabilities may require an updated package or reconnect. A client that does not call a tool cannot receive fresh server content. Native UI connection on each named client is separate from protocol verification.
 
@@ -53,6 +53,6 @@ npm run dev
 npm run verify:live # checks the deployed service with modern and legacy SDK clients
 ```
 
-`npm run deploy` deploys the Cloudflare Worker. Fixed public source URLs, bounded source reads and result limits keep this a read-only catalog service. It has no database, visitor analytics, paid gate or lead collection.
+`npm run deploy` deploys the Cloudflare Worker. Fixed public source locations, bounded source reads and result limits keep this a read-only catalog service. It has no database, visitor analytics, paid gate or lead collection.
 
 Installation references: [Claude](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp), [Cursor](https://cursor.com/docs/mcp), [Grok](https://docs.x.ai/grok/connectors), [VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers), [Gemini CLI](https://geminicli.com/docs/tools/mcp-server/), [ChatGPT](https://developers.openai.com/plugins/quickstart).
