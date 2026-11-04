@@ -1315,6 +1315,56 @@
     "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/ElevenLabs/status/2112550782063247521"
   },
   {
+    "id": 50,
+    "title": "Grok Bot — New Shopping Experience",
+    "originalTitle": "Grok Bot — New Shopping Experience",
+    "account": "@bot",
+    "followers": 501290,
+    "category": "Feature clip",
+    "seed": false,
+    "impressions": 212498,
+    "views": null,
+    "likes": 2540,
+    "bookmarks": 613,
+    "reposts": 194,
+    "replies": 424,
+    "quotes": 107,
+    "originalSeconds": 16.733,
+    "clipSeconds": 16.79,
+    "excerpt": false,
+    "ratio": "16:9",
+    "date": "2026-11-03",
+    "width": 960,
+    "height": 540,
+    "hasAudio": true,
+    "source": "https://x.com/bot/status/2117736249444507834",
+    "quote": "Try the new shopping experience in Grok Bot.\n\nFind the best deal, compare items, and have Bot track all your orders.",
+    "styles": [
+      "UI motion",
+      "Kinetic type"
+    ],
+    "notes": [
+      "A minimal chat request expands into a carousel of product cards, followed by a detailed shopping view on white.",
+      "An oversized cursor selects a shoe size and clicks Buy now, then a receipt message resolves into the Grok Bot logo."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/grok-bot-new-shopping-experience.mp4",
+    "poster": "previews/grok-bot-new-shopping-experience.jpg",
+    "snapshotDate": "2026-11-03",
+    "collectionSource": "https://x.com/bot/status/2117736249444507834",
+    "metricSources": [
+      "https://cdn.syndication.twimg.com/tweet-result?id=2117736249444507834&lang=en&token=1",
+      "https://api.fxtwitter.com/status/2117736249444507834"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot.",
+    "slug": "grok-bot-new-shopping-experience",
+    "readmeCategory": "clean-ui-data-graphics",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/50.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-50",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/bot/status/2117736249444507834"
+  },
+  {
     "id": 41,
     "title": "Notion AI — Agents & More",
     "originalTitle": "Notion AI 大升级（Agents / Auto / BYOK / MCP）",
@@ -2271,5 +2321,56 @@
     "watchUrl": "https://serenatan.org/launchvideo/assets/31.mp4",
     "detailUrl": "https://serenatan.org/launchvideo/#video-31",
     "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/ManusAI/status/2115110045977583909"
+  },
+  {
+    "id": 51,
+    "title": "AffordiHome Finder — Illustrated Launch",
+    "originalTitle": "AffordiHome Finder — Illustrated Launch",
+    "account": "@TimurNegru",
+    "followers": 103352,
+    "category": "Startup launch",
+    "seed": false,
+    "impressions": 10374,
+    "views": null,
+    "likes": 33,
+    "bookmarks": 4,
+    "reposts": 2,
+    "replies": 10,
+    "quotes": 4,
+    "originalSeconds": 32.554,
+    "clipSeconds": 32.6,
+    "excerpt": false,
+    "ratio": "9:16",
+    "date": "2026-11-02",
+    "width": 540,
+    "height": 960,
+    "hasAudio": true,
+    "source": "https://x.com/TimurNegru/status/2117222530620461443",
+    "quote": "I asked Claude to make our launch video and for some reason it went with a snail",
+    "styles": [
+      "Character animation",
+      "UI motion",
+      "Kinetic type"
+    ],
+    "notes": [
+      "An illustrated snail searches for homes overnight; floating listing cards and a morning email turn the product workflow into a character story.",
+      "Sunny farmhouse, pool and seaside scenes combine property UI cards with playful 2D environments, ending on the AffordiHome Finder logo and URL."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/affordihome-finder-illustrated-launch.mp4",
+    "poster": "previews/affordihome-finder-illustrated-launch.jpg",
+    "snapshotDate": "2026-11-03",
+    "collectionSource": "https://x.com/TimurNegru/status/2117222530620461443",
+    "metricSources": [
+      "https://cdn.syndication.twimg.com/tweet-result?id=2117222530620461443&lang=en&token=1",
+      "https://api.fxtwitter.com/status/2117222530620461443"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot.",
+    "slug": "affordihome-finder-illustrated-launch",
+    "readmeCategory": "illustrated-mascot-stories",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/51.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-51",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/TimurNegru/status/2117222530620461443"
   }
 ]

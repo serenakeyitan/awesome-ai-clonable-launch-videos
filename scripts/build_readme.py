@@ -10,6 +10,7 @@ GROUPS = [
     ('pastel-ui-cursor-demos', 'C. Pastel UI & Cursor Demos', 'Product stories driven by clear interfaces, oversized cursors, and quick visual payoffs.'),
     ('typography-abstract-motion', 'D. Typography & Abstract Motion', 'Kinetic type, counters, glowing outlines, rings, and waveform-led product stories.'),
     ('dark-gradient-mixed-media', 'E. Dark, Gradient & Mixed Media', 'Dark interfaces, floating devices, image collage, and product demos mixed with people or generated footage.'),
+    ('illustrated-mascot-stories', 'F. Illustrated Mascot Stories', 'Character-led 2D stories with illustrated environments and product interfaces.'),
 ]
 
 def duration(seconds):

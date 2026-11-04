@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-42-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-44-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 42 compressed reference files are also included in [videos/](videos/).
+**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 compressed reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -34,6 +34,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
+- [Grok Bot — New Shopping Experience](#grok-bot-new-shopping-experience)
 - [Notion AI — Agents & More](#notion-ai-agents-more)
 - [Cursor SDK — run.steer()](#cursor-sdk-run-steer)
 - [Vercel — Run Your Backend](#vercel-run-your-backend)
@@ -74,6 +75,10 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 - [Linear — Mobile Coding Sessions](#linear-mobile-coding-sessions)
 - [Readwise for OpenClaw](#readwise-for-openclaw)
 - [Studiyo — Grok Bot Widget](#studiyo-grok-bot-widget)
+
+### [F. Illustrated Mascot Stories](#illustrated-mascot-stories)
+
+- [AffordiHome Finder — Illustrated Launch](#affordihome-finder-illustrated-launch)
 
 ---
 
@@ -583,6 +588,51 @@ https://x.com/ManusAI/status/2115110045977583909
 ## B. Clean UI, Data & Graphics
 
 One focal point per scene: charts, code cards, simple geometry, and useful product actions.
+
+<a id="grok-bot-new-shopping-experience"></a>
+
+### Grok Bot — New Shopping Experience
+
+[![Grok Bot — New Shopping Experience preview](previews/grok-bot-new-shopping-experience.jpg)](https://serenatan.org/launchvideo/assets/50.mp4)
+
+**0:17 · 16:9 · 212.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/50.mp4) · [MP4 file](videos/grok-bot-new-shopping-experience.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-50)
+
+A minimal chat request expands into a carousel of product cards, followed by a detailed shopping view on white. An oversized cursor selects a shoe size and clicks Buy now, then a receipt message resolves into the Grok Bot logo.
+
+```text
+clone this video 1:1 for my product
+https://x.com/bot/status/2117736249444507834
+```
+
+*Source: [@bot](https://x.com/bot/status/2117736249444507834) · 2026-11-03*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @bot |
+| Post date | 2026-11-03 |
+| Stats snapshot (PT) | 2026-11-03 |
+| Post impressions | 212,498 |
+| Video plays | — |
+| Likes | 2,540 |
+| Bookmarks | 613 |
+| Reposts | 194 |
+| Replies | 424 |
+| Quotes | 107 |
+| Account followers | 501,290 |
+| Original duration | 0:17 |
+| Included file | 0:17 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 960 × 540 |
+| Audio track | Present |
+
+</details>
+
+---
 
 <a id="notion-ai-agents-more"></a>
 
@@ -1992,6 +2042,57 @@ https://x.com/Studiyoco/status/2101329629701443613
 | Aspect ratio | 1:1 |
 | Reference resolution | 540 × 540 |
 | Audio track | None |
+
+</details>
+
+---
+
+<a id="illustrated-mascot-stories"></a>
+
+## F. Illustrated Mascot Stories
+
+Character-led 2D stories with illustrated environments and product interfaces.
+
+<a id="affordihome-finder-illustrated-launch"></a>
+
+### AffordiHome Finder — Illustrated Launch
+
+[![AffordiHome Finder — Illustrated Launch preview](previews/affordihome-finder-illustrated-launch.jpg)](https://serenatan.org/launchvideo/assets/51.mp4)
+
+**0:33 · 9:16 · 10.4K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/51.mp4) · [MP4 file](videos/affordihome-finder-illustrated-launch.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-51)
+
+An illustrated snail searches for homes overnight; floating listing cards and a morning email turn the product workflow into a character story. Sunny farmhouse, pool and seaside scenes combine property UI cards with playful 2D environments, ending on the AffordiHome Finder logo and URL.
+
+```text
+clone this video 1:1 for my product
+https://x.com/TimurNegru/status/2117222530620461443
+```
+
+*Source: [@TimurNegru](https://x.com/TimurNegru/status/2117222530620461443) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @TimurNegru |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-03 |
+| Post impressions | 10,374 |
+| Video plays | — |
+| Likes | 33 |
+| Bookmarks | 4 |
+| Reposts | 2 |
+| Replies | 10 |
+| Quotes | 4 |
+| Account followers | 103,352 |
+| Original duration | 0:33 |
+| Included file | 0:33 — full clip |
+| Aspect ratio | 9:16 |
+| Reference resolution | 540 × 960 |
+| Audio track | Present |
 
 </details>
 
