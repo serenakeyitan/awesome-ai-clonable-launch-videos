@@ -64,7 +64,7 @@ parts = [f'''# Awesome AI Clonable Launch Videos
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all {len(VIDEOS)} compressed reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all {len(VIDEOS)} high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -131,7 +131,7 @@ parts.append('''## How to use these prompts
 - Metrics are historical snapshots (Pacific time). Each entry records its own date; counts are not live. Unavailable counts appear as —.
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
-- Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
+- Reference files use high-resolution source footage, with web-optimized H.264 encodes where needed. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
 - Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 

@@ -75,3 +75,5 @@ The bootstrap SKILL.md and installed MCP URL stay fixed. Each invocation reads t
 | Change website layout | Website publication | Layout changes do not automatically define new MCP capabilities. |
 
 Changes appear on the next read. Already-generated chat messages are not rewritten automatically. The seven SDK tests include both modern and legacy clients kept connected while synthetic catalog, manifest, workflow and structure changes are applied. Synthetic references stay in tests and are never published into the real collection.
+
+The landing page shares the canonical site header at `/shared/site-header.js` and `/shared/site-header.css`, maintained in the portfolio project. `mediaQuality` records source/delivery dimensions and encoding provenance; it is visible to existing agent connections through `additionalMetadata`.

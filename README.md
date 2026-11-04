@@ -12,7 +12,7 @@
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 compressed reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -136,7 +136,7 @@ https://x.com/bot/status/2093419921007108385
 | Original duration | 0:11 |
 | Included file | 0:11 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -181,7 +181,7 @@ https://x.com/bot/status/2107949161878606089
 | Original duration | 0:12 |
 | Included file | 0:12 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -226,7 +226,7 @@ https://x.com/interaction/status/2062575428213285352
 | Original duration | 0:43 |
 | Included file | 0:43 — full clip |
 | Aspect ratio | 4:3 |
-| Reference resolution | 640 × 480 |
+| Reference resolution | 1440 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -271,7 +271,7 @@ https://x.com/bot/status/2112252507762368684
 | Original duration | 0:13 |
 | Included file | 0:13 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -316,7 +316,7 @@ https://x.com/bot/status/2113717946019397910
 | Original duration | 0:19 |
 | Included file | 0:19 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -361,7 +361,7 @@ https://x.com/cursor_ai/status/2113661506634305834
 | Original duration | 0:21 |
 | Included file | 0:21 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -406,7 +406,7 @@ https://x.com/allophonesystem/status/2115793573589258279
 | Original duration | 0:20 |
 | Included file | 0:20 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -451,7 +451,7 @@ https://x.com/NotionHQ/status/2113694972339986860
 | Original duration | 0:09 |
 | Included file | 0:09 — full clip |
 | Aspect ratio | 1.54:1 |
-| Reference resolution | 832 × 540 |
+| Reference resolution | 2606 × 1692 |
 | Audio track | None |
 
 </details>
@@ -496,7 +496,7 @@ https://x.com/readwise/status/2079973992077902283
 | Original duration | 1:00 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -541,7 +541,7 @@ https://x.com/golo_app/status/2087584902984155632
 | Original duration | 0:10 |
 | Included file | 0:10 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 540 × 540 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | None |
 
 </details>
@@ -586,7 +586,7 @@ https://x.com/ManusAI/status/2115110045977583909
 | Original duration | 0:19 |
 | Included file | 0:19 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -637,7 +637,7 @@ https://x.com/bot/status/2117736249444507834
 | Original duration | 0:17 |
 | Included file | 0:17 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -682,7 +682,7 @@ https://x.com/NotionHQ/status/2112269722075242887
 | Original duration | 0:51 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -727,7 +727,7 @@ https://x.com/cursor_ai/status/2107141004482793827
 | Original duration | 0:20 |
 | Included file | 0:20 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -772,7 +772,7 @@ https://x.com/vercel/status/2110786348131258456
 | Original duration | 0:12 |
 | Included file | 0:12 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -817,7 +817,7 @@ https://x.com/browserbase/status/2114777924335554605
 | Original duration | 0:24 |
 | Included file | 0:24 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -862,7 +862,7 @@ https://x.com/coinbase/status/2114148184285143349
 | Original duration | 0:30 |
 | Included file | 0:30 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -907,7 +907,7 @@ https://x.com/cursor_ai/status/2108289748628566496
 | Original duration | 0:27 |
 | Included file | 0:27 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -952,7 +952,7 @@ https://x.com/coinbase/status/2114718467610022208
 | Original duration | 0:26 |
 | Included file | 0:26 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -997,7 +997,7 @@ https://x.com/chddaniel/status/2048402359110557714
 | Original duration | 0:23 |
 | Included file | 0:23 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -1048,7 +1048,7 @@ https://x.com/lovart_ai/status/2033904987277774951
 | Original duration | 0:45 |
 | Included file | 0:45 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 648 × 360 |
+| Reference resolution | 2880 × 1600 |
 | Audio track | Present |
 
 </details>
@@ -1093,7 +1093,7 @@ https://x.com/maximusgrave/status/2102800008982777902
 | Original duration | 0:31 |
 | Included file | 0:31 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 360 × 360 |
+| Reference resolution | 2000 × 2000 |
 | Audio track | Present |
 
 </details>
@@ -1138,7 +1138,7 @@ https://x.com/krea_ai/status/2112567020353102324
 | Original duration | 0:35 |
 | Included file | 0:35 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1183,7 +1183,7 @@ https://x.com/charles_maddock/status/2114659351470247986
 | Original duration | 1:30 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1228,7 +1228,7 @@ https://x.com/ActifyAI/status/2080331695560274183
 | Original duration | 0:38 |
 | Included file | 0:38 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 2560 × 1440 |
 | Audio track | Present |
 
 </details>
@@ -1273,7 +1273,7 @@ https://x.com/CrowdReply_io/status/2105312058451570973
 | Original duration | 0:58 |
 | Included file | 0:58 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1318,7 +1318,7 @@ https://x.com/samuel_spitz/status/2041198900791714278
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 642 × 360 |
+| Reference resolution | 1928 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1331,7 +1331,7 @@ https://x.com/samuel_spitz/status/2041198900791714278
 
 https://github.com/user-attachments/assets/accbf4ff-9fa3-4dc0-bf10-c4d9178ef1cd
 
-**0:45 excerpt of 1:04 · 16:9 · 164.6K impressions · 27.6K plays**
+**0:45 excerpt of 1:05 · 16:9 · 164.6K impressions · 27.6K plays**
 
 [▶ Watch video](https://serenatan.org/launchvideo/assets/26.mp4) · [MP4 file](videos/tavus-pal.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-26)
 
@@ -1360,10 +1360,10 @@ https://x.com/tavus/status/2074894605125026072
 | Replies | 28 |
 | Quotes | 12 |
 | Account followers | 43,533 |
-| Original duration | 1:04 |
+| Original duration | 1:05 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -1414,7 +1414,7 @@ https://x.com/aiscwork/status/2090862009008984574
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1459,7 +1459,7 @@ https://x.com/LexnLin/status/2110122106537050584
 | Original duration | 1:04 |
 | Included file | 0:50 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1504,7 +1504,7 @@ https://x.com/NousResearch/status/2064760263224504719
 | Original duration | 0:47 |
 | Included file | 0:47 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 360 × 360 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -1549,7 +1549,7 @@ https://x.com/ElevenLabs/status/2112550782063247521
 | Original duration | 1:11 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1600,7 +1600,7 @@ https://x.com/vriparbelli/status/2107850981614489957
 | Original duration | 1:01 |
 | Included file | 1:01 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1645,7 +1645,7 @@ https://x.com/vida_agent/status/2069718855551955194
 | Original duration | 1:02 |
 | Included file | 1:02 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1690,7 +1690,7 @@ https://x.com/arcads_ai/status/2084611105528115415
 | Original duration | 1:08 |
 | Included file | 0:50 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1735,7 +1735,7 @@ https://x.com/CashApp/status/2103207687127466307
 | Original duration | 0:17 |
 | Included file | 0:17 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 480 × 480 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | None |
 
 </details>
@@ -1780,7 +1780,7 @@ https://x.com/Dipanjan_Dey/status/2061825199247614316
 | Original duration | 1:25 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1825,7 +1825,7 @@ https://x.com/instinct_xyz/status/2110439790961442825
 | Original duration | 0:26 |
 | Included file | 0:26 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -1870,7 +1870,7 @@ https://x.com/Jibran_05/status/2033589137018917027
 | Original duration | 0:31 |
 | Included file | 0:31 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1915,7 +1915,7 @@ https://x.com/RiversidedotFM/status/2077770308992258493
 | Original duration | 0:38 |
 | Included file | 0:38 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1960,7 +1960,7 @@ https://x.com/linear/status/2082856036977803595
 | Original duration | 0:21 |
 | Included file | 0:21 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -2005,7 +2005,7 @@ https://x.com/readwise/status/2037536421414653965
 | Original duration | 0:37 |
 | Included file | 0:37 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -2050,7 +2050,7 @@ https://x.com/Studiyoco/status/2101329629701443613
 | Original duration | 0:15 |
 | Included file | 0:15 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 540 × 540 |
+| Reference resolution | 2000 × 2000 |
 | Audio track | None |
 
 </details>
@@ -2101,7 +2101,7 @@ https://x.com/TimurNegru/status/2117222530620461443
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 9:16 |
-| Reference resolution | 540 × 960 |
+| Reference resolution | 1080 × 1920 |
 | Audio track | Present |
 
 </details>
@@ -2119,7 +2119,7 @@ https://x.com/TimurNegru/status/2117222530620461443
 - Metrics are historical snapshots (Pacific time). Each entry records its own date; counts are not live. Unavailable counts appear as —.
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
-- Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
+- Reference files use high-resolution source footage, with web-optimized H.264 encodes where needed. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
 - Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 
