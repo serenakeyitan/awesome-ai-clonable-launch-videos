@@ -5,7 +5,7 @@
   --line: #c7c7c7;
   --accent: var(--site-accent, #0000ff);
   --wash: #ececec;
-  --button: #d4d0c8;
+  --button: var(--paper);
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 * { box-sizing: border-box; }
@@ -28,13 +28,13 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .intro-bottom p { font-size: 15px; line-height: 1.6; color: #2a2a2a; }
 .solid-link, .solid-button, .client-buttons > a, .client-buttons > button, .copy-config, .sort-tools > button, .dialog-header button {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--button); color: #000; border: 1px solid; border-color: #fff #808080 #808080 #fff;
-  box-shadow: inset 1px 1px 0 #f2f0ec, inset -1px -1px 0 #a8a4a0;
+  background: var(--button); color: var(--ink); border: 1px solid var(--ink);
+  box-shadow: none;
   padding: 9px 13px; font-size: 13px; text-decoration: none; white-space: nowrap;
 }
-.solid-link:hover, .solid-button:hover, .client-buttons > a:hover, .client-buttons > button:hover, .copy-config:hover { background: #e5e3dd; text-decoration: none; }
+.solid-link:hover, .solid-button:hover, .client-buttons > a:hover, .client-buttons > button:hover, .copy-config:hover { background: var(--wash); text-decoration: none; }
 .solid-link:active, .solid-button:active, .client-buttons > a:active, .client-buttons > button[aria-expanded=true], .copy-config:active {
-  border-color: #808080 #fff #fff #808080; box-shadow: inset 1px 1px 0 #a8a4a0, inset -1px -1px 0 #f2f0ec;
+  background: var(--wash); border-color: var(--ink); box-shadow: none;
 }
 .github-mark { display: block; width: 19px; height: 19px; }
 .solid-link > span { margin-left: 10px; }
@@ -55,7 +55,8 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .agent-logos .brand-icon { width: 26px; height: 26px; }
 .setup-prompt { display: flex; align-items: center; gap: 18px; padding: 18px 18px 18px 20px; background: #000; color: #fff; }
 .setup-prompt code { flex: 1; min-width: 0; font: 14px/1.65 var(--mono); letter-spacing: -.01em; overflow-wrap: anywhere; }
-.setup-prompt > button { display: grid; place-items: center; flex: none; width: 42px; height: 42px; background: var(--button); color: #000; border: 1px solid; border-color: #fff #808080 #808080 #fff; box-shadow: inset 1px 1px 0 #f2f0ec, inset -1px -1px 0 #a8a4a0; }
+.setup-prompt > button { display: grid; place-items: center; flex: none; width: 42px; height: 42px; background: transparent; color: #fff; border: 1px solid #fff; box-shadow: none; }
+.setup-prompt > button:hover, .setup-prompt > button:active { background: #fff; color: #000; }
 .quick-connect { display: flex; align-items: center; gap: 17px; margin-top: 18px; }
 .quick-connect > span { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .client-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
