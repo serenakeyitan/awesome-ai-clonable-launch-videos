@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "launch-archive",
+  "version": "0.1.0",
+  "description": "Find playable launch-video references and current remake workflows from the live Launch Archive.",
+  "author": {
+    "name": "Serena Tan"
+  },
+  "homepage": "https://serenatan.org/launchvideo/",
+  "repository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
+  "license": "MIT",
+  "keywords": [
+    "launch-video",
+    "video",
+    "design",
+    "remotion"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Launch Archive",
+        "shortDescription": "Launch videos for your agent",
+        "longDescription": "Search the live library of launch-video references, inspect metadata and dated stats, and get a copyable prompt with the original source. Every tool fetches the current catalog and workflow. Rendering uses your existing video tools.",
+        "developerName": "Serena Tan",
+        "category": "Creativity",
+        "capabilities": [],
+        "defaultPrompt": "Find launch-video references for my product and help me remake one.",
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg"
+      }
+    }
+  }
+}

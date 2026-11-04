@@ -16,6 +16,16 @@ For founders, designers, and builders making their next product launch. Browse a
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
+## Use with your agent
+
+```text
+set up https://serenatan.org/launchvideo/agent/SKILL.md
+```
+
+[Connect Claude, ChatGPT, Codex, Cursor, Grok & more](agent/README.md) · [Live MCP endpoint](https://serenatan.org/launchvideo/mcp) · [Plugin package](plugin/launch-archive)
+
+The connector reads the current published library and workflow on every call. New videos and formats reach existing connections without reinstalling.
+
 ## Table of Contents
 
 ### [A. Device & UI Transformations](#device-ui-transformations)

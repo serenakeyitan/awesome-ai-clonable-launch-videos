@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "name": "Launch Archive",
+  "homepage": "https://serenatan.org/launchvideo/",
+  "mcpUrl": "https://serenatan.org/launchvideo/mcp",
+  "workflowUrl": "https://serenatan.org/launchvideo/agent/workflow.md",
+  "catalogUrl": "https://serenatan.org/launchvideo/agent/catalog.json",
+  "skillUrl": "https://serenatan.org/launchvideo/agent/SKILL.md",
+  "sourceRepository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
+  "formats": [
+    {"id":"device-ui-transformations", "name":"Device & UI Transformations"},
+    {"id":"clean-ui-data-graphics", "name":"Clean UI, Data & Graphics"},
+    {"id":"pastel-ui-cursor-demos", "name":"Pastel UI & Cursor Demos"},
+    {"id":"typography-abstract-motion", "name":"Typography & Abstract Motion"},
+    {"id":"dark-gradient-mixed-media", "name":"Dark, Gradient & Mixed Media"},
+    {"id":"illustrated-mascot-stories", "name":"Illustrated Mascot Stories"}
+  ]
+}
