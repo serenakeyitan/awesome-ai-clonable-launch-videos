@@ -28,6 +28,9 @@ def compact(number):
 def prompt(video):
     return f"clone this video 1:1 for my product\n{video['source']}"
 
+def video_embed(video):
+    return video.get('githubVideoUrl') or f"[![{video['title']} preview]({video['poster']})]({video['watchUrl']})"
+
 def stats(video):
     v = video
     rows = [
@@ -80,7 +83,7 @@ for key, title, description in GROUPS:
 
 ### {v['title']}
 
-[![{v['title']} preview]({v['poster']})]({v['watchUrl']})
+{video_embed(v)}
 
 **{included} · {v['ratio']} · {compact(v['impressions'])} impressions · {compact(v['views'])} plays**
 
