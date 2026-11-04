@@ -8,7 +8,7 @@ const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:tr
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
 const guarded = (load, fn) => async args => {
   try { return result(await fn(await load(), args)); }
-  catch { return {isError:true, content:[{type:'text', text:'The current published archive is unavailable. Retry later; no cached catalog was returned.'}]}; }
+  catch (error) { console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message})); return {isError:true, content:[{type:'text', text:'The current published archive is unavailable. Retry later; no cached catalog was returned.'}]}; }
 };
 
 export function createServer(load = loadArchive) {
@@ -70,6 +70,6 @@ export default {
       else data = response(context(archive));
       data.headers.set('X-Launch-Archive-Version',archive.version);
       return request.method === 'HEAD' ? new Response(null,data) : data;
-    } catch { return response({error:'Current published archive unavailable. No cached catalog returned.'},'application/json',503); }
+    } catch (error) { console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message})); return response({error:'Current published archive unavailable. No cached catalog returned.'},'application/json',503); }
   }
 };
