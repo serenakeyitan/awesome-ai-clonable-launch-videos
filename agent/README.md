@@ -56,3 +56,22 @@ npm run verify:live # checks the deployed service with modern and legacy SDK cli
 `npm run deploy` deploys the Cloudflare Worker. Fixed public source locations, bounded source reads and result limits keep this a read-only catalog service. It has no database, visitor analytics, paid gate or lead collection.
 
 Installation references: [Claude](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp), [Cursor](https://cursor.com/docs/mcp), [Grok](https://docs.x.ai/grok/connectors), [VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers), [Gemini CLI](https://geminicli.com/docs/tools/mcp-server/), [ChatGPT](https://developers.openai.com/plugins/quickstart).
+
+## Verified update compatibility
+
+The bootstrap SKILL.md and installed MCP URL stay fixed. Each invocation reads the current published main revision; it does not reuse an installed catalog snapshot.
+
+| Change | Same setup and installed skill? | How it reaches the agent |
+| --- | --- | --- |
+| Add, edit or remove a video | Yes | The next tool call loads the current catalog. |
+| Edit title, playable URL, notes or dated statistics | Yes | get_launch_video returns the current record. |
+| Add styles, categories or format definitions | Yes | Current facets and the full format manifest are returned as data. |
+| Add metadata fields | Yes | Full video details and the HTTP catalog expose additionalMetadata. |
+| Add fields or nested structures to the manifest | Yes | The complete manifest is forwarded, including HTTP discovery links at the root. |
+| Wrap the catalog in an object | Yes, for the supported videos envelope | Arrays and objects with a videos array are accepted; other envelope fields appear as catalogMetadata. |
+| Change the remake workflow | Yes | Each tool response includes the current remote workflow. |
+| Rename required video keys or change the major source schema | Requires a service adapter | Preserve the existing tool output and endpoint contracts for existing clients. Unsupported source schemas fail explicitly. |
+| Rename MCP tools, change connection URLs or add permissions | Client-dependent | Preserve compatibility aliases or plan a client refresh/reconnect. |
+| Change website layout | Website publication | Layout changes do not automatically define new MCP capabilities. |
+
+Changes appear on the next read. Already-generated chat messages are not rewritten automatically. The seven SDK tests include both modern and legacy clients kept connected while synthetic catalog, manifest, workflow and structure changes are applied. Synthetic references stay in tests and are never published into the real collection.

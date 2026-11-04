@@ -39,23 +39,3 @@
     panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
   }));
 })();
-
-// The opener is a silent decorative loop; allow pause and respect reduced motion.
-(() => {
-  const video=document.getElementById('hero-mascot');
-  const button=document.getElementById('mascot-control');
-  if(!video||!button)return;
-  video.muted=true;
-  // Safari uses the paper-matched MP4; Chromium/Firefox can use VP9 alpha.
-  const safari=/^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  if(!safari&&video.canPlayType('video/webm; codecs="vp9"')) {
-    video.src='mascot/serena-idle.webm';
-    video.addEventListener('error',()=>{video.src='mascot/serena-idle.mp4';video.load();},{once:true});
-  }
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  function sync(){const label=video.paused?'Play mascot animation':'Pause mascot animation';button.setAttribute('aria-label',label);button.title=label;button.querySelector('.mascot-play-state').textContent=video.paused?'▶':'Ⅱ';}
-  function applyMotion(){if(reduced.matches){video.autoplay=false;video.pause();}else video.play().catch(()=>{});sync();}
-  video.addEventListener('play',sync);video.addEventListener('pause',sync);
-  button.addEventListener('click',()=>{if(video.paused)video.play().catch(()=>{});else video.pause();});
-  reduced.addEventListener('change',applyMotion);applyMotion();
-})();

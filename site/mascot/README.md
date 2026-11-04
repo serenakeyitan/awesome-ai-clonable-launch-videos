@@ -1,8 +1,8 @@
 # Serena landing mascot
 
-The owner avatar was supplied by the GitHub profile https://github.com/serenakeyitan. Background removal used the built-in imagegen tool, with true PNG alpha. The six-second animation is a subtle float/tilt loop. Chromium and Firefox use VP9 WebM with alpha. Safari receives a paper-matched H.264 MP4 fallback. The original purple background is removed. The video has no audio. A pause control and reduced-motion behavior are provided.
+The landing page uses `serena-cutout.png` as a static illustration integrated into the agent setup panel. CSS mirrors the character toward the content, tilts it slightly, and clips the lower body against the panel edge. On smaller screens it sits over the upper border. The page has no mascot video or playback controls.
 
-Files: `serena-cutout.png` (transparent PNG), `serena-idle.webm` (VP9 alpha), and `serena-idle.mp4` (H.264 fallback). Both videos are 720×720, 30fps, six seconds. Regenerate with `bash scripts/render_mascot.sh` from the repository root.
+The owner avatar comes from https://github.com/serenakeyitan. Background removal used the built-in imagegen tool, preserving PNG alpha. The earlier six-second animation assets and rendering script remain available as source materials.
 
 Final imagegen prompt:
 
