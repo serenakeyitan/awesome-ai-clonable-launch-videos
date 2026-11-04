@@ -28,7 +28,7 @@ export async function loadArchive(fetcher = fetch) {
   const texts = await Promise.all(Object.entries(SOURCES).map(async ([key, url]) => {
     const response = await fetcher(`${url}?fresh=${nonce}`, {
       headers: {'User-Agent':'LaunchArchiveAgent/1.0', 'Cache-Control':'no-cache'},
-      cache: 'no-store', signal: AbortSignal.timeout(12000), cf: {cacheTtl: 0, cacheEverything: false}
+      cache: 'no-store', signal: AbortSignal.timeout(12000)
     });
     return [key, await readBounded(response, key === 'catalog' ? 4 * 1024 * 1024 : 65536)];
   }));

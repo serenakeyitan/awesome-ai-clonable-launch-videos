@@ -1,1 +1,22 @@
-{"name":"launch-archive-agent","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"wrangler dev","deploy":"wrangler deploy","test":"node --test test/*.test.mjs"},"dependencies":{"@modelcontextprotocol/server":"2.4.0","agents":"0.33.0","zod":"4.6.7"},"devDependencies":{"@modelcontextprotocol/client":"2.4.0","@modelcontextprotocol/sdk":"1.32.2","wrangler":"4.157.0"}}
+{
+  "name": "launch-archive-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/*.test.mjs",
+    "verify:live": "node scripts/verify-live.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "agents": "0.33.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "wrangler": "4.157.0"
+  }
+}

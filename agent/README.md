@@ -50,6 +50,7 @@ cd agent-service
 npm ci
 npm test
 npm run dev
+npm run verify:live # checks the deployed service with modern and legacy SDK clients
 ```
 
 `npm run deploy` deploys the Cloudflare Worker. Fixed public source URLs, bounded source reads and result limits keep this a read-only catalog service. It has no database, visitor analytics, paid gate or lead collection.
