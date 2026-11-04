@@ -1,5 +1,5 @@
-const ROOT = 'https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/';
-export const SOURCES = {catalog: `${ROOT}data/videos.json`, manifest: `${ROOT}agent/manifest.json`, workflow: `${ROOT}agent/workflow.md`};
+const REPO = 'serenakeyitan/awesome-ai-clonable-launch-videos';
+const SOURCE_PATHS = {catalog:'data/videos.json', manifest:'agent/manifest.json', workflow:'agent/workflow.md'};
 
 export async function readBounded(response, limit) {
   if (!response.ok) throw new Error('Published source unavailable');
@@ -22,14 +22,18 @@ export async function readBounded(response, limit) {
   return new TextDecoder().decode(bytes);
 }
 
-// The request-specific cache key bypasses upstream/CDN caches. No local snapshot fallback.
+// Raw branch URLs can stay stale despite cache-busting queries. Resolve the
+// revalidated Git ref, then read all files at the same immutable commit.
 export async function loadArchive(fetcher = fetch) {
-  const nonce = crypto.randomUUID();
-  const texts = await Promise.all(Object.entries(SOURCES).map(async ([key, url]) => {
-    const response = await fetcher(`${url}?fresh=${nonce}`, {
+  const options = () => ({
       headers: {'User-Agent':'LaunchArchiveAgent/1.0', 'Cache-Control':'no-cache'},
       cache: 'no-store', signal: AbortSignal.timeout(12000)
-    });
+  });
+  const refs = await readBounded(await fetcher(`https://github.com/${REPO}.git/info/refs?service=git-upload-pack`,options()),128 * 1024);
+  const sourceRevision = refs.match(/([0-9a-f]{40}) refs\/heads\/main(?:\0|\n)/)?.[1];
+  if (!sourceRevision) throw new Error('Published main revision unavailable');
+  const texts = await Promise.all(Object.entries(SOURCE_PATHS).map(async ([key, path]) => {
+    const response = await fetcher(`https://raw.githubusercontent.com/${REPO}/${sourceRevision}/${path}`, options());
     return [key, await readBounded(response, key === 'catalog' ? 4 * 1024 * 1024 : 65536)];
   }));
   const raw = Object.fromEntries(texts);
@@ -40,11 +44,11 @@ export async function loadArchive(fetcher = fetch) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(raw)));
   const version = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
   const facets = key => [...new Set(videos.flatMap(v => v[key] ?? []))].sort();
-  return {videos, manifest, workflow:raw.workflow, version, fetchedAt:new Date().toISOString(), facets:{categories:facets('category'), styles:facets('styles'), ratios:facets('ratio'), formats:manifest.formats ?? []}};
+  return {videos, manifest, workflow:raw.workflow, version, sourceRevision, fetchedAt:new Date().toISOString(), facets:{categories:facets('category'), styles:facets('styles'), ratios:facets('ratio'), formats:manifest.formats ?? []}};
 }
 
 export function context(archive) {
-  return {version:archive.version, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, workflow:archive.workflow,
+  return {version:archive.version, sourceRevision:archive.sourceRevision, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, workflow:archive.workflow,
     metricsNote:'Statistics are dated snapshots, not live counts. Impressions are post exposure; views are video plays. Missing counts remain null.'};
 }
 
