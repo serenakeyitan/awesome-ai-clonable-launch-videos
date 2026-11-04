@@ -29,7 +29,10 @@ def prompt(video):
     return f"clone this video 1:1 for my product\n{video['source']}"
 
 def video_embed(video):
-    return video.get('githubVideoUrl') or f"[![{video['title']} preview]({video['poster']})]({video['watchUrl']})"
+    # GitHub turns uploaded attachment URLs into native players in Markdown.
+    url = video['githubVideoUrl']
+    assert url.startswith('https://github.com/user-attachments/assets/'), video['slug']
+    return url
 
 def stats(video):
     v = video
@@ -61,7 +64,7 @@ parts = [f'''# Awesome AI Clonable Launch Videos
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes a preview, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all {len(VIDEOS)} compressed reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all {len(VIDEOS)} compressed reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -124,7 +127,7 @@ parts.append('''## How to use these prompts
 
 ## Contributing
 
-Suggestions are welcome! Open a PR with a public source post, a preview, a useful style breakdown, and a copyable remake prompt. Include a dated source for any stats, and label excerpts clearly. Add the entry to `data/videos.json`, then run:
+Suggestions are welcome! Open a PR with a public source post, a preview, a useful style breakdown, and a copyable remake prompt. Include a dated source for any stats, and label excerpts clearly. Upload the MP4 as a GitHub video attachment and add its URL as `githubVideoUrl` in `data/videos.json`, then run:
 
 ```bash
 python3 scripts/build_readme.py
