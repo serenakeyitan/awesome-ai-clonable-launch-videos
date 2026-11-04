@@ -9,6 +9,8 @@ OUT.mkdir(exist_ok=True)
 for source in (ROOT / 'site').iterdir():
     if source.is_file():
         shutil.copy2(source, OUT / source.name)
+    elif source.is_dir():
+        shutil.copytree(source, OUT / source.name, dirs_exist_ok=True)
 html = (OUT / 'index.html').read_text().replace('"assets/', '"https://serenatan.org/launchvideo/assets/')
 (OUT / 'index.html').write_text(html)
 videos = json.loads((ROOT / 'data/videos.json').read_text())
