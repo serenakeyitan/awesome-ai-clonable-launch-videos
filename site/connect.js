@@ -1,0 +1,40 @@
+'use strict';
+(() => {
+  const endpoint = 'https://serenatan.org/launchvideo/mcp';
+  const setup = 'set up https://serenatan.org/launchvideo/agent/SKILL.md';
+  const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const config = JSON.stringify({mcpServers:{'launch-archive':{url:endpoint}}},null,2);
+  const clients = {
+    claude:{name:'Claude',text:'Open Customize → Connectors → Add custom connector. Name it Launch Archive, paste the server URL below, and choose No sign in.',value:endpoint,link:'https://claude.ai/settings/connectors',label:'Open Claude ↗',extra:`Claude Code: claude mcp add --transport http launch-archive ${endpoint}`},
+    chatgpt:{name:'ChatGPT',text:'Open Plugins, select + → Add custom MCP server. Paste the server URL below, choose No authentication, then create and install the plugin.',value:endpoint,link:'https://chatgpt.com/#settings',label:'Open ChatGPT ↗',extra:'Custom server access depends on your account and workspace settings.'},
+    codex:{name:'Codex',text:'Run this in your terminal, or send the setup prompt above to Codex. Then ask: Find launch-video references for my product.',value:`codex mcp add launch-archive --url ${endpoint}`,link:'https://developers.openai.com/learn/docs-mcp',label:'Connection guide ↗'},
+    cursor:{name:'Cursor',text:'Add this server to .cursor/mcp.json, keeping any existing servers. Enable Launch Archive in Cursor’s MCP settings.',value:config,link:'https://cursor.com/docs/mcp',label:'Cursor setup guide ↗'},
+    grok:{name:'Grok',text:'Open Connectors → New Connector → Custom. Paste the server URL below and connect.',value:endpoint,link:'https://grok.com/connectors',label:'Open Grok connectors ↗',extra:'Business and Enterprise teams may need an admin to enable the connector.'},
+    more:{name:'Gemini, VS Code, Raft & more',text:'Send the setup prompt to any agent with web access. If it supports remote MCP, use the server URL below. Otherwise it can read the live skill and catalog over HTTP.',value:endpoint,link:'https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/blob/main/agent/README.md',label:'All setup options ↗',extra:'VS Code: MCP: Add Server → HTTP. Gemini CLI: use httpUrl in your MCP configuration. Raft: send the setup prompt.'}
+  };
+  async function copy(value, button) {
+    try {
+      if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(value);
+      else {
+        const input = document.createElement('textarea'); input.value=value; input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();
+        const copied = document.execCommand('copy');input.remove();if (!copied) throw new Error('Copy unavailable');
+      }
+      const label = button.getAttribute('aria-label');button.setAttribute('aria-label','Copied');
+      const toast = document.getElementById('toast');toast.textContent='Copied to clipboard';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),2500);
+      button.dataset.copied='true';setTimeout(()=>{button.removeAttribute('data-copied');if(label)button.setAttribute('aria-label',label);},2000);
+    } catch {
+      const toast = document.getElementById('toast');toast.textContent='Copy unavailable. Select and copy the text above.';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),3500);
+    }
+  }
+  document.getElementById('copy-setup').addEventListener('click',event=>copy(setup,event.currentTarget));
+  document.querySelectorAll('[data-client]').forEach(button=>button.addEventListener('click',()=>{
+    const opened = button.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('[data-client]').forEach(b=>b.setAttribute('aria-expanded','false'));
+    const panel=document.getElementById('client-setup');panel.hidden=opened;
+    if(opened)return;
+    button.setAttribute('aria-expanded','true');
+    const client=clients[button.dataset.client];
+    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">COPY</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
+    panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
+  }));
+})();
