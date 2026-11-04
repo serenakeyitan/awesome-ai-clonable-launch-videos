@@ -9,7 +9,7 @@ const timecode = (seconds) => {
   const total = Math.round(seconds);
   return `${String(Math.floor(total / 60)).padStart(2,'0')}:${String(total % 60).padStart(2,'0')}`;
 };
-const displayDuration = (video) => `${timecode(video.clipSeconds)}${video.excerpt ? ` EXCERPT / ${timecode(video.originalSeconds)} ORIGINAL` : ''}`;
+const displayDuration = (video) => `${timecode(video.clipSeconds)}${video.excerpt ? ` excerpt / ${timecode(video.originalSeconds)} original` : ''}`;
 let videos = [];
 let filtered = [];
 let activeId = null;
@@ -31,16 +31,16 @@ function card(video) {
     <div class="thumb inline-player">
       <video controls playsinline preload="none" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} inline video"></video>
       <button class="inline-play play-icon" data-play="${v.id}" aria-label="Play ${escapeHTML(v.title)}">▶</button>
-      ${v.excerpt ? '<span class="excerpt-label">EXCERPT</span>' : ''}<span class="timecode">${timecode(v.clipSeconds)}</span>
+      ${v.excerpt ? '<span class="excerpt-label">Excerpt</span>' : ''}<span class="timecode">${timecode(v.clipSeconds)}</span>
     </div>
-    <div class="card-title-row"><h3>${escapeHTML(v.title)}</h3><button class="details-link" data-open="${v.id}" aria-label="View ${escapeHTML(v.title)} details">Details ↗</button></div>
+    <div class="card-title-row"><h3><button class="video-title" data-open="${v.id}" aria-label="View ${escapeHTML(v.title)} details">${escapeHTML(v.title)}</button></h3></div>
     <div class="byline">${escapeHTML(v.account)}</div>
-    <div class="card-metrics"><div><strong title="${full(v.impressions)} impressions">${compact(v.impressions)} ${v.flag ? '<span class="flag-mark" title="Video plays are below 3% of impressions">△</span>' : ''}</strong><span>IMPRESSIONS</span></div><div><strong title="${full(v.views)} plays">${compact(v.views)}</strong><span>VIDEO PLAYS</span></div></div>
+    <div class="card-metrics"><div><strong title="${full(v.impressions)} impressions">${compact(v.impressions)} ${v.flag ? '<span class="flag-mark" title="Video plays are below 3% of impressions">△</span>' : ''}</strong><span>Impressions</span></div><div><strong title="${full(v.views)} plays">${compact(v.views)}</strong><span>Video plays</span></div></div>
   </article>`;
 }
 
 function table() {
-  return `<table class="index-table"><thead><tr><th>REF.</th><th>VIDEO / POSTING ACCOUNT</th><th>CATEGORY</th><th>IMPRESSIONS</th><th>PLAYS</th><th>LIKES</th><th>BOOKMARKS</th><th>DURATION</th></tr></thead><tbody>${filtered.map(v => `<tr><td>${pad(v.id)}</td><td><button data-open="${v.id}">▶ ${escapeHTML(v.title)}</button><br><span class="byline">${escapeHTML(v.account)}</span></td><td>${escapeHTML(v.category)}</td><td>${full(v.impressions)}${v.flag ? ' △' : ''}</td><td>${full(v.views)}</td><td>${full(v.likes)}</td><td>${full(v.bookmarks)}</td><td>${timecode(v.clipSeconds)}${v.excerpt ? '*' : ''}</td></tr>`).join('')}</tbody></table>`;
+  return `<table class="index-table"><thead><tr><th>Ref.</th><th>Video / creator</th><th>Category</th><th>Impressions</th><th>Plays</th><th>Likes</th><th>Bookmarks</th><th>Duration</th></tr></thead><tbody>${filtered.map(v => `<tr><td>${pad(v.id)}</td><td><button data-open="${v.id}">▶ ${escapeHTML(v.title)}</button><br><span class="byline">${escapeHTML(v.account)}</span></td><td>${escapeHTML(v.category)}</td><td>${full(v.impressions)}${v.flag ? ' △' : ''}</td><td>${full(v.views)}</td><td>${full(v.likes)}</td><td>${full(v.bookmarks)}</td><td>${timecode(v.clipSeconds)}${v.excerpt ? '*' : ''}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function renderCollection() {
@@ -69,7 +69,7 @@ function setFeature(id) {
   player.setAttribute('aria-label', `${v.title} launch video`);
   $('#featured-duration').textContent = displayDuration(v);
   $('#featured-source').href = v.source;
-  $('#featured-info').innerHTML = `<h3>${escapeHTML(v.title)}</h3><div class="byline">${escapeHTML(v.account)}</div><div class="featured-stats"><div><strong>${compact(v.impressions)}</strong><span>IMPRESSIONS</span></div><div><strong>${compact(v.views)}</strong><span>VIDEO PLAYS</span></div></div><button class="text-link" data-open="${v.id}">VIEW DETAILS ↗</button>`;
+  $('#featured-info').innerHTML = `<h3>${escapeHTML(v.title)}</h3><div class="byline">${escapeHTML(v.account)}</div><div class="featured-stats"><div><strong>${compact(v.impressions)}</strong><span>Impressions</span></div><div><strong>${compact(v.views)}</strong><span>Video plays</span></div></div><button class="text-link" data-open="${v.id}">View details ↗</button>`;
   document.querySelectorAll('[data-feature]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.feature) === id)));
 }
 
@@ -86,23 +86,23 @@ function openVideo(id, trigger) {
   activeId = id;
   if (trigger) lastTrigger = trigger;
   $('#dialog-ref').textContent = v.title;
-  const metrics = [['impressions','IMPRESSIONS'],['views','VIDEO PLAYS'],['likes','LIKES'],['bookmarks','BOOKMARKS'],['reposts','REPOSTS'],['replies','REPLIES'],['quotes','QUOTES'],['followers','FOLLOWERS']];
+  const metrics = [['impressions','Impressions'],['views','Video plays'],['likes','Likes'],['bookmarks','Bookmarks'],['reposts','Reposts'],['replies','Replies'],['quotes','Quotes'],['followers','Followers']];
   $('#dialog-content').innerHTML = `<div class="dialog-main"><div class="dialog-left">
     <video id="dialog-video" controls playsinline preload="metadata" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} video"></video>
     <p class="video-error" id="media-error" hidden>Unable to play this file. <a href="${v.source}" target="_blank" rel="noopener">Watch the original post ↗</a></p>
-    <div class="clip-note"><span>${displayDuration(v)}</span><a href="${v.source}" target="_blank" rel="noopener">ORIGINAL POST ↗</a></div>
+    <div class="clip-note"><span>${displayDuration(v)}</span><a href="${v.source}" target="_blank" rel="noopener">Original post ↗</a></div>
     <h2 id="dialog-title">${escapeHTML(v.title)}</h2>
-    <div class="byline">${escapeHTML(v.account)} · POSTED ${v.date}</div>
-    <div class="dialog-tags">${v.styles.map(s => escapeHTML(s.toUpperCase())).join(' / ')}</div>
-    <h3>WHAT TO BORROW</h3><ul class="notes-list">${v.notes.map(note => `<li>${escapeHTML(note)}</li>`).join('')}</ul>
+    <div class="byline">${escapeHTML(v.account)} · Posted ${v.date}</div>
+    <div class="dialog-tags">${v.styles.map(s => escapeHTML(s)).join(' / ')}</div>
+    <h3>What to borrow</h3><ul class="notes-list">${v.notes.map(note => `<li>${escapeHTML(note)}</li>`).join('')}</ul>
     <details><summary>Original post</summary><blockquote>${escapeHTML(v.quote)}</blockquote></details>
-  </div><aside class="dialog-right"><h3 class="stats-heading">STATS</h3>
+  </div><aside class="dialog-right"><h3 class="stats-heading">Stats</h3>
     <div class="stat-grid">${metrics.map(([key,label]) => `<div><strong>${full(v[key])}</strong><span>${label}</span></div>`).join('')}</div>
     ${v.flag ? `<p class="metric-warning">△ Plays are only ${(v.views / v.impressions * 100).toFixed(2)}% of impressions. A low ratio alone does not establish organic reach or paid promotion.</p>` : ''}
     <details class="file-details"><summary>File & post metadata</summary><table class="metadata-table"><tbody>
-      <tr><td>Post date</td><td>${v.date}</td></tr><tr><td>Original duration</td><td>${timecode(v.originalSeconds)}</td></tr><tr><td>Included footage</td><td>${timecode(v.clipSeconds)}${v.excerpt ? ' / EXCERPT' : ' / FULL CLIP'}</td></tr><tr><td>Aspect ratio</td><td>${v.ratio}</td></tr><tr><td>Reference resolution</td><td>${v.width} × ${v.height}</td></tr><tr><td>Audio track</td><td>${v.hasAudio ? 'YES' : 'NONE'}</td></tr><tr><td>Plays / impressions</td><td>${v.views == null || !v.impressions ? '—' : `${(v.views / v.impressions * 100).toFixed(2)}%`}</td></tr><tr><td>Data snapshot</td><td>${escapeHTML(v.snapshotDate || '2026-10-27')} PT</td></tr>
+      <tr><td>Post date</td><td>${v.date}</td></tr><tr><td>Original duration</td><td>${timecode(v.originalSeconds)}</td></tr><tr><td>Included footage</td><td>${timecode(v.clipSeconds)}${v.excerpt ? ' / Excerpt' : ' / Full clip'}</td></tr><tr><td>Aspect ratio</td><td>${v.ratio}</td></tr><tr><td>Reference resolution</td><td>${v.width} × ${v.height}</td></tr><tr><td>Audio track</td><td>${v.hasAudio ? 'Yes' : 'None'}</td></tr><tr><td>Plays / impressions</td><td>${v.views == null || !v.impressions ? '—' : `${(v.views / v.impressions * 100).toFixed(2)}%`}</td></tr><tr><td>Data snapshot</td><td>${escapeHTML(v.snapshotDate || '2026-10-27')} PT</td></tr>
     </tbody></table></details>
-    <details class="brief-details"><summary>AI remake brief</summary><label class="sr-only" for="remake-brief">Editable AI remake brief</label><textarea id="remake-brief" class="brief-text" spellcheck="false">${escapeHTML(brief(v))}</textarea><button id="copy-brief" class="solid-button">COPY AI REMAKE BRIEF <span aria-hidden="true">↗</span></button></details>
+    <details class="brief-details"><summary>AI remake brief</summary><label class="sr-only" for="remake-brief">Editable AI remake brief</label><textarea id="remake-brief" class="brief-text" spellcheck="false">${escapeHTML(brief(v))}</textarea><button id="copy-brief" class="solid-button">Copy AI remake brief <span aria-hidden="true">↗</span></button></details>
   </aside></div>`;
   $('#dialog-video').addEventListener('error', () => { $('#media-error').hidden = false; });
   $('#dialog-video').addEventListener('play', () => $('#featured-video').pause());
@@ -127,9 +127,9 @@ async function copyBrief() {
   try {
     await navigator.clipboard.writeText(textarea.value);
     const button = $('#copy-brief');
-    button.textContent = 'COPIED ✓';
-    notify('BRIEF COPIED. MAKE IT YOURS.');
-    setTimeout(() => { if (button.isConnected) button.innerHTML = 'COPY AI REMAKE BRIEF ↗'; }, 2000);
+    button.textContent = 'Copied ✓';
+    notify('Brief copied. Make it yours.');
+    setTimeout(() => { if (button.isConnected) button.innerHTML = 'Copy AI remake brief ↗'; }, 2000);
   } catch {
     textarea.focus();
     textarea.select();
@@ -193,7 +193,7 @@ $('#reset-filters').addEventListener('click', () => {
 });
 $('#view-toggle').addEventListener('click', () => {
   tableView = !tableView;
-  $('#view-toggle').textContent = tableView ? '[ GRID ]' : '[ TABLE ]';
+  $('#view-toggle').textContent = tableView ? 'Grid' : 'Table';
   $('#view-toggle').setAttribute('aria-label', tableView ? 'Switch to grid view' : 'Switch to table view');
   renderCollection();
 });
@@ -204,7 +204,7 @@ fetch('videos.json').then(response => {
   return response.json();
 }).then(data => {
   videos = data;
-  for (const [id, values, label] of [['category',videos.map(v=>v.category),'ALL CATEGORIES'],['style',videos.flatMap(v=>v.styles),'ALL STYLES']]) {
+  for (const [id, values, label] of [['category',videos.map(v=>v.category),'All categories'],['style',videos.flatMap(v=>v.styles),'All styles']]) {
     document.getElementById(id).innerHTML = `<option value="all">${label}</option>` + [...new Set(values)].sort().map(value=>`<option>${escapeHTML(value)}</option>`).join('');
   }
   $('#total-videos').textContent = videos.length;

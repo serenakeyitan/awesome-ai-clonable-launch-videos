@@ -12,7 +12,7 @@
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 compressed reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -102,7 +102,7 @@ Phones, floating windows, camera moves, and interfaces that change shape.
 
 ### Grok Bot — Online Shopping
 
-https://github.com/user-attachments/assets/e3bc92fc-8c0e-465f-9447-ecb6d72f850e
+https://github.com/user-attachments/assets/ce0db070-1f97-4cc7-acfe-5368dfc60a0f
 
 **0:11 · 16:9 · 10.01M impressions · 710.7K plays**
 
@@ -136,7 +136,7 @@ https://x.com/bot/status/2093419921007108385
 | Original duration | 0:11 |
 | Included file | 0:11 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -147,7 +147,7 @@ https://x.com/bot/status/2093419921007108385
 
 ### Grok Bot — Search, Read & Monitor X
 
-https://github.com/user-attachments/assets/e2ac40d0-fb56-46eb-afcb-3de44c2e85b5
+https://github.com/user-attachments/assets/688c0575-1c63-425e-81c2-1519321980b6
 
 **0:12 · 16:9 · 5.92M impressions · 1.64M plays**
 
@@ -181,7 +181,7 @@ https://x.com/bot/status/2107949161878606089
 | Original duration | 0:12 |
 | Included file | 0:12 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -192,7 +192,7 @@ https://x.com/bot/status/2107949161878606089
 
 ### Poke — iMessage AI Assistant
 
-https://github.com/user-attachments/assets/4428ee32-a106-431e-b394-25512e1805e0
+https://github.com/user-attachments/assets/30c62885-c5f6-4aae-9ac9-0f953f134569
 
 **0:43 · 4:3 · 5.04M impressions · 563.0K plays**
 
@@ -226,7 +226,7 @@ https://x.com/interaction/status/2062575428213285352
 | Original duration | 0:43 |
 | Included file | 0:43 — full clip |
 | Aspect ratio | 4:3 |
-| Reference resolution | 640 × 480 |
+| Reference resolution | 1440 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -237,7 +237,7 @@ https://x.com/interaction/status/2062575428213285352
 
 ### Grok Bot — Action Button
 
-https://github.com/user-attachments/assets/ec0e9cbc-126a-491c-9ae6-18d32f2ce71c
+https://github.com/user-attachments/assets/fe3b8890-58c6-418f-9a66-1c5bc7ca4a2e
 
 **0:13 · 16:9 · 2.85M impressions · 904.9K plays**
 
@@ -271,7 +271,7 @@ https://x.com/bot/status/2112252507762368684
 | Original duration | 0:13 |
 | Included file | 0:13 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -282,7 +282,7 @@ https://x.com/bot/status/2112252507762368684
 
 ### Grok Bot — Vault
 
-https://github.com/user-attachments/assets/e4d9a59b-1a3a-4680-902e-6ee1861a115e
+https://github.com/user-attachments/assets/12a5ee41-2262-4752-abca-d4bc264a5667
 
 **0:19 · 16:9 · 2.14M impressions · 687.3K plays**
 
@@ -316,7 +316,7 @@ https://x.com/bot/status/2113717946019397910
 | Original duration | 0:19 |
 | Included file | 0:19 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -327,7 +327,7 @@ https://x.com/bot/status/2113717946019397910
 
 ### Cursor — Computer Use
 
-https://github.com/user-attachments/assets/41f98078-d1a6-4048-94c3-8d85442acbce
+https://github.com/user-attachments/assets/d6e2176f-c344-4b5c-a651-9c76b5363a3a
 
 **0:21 · 16:9 · 412.2K impressions · 164.7K plays**
 
@@ -361,7 +361,7 @@ https://x.com/cursor_ai/status/2113661506634305834
 | Original duration | 0:21 |
 | Included file | 0:21 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -372,7 +372,7 @@ https://x.com/cursor_ai/status/2113661506634305834
 
 ### Allo — Grok Bot Gets a Phone
 
-https://github.com/user-attachments/assets/abc425c8-9188-419b-a91c-fed2f9ebd03d
+https://github.com/user-attachments/assets/6e15a51f-38d6-4b3d-86d8-6291d7cbadf6
 
 **0:20 · 16:9 · 172.4K impressions · — plays**
 
@@ -406,7 +406,7 @@ https://x.com/allophonesystem/status/2115793573589258279
 | Original duration | 0:20 |
 | Included file | 0:20 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -417,7 +417,7 @@ https://x.com/allophonesystem/status/2115793573589258279
 
 ### Notion — iPhone Duo
 
-https://github.com/user-attachments/assets/43f51bb9-088b-4cfc-809b-61d7a444956f
+https://github.com/user-attachments/assets/d9116a27-f0de-4678-90ca-ebcd6f6c39be
 
 **0:09 · 1.54:1 · 123.4K impressions · 48.2K plays**
 
@@ -451,7 +451,7 @@ https://x.com/NotionHQ/status/2113694972339986860
 | Original duration | 0:09 |
 | Included file | 0:09 — full clip |
 | Aspect ratio | 1.54:1 |
-| Reference resolution | 832 × 540 |
+| Reference resolution | 2606 × 1692 |
 | Audio track | None |
 
 </details>
@@ -462,7 +462,7 @@ https://x.com/NotionHQ/status/2113694972339986860
 
 ### Readwise 2.0
 
-https://github.com/user-attachments/assets/b48fcdb8-a457-4d39-9616-e916d67e85d0
+https://github.com/user-attachments/assets/af1f74ec-3526-4f8d-8aa5-4f7b94423bc0
 
 **0:35 excerpt of 1:00 · 16:9 · 70.1K impressions · 15.3K plays**
 
@@ -496,7 +496,7 @@ https://x.com/readwise/status/2079973992077902283
 | Original duration | 1:00 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -507,7 +507,7 @@ https://x.com/readwise/status/2079973992077902283
 
 ### Go-lo — Live Scores
 
-https://github.com/user-attachments/assets/efa735e7-ee6f-44d0-9ce6-25890dbe93f5
+https://github.com/user-attachments/assets/d25f9e6b-9ec4-4ccb-ab51-e7d3794f2a6b
 
 **0:10 · 1:1 · 41.3K impressions · 273 plays**
 
@@ -541,7 +541,7 @@ https://x.com/golo_app/status/2087584902984155632
 | Original duration | 0:10 |
 | Included file | 0:10 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 540 × 540 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | None |
 
 </details>
@@ -552,7 +552,7 @@ https://x.com/golo_app/status/2087584902984155632
 
 ### Manus — Websites to Desktop Apps
 
-https://github.com/user-attachments/assets/d64ed6fd-1ef7-43dd-bbb5-ce31a7ed1ff9
+https://github.com/user-attachments/assets/e59e2197-20c9-4be0-99d3-5427f3741a8e
 
 **0:19 · 16:9 · 32.4K impressions · 11.8K plays**
 
@@ -586,7 +586,7 @@ https://x.com/ManusAI/status/2115110045977583909
 | Original duration | 0:19 |
 | Included file | 0:19 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -603,7 +603,7 @@ One focal point per scene: charts, code cards, simple geometry, and useful produ
 
 ### Grok Bot — New Shopping Experience
 
-https://github.com/user-attachments/assets/80590812-2b95-4e71-9ac2-4ea0e24c602a
+https://github.com/user-attachments/assets/c9aba1cb-2a58-43d4-a50a-fc9d9d0da781
 
 **0:17 · 16:9 · 212.5K impressions · — plays**
 
@@ -637,7 +637,7 @@ https://x.com/bot/status/2117736249444507834
 | Original duration | 0:17 |
 | Included file | 0:17 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -648,7 +648,7 @@ https://x.com/bot/status/2117736249444507834
 
 ### Notion AI — Agents & More
 
-https://github.com/user-attachments/assets/3c27ce92-fbc9-4d3b-9f62-1005895ae054
+https://github.com/user-attachments/assets/aebd26f9-1b86-45f5-97df-a0b83820d18b
 
 **0:35 excerpt of 0:51 · 16:9 · 181.0K impressions · 61.6K plays**
 
@@ -682,7 +682,7 @@ https://x.com/NotionHQ/status/2112269722075242887
 | Original duration | 0:51 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -693,7 +693,7 @@ https://x.com/NotionHQ/status/2112269722075242887
 
 ### Cursor SDK — run.steer()
 
-https://github.com/user-attachments/assets/e4dadbd8-3f6c-4d1b-8ee4-d38889d4f3f3
+https://github.com/user-attachments/assets/72edc146-63f8-4239-80eb-c2491f6b927b
 
 **0:20 · 16:9 · 141.6K impressions · 54.1K plays**
 
@@ -727,7 +727,7 @@ https://x.com/cursor_ai/status/2107141004482793827
 | Original duration | 0:20 |
 | Included file | 0:20 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -738,7 +738,7 @@ https://x.com/cursor_ai/status/2107141004482793827
 
 ### Vercel — Run Your Backend
 
-https://github.com/user-attachments/assets/67ed49cc-880b-496a-8046-424c352a2f81
+https://github.com/user-attachments/assets/a069a1c4-91e1-4691-9185-3934a3b31c77
 
 **0:12 · 16:9 · 136.9K impressions · 49.1K plays**
 
@@ -772,7 +772,7 @@ https://x.com/vercel/status/2110786348131258456
 | Original duration | 0:12 |
 | Included file | 0:12 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -783,7 +783,7 @@ https://x.com/vercel/status/2110786348131258456
 
 ### BELL — Personal Assistant Stack
 
-https://github.com/user-attachments/assets/5804ff83-b60d-4aff-956c-760c8179bfdf
+https://github.com/user-attachments/assets/a42fafb1-0880-4e9f-9038-b97b6ecba7cd
 
 **0:24 · 16:9 · 101.7K impressions · 31.5K plays**
 
@@ -817,7 +817,7 @@ https://x.com/browserbase/status/2114777924335554605
 | Original duration | 0:24 |
 | Included file | 0:24 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -828,7 +828,7 @@ https://x.com/browserbase/status/2114777924335554605
 
 ### Coinbase — Over / Under
 
-https://github.com/user-attachments/assets/8fc8d8dd-f2b8-4743-a2ca-ce1ec2695abb
+https://github.com/user-attachments/assets/ced7aef3-9bac-4929-9cf0-93cdd6975a25
 
 **0:30 · 16:9 · 96.7K impressions · 12.6K plays**
 
@@ -862,7 +862,7 @@ https://x.com/coinbase/status/2114148184285143349
 | Original duration | 0:30 |
 | Included file | 0:30 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -873,7 +873,7 @@ https://x.com/coinbase/status/2114148184285143349
 
 ### Cursor — /visualize
 
-https://github.com/user-attachments/assets/beeadb2c-02fe-4d3b-8098-40bef9075c88
+https://github.com/user-attachments/assets/3c9db2e9-af82-4198-adf3-6efe141a0230
 
 **0:27 · 16:9 · 83.3K impressions · 28.9K plays**
 
@@ -907,7 +907,7 @@ https://x.com/cursor_ai/status/2108289748628566496
 | Original duration | 0:27 |
 | Included file | 0:27 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | None |
 
 </details>
@@ -918,7 +918,7 @@ https://x.com/cursor_ai/status/2108289748628566496
 
 ### Coinbase — Crypto Paychecks
 
-https://github.com/user-attachments/assets/dba0e7d9-6204-4b0e-9d00-57b6f8aa572e
+https://github.com/user-attachments/assets/ad8c8b75-de9a-48d3-824f-99b0ba33b9be
 
 **0:26 · 16:9 · 82.3K impressions · 7.8K plays**
 
@@ -952,7 +952,7 @@ https://x.com/coinbase/status/2114718467610022208
 | Original duration | 0:26 |
 | Included file | 0:26 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 960 × 540 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -963,7 +963,7 @@ https://x.com/coinbase/status/2114718467610022208
 
 ### Shipper — Build Bots with AI
 
-https://github.com/user-attachments/assets/99f8cf08-7c57-4ef9-825e-4bddde9d9765
+https://github.com/user-attachments/assets/7459dba7-a19b-42aa-bd34-5c6183bcdf6a
 
 **0:23 · 16:9 · 56.1K impressions · 14.7K plays**
 
@@ -997,7 +997,7 @@ https://x.com/chddaniel/status/2048402359110557714
 | Original duration | 0:23 |
 | Included file | 0:23 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -1014,7 +1014,7 @@ Product stories driven by clear interfaces, oversized cursors, and quick visual 
 
 ### Lovart — Voice Mode
 
-https://github.com/user-attachments/assets/774a53f5-0a14-4b1c-a23a-4cb54e624543
+https://github.com/user-attachments/assets/54b478bc-597d-43d5-9db8-3a42a203426c
 
 **0:45 · 16:9 · 5.15M impressions · 2.18M plays**
 
@@ -1048,7 +1048,7 @@ https://x.com/lovart_ai/status/2033904987277774951
 | Original duration | 0:45 |
 | Included file | 0:45 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 648 × 360 |
+| Reference resolution | 2880 × 1600 |
 | Audio track | Present |
 
 </details>
@@ -1059,7 +1059,7 @@ https://x.com/lovart_ai/status/2033904987277774951
 
 ### Sidehoe
 
-https://github.com/user-attachments/assets/87c7a728-181f-4874-86cc-ddde3d815f02
+https://github.com/user-attachments/assets/bfa4ba44-9d9a-4d0b-81e2-c4df05da9446
 
 **0:31 · 1:1 · 4.70M impressions · 766.9K plays**
 
@@ -1093,7 +1093,7 @@ https://x.com/maximusgrave/status/2102800008982777902
 | Original duration | 0:31 |
 | Included file | 0:31 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 360 × 360 |
+| Reference resolution | 2000 × 2000 |
 | Audio track | Present |
 
 </details>
@@ -1104,7 +1104,7 @@ https://x.com/maximusgrave/status/2102800008982777902
 
 ### Krea 3
 
-https://github.com/user-attachments/assets/c452c41d-61d4-4c43-a31e-d1bcfb06d644
+https://github.com/user-attachments/assets/5b3f4a89-cf72-4684-8fbd-a42eb1e55279
 
 **0:35 · 16:9 · 1.33M impressions · 103.5K plays**
 
@@ -1138,7 +1138,7 @@ https://x.com/krea_ai/status/2112567020353102324
 | Original duration | 0:35 |
 | Included file | 0:35 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1149,7 +1149,7 @@ https://x.com/krea_ai/status/2112567020353102324
 
 ### Strawberry 1.0
 
-https://github.com/user-attachments/assets/7cec940f-65b3-420c-9f35-48728c42dde6
+https://github.com/user-attachments/assets/9265c072-cbcf-4bde-867b-d3b1d679ae91
 
 **0:35 excerpt of 1:30 · 16:9 · 1.22M impressions · 172.3K plays**
 
@@ -1183,7 +1183,7 @@ https://x.com/charles_maddock/status/2114659351470247986
 | Original duration | 1:30 |
 | Included file | 0:35 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1194,7 +1194,7 @@ https://x.com/charles_maddock/status/2114659351470247986
 
 ### Actify AI
 
-https://github.com/user-attachments/assets/ba760368-76bb-429f-bc46-8e906f461c10
+https://github.com/user-attachments/assets/9b68d56f-5ceb-4979-844f-0ea31161aa62
 
 **0:38 · 16:9 · 377.5K impressions · 1.2K plays**
 
@@ -1228,7 +1228,7 @@ https://x.com/ActifyAI/status/2080331695560274183
 | Original duration | 0:38 |
 | Included file | 0:38 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 2560 × 1440 |
 | Audio track | Present |
 
 </details>
@@ -1239,7 +1239,7 @@ https://x.com/ActifyAI/status/2080331695560274183
 
 ### CrowdReply — Citation Outreach
 
-https://github.com/user-attachments/assets/3aa7698c-c8cf-41d0-b1ff-e8e523d7c632
+https://github.com/user-attachments/assets/ee4cf7a6-d741-4fc2-8562-48c70245bd57
 
 **0:58 · 16:9 · 361.1K impressions · 68.6K plays**
 
@@ -1273,7 +1273,7 @@ https://x.com/CrowdReply_io/status/2105312058451570973
 | Original duration | 0:58 |
 | Included file | 0:58 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1284,7 +1284,7 @@ https://x.com/CrowdReply_io/status/2105312058451570973
 
 ### Replit AI SDR
 
-https://github.com/user-attachments/assets/578780b5-244f-429c-b5c9-7499853ed72d
+https://github.com/user-attachments/assets/1b912b46-54f0-430b-9235-e7cf33d1adf0
 
 **0:33 · 16:9 · 279.2K impressions · 61.7K plays**
 
@@ -1318,7 +1318,7 @@ https://x.com/samuel_spitz/status/2041198900791714278
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 642 × 360 |
+| Reference resolution | 1928 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1329,9 +1329,9 @@ https://x.com/samuel_spitz/status/2041198900791714278
 
 ### Tavus PAL
 
-https://github.com/user-attachments/assets/accbf4ff-9fa3-4dc0-bf10-c4d9178ef1cd
+https://github.com/user-attachments/assets/b8d44ce6-96ec-4156-8aa7-f0ac878099d6
 
-**0:45 excerpt of 1:04 · 16:9 · 164.6K impressions · 27.6K plays**
+**0:45 excerpt of 1:05 · 16:9 · 164.6K impressions · 27.6K plays**
 
 [▶ Watch video](https://serenatan.org/launchvideo/assets/26.mp4) · [MP4 file](videos/tavus-pal.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-26)
 
@@ -1360,10 +1360,10 @@ https://x.com/tavus/status/2074894605125026072
 | Replies | 28 |
 | Quotes | 12 |
 | Account followers | 43,533 |
-| Original duration | 1:04 |
+| Original duration | 1:05 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -1380,7 +1380,7 @@ Kinetic type, counters, glowing outlines, rings, and waveform-led product storie
 
 ### AISC — Out of Stealth
 
-https://github.com/user-attachments/assets/de084416-f432-45d5-81aa-c62efc1d2c7d
+https://github.com/user-attachments/assets/ba4ac478-1c84-48c9-8acc-6b2e084f34c8
 
 **0:33 · 16:9 · 1.07M impressions · 42.5K plays**
 
@@ -1414,7 +1414,7 @@ https://x.com/aiscwork/status/2090862009008984574
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1425,7 +1425,7 @@ https://x.com/aiscwork/status/2090862009008984574
 
 ### TasteSkill v2
 
-https://github.com/user-attachments/assets/70723a2b-5a82-4951-888d-a67fbd711bd2
+https://github.com/user-attachments/assets/0453c796-297e-480a-b39d-565846afc871
 
 **0:50 excerpt of 1:04 · 16:9 · 571.8K impressions · 163.4K plays**
 
@@ -1459,7 +1459,7 @@ https://x.com/LexnLin/status/2110122106537050584
 | Original duration | 1:04 |
 | Included file | 0:50 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1470,7 +1470,7 @@ https://x.com/LexnLin/status/2110122106537050584
 
 ### Hermes — Profile Builder
 
-https://github.com/user-attachments/assets/79deae3a-730c-4852-8062-c2826cdfd83e
+https://github.com/user-attachments/assets/06d390e1-39b6-49ed-931c-43de48cb24f4
 
 **0:47 · 1:1 · 546.6K impressions · 75.8K plays**
 
@@ -1504,7 +1504,7 @@ https://x.com/NousResearch/status/2064760263224504719
 | Original duration | 0:47 |
 | Included file | 0:47 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 360 × 360 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -1515,7 +1515,7 @@ https://x.com/NousResearch/status/2064760263224504719
 
 ### Eleven Realtime
 
-https://github.com/user-attachments/assets/5f5c3c75-8557-4efe-b62c-5dc5ff985f95
+https://github.com/user-attachments/assets/2fef8eb6-2738-4a1e-bdbb-aaad64f08eeb
 
 **0:45 excerpt of 1:11 · 16:9 · 223.1K impressions · 74.4K plays**
 
@@ -1549,7 +1549,7 @@ https://x.com/ElevenLabs/status/2112550782063247521
 | Original duration | 1:11 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1566,7 +1566,7 @@ Dark interfaces, floating devices, image collage, and product demos mixed with p
 
 ### Synthesia — Syren
 
-https://github.com/user-attachments/assets/08546e6d-8a4f-4dca-85f6-2add854e3aef
+https://github.com/user-attachments/assets/870e16d9-c055-45c7-af1f-f6f9e6d9da55
 
 **1:01 · 16:9 · 1.49M impressions · 46.4K plays**
 
@@ -1600,7 +1600,7 @@ https://x.com/vriparbelli/status/2107850981614489957
 | Original duration | 1:01 |
 | Included file | 1:01 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1611,7 +1611,7 @@ https://x.com/vriparbelli/status/2107850981614489957
 
 ### Vida — Desktop Agent
 
-https://github.com/user-attachments/assets/537c0fd7-8a0e-40d3-9c7a-584a013da2f6
+https://github.com/user-attachments/assets/66360a9c-5968-4e3d-8ced-2d4bfe43e5b2
 
 **1:02 · 16:9 · 1.29M impressions · 22.8K plays**
 
@@ -1645,7 +1645,7 @@ https://x.com/vida_agent/status/2069718855551955194
 | Original duration | 1:02 |
 | Included file | 1:02 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1656,7 +1656,7 @@ https://x.com/vida_agent/status/2069718855551955194
 
 ### Arcads — Mark
 
-https://github.com/user-attachments/assets/948594d4-e214-43b5-82eb-297203571b37
+https://github.com/user-attachments/assets/29365212-0950-4805-aaf6-c9c113b60018
 
 **0:50 excerpt of 1:08 · 16:9 · 653.2K impressions · 78.6K plays**
 
@@ -1690,7 +1690,7 @@ https://x.com/arcads_ai/status/2084611105528115415
 | Original duration | 1:08 |
 | Included file | 0:50 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1701,7 +1701,7 @@ https://x.com/arcads_ai/status/2084611105528115415
 
 ### Cash App — Weekly Bitcoin Rewards
 
-https://github.com/user-attachments/assets/793ae19f-2617-4843-888b-91198a19aa3c
+https://github.com/user-attachments/assets/b3c3d59c-4de9-476e-bd63-7e77c999b5e5
 
 **0:17 · 1:1 · 506.0K impressions · 87.5K plays**
 
@@ -1735,7 +1735,7 @@ https://x.com/CashApp/status/2103207687127466307
 | Original duration | 0:17 |
 | Included file | 0:17 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 480 × 480 |
+| Reference resolution | 2160 × 2160 |
 | Audio track | None |
 
 </details>
@@ -1746,7 +1746,7 @@ https://x.com/CashApp/status/2103207687127466307
 
 ### Kombai 2.0
 
-https://github.com/user-attachments/assets/5282dfd2-cf8a-4cf4-8936-530123e15146
+https://github.com/user-attachments/assets/608cc9ed-1994-413e-973c-cbe157d049e3
 
 **0:45 excerpt of 1:25 · 16:9 · 443.2K impressions · 51.1K plays**
 
@@ -1780,7 +1780,7 @@ https://x.com/Dipanjan_Dey/status/2061825199247614316
 | Original duration | 1:25 |
 | Included file | 0:45 — excerpt |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1791,7 +1791,7 @@ https://x.com/Dipanjan_Dey/status/2061825199247614316
 
 ### Instinct
 
-https://github.com/user-attachments/assets/5ade2aa4-173a-44af-a6df-91232f63dd06
+https://github.com/user-attachments/assets/ff55b978-dd52-4e5e-b872-0173e96b3732
 
 **0:26 · 16:9 · 435.4K impressions · 140.7K plays**
 
@@ -1825,7 +1825,7 @@ https://x.com/instinct_xyz/status/2110439790961442825
 | Original duration | 0:26 |
 | Included file | 0:26 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -1836,7 +1836,7 @@ https://x.com/instinct_xyz/status/2110439790961442825
 
 ### Lightreel
 
-https://github.com/user-attachments/assets/f797ad36-5527-4343-829a-0491ffd27759
+https://github.com/user-attachments/assets/487d0ffe-6936-49eb-90a9-8757d0718f0f
 
 **0:31 · 16:9 · 394.5K impressions · 67.1K plays**
 
@@ -1870,7 +1870,7 @@ https://x.com/Jibran_05/status/2033589137018917027
 | Original duration | 0:31 |
 | Included file | 0:31 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1881,7 +1881,7 @@ https://x.com/Jibran_05/status/2033589137018917027
 
 ### Riverside — Agentic Editor
 
-https://github.com/user-attachments/assets/981b6389-4b94-49fd-b07d-691aa6c2c867
+https://github.com/user-attachments/assets/ad79a094-f2d2-47ba-beb6-2ecf7278330f
 
 **0:38 · 16:9 · 259.3K impressions · 13.0K plays**
 
@@ -1915,7 +1915,7 @@ https://x.com/RiversidedotFM/status/2077770308992258493
 | Original duration | 0:38 |
 | Included file | 0:38 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1926,7 +1926,7 @@ https://x.com/RiversidedotFM/status/2077770308992258493
 
 ### Linear — Mobile Coding Sessions
 
-https://github.com/user-attachments/assets/0fd0ef18-0359-4a23-b9e1-daecff40c762
+https://github.com/user-attachments/assets/a5cb5b28-f936-4fdc-a876-479c2b22c286
 
 **0:21 · 16:9 · 64.0K impressions · 13.5K plays**
 
@@ -1960,7 +1960,7 @@ https://x.com/linear/status/2082856036977803595
 | Original duration | 0:21 |
 | Included file | 0:21 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 854 × 480 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -1971,7 +1971,7 @@ https://x.com/linear/status/2082856036977803595
 
 ### Readwise for OpenClaw
 
-https://github.com/user-attachments/assets/32385d18-2058-4f80-a699-021e80e7c443
+https://github.com/user-attachments/assets/4b424985-a16c-4e98-b584-72edc11498d6
 
 **0:37 · 16:9 · 57.2K impressions · 15.9K plays**
 
@@ -2005,7 +2005,7 @@ https://x.com/readwise/status/2037536421414653965
 | Original duration | 0:37 |
 | Included file | 0:37 — full clip |
 | Aspect ratio | 16:9 |
-| Reference resolution | 640 × 360 |
+| Reference resolution | 3840 × 2160 |
 | Audio track | Present |
 
 </details>
@@ -2016,7 +2016,7 @@ https://x.com/readwise/status/2037536421414653965
 
 ### Studiyo — Grok Bot Widget
 
-https://github.com/user-attachments/assets/373740c0-2a27-4400-b375-f527e114ae47
+https://github.com/user-attachments/assets/75f167c7-b874-49c1-97aa-c506588abec6
 
 **0:15 · 1:1 · 48.5K impressions · — plays**
 
@@ -2050,7 +2050,7 @@ https://x.com/Studiyoco/status/2101329629701443613
 | Original duration | 0:15 |
 | Included file | 0:15 — full clip |
 | Aspect ratio | 1:1 |
-| Reference resolution | 540 × 540 |
+| Reference resolution | 2000 × 2000 |
 | Audio track | None |
 
 </details>
@@ -2067,7 +2067,7 @@ Character-led 2D stories with illustrated environments and product interfaces.
 
 ### AffordiHome Finder — Illustrated Launch
 
-https://github.com/user-attachments/assets/3f59f461-21ab-4498-aedc-9c52b82da660
+https://github.com/user-attachments/assets/0c938f7b-b211-4d3b-ad18-9b06bda73873
 
 **0:33 · 9:16 · 10.4K impressions · — plays**
 
@@ -2101,7 +2101,7 @@ https://x.com/TimurNegru/status/2117222530620461443
 | Original duration | 0:33 |
 | Included file | 0:33 — full clip |
 | Aspect ratio | 9:16 |
-| Reference resolution | 540 × 960 |
+| Reference resolution | 1080 × 1920 |
 | Audio track | Present |
 
 </details>
@@ -2119,7 +2119,7 @@ https://x.com/TimurNegru/status/2117222530620461443
 - Metrics are historical snapshots (Pacific time). Each entry records its own date; counts are not live. Unavailable counts appear as —.
 - Impressions describe post exposure, not video plays. They do not establish organic reach or exclude paid promotion.
 - Posting-account follower counts may describe a founder or employee rather than a company.
-- Files are compressed references, up to 540p. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
+- Reference files use high-resolution source footage, with web-optimized H.264 encodes where needed. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
 - Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 

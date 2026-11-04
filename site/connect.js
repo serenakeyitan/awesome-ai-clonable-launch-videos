@@ -35,7 +35,7 @@
     button.setAttribute('aria-expanded','true');
     const client=clients[button.dataset.client];
     const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'launch-archive',config:JSON.stringify({type:'http',url:endpoint})});
-    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">COPY</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${button.dataset.client==='more'?`<a class="vscode-install" href="${vsCode}" target="_blank" rel="noopener">Add to VS Code ↗</a>`:''}${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
+    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">Copy</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${button.dataset.client==='more'?`<a class="vscode-install" href="${vsCode}" target="_blank" rel="noopener">Add to VS Code ↗</a>`:''}${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
     panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
   }));
 })();

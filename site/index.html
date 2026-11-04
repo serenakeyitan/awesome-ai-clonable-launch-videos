@@ -3,32 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf9f6">
+  <meta name="theme-color" content="#f4f4f4">
   <meta name="description" content="44 playable viral launch videos. Study the hooks, inspect the numbers, and copy a brief to build your own with AI.">
   <title>AI Clonable Viral Launch Videos — The Launch Archive</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/shared/site-header.css">
+  <script src="/shared/site-header.js" defer></script>
   <script src="app.js" defer></script>
   <script src="connect.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#archive">Skip to videos</a>
+  <header class="masthead site-header" data-site-header data-site-page="launch-videos">
+    <div class="brand"><a class="logo" href="/">Serena Tan</a></div>
+    <nav class="meta" aria-label="Page navigation"><a href="#archive">Collection ↓</a></nav>
+  </header>
   <main class="document">
-    <header class="masthead numbered" data-line="001">
-      <a class="wordmark" href="#">THE LAUNCH ARCHIVE<span class="cursor" aria-hidden="true">▮</span></a>
-      <nav aria-label="Main navigation"><a href="#archive">[ THE COLLECTION ]</a><a href="https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos" target="_blank" rel="noopener">[ GITHUB ↗ ]</a></nav>
-    </header>
-
-    <section class="intro numbered" data-line="002" aria-labelledby="main-title">
-      <h1 id="main-title">AI CLONABLE<br>VIRAL LAUNCH VIDEOS<span class="period">.</span></h1>
+<section class="intro numbered" data-line="002" aria-labelledby="main-title">
+      <h1 id="main-title">AI clonable<br>viral launch videos<span class="period">.</span></h1>
       <div class="intro-bottom">
         <p>Launch your idea before your product.</p>
         <a class="solid-link" href="https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos" target="_blank" rel="noopener"><img class="github-mark" src="logos/github.svg" width="19" height="19" alt="" aria-hidden="true">Open source <span>↗</span></a>
       </div>
       <div class="summary" aria-label="Collection statistics">
-        <div><strong id="total-videos">44</strong><span>PLAYABLE REFERENCES</span></div>
-        <div><strong id="total-impressions">49.55M</strong><span>POST IMPRESSIONS</span></div>
-        <div><strong id="total-views">9.28M</strong><span>VIDEO PLAYS</span></div>
+        <div><strong id="total-videos">44</strong><span>Playable references</span></div>
+        <div><strong id="total-impressions">49.55M</strong><span>Post impressions</span></div>
+        <div><strong id="total-views">9.28M</strong><span>Video plays</span></div>
       </div>
     </section>
 
@@ -41,47 +42,47 @@
     </section>
 
     <section class="featured section numbered" data-line="004" aria-labelledby="featured-title">
-      <div class="section-heading"><h2 id="featured-title">FEATURED</h2></div>
+      <div class="section-heading"><h2 id="featured-title">Featured</h2></div>
       <div class="featured-layout">
         <div class="featured-media">
           <video id="featured-video" controls playsinline preload="metadata" poster="assets/03.jpg" src="assets/03.mp4" aria-label="Sidehoe launch video"></video>
-          <div class="media-caption"><span id="featured-duration">00:31 / 1:1 / AUDIO</span><a id="featured-source" href="https://x.com/maximusgrave/status/2102800008982777902" target="_blank" rel="noopener">ORIGINAL POST ↗</a></div>
+          <div class="media-caption"><span id="featured-duration">00:31 / 1:1 / Audio</span><a id="featured-source" href="https://x.com/maximusgrave/status/2102800008982777902" target="_blank" rel="noopener">Original post ↗</a></div>
         </div>
         <div class="featured-info" id="featured-info"></div>
       </div>
       <div class="desk-selector" aria-label="Choose a featured video">
-        <button data-feature="3" aria-pressed="true">SIDEHOE</button>
-        <button data-feature="11" aria-pressed="false">STRAWBERRY</button>
-        <button data-feature="9" aria-pressed="false">KREA 3</button>
+        <button data-feature="3" aria-pressed="true">Sidehoe</button>
+        <button data-feature="11" aria-pressed="false">Strawberry</button>
+        <button data-feature="9" aria-pressed="false">Krea 3</button>
       </div>
     </section>
 
     <section class="archive section numbered" id="archive" data-line="005" aria-labelledby="archive-title">
-      <div class="section-heading"><h2 id="archive-title">ALL VIDEOS</h2></div>
+      <div class="section-heading"><h2 id="archive-title">All videos</h2></div>
       <div class="filter-bar">
         <label class="search-label"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search videos, creators, or styles…" aria-label="Search the collection"></label>
-        <label><span class="sr-only">Category</span><select id="category"><option value="all">ALL CATEGORIES</option><option>Startup launch</option><option>AI launch</option><option>Feature clip</option></select></label>
-        <label><span class="sr-only">Visual style</span><select id="style"><option value="all">ALL STYLES</option><option>UI motion</option><option>Device motion</option><option>Kinetic type</option><option>Mixed media</option><option>Abstract motion</option><option>Image collage</option><option>Terminal</option><option>Charts</option><option>Logo motion</option><option>Character animation</option></select></label>
+        <label><span class="sr-only">Category</span><select id="category"><option value="all">All categories</option><option>Startup launch</option><option>AI launch</option><option>Feature clip</option></select></label>
+        <label><span class="sr-only">Visual style</span><select id="style"><option value="all">All styles</option><option>UI motion</option><option>Device motion</option><option>Kinetic type</option><option>Mixed media</option><option>Abstract motion</option><option>Image collage</option><option>Terminal</option><option>Charts</option><option>Logo motion</option><option>Character animation</option></select></label>
       </div>
       <div class="collection-toolbar">
         <span id="result-count" role="status" aria-live="polite">44 videos</span>
-        <div class="sort-tools"><label for="sort">SORT BY</label><select id="sort" aria-label="Sort videos"><option value="impressions">IMPRESSIONS ↓</option><option value="views">VIDEO PLAYS ↓</option><option value="bookmarks">BOOKMARKS ↓</option><option value="likes">LIKES ↓</option><option value="date">NEWEST FIRST</option></select><button id="view-toggle" aria-label="Switch to table view" title="Switch to table view">[ TABLE ]</button></div>
+        <div class="sort-tools"><label for="sort">Sort by</label><select id="sort" aria-label="Sort videos"><option value="impressions">Impressions ↓</option><option value="views">Video plays ↓</option><option value="bookmarks">Bookmarks ↓</option><option value="likes">Likes ↓</option><option value="date">Newest first</option></select><button id="view-toggle" aria-label="Switch to table view" title="Switch to table view">Table</button></div>
       </div>
-      <div id="collection" class="video-grid" aria-label="Launch video collection"><p class="loading">LOADING THE ARCHIVE…</p></div>
-      <div id="empty" class="empty" hidden><p>NO MATCHING REFERENCES.</p><button id="reset-filters">[ RESET FILTERS ↗ ]</button></div>
+      <div id="collection" class="video-grid" aria-label="Launch video collection"><p class="loading">Loading the archive…</p></div>
+      <div id="empty" class="empty" hidden><p>No matching references.</p><button id="reset-filters">Reset filters ↗</button></div>
     </section>
 
     <details class="source-notes" id="method">
       <summary>About the data</summary>
       <p>Each video's statistics snapshot date (PT) is shown in its details. Unavailable counts appear as —. Impressions measure post exposure, not video plays. △ marks plays below 3% of impressions; the cause is unverified.</p>
-      <p>Videos are compressed references. Eight are excerpts, labeled with the original duration. The collection’s style notes use sampled frames; remake briefs are suggested starting points.</p>
+      <p>High-resolution reference files, with each file’s actual resolution in its details. Eight are excerpts, labeled with the original duration. Style notes use sampled frames.</p>
       <a href="videos.json" download="launch-archive-metadata.json">Download all metadata ↓</a>
     </details>
-    <footer class="footer numbered" data-line="007"><span>THE LAUNCH ARCHIVE</span><a href="#">BACK TO TOP ↑</a></footer>
+    <footer class="footer numbered" data-line="007"><span>Launch archive</span><a href="#">Back to top ↑</a></footer>
   </main>
 
   <dialog id="video-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-header"><span id="dialog-ref">REFERENCE / 003</span><div><button id="prev-video" aria-label="Previous reference">← PREV</button><button id="next-video" aria-label="Next reference">NEXT →</button><button id="close-dialog" aria-label="Close video details">CLOSE [×]</button></div></div>
+    <div class="dialog-header"><span id="dialog-ref">Reference / 003</span><div><button id="prev-video" aria-label="Previous reference">← Prev</button><button id="next-video" aria-label="Next reference">Next →</button><button id="close-dialog" aria-label="Close video details">Close ×</button></div></div>
     <div id="dialog-content"></div>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
