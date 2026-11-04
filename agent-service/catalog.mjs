@@ -37,29 +37,43 @@ export async function loadArchive(fetcher = fetch) {
     return [key, await readBounded(response, key === 'catalog' ? 4 * 1024 * 1024 : 65536)];
   }));
   const raw = Object.fromEntries(texts);
-  const videos = JSON.parse(raw.catalog);
+  const catalog = JSON.parse(raw.catalog);
+  const videos = Array.isArray(catalog) ? catalog : catalog?.videos;
+  const catalogMetadata = Array.isArray(catalog) ? null : Object.fromEntries(Object.entries(catalog ?? {}).filter(([key]) => key !== 'videos'));
   const manifest = JSON.parse(raw.manifest);
   if (manifest.schemaVersion !== 1 || !Array.isArray(videos) || !videos.length || videos.length > 5000) throw new Error('Published archive schema unavailable');
   if (videos.some(v => !Number.isInteger(v.id) || !v.title || !v.source || !Array.isArray(v.styles))) throw new Error('Published catalog is invalid');
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(raw)));
   const version = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
   const facets = key => [...new Set(videos.flatMap(v => v[key] ?? []))].sort();
-  return {videos, manifest, workflow:raw.workflow, version, sourceRevision, fetchedAt:new Date().toISOString(), facets:{categories:facets('category'), styles:facets('styles'), ratios:facets('ratio'), formats:manifest.formats ?? []}};
+  return {videos, catalogMetadata, manifest, workflow:raw.workflow, version, sourceRevision, fetchedAt:new Date().toISOString(), facets:{categories:facets('category'), styles:facets('styles'), ratios:facets('ratio'), formats:manifest.formats ?? []}};
 }
 
 export function context(archive) {
-  return {version:archive.version, sourceRevision:archive.sourceRevision, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, workflow:archive.workflow,
+  return {version:archive.version, sourceRevision:archive.sourceRevision, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, catalogMetadata:archive.catalogMetadata, workflow:archive.workflow,
     metricsNote:'Statistics are dated snapshots, not live counts. Impressions are post exposure; views are video plays. Missing counts remain null.'};
 }
 
-export function record(v, detail = false) {
+// Preserve the flat discovery links used by the original HTTP bootstrap, while
+// retaining the nested manifest/context shape for existing MCP/HTTP consumers.
+export function publicManifest(archive) {
+  return {...archive.manifest, ...context(archive)};
+}
+
+const KNOWN_VIDEO_FIELDS = new Set('id title originalTitle account followers category seed impressions views likes bookmarks reposts replies quotes originalSeconds clipSeconds excerpt ratio date width height hasAudio source quote styles notes originalNotes flag video poster snapshotDate collectionSource referenceGroup scores benchmark slug readmeCategory watchUrl detailUrl remakePrompt githubVideoUrl'.split(' '));
+
+export function record(v, detail = false, revision = 'main') {
   const result = {id:v.id, slug:v.slug, title:v.title, account:v.account, category:v.category, format:v.readmeCategory, styles:v.styles, ratio:v.ratio,
     clipSeconds:v.clipSeconds, originalSeconds:v.originalSeconds, excerpt:v.excerpt, hasAudio:v.hasAudio,
     date:v.date, snapshotDate:v.snapshotDate, impressions:v.impressions, views:v.views,
     source:v.source, watchUrl:v.watchUrl, githubVideoUrl:v.githubVideoUrl,
-    poster:new URL(v.poster, 'https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/').href,
+    poster:new URL(v.poster, `https://raw.githubusercontent.com/${REPO}/${revision}/`).href,
     detailUrl:v.detailUrl, remakePrompt:`clone this video 1:1 for my product ${v.source}`};
-  if (detail) Object.assign(result, {width:v.width, height:v.height, notes:v.notes, likes:v.likes, bookmarks:v.bookmarks, reposts:v.reposts, replies:v.replies, quotes:v.quotes, followers:v.followers});
+  if (detail) {
+    Object.assign(result, {width:v.width, height:v.height, notes:v.notes, likes:v.likes, bookmarks:v.bookmarks, reposts:v.reposts, replies:v.replies, quotes:v.quotes, followers:v.followers});
+    const additionalMetadata = Object.fromEntries(Object.entries(v).filter(([key]) => !KNOWN_VIDEO_FIELDS.has(key)));
+    if (Object.keys(additionalMetadata).length) result.additionalMetadata = additionalMetadata;
+  }
   return result;
 }
 
@@ -71,7 +85,7 @@ export function search(archive, args = {}) {
     return {v, score:tokens.reduce((n,t) => n + (title.includes(t) ? 3 : text.includes(t) ? 1 : 0), 0)};
   }).filter(({v,score}) => (!tokens.length || score > 0) && (!args.style || v.styles.some(s => s.toLowerCase() === args.style.toLowerCase())) && (!args.category || v.category.toLowerCase() === args.category.toLowerCase()) && (!args.ratio || v.ratio === args.ratio));
   rows.sort((a,b) => args.sort === 'newest' ? b.v.date.localeCompare(a.v.date) : args.sort === 'impressions' ? (b.v.impressions ?? -1) - (a.v.impressions ?? -1) : b.score - a.score || (b.v.impressions ?? -1) - (a.v.impressions ?? -1));
-  return {totalMatches:rows.length, videos:rows.slice(0, args.limit ?? 6).map(({v}) => record(v))};
+  return {totalMatches:rows.length, videos:rows.slice(0, args.limit ?? 6).map(({v}) => record(v,false,archive.sourceRevision))};
 }
 
 export function findVideo(archive, reference) {

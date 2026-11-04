@@ -8,11 +8,44 @@
   "skillUrl": "https://serenatan.org/launchvideo/agent/SKILL.md",
   "sourceRepository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
   "formats": [
-    {"id":"device-ui-transformations", "name":"Device & UI Transformations"},
-    {"id":"clean-ui-data-graphics", "name":"Clean UI, Data & Graphics"},
-    {"id":"pastel-ui-cursor-demos", "name":"Pastel UI & Cursor Demos"},
-    {"id":"typography-abstract-motion", "name":"Typography & Abstract Motion"},
-    {"id":"dark-gradient-mixed-media", "name":"Dark, Gradient & Mixed Media"},
-    {"id":"illustrated-mascot-stories", "name":"Illustrated Mascot Stories"}
-  ]
+    {
+      "id": "device-ui-transformations",
+      "name": "Device & UI Transformations"
+    },
+    {
+      "id": "clean-ui-data-graphics",
+      "name": "Clean UI, Data & Graphics"
+    },
+    {
+      "id": "pastel-ui-cursor-demos",
+      "name": "Pastel UI & Cursor Demos"
+    },
+    {
+      "id": "typography-abstract-motion",
+      "name": "Typography & Abstract Motion"
+    },
+    {
+      "id": "dark-gradient-mixed-media",
+      "name": "Dark, Gradient & Mixed Media"
+    },
+    {
+      "id": "illustrated-mascot-stories",
+      "name": "Illustrated Mascot Stories"
+    }
+  ],
+  "updatePolicy": {
+    "refresh": "Every tool call and HTTP catalog/workflow read resolves the current published main revision.",
+    "clientBootstrap": "Keep the existing MCP endpoint and installed bootstrap skill.",
+    "catalogShapes": [
+      "video array",
+      {
+        "videos": "video array",
+        "otherFields": "exposed as catalogMetadata"
+      }
+    ],
+    "additiveVideoFields": "Exposed by get_launch_video and HTTP catalog as additionalMetadata.",
+    "additiveManifestFields": "Exposed in MCP manifest and at the root of the HTTP manifest.",
+    "breakingChanges": "Renamed core fields or a new major schema need a server adapter. Changed tool names, endpoint URLs or permissions may require client refresh or reconnect.",
+    "website": "Website layout and media assets use their publishing pipeline; the agent reads the published catalog and workflow."
+  }
 }

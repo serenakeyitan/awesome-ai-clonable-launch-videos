@@ -1,7 +1,7 @@
 import {McpServer} from '@modelcontextprotocol/server';
 import {createMcpHandler} from 'agents/mcp/server';
 import {z} from 'zod';
-import {loadArchive, context, search, record, findVideo} from './catalog.mjs';
+import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 
 const BASE = '/launchvideo';
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
@@ -26,7 +26,7 @@ export function createServer(load = loadArchive) {
     inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);
-    return {...context(archive), found:!!video, video:video ? record(video,true) : null};
+    return {...context(archive), found:!!video, video:video ? record(video,true,archive.sourceRevision) : null};
   }));
   return server;
 }
@@ -66,8 +66,8 @@ export default {
       const archive = await loadArchive();
       let data;
       if (path.endsWith('/workflow.md')) data = response(archive.workflow,'text/markdown');
-      else if (path.endsWith('/catalog.json')) data = response({...context(archive), videos:archive.videos.map(v => record(v,true))});
-      else data = response(context(archive));
+      else if (path.endsWith('/catalog.json')) data = response({...context(archive), videos:archive.videos.map(v => record(v,true,archive.sourceRevision))});
+      else data = response(publicManifest(archive));
       data.headers.set('X-Launch-Archive-Version',archive.version);
       return request.method === 'HEAD' ? new Response(null,data) : data;
     } catch (error) { console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message})); return response({error:'Current published archive unavailable. No cached catalog returned.'},'application/json',503); }
