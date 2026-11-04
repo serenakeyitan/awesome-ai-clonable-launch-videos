@@ -27,14 +27,35 @@
     }
   }
   document.getElementById('copy-setup').addEventListener('click',event=>copy(setup,event.currentTarget));
-  document.querySelectorAll('[data-client]').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('button[data-client]').forEach(button=>button.addEventListener('click',()=>{
     const opened = button.getAttribute('aria-expanded')==='true';
-    document.querySelectorAll('[data-client]').forEach(b=>b.setAttribute('aria-expanded','false'));
+    document.querySelectorAll('button[data-client]').forEach(b=>b.setAttribute('aria-expanded','false'));
     const panel=document.getElementById('client-setup');panel.hidden=opened;
     if(opened)return;
     button.setAttribute('aria-expanded','true');
     const client=clients[button.dataset.client];
-    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">COPY</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
+    const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'launch-archive',config:JSON.stringify({type:'http',url:endpoint})});
+    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">COPY</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${button.dataset.client==='more'?`<a class="vscode-install" href="${vsCode}" target="_blank" rel="noopener">Add to VS Code ↗</a>`:''}${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
     panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
   }));
+})();
+
+// The opener is a silent decorative loop; allow pause and respect reduced motion.
+(() => {
+  const video=document.getElementById('hero-mascot');
+  const button=document.getElementById('mascot-control');
+  if(!video||!button)return;
+  video.muted=true;
+  // Safari uses the paper-matched MP4; Chromium/Firefox can use VP9 alpha.
+  const safari=/^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if(!safari&&video.canPlayType('video/webm; codecs="vp9"')) {
+    video.src='mascot/serena-idle.webm';
+    video.addEventListener('error',()=>{video.src='mascot/serena-idle.mp4';video.load();},{once:true});
+  }
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  function sync(){const label=video.paused?'Play mascot animation':'Pause mascot animation';button.setAttribute('aria-label',label);button.title=label;button.querySelector('.mascot-play-state').textContent=video.paused?'▶':'Ⅱ';}
+  function applyMotion(){if(reduced.matches){video.autoplay=false;video.pause();}else video.play().catch(()=>{});sync();}
+  video.addEventListener('play',sync);video.addEventListener('pause',sync);
+  button.addEventListener('click',()=>{if(video.paused)video.play().catch(()=>{});else video.pause();});
+  reduced.addEventListener('change',applyMotion);applyMotion();
 })();
