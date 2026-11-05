@@ -80,6 +80,7 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .featured-info { padding: 24px; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 .featured-info h3 { font-size: 30px; line-height: 1.2; letter-spacing: -.035em; margin-bottom: 8px; }
 .byline { color: var(--muted); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.launch-date { margin-top: 5px; color: var(--ink); font-size: 12px; line-height: 1.5; }
 .featured-stats { display: grid; grid-template-columns: 1fr 1fr; margin: 23px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .featured-stats > div { padding: 13px 0; }
 .featured-stats > div + div { border-left: 1px solid var(--line); padding-left: 20px; }
