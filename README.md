@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-44-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-46-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 44 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 46 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -41,6 +41,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Readwise 2.0](#readwise-2-0)
 - [Go-lo — Live Scores](#go-lo-live-scores)
 - [Manus — Websites to Desktop Apps](#manus-websites-to-desktop-apps)
+- [Ghosthand for Grok Bot — A Real iPhone](#ghosthand-grok-bot-real-iphone)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -53,6 +54,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Cursor — /visualize](#cursor-visualize)
 - [Coinbase — Crypto Paychecks](#coinbase-crypto-paychecks)
 - [Shipper — Build Bots with AI](#shipper-build-bots-with-ai)
+- [Grok Bot — Phone Calls](#grok-bot-phone-calls)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -593,6 +595,51 @@ https://x.com/ManusAI/status/2115110045977583909
 
 ---
 
+<a id="ghosthand-grok-bot-real-iphone"></a>
+
+### Ghosthand for Grok Bot — A Real iPhone
+
+https://github.com/user-attachments/assets/e179917f-89af-4519-ae1d-810cad3aa8f3
+
+**0:43 · 16:9 · 14.1K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/52.mp4) · [MP4 file](videos/ghosthand-grok-bot-real-iphone.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-52)
+
+A floating iPhone and Grok Bot mascot introduce the product, then purple chat commands drive a real-phone TikTok publishing demo. Dark task cards expand into a grid of phone-number, app and account workflows before a gradient logo and URL end frame.
+
+```text
+clone this video 1:1 for my product
+https://x.com/__morse/status/2118079056851669202
+```
+
+*Source: [@__morse](https://x.com/__morse/status/2118079056851669202) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @__morse |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-04 |
+| Post impressions | 14,111 |
+| Video plays | — |
+| Likes | 178 |
+| Bookmarks | 164 |
+| Reposts | 9 |
+| Replies | 15 |
+| Quotes | 0 |
+| Account followers | 7,923 |
+| Original duration | 0:43 |
+| Included file | 0:43 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="clean-ui-data-graphics"></a>
 
 ## B. Clean UI, Data & Graphics
@@ -998,6 +1045,51 @@ https://x.com/chddaniel/status/2048402359110557714
 | Included file | 0:23 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="grok-bot-phone-calls"></a>
+
+### Grok Bot — Phone Calls
+
+https://github.com/user-attachments/assets/d1cee917-3816-416c-970f-363a41987474
+
+**0:42 · 16:9 · 1.41M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/53.mp4) · [MP4 file](videos/grok-bot-phone-calls.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-53)
+
+A minimal white chat shows an expiring internet contract, then turns a phone-call button into an animated call timer and live transcript. Orange reply bubbles, sparse intertitles and a compact call panel lead to a cancellation confirmation and a simple Grok Bot logo close.
+
+```text
+clone this video 1:1 for my product
+https://x.com/bot/status/2118043939592942052
+```
+
+*Source: [@bot](https://x.com/bot/status/2118043939592942052) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @bot |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-04 |
+| Post impressions | 1,409,107 |
+| Video plays | — |
+| Likes | 10,077 |
+| Bookmarks | 2,268 |
+| Reposts | 551 |
+| Replies | 2,392 |
+| Quotes | 475 |
+| Account followers | 507,165 |
+| Original duration | 0:42 |
+| Included file | 0:42 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
