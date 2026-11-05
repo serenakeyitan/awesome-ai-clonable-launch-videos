@@ -2980,5 +2980,67 @@
       "verifiedAt": "2026-11-04"
     },
     "githubVideoUrl": "https://github.com/user-attachments/assets/d1cee917-3816-416c-970f-363a41987474"
+  },
+  {
+    "id": 54,
+    "title": "Grok Bot — Text Messages on Mac",
+    "originalTitle": "Grok Bot — Text Messages on Mac",
+    "account": "@Texas_Twins_Dad",
+    "followers": 11730,
+    "category": "Feature clip",
+    "seed": false,
+    "impressions": 20524,
+    "views": null,
+    "likes": 155,
+    "bookmarks": 216,
+    "reposts": 8,
+    "replies": 33,
+    "quotes": 1,
+    "originalSeconds": 20.9,
+    "clipSeconds": 20.9,
+    "excerpt": false,
+    "ratio": "4:5",
+    "date": "2026-11-03",
+    "width": 1080,
+    "height": 1350,
+    "hasAudio": true,
+    "source": "https://x.com/texas_twins_dad/status/2117824974689890485",
+    "quote": "I found a way for my Grok Bot to read and send my texts.\n\nNo phone hack. It works through the Messages app on my Mac.\n\nHow to set it up:\n1. On iPhone, turn on Text Message Forwarding (Settings › Apps › Messages) so texts and iMessages show up on my Mac\n2. Connect Mac to Grok Bot as a computer\n3. Let it read Messages (macOS will ask, and I approve)\n4. It only sends a text when I say \"send\"\n\nMy texts, handled. I stay in control.",
+    "styles": [
+      "Device motion",
+      "UI motion",
+      "Kinetic type"
+    ],
+    "notes": [
+      "Four numbered steps pair bold headings with simplified iPhone settings, a MacBook and the Grok Bot mascot on a pale background.",
+      "Cursor clicks, message bubbles, dotted connectors and green confirmation checks visualize each setup step, ending on an explicit send confirmation."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/grok-bot-text-messages-on-mac.mp4",
+    "poster": "previews/grok-bot-text-messages-on-mac.jpg",
+    "snapshotDate": "2026-11-04",
+    "collectionSource": "https://x.com/texas_twins_dad/status/2117824974689890485",
+    "metricSources": [
+      "https://api.fxtwitter.com/status/2117824974689890485",
+      "https://cdn.syndication.twimg.com/tweet-result?id=2117824974689890485&lang=en&token=1"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot.",
+    "slug": "grok-bot-text-messages-on-mac",
+    "readmeCategory": "device-ui-transformations",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/54.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-54",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/texas_twins_dad/status/2117824974689890485",
+    "mediaQuality": {
+      "sourceWidth": 1080,
+      "sourceHeight": 1350,
+      "deliveryWidth": 1080,
+      "deliveryHeight": 1350,
+      "codec": "H.264",
+      "deliveryMethod": "Original source streams, remuxed for fast start",
+      "upscaled": false,
+      "verifiedAt": "2026-11-04"
+    },
+    "githubVideoUrl": "https://github.com/user-attachments/assets/7bea875b-0f05-468e-83d7-8e85fe079023"
   }
 ]

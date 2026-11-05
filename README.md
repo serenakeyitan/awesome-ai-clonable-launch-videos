@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-46-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-47-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 46 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 47 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -42,6 +42,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Go-lo — Live Scores](#go-lo-live-scores)
 - [Manus — Websites to Desktop Apps](#manus-websites-to-desktop-apps)
 - [Ghosthand for Grok Bot — A Real iPhone](#ghosthand-grok-bot-real-iphone)
+- [Grok Bot — Text Messages on Mac](#grok-bot-text-messages-on-mac)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -634,6 +635,51 @@ https://x.com/__morse/status/2118079056851669202
 | Included file | 0:43 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="grok-bot-text-messages-on-mac"></a>
+
+### Grok Bot — Text Messages on Mac
+
+https://github.com/user-attachments/assets/7bea875b-0f05-468e-83d7-8e85fe079023
+
+**0:21 · 4:5 · 20.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/54.mp4) · [MP4 file](videos/grok-bot-text-messages-on-mac.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-54)
+
+Four numbered steps pair bold headings with simplified iPhone settings, a MacBook and the Grok Bot mascot on a pale background. Cursor clicks, message bubbles, dotted connectors and green confirmation checks visualize each setup step, ending on an explicit send confirmation.
+
+```text
+clone this video 1:1 for my product
+https://x.com/texas_twins_dad/status/2117824974689890485
+```
+
+*Source: [@Texas_Twins_Dad](https://x.com/texas_twins_dad/status/2117824974689890485) · 2026-11-03*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Texas_Twins_Dad |
+| Post date | 2026-11-03 |
+| Stats snapshot (PT) | 2026-11-04 |
+| Post impressions | 20,524 |
+| Video plays | — |
+| Likes | 155 |
+| Bookmarks | 216 |
+| Reposts | 8 |
+| Replies | 33 |
+| Quotes | 1 |
+| Account followers | 11,730 |
+| Original duration | 0:21 |
+| Included file | 0:21 — full clip |
+| Aspect ratio | 4:5 |
+| Reference resolution | 1080 × 1350 |
 | Audio track | Present |
 
 </details>
