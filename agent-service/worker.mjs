@@ -2,6 +2,7 @@ import {McpServer} from '@modelcontextprotocol/server';
 import {createMcpHandler} from 'agents/mcp/server';
 import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
+import {guardRequest} from './request-guard.mjs';
 
 const BASE = '/launchvideo';
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
@@ -54,6 +55,9 @@ function response(body, type = 'application/json', status = 200) {
 const mcp = createMcpHandler(() => createServer(), {route:`${BASE}/mcp`, legacy:'stateless', allowedHostnames:['serenatan.org','localhost','127.0.0.1'], allowedOriginHostnames:'*'});
 export default {
   async fetch(request, env, ctx) {
+    const guarded = await guardRequest(request, env);
+    if (guarded.response) return guarded.response;
+    request = guarded.request;
     const path = new URL(request.url).pathname;
     if (path === `${BASE}/mcp`) return mcp(request,env,ctx);
     if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS'}});
