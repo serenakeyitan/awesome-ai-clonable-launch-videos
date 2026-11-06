@@ -8,7 +8,7 @@
   "skillUrl": "https://serenatan.org/launchvideo/agent/SKILL.md",
   "sourceRepository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
   "accessPolicy": {
-    "authentication": "none",
+    "authentication": "oauth2",
     "dailyQuota": "none",
     "shortTermThrottle": {
       "requests": 120,
@@ -24,7 +24,14 @@
       "maxRetries": 2,
       "fallbackBypassesLimit": false
     },
-    "websiteAndVideoPlayback": "Public and outside the agent-service throttle."
+    "websiteAndVideoPlayback": "Public and outside the agent-service throttle.",
+    "authorizationServer": "https://clerk.serenatan.org",
+    "requiredScopes": [
+      "profile",
+      "email"
+    ],
+    "privacyUrl": "https://serenatan.org/launchvideo/privacy.html",
+    "newsletterSubscription": "Separate opt-in; never implied by login."
   },
   "formats": [
     {
@@ -65,6 +72,7 @@
     "additiveVideoFields": "Exposed by get_launch_video and HTTP catalog as additionalMetadata.",
     "additiveManifestFields": "Exposed in MCP manifest and at the root of the HTTP manifest.",
     "breakingChanges": "Renamed core fields or a new major schema need a server adapter. Changed tool names, endpoint URLs or permissions may require client refresh or reconnect.",
-    "website": "Website layout and media assets use their publishing pipeline; the agent reads the published catalog and workflow."
+    "website": "Website layout and media assets use their publishing pipeline; the agent reads the published catalog and workflow.",
+    "authenticationMigration": "Existing unauthenticated installations must reconnect once for OAuth. Future catalog and workflow updates keep the same connection."
   }
 }

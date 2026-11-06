@@ -1,12 +1,18 @@
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 import {Client as Modern, StreamableHTTPClientTransport as ModernHTTP} from '@modelcontextprotocol/client';
 import {Client as Legacy} from '@modelcontextprotocol/sdk/client/index.js';
 import {StreamableHTTPClientTransport as LegacyHTTP} from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 const url = process.argv[2] ?? 'https://serenatan.org/launchvideo/mcp';
+// Optional protected local token file for the authenticated rollout. Never put
+// tokens in command arguments, console output or source control.
+const tokenFile = process.env.LAUNCH_ARCHIVE_TOKEN_FILE;
+const token = tokenFile ? (await readFile(tokenFile,'utf8')).trim() : null;
+const transportOptions = token ? {requestInit:{headers:{Authorization:`Bearer ${token}`}}} : undefined;
 for (const [name, Client, Transport] of [['modern',Modern,ModernHTTP],['legacy',Legacy,LegacyHTTP]]) {
  const c = new Client({name:`launch-archive-${name}-verification`,version:'1.0.0'});
  try {
-  await c.connect(new Transport(new URL(url)));
+  await c.connect(new Transport(new URL(url),transportOptions));
   const tools=await c.listTools();assert.equal(tools.tools.length,3);
   const initial=await c.callTool({name:'get_launch_context',arguments:{}});assert.ok(!initial.isError,initial.content?.[0]?.text);const context=initial.structuredContent;
   assert.ok(context.totalVideos>0);assert.ok(Array.isArray(context.facets.styles));

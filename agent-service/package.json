@@ -10,6 +10,7 @@
     "verify:live": "node scripts/verify-live.mjs"
   },
   "dependencies": {
+    "@clerk/backend": "3.27.0",
     "@modelcontextprotocol/server": "2.4.0",
     "agents": "0.33.0",
     "zod": "4.6.7"
