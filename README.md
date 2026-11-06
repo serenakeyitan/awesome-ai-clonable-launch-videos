@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-51-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-53-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 51 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 53 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -44,6 +44,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Ghosthand for Grok Bot — A Real iPhone](#ghosthand-grok-bot-real-iphone)
 - [Grok Bot — Text Messages on Mac](#grok-bot-text-messages-on-mac)
 - [Notion Calendar — Rebuilt for iOS](#notion-calendar-ios)
+- [Native Cook — Mobile UI Blocks](#native-cook)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -59,6 +60,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Grok Bot — Phone Calls](#grok-bot-phone-calls)
 - [Notion — One Shared Brain for Every Agent](#notion-shared-brain)
 - [Claude Managed Agents — Dynamic Workflows](#claude-managed-agents-dynamic-workflows)
+- [Terminus Notes — Open-Source Notes](#terminus-notes)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -735,6 +737,51 @@ https://x.com/NotionHQ/status/2118407963723567512
 
 ---
 
+<a id="native-cook"></a>
+
+### Native Cook — Mobile UI Blocks
+
+https://github.com/user-attachments/assets/1c443874-7dfe-4807-9e69-720b37042fec
+
+**0:53 · 16:9 · 24.9K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/59.mp4) · [MP4 file](videos/native-cook.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-59)
+
+On a dark canvas, large white type introduces a library of mobile UI blocks before colorful phone mockups show animated screens. The demo moves from a block preview to copying a Swift prompt, running code and viewing the result in an iOS simulator, with yellow text highlights and short caption pills.
+
+```text
+clone this video 1:1 for my product
+https://x.com/ngocdevv/status/2117645490057892004
+```
+
+*Source: [@ngocdevv](https://x.com/ngocdevv/status/2117645490057892004) · 2026-11-03*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @ngocdevv |
+| Post date | 2026-11-03 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 24,898 |
+| Video plays | — |
+| Likes | 574 |
+| Bookmarks | 743 |
+| Reposts | 54 |
+| Replies | 22 |
+| Quotes | 6 |
+| Account followers | 299 |
+| Original duration | 0:53 |
+| Included file | 0:53 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="clean-ui-data-graphics"></a>
 
 ## B. Clean UI, Data & Graphics
@@ -1276,6 +1323,51 @@ https://x.com/ClaudeDevs/status/2108591328732856655
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | None |
+
+</details>
+
+---
+
+<a id="terminus-notes"></a>
+
+### Terminus Notes — Open-Source Notes
+
+https://github.com/user-attachments/assets/8fb93e0f-22c0-4e85-bc8d-33533a8e4e1e
+
+**0:45 · 16:9 · 827.9K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/60.mp4) · [MP4 file](videos/terminus-notes.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-60)
+
+An off-white opening combines serif type, broken Notion-style letter blocks and a blue horse icon before moving into a clean notes workspace. A launch checklist and Paris travel page demonstrate editing, an AI chat panel and an embedded map with changing styles, ending with free and open-source messaging and the Terminus Notes title.
+
+```text
+clone this video 1:1 for my product
+https://x.com/WinstonGu_/status/2117336804705927410
+```
+
+*Source: [@WinstonGu_](https://x.com/WinstonGu_/status/2117336804705927410) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @WinstonGu_ |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 827,870 |
+| Video plays | — |
+| Likes | 5,311 |
+| Bookmarks | 5,990 |
+| Reposts | 342 |
+| Replies | 275 |
+| Quotes | 129 |
+| Account followers | 1,512 |
+| Original duration | 0:45 |
+| Included file | 0:45 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
 
 </details>
 
