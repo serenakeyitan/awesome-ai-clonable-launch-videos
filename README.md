@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-53-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-74-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 53 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 74 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -45,6 +45,9 @@ The connector reads the current published library and workflow on every call. Ne
 - [Grok Bot — Text Messages on Mac](#grok-bot-text-messages-on-mac)
 - [Notion Calendar — Rebuilt for iOS](#notion-calendar-ios)
 - [Native Cook — Mobile UI Blocks](#native-cook)
+- [MCP for iPhone — Cloud Device Control](#mcp-for-iphone)
+- [Pen.dev — Agentic Canvas Plugin](#pen-dev-agentic-canvas)
+- [Opptics — Payments Motion Study](#opptics-payments-motion-study)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -61,6 +64,11 @@ The connector reads the current published library and workflow on every call. Ne
 - [Notion — One Shared Brain for Every Agent](#notion-shared-brain)
 - [Claude Managed Agents — Dynamic Workflows](#claude-managed-agents-dynamic-workflows)
 - [Terminus Notes — Open-Source Notes](#terminus-notes)
+- [Google Gemini — Motion Design Study](#google-gemini-motion-study)
+- [Design-to-Code — A Skill for Every Agent](#design-to-code)
+- [Commas × HighLevel — Subscription Recovery](#commas-highlevel)
+- [Treg × Jev — Social API](#treg-social-api)
+- [Reason — Coding Agent](#reason-coding-agent)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -73,6 +81,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Replit AI SDR](#replit-ai-sdr)
 - [Tavus PAL](#tavus-pal)
 - [Oh Wait — With Context vs. Without Context](#oh-wait-context-comparison)
+- [AI Workspace — Motion Design Study](#ai-workspace-motion-study)
 
 ### [D. Typography & Abstract Motion](#typography-abstract-motion)
 
@@ -80,6 +89,11 @@ The connector reads the current published library and workflow on every call. Ne
 - [TasteSkill v2](#tasteskill-v2)
 - [Hermes — Profile Builder](#hermes-profile-builder)
 - [Eleven Realtime](#eleven-realtime)
+- [Agent Budgets — Isometric Launch Film](#agent-budgets-isometric-film)
+- [Launch Video Hook — Layer Breakdown](#launch-hook-layer-breakdown)
+- [Paper — Rich Text Editing](#paper-rich-text)
+- [ElevenLabs — Speech Engine](#elevenlabs-speech-engine)
+- [Lifted Finance — Launch Film](#lifted-finance)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -94,10 +108,17 @@ The connector reads the current published library and workflow on every call. Ne
 - [Linear — Mobile Coding Sessions](#linear-mobile-coding-sessions)
 - [Readwise for OpenClaw](#readwise-for-openclaw)
 - [Studiyo — Grok Bot Widget](#studiyo-grok-bot-widget)
+- [Remocn v3 — Motion Components](#remocn-v3)
+- [Holo — AI Marketing Motion Study](#holo-marketing-motion-study)
+- [Raylight 2.0 — Editable Motion Graphics](#raylight-2)
+- [Instagram Reminders — Motion Concept](#instagram-reminders-motion-concept)
+- [Dnyx Studios — Imagination Upgrade](#dnyx-imagination-upgrade)
+- [LandAtlas — Real Estate Workflow](#landatlas-launch)
 
 ### [F. Illustrated Mascot Stories](#illustrated-mascot-stories)
 
 - [AffordiHome Finder — Illustrated Launch](#affordihome-finder-illustrated-launch)
+- [Someone Believes in Your Idea — Landing Motion](#idea-backing-landing-motion)
 
 ---
 
@@ -782,6 +803,141 @@ https://x.com/ngocdevv/status/2117645490057892004
 
 ---
 
+<a id="mcp-for-iphone"></a>
+
+### MCP for iPhone — Cloud Device Control
+
+https://github.com/user-attachments/assets/8bbf9f95-922e-464a-bf58-1a911f9ace5c
+
+**0:59 · 16:9 · 95.7K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/61.mp4) · [MP4 file](videos/mcp-for-iphone.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-61)
+
+A black device-service mark on a pale canvas leads into connecting an MCP endpoint, sending a chat prompt and operating a real iPhone interface. Phone screens, social-post panels, a weekly planner and a grid of devices demonstrate the workflow with short explanatory headlines.
+
+```text
+clone this video 1:1 for my product
+https://x.com/HamonPaulm/status/2118309946190172318
+```
+
+*Source: [@HamonPaulm](https://x.com/HamonPaulm/status/2118309946190172318) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @HamonPaulm |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 95,730 |
+| Video plays | — |
+| Likes | 808 |
+| Bookmarks | 1,175 |
+| Reposts | 69 |
+| Replies | 65 |
+| Quotes | 15 |
+| Account followers | 807 |
+| Original duration | 0:59 |
+| Included file | 0:59 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="pen-dev-agentic-canvas"></a>
+
+### Pen.dev — Agentic Canvas Plugin
+
+https://github.com/user-attachments/assets/b2cf2d6c-fc43-4cd9-b98c-e9b2acea36f5
+
+**0:18 · 16:9 · 149.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/66.mp4) · [MP4 file](videos/pen-dev-agentic-canvas.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-66)
+
+Large metallic pen-nib and ChatGPT-style marks move across a pale background before the canvas interface appears. A typed import prompt brings a dashboard onto the canvas; bright metric cards, pixel-like numerals and cursor movements lead to the pen.dev closing mark.
+
+```text
+clone this video 1:1 for my product
+https://x.com/tomkrcha/status/2117336830559617513
+```
+
+*Source: [@tomkrcha](https://x.com/tomkrcha/status/2117336830559617513) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @tomkrcha |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 149,546 |
+| Video plays | — |
+| Likes | 902 |
+| Bookmarks | 831 |
+| Reposts | 42 |
+| Replies | 40 |
+| Quotes | 11 |
+| Account followers | 26,097 |
+| Original duration | 0:18 |
+| Included file | 0:18 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="opptics-payments-motion-study"></a>
+
+### Opptics — Payments Motion Study
+
+https://github.com/user-attachments/assets/75e4fdc6-ddf2-4140-b83d-8da1705b9c84
+
+**0:21 · 16:9 · 16.1K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/78.mp4) · [MP4 file](videos/opptics-payments-motion-study.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-78)
+
+Bright perspective cards combine payment notices, a piggy bank, gears, stars and colorful radial ribbons. Large typography about payout timing, fees and approvals alternates with stylized payment UI before the Opptics end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/Nexoxh/status/2116053584223547792
+```
+
+*Source: [@Nexoxh](https://x.com/Nexoxh/status/2116053584223547792) · 2026-10-29*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Nexoxh |
+| Post date | 2026-10-29 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 16,089 |
+| Video plays | — |
+| Likes | 566 |
+| Bookmarks | 273 |
+| Reposts | 25 |
+| Replies | 29 |
+| Quotes | 1 |
+| Account followers | 5,702 |
+| Original duration | 0:21 |
+| Included file | 0:21 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1024 × 576 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="clean-ui-data-graphics"></a>
 
 ## B. Clean UI, Data & Graphics
@@ -1373,6 +1529,231 @@ https://x.com/WinstonGu_/status/2117336804705927410
 
 ---
 
+<a id="google-gemini-motion-study"></a>
+
+### Google Gemini — Motion Design Study
+
+https://github.com/user-attachments/assets/8343e405-b9f4-4f0b-bf9e-4771d2a1abe0
+
+**0:18 · 16:9 · 8.7K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/65.mp4) · [MP4 file](videos/google-gemini-motion-study.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-65)
+
+The Google mark connects to document, map, mail and video-call icons through thin branching lines. Blue text selections, a glowing prompt box, the Gemini mark and simplified document-sharing UI tell the story on a white canvas.
+
+```text
+clone this video 1:1 for my product
+https://x.com/Nexoxh/status/2118411690970599718
+```
+
+*Source: [@Nexoxh](https://x.com/Nexoxh/status/2118411690970599718) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Nexoxh |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 8,660 |
+| Video plays | — |
+| Likes | 250 |
+| Bookmarks | 148 |
+| Reposts | 12 |
+| Replies | 26 |
+| Quotes | 2 |
+| Account followers | 5,702 |
+| Original duration | 0:18 |
+| Included file | 0:18 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1024 × 576 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="design-to-code"></a>
+
+### Design-to-Code — A Skill for Every Agent
+
+https://github.com/user-attachments/assets/aa40f6f4-597f-4363-b8d1-35fb56c4ca23
+
+**0:35 · 16:9 · 31.0K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/70.mp4) · [MP4 file](videos/design-to-code.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-70)
+
+A faint grid, light-blue text selections and pixel-block transitions introduce turning design references into code. Website comparisons, a terminal checklist and a chain from the agent to the design-to-code skill lead to the install-command end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/athrix_codes/status/2117596718019789205
+```
+
+*Source: [@athrix_codes](https://x.com/athrix_codes/status/2117596718019789205) · 2026-11-03*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @athrix_codes |
+| Post date | 2026-11-03 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 31,032 |
+| Video plays | — |
+| Likes | 569 |
+| Bookmarks | 716 |
+| Reposts | 45 |
+| Replies | 64 |
+| Quotes | 8 |
+| Account followers | 4,075 |
+| Original duration | 0:35 |
+| Included file | 0:35 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="commas-highlevel"></a>
+
+### Commas × HighLevel — Subscription Recovery
+
+https://github.com/user-attachments/assets/932d6d86-7140-4de9-a23b-d23f0cdf8285
+
+**0:51 · 16:9 · 3.6K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/72.mp4) · [MP4 file](videos/commas-highlevel.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-72)
+
+Blue glass-like buttons, a pointer and a payment panel introduce a billing workflow on a white background. Failed-subscription copy gives way to recovery messaging, a revenue line chart and the Commas × HighLevel closing card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/abdullah4204k/status/2118417123731186095
+```
+
+*Source: [@abdullah4204k](https://x.com/abdullah4204k/status/2118417123731186095) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @abdullah4204k |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 3,610 |
+| Video plays | — |
+| Likes | 135 |
+| Bookmarks | 108 |
+| Reposts | 3 |
+| Replies | 5 |
+| Quotes | 1 |
+| Account followers | 3,932 |
+| Original duration | 0:51 |
+| Included file | 0:51 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="treg-social-api"></a>
+
+### Treg × Jev — Social API
+
+https://github.com/user-attachments/assets/a7866910-d6ee-496d-a1c8-269fa8e4d750
+
+**0:54 · 16:9 · 130.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/75.mp4) · [MP4 file](videos/treg-social-api.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-75)
+
+A central terminal prompt is surrounded by social-platform icons, then moves through a decoded video, mention boards and creator data. Headphones imagery, relationship diagrams, audience bars and dashboard cards lead to the Jev and Treg end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/treg_ai/status/2118660249150427243
+```
+
+*Source: [@treg_ai](https://x.com/treg_ai/status/2118660249150427243) · 2026-11-06*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @treg_ai |
+| Post date | 2026-11-06 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 130,795 |
+| Video plays | — |
+| Likes | 1,326 |
+| Bookmarks | 1,944 |
+| Reposts | 79 |
+| Replies | 107 |
+| Quotes | 75 |
+| Account followers | 8,760 |
+| Original duration | 0:54 |
+| Included file | 0:54 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="reason-coding-agent"></a>
+
+### Reason — Coding Agent
+
+https://github.com/user-attachments/assets/34a114e9-fb84-44de-ae04-97f5b3c41ef9
+
+**0:29 · 16:9 · 25.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/79.mp4) · [MP4 file](videos/reason-coding-agent.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-79)
+
+Usage bars and a short out-of-usage headline introduce Reason on a warm off-white canvas. Side-by-side coding interfaces and benchmark-style bars compare the advertised workflow before a free-trial closing card; the claims are presented as source-video content.
+
+```text
+clone this video 1:1 for my product
+https://x.com/reasonmachines/status/2117986868004573695
+```
+
+*Source: [@reasonmachines](https://x.com/reasonmachines/status/2117986868004573695) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @reasonmachines |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 25,480 |
+| Video plays | — |
+| Likes | 335 |
+| Bookmarks | 209 |
+| Reposts | 14 |
+| Replies | 42 |
+| Quotes | 2 |
+| Account followers | 13,939 |
+| Original duration | 0:29 |
+| Included file | 0:29 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="pastel-ui-cursor-demos"></a>
 
 ## C. Pastel UI & Cursor Demos
@@ -1784,6 +2165,51 @@ https://x.com/jaimintf/status/2118396459150344437
 
 ---
 
+<a id="ai-workspace-motion-study"></a>
+
+### AI Workspace — Motion Design Study
+
+https://github.com/user-attachments/assets/a2d37684-8609-4d0c-87b7-d29b969226b7
+
+**0:30 · 16:9 · 27.0K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/64.mp4) · [MP4 file](videos/ai-workspace-motion-study.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-64)
+
+Thermal-colored imagery and soft gradients introduce an AI workspace, followed by oversized lettering against a sky of clouds. A prompt field, image-generation progress steps and fashion-photo collages use floating panels and changing scale on a light canvas.
+
+```text
+clone this video 1:1 for my product
+https://x.com/rajzmotion/status/2117525794637697456
+```
+
+*Source: [@rajzmotion](https://x.com/rajzmotion/status/2117525794637697456) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @rajzmotion |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 27,038 |
+| Video plays | — |
+| Likes | 726 |
+| Bookmarks | 622 |
+| Reposts | 22 |
+| Replies | 32 |
+| Quotes | 0 |
+| Account followers | 1,510 |
+| Original duration | 0:30 |
+| Included file | 0:30 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="typography-abstract-motion"></a>
 
 ## D. Typography & Abstract Motion
@@ -1962,6 +2388,231 @@ https://x.com/ElevenLabs/status/2112550782063247521
 | Account followers | 208,922 |
 | Original duration | 1:11 |
 | Included file | 0:45 — excerpt |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="agent-budgets-isometric-film"></a>
+
+### Agent Budgets — Isometric Launch Film
+
+https://github.com/user-attachments/assets/c2d2719e-aaae-4e86-b9b0-3fd73adf3f19
+
+**1:08 · 16:9 · 8.7K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/68.mp4) · [MP4 file](videos/agent-budgets-isometric-film.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-68)
+
+Neon green panels, black grid lines and large white type frame an isometric story about teams and budgets. Colored cubes, numerical limits, expanding geometry and graph-like paths alternate between flat compositions and perspective views.
+
+```text
+clone this video 1:1 for my product
+https://x.com/MarkKnd/status/2118682213139001373
+```
+
+*Source: [@MarkKnd](https://x.com/MarkKnd/status/2118682213139001373) · 2026-11-06*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @MarkKnd |
+| Post date | 2026-11-06 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 8,708 |
+| Video plays | — |
+| Likes | 327 |
+| Bookmarks | 240 |
+| Reposts | 10 |
+| Replies | 16 |
+| Quotes | 1 |
+| Account followers | 40,660 |
+| Original duration | 1:08 |
+| Included file | 1:08 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="launch-hook-layer-breakdown"></a>
+
+### Launch Video Hook — Layer Breakdown
+
+https://github.com/user-attachments/assets/39994253-a288-414a-b72b-d8a9de208592
+
+**0:14 · 16:9 · 3.4K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/69.mp4) · [MP4 file](videos/launch-hook-layer-breakdown.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-69)
+
+A production breakdown exposes selection boxes, motion paths, handles and overlapping layers behind an app-launch hook. Vintage cutout images, serif lettering, pixel-style pointers and colored feature requests animate on a pale yellow canvas.
+
+```text
+clone this video 1:1 for my product
+https://x.com/Jerrythe2d/status/2118730912901042221
+```
+
+*Source: [@Jerrythe2d](https://x.com/Jerrythe2d/status/2118730912901042221) · 2026-11-06*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Jerrythe2d |
+| Post date | 2026-11-06 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 3,413 |
+| Video plays | — |
+| Likes | 241 |
+| Bookmarks | 137 |
+| Reposts | 3 |
+| Replies | 9 |
+| Quotes | 0 |
+| Account followers | 6,369 |
+| Original duration | 0:14 |
+| Included file | 0:14 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 2880 × 1620 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="paper-rich-text"></a>
+
+### Paper — Rich Text Editing
+
+https://github.com/user-attachments/assets/c9121b6d-b09d-477c-a892-c239e8c44750
+
+**0:45 · 1:1 · 38.2K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/73.mp4) · [MP4 file](videos/paper-rich-text.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-73)
+
+Collaborative cursors and live selections turn a short line of text into a sequence of changing letterforms and contrasting type treatments. The square clip shifts between light and dark canvases, letter grids and oversized editorial layouts before the Paper mark.
+
+```text
+clone this video 1:1 for my product
+https://x.com/stephenhaney/status/2117333603608932710
+```
+
+*Source: [@stephenhaney](https://x.com/stephenhaney/status/2117333603608932710) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @stephenhaney |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 38,183 |
+| Video plays | — |
+| Likes | 661 |
+| Bookmarks | 171 |
+| Reposts | 28 |
+| Replies | 52 |
+| Quotes | 10 |
+| Account followers | 21,434 |
+| Original duration | 0:45 |
+| Included file | 0:45 — full clip |
+| Aspect ratio | 1:1 |
+| Reference resolution | 1080 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="elevenlabs-speech-engine"></a>
+
+### ElevenLabs — Speech Engine
+
+https://github.com/user-attachments/assets/33e6f7da-09d4-4c1d-be3b-571071d0e34a
+
+**0:54 · 16:9 · 18.68M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/74.mp4) · [MP4 file](videos/elevenlabs-speech-engine.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-74)
+
+A softly lit metallic sphere moves between dark and light compositions alongside chat bubbles and minimal captions. Integration blocks, multilingual speech examples and turn-taking labels explain the voice-agent workflow before the ElevenLabs closing mark.
+
+```text
+clone this video 1:1 for my product
+https://x.com/ElevenLabsDevs/status/2057919237566407063
+```
+
+*Source: [@ElevenLabsDevs](https://x.com/ElevenLabsDevs/status/2057919237566407063) · 2026-05-22*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @ElevenLabsDevs |
+| Post date | 2026-05-22 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 18,678,618 |
+| Video plays | — |
+| Likes | 3,522 |
+| Bookmarks | 2,281 |
+| Reposts | 426 |
+| Replies | 245 |
+| Quotes | 27 |
+| Account followers | 23,830 |
+| Original duration | 0:54 |
+| Included file | 0:54 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="lifted-finance"></a>
+
+### Lifted Finance — Launch Film
+
+https://github.com/user-attachments/assets/baaee9a0-ba32-4317-adff-edeb5e316b50
+
+**0:34 · 16:9 · 2.7K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/81.mp4) · [MP4 file](videos/lifted-finance.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-81)
+
+Minimal white typography introduces a yield question on a black canvas, with thin chart lines and outlined financial symbols. Animated spread curves and a leverage gauge illustrate the product before a compact Lifted Finance logo end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/BuffetDesigns/status/2117225648595022031
+```
+
+*Source: [@BuffetDesigns](https://x.com/BuffetDesigns/status/2117225648595022031) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @BuffetDesigns |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 2,704 |
+| Video plays | — |
+| Likes | 66 |
+| Bookmarks | 39 |
+| Reposts | 10 |
+| Replies | 8 |
+| Quotes | 1 |
+| Account followers | 6,317 |
+| Original duration | 0:34 |
+| Included file | 0:34 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
@@ -2471,6 +3122,276 @@ https://x.com/Studiyoco/status/2101329629701443613
 
 ---
 
+<a id="remocn-v3"></a>
+
+### Remocn v3 — Motion Components
+
+https://github.com/user-attachments/assets/720c8c6f-db8d-4d67-9a3a-073541d59fad
+
+**2:55 · 16:9 · 7.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/62.mp4) · [MP4 file](videos/remocn-v3.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-62)
+
+A long-form showcase moves between a redesigned component library, floating reference thumbnails, large number typography and softly colored gradient scenes. The full clip includes dashboard mockups, phone screens, a launch checklist, animated logo typography and branching diagrams.
+
+```text
+clone this video 1:1 for my product
+https://x.com/kapish_dima/status/2118389802433163449
+```
+
+*Source: [@kapish_dima](https://x.com/kapish_dima/status/2118389802433163449) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @kapish_dima |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 7,826 |
+| Video plays | — |
+| Likes | 223 |
+| Bookmarks | 240 |
+| Reposts | 13 |
+| Replies | 21 |
+| Quotes | 0 |
+| Account followers | 2,485 |
+| Original duration | 2:55 |
+| Included file | 2:55 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="holo-marketing-motion-study"></a>
+
+### Holo — AI Marketing Motion Study
+
+https://github.com/user-attachments/assets/e82542a7-d39d-47d5-9034-3ccedfa341ff
+
+**0:45 · 16:9 · 18.2K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/63.mp4) · [MP4 file](videos/holo-marketing-motion-study.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-63)
+
+A colorful pill-shaped word and floating image tiles introduce Holo on a bright canvas. Ads, social content, email and SEO labels transition into product images, dashboards and photography before the tryholo.ai end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/Nexoxh/status/2117911995605569654
+```
+
+*Source: [@Nexoxh](https://x.com/Nexoxh/status/2117911995605569654) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Nexoxh |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 18,155 |
+| Video plays | — |
+| Likes | 665 |
+| Bookmarks | 489 |
+| Reposts | 35 |
+| Replies | 27 |
+| Quotes | 2 |
+| Account followers | 5,702 |
+| Original duration | 0:45 |
+| Included file | 0:45 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1024 × 576 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="raylight-2"></a>
+
+### Raylight 2.0 — Editable Motion Graphics
+
+https://github.com/user-attachments/assets/d3b6e619-4914-44c9-9671-2ff20b884d9f
+
+**0:45 · 16:9 · 66.4K impressions · — plays**
+
+[▶ Watch video](https://github.com/user-attachments/assets/d3b6e619-4914-44c9-9671-2ff20b884d9f) · [MP4 file](videos/raylight-2.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-67)
+
+A glowing blue mark and prompt box introduce motion generation on a black canvas. A lit phone, colored editing tracks and a template gallery demonstrate moving from generated footage to editable motion, followed by a dark logo end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/cy_burns/status/2117633106366632007
+```
+
+*Source: [@cy_burns](https://x.com/cy_burns/status/2117633106366632007) · 2026-11-03*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @cy_burns |
+| Post date | 2026-11-03 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 66,406 |
+| Video plays | — |
+| Likes | 1,126 |
+| Bookmarks | 1,725 |
+| Reposts | 56 |
+| Replies | 545 |
+| Quotes | 2 |
+| Account followers | 868 |
+| Original duration | 0:45 |
+| Included file | 0:45 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 3840 × 2160 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="instagram-reminders-motion-concept"></a>
+
+### Instagram Reminders — Motion Concept
+
+https://github.com/user-attachments/assets/d3c2792e-d911-4606-a90c-149e4b302a43
+
+**0:30 · 4:3 · 33.0K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/76.mp4) · [MP4 file](videos/instagram-reminders-motion-concept.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-76)
+
+An Instagram-style save action expands into large gradient lettering and a speculative reminder interface. The clip mixes social-post mockups, an editing-timeline view and a warm photographic scene to deliver a personal reminder joke.
+
+```text
+clone this video 1:1 for my product
+https://x.com/dpratyush02/status/2118184366593757489
+```
+
+*Source: [@dpratyush02](https://x.com/dpratyush02/status/2118184366593757489) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @dpratyush02 |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 32,990 |
+| Video plays | — |
+| Likes | 925 |
+| Bookmarks | 562 |
+| Reposts | 22 |
+| Replies | 49 |
+| Quotes | 3 |
+| Account followers | 1,888 |
+| Original duration | 0:30 |
+| Included file | 0:30 — full clip |
+| Aspect ratio | 4:3 |
+| Reference resolution | 1080 × 810 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="dnyx-imagination-upgrade"></a>
+
+### Dnyx Studios — Imagination Upgrade
+
+https://github.com/user-attachments/assets/f24e5e3c-1003-44c3-be0a-518c146f49f0
+
+**0:13 · 16:9 · 6.6K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/77.mp4) · [MP4 file](videos/dnyx-imagination-upgrade.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-77)
+
+Floating design and product thumbnails move from a warm light background to a dark assistant-prompt scene. A short prompt, cursor action, expanding inspiration collage and blurred studio wordmark finish the compact motion piece.
+
+```text
+clone this video 1:1 for my product
+https://x.com/thednyx/status/2118214587094814786
+```
+
+*Source: [@thednyx](https://x.com/thednyx/status/2118214587094814786) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @thednyx |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 6,619 |
+| Video plays | — |
+| Likes | 344 |
+| Bookmarks | 178 |
+| Reposts | 4 |
+| Replies | 24 |
+| Quotes | 0 |
+| Account followers | 2,609 |
+| Original duration | 0:13 |
+| Included file | 0:13 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="landatlas-launch"></a>
+
+### LandAtlas — Real Estate Workflow
+
+https://github.com/user-attachments/assets/e16e1f0b-f036-4059-a897-1c0e9c60e0d8
+
+**1:00 · 16:9 · 3.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/80.mp4) · [MP4 file](videos/landatlas-launch.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-80)
+
+Property photography gives way to a dark real-estate interface lit with teal gradients and animated map points. A builder feed, map results, exports, seller details and team-access controls form a sequential product walkthrough.
+
+```text
+clone this video 1:1 for my product
+https://x.com/abdullah4204k/status/2117285743282598063
+```
+
+*Source: [@abdullah4204k](https://x.com/abdullah4204k/status/2117285743282598063) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @abdullah4204k |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 3,798 |
+| Video plays | — |
+| Likes | 123 |
+| Bookmarks | 115 |
+| Reposts | 3 |
+| Replies | 18 |
+| Quotes | 1 |
+| Account followers | 3,932 |
+| Original duration | 1:00 |
+| Included file | 1:00 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="illustrated-mascot-stories"></a>
 
 ## F. Illustrated Mascot Stories
@@ -2517,6 +3438,51 @@ https://x.com/TimurNegru/status/2117222530620461443
 | Aspect ratio | 9:16 |
 | Reference resolution | 1080 × 1920 |
 | Audio track | Present |
+
+</details>
+
+---
+
+<a id="idea-backing-landing-motion"></a>
+
+### Someone Believes in Your Idea — Landing Motion
+
+https://github.com/user-attachments/assets/fc89099f-f10d-4783-827c-759db160e5da
+
+**0:30 · 4:3 · 57.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/71.mp4) · [MP4 file](videos/idea-backing-landing-motion.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-71)
+
+A restrained landing-page composition holds its typography and calls to action while small rendered figures move around bright geometric forms. The repeated crowd motion sits above the headline about someone already believing in your idea; the source clip has no audio stream.
+
+```text
+clone this video 1:1 for my product
+https://x.com/nazyurtal/status/2117252549019328774
+```
+
+*Source: [@nazyurtal](https://x.com/nazyurtal/status/2117252549019328774) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @nazyurtal |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 57,790 |
+| Video plays | — |
+| Likes | 1,866 |
+| Bookmarks | 1,494 |
+| Reposts | 51 |
+| Replies | 37 |
+| Quotes | 2 |
+| Account followers | 450 |
+| Original duration | 0:30 |
+| Included file | 0:30 — full clip |
+| Aspect ratio | 4:3 |
+| Reference resolution | 960 × 720 |
+| Audio track | None |
 
 </details>
 
