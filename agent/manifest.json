@@ -7,6 +7,25 @@
   "catalogUrl": "https://serenatan.org/launchvideo/agent/catalog.json",
   "skillUrl": "https://serenatan.org/launchvideo/agent/SKILL.md",
   "sourceRepository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
+  "accessPolicy": {
+    "authentication": "none",
+    "dailyQuota": "none",
+    "shortTermThrottle": {
+      "requests": 120,
+      "periodSeconds": 60,
+      "key": "Cloudflare ingress IP",
+      "scope": "Approximate per Cloudflare location; shared by MCP and HTTP agent routes, including preflight and failed requests. Shared proxy IPs share the allowance."
+    },
+    "maxMcpRequestBodyBytes": 65536,
+    "retry": {
+      "rateLimitedStatus": 429,
+      "respectHeader": "Retry-After",
+      "defaultDelaySeconds": 60,
+      "maxRetries": 2,
+      "fallbackBypassesLimit": false
+    },
+    "websiteAndVideoPlayback": "Public and outside the agent-service throttle."
+  },
   "formats": [
     {
       "id": "device-ui-transformations",
