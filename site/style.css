@@ -52,7 +52,7 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 12px; }
 .section-heading h2 { font-size: 18px; }
 .section-heading > span, .section-heading > a { font-size: 12px; color: var(--muted); }
-.agent-connect { margin-top: 42px; }
+.agent-connect { margin-top: 42px; padding: 24px; border: 1px solid var(--ink); }
 .connect-heading { margin-bottom: 14px; }
 .connect-heading h2 { font-size: 18px; line-height: 1.4; letter-spacing: -.02em; }
 .brand-icon { display: block; object-fit: contain; flex: none; }
@@ -199,6 +199,7 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
   h1 { font-size: 34px; line-height: 1.15; }
   .intro-bottom { grid-column: 1; grid-row: 2; align-items: flex-start; flex-direction: column; gap: 12px; }
   .intro-tagline { font-size: 14px; }
+  .agent-connect { padding: 18px; }
   .summary { flex-direction: column; gap: 7px; }
   .summary > div { white-space: normal; }
   .summary strong { font-size: 14px; }
