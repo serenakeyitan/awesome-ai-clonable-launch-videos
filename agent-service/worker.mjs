@@ -3,6 +3,7 @@ import {createMcpHandler} from 'agents/mcp/server';
 import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 import {guardRequest} from './request-guard.mjs';
+import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 
 const BASE = '/launchvideo';
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
@@ -61,7 +62,17 @@ export default {
     if (guarded.response) return guarded.response;
     request = guarded.request;
     const path = new URL(request.url).pathname;
-    if (path === `${BASE}/mcp`) return mcp(request,env,ctx);
+    if (path === RESOURCE_METADATA_PATH && ['GET','HEAD'].includes(request.method)) {
+      const metadata = protectedResourceMetadata(env);
+      return request.method === 'HEAD' ? new Response(null, metadata) : metadata;
+    }
+    if (path === `${BASE}/mcp`) {
+      if (request.method !== 'OPTIONS') {
+        const auth = await authorizeMcp(request, env);
+        if (auth.response) return auth.response;
+      }
+      return mcp(request,env,ctx);
+    }
     if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS'}});
     if (!['GET','HEAD'].includes(request.method)) return response({error:'Method not allowed'},'application/json',405);
     if (path === `${BASE}/agent` || path === `${BASE}/agent/`) return Response.redirect('https://serenatan.org/launchvideo/#connect',302);
