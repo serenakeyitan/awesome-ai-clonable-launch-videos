@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-47-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-51-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 47 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 51 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -43,6 +43,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Manus — Websites to Desktop Apps](#manus-websites-to-desktop-apps)
 - [Ghosthand for Grok Bot — A Real iPhone](#ghosthand-grok-bot-real-iphone)
 - [Grok Bot — Text Messages on Mac](#grok-bot-text-messages-on-mac)
+- [Notion Calendar — Rebuilt for iOS](#notion-calendar-ios)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -56,6 +57,8 @@ The connector reads the current published library and workflow on every call. Ne
 - [Coinbase — Crypto Paychecks](#coinbase-crypto-paychecks)
 - [Shipper — Build Bots with AI](#shipper-build-bots-with-ai)
 - [Grok Bot — Phone Calls](#grok-bot-phone-calls)
+- [Notion — One Shared Brain for Every Agent](#notion-shared-brain)
+- [Claude Managed Agents — Dynamic Workflows](#claude-managed-agents-dynamic-workflows)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -67,6 +70,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [CrowdReply — Citation Outreach](#crowdreply-citation-outreach)
 - [Replit AI SDR](#replit-ai-sdr)
 - [Tavus PAL](#tavus-pal)
+- [Oh Wait — With Context vs. Without Context](#oh-wait-context-comparison)
 
 ### [D. Typography & Abstract Motion](#typography-abstract-motion)
 
@@ -686,6 +690,51 @@ https://x.com/texas_twins_dad/status/2117824974689890485
 
 ---
 
+<a id="notion-calendar-ios"></a>
+
+### Notion Calendar — Rebuilt for iOS
+
+https://github.com/user-attachments/assets/357f2a1d-3d53-4442-b9b6-38c8cef14ff3
+
+**0:15 · 16:9 · 123.9K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/55.mp4) · [MP4 file](videos/notion-calendar-ios.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-55)
+
+A close-up iPhone dock opens into pastel calendar blocks, with bold feature captions on an off-white background. Calendar details and event edits lead to a family of phone, tablet and desktop mockups, then return to the app icon.
+
+```text
+clone this video 1:1 for my product
+https://x.com/NotionHQ/status/2118407963723567512
+```
+
+*Source: [@NotionHQ](https://x.com/NotionHQ/status/2118407963723567512) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @NotionHQ |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 123,872 |
+| Video plays | — |
+| Likes | 891 |
+| Bookmarks | 217 |
+| Reposts | 60 |
+| Replies | 49 |
+| Quotes | 21 |
+| Account followers | 536,325 |
+| Original duration | 0:15 |
+| Included file | 0:15 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="clean-ui-data-graphics"></a>
 
 ## B. Clean UI, Data & Graphics
@@ -1142,6 +1191,96 @@ https://x.com/bot/status/2118043939592942052
 
 ---
 
+<a id="notion-shared-brain"></a>
+
+### Notion — One Shared Brain for Every Agent
+
+https://github.com/user-attachments/assets/9fa5ec1c-2d09-4802-8a2e-cc60a318c006
+
+**0:36 · 16:9 · 1.44M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/56.mp4) · [MP4 file](videos/notion-shared-brain.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-56)
+
+Large black headlines introduce shared memory, followed by floating terminal windows and a Notion memories database. A phone conversation and the database appear side by side, connected by a hand-drawn arrow before a simple Notion logo close.
+
+```text
+clone this video 1:1 for my product
+https://x.com/NotionHQ/status/2118059335930744999
+```
+
+*Source: [@NotionHQ](https://x.com/NotionHQ/status/2118059335930744999) · 2026-11-04*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @NotionHQ |
+| Post date | 2026-11-04 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 1,437,538 |
+| Video plays | — |
+| Likes | 6,006 |
+| Bookmarks | 8,290 |
+| Reposts | 553 |
+| Replies | 464 |
+| Quotes | 528 |
+| Account followers | 536,325 |
+| Original duration | 0:36 |
+| Included file | 0:36 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="claude-managed-agents-dynamic-workflows"></a>
+
+### Claude Managed Agents — Dynamic Workflows
+
+https://github.com/user-attachments/assets/aec5765d-3501-4817-8829-67d42c0d4fd9
+
+**0:58 · 16:9 · 1.04M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/58.mp4) · [MP4 file](videos/claude-managed-agents-dynamic-workflows.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-58)
+
+An orange agent dot, document stacks and thin black diagrams explain how a large task splits into parallel phases and recombines. Workflow rows turn into branching lines, a result counter, a phase timeline and a budget bar on a warm off-white canvas, ending on the Claude mark.
+
+```text
+clone this video 1:1 for my product
+https://x.com/ClaudeDevs/status/2108591328732856655
+```
+
+*Source: [@ClaudeDevs](https://x.com/ClaudeDevs/status/2108591328732856655) · 2026-10-09*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @ClaudeDevs |
+| Post date | 2026-10-09 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 1,043,404 |
+| Video plays | — |
+| Likes | 12,542 |
+| Bookmarks | 8,450 |
+| Reposts | 728 |
+| Replies | 429 |
+| Quotes | 286 |
+| Account followers | 800,149 |
+| Original duration | 0:58 |
+| Included file | 0:58 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | None |
+
+</details>
+
+---
+
 <a id="pastel-ui-cursor-demos"></a>
 
 ## C. Pastel UI & Cursor Demos
@@ -1503,6 +1642,51 @@ https://x.com/tavus/status/2074894605125026072
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
 | Audio track | Present |
+
+</details>
+
+---
+
+<a id="oh-wait-context-comparison"></a>
+
+### Oh Wait — With Context vs. Without Context
+
+https://github.com/user-attachments/assets/4c9d62a2-a17e-449a-98bd-23069fea34f7
+
+**0:30 · 4:3 · 18.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/57.mp4) · [MP4 file](videos/oh-wait-context-comparison.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-57)
+
+Two iPhone mockups compare a pink checklist interface with an editorial fashion and packing experience throughout the clip. Rapid screen changes combine cut-out product and fashion photography, serif headlines, checklist rows and bottom navigation.
+
+```text
+clone this video 1:1 for my product
+https://x.com/jaimintf/status/2118396459150344437
+```
+
+*Source: [@jaimintf](https://x.com/jaimintf/status/2118396459150344437) · 2026-11-05*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @jaimintf |
+| Post date | 2026-11-05 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 18,847 |
+| Video plays | — |
+| Likes | 314 |
+| Bookmarks | 428 |
+| Reposts | 8 |
+| Replies | 12 |
+| Quotes | 4 |
+| Account followers | 6,094 |
+| Original duration | 0:30 |
+| Included file | 0:30 — full clip |
+| Aspect ratio | 4:3 |
+| Reference resolution | 2880 × 2160 |
+| Audio track | None |
 
 </details>
 
