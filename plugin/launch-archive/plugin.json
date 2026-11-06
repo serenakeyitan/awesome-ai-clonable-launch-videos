@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "launch-archive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find playable launch-video references and current remake workflows from the live Launch Archive.",
   "author": {
     "name": "Serena Tan"
