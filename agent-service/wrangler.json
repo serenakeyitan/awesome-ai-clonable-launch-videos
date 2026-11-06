@@ -12,7 +12,9 @@
   "routes":[
     {"pattern":"serenatan.org/launchvideo/mcp","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
     {"pattern":"serenatan.org/launchvideo/agent","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
-    {"pattern":"serenatan.org/launchvideo/agent/*","zone_id":"11fc0522e36faacb75ccfb68a3a39306"}
+    {"pattern":"serenatan.org/launchvideo/agent/*","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
+    {"pattern":"serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp","zone_id":"11fc0522e36faacb75ccfb68a3a39306"}
   ],
+  "vars":{"CLERK_AUTH_ENABLED":"false","CLERK_ISSUER":"https://clerk.serenatan.org","CLERK_PUBLISHABLE_KEY":"pk_live_Y2xlcmsuc2VyZW5hdGFuLm9yZyQ"},
   "observability":{"enabled":true,"logs":{"enabled":true,"head_sampling_rate":0.1},"traces":{"enabled":true,"head_sampling_rate":0.01}}
 }

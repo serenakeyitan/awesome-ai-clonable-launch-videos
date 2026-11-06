@@ -6,14 +6,14 @@ Send this to an agent with web access:
 set up https://serenatan.org/launchvideo/agent/SKILL.md
 ```
 
-Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP, public and read-only, no API key or sign-in.
+Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP and read-only, with Clerk OAuth sign-in. Sign in and approve access in your client’s browser flow; never paste credentials into chat. The gallery and videos remain public.
 
 | Client | Setup |
 | --- | --- |
 | Codex CLI | `codex mcp add launch-archive --url https://serenatan.org/launchvideo/mcp` |
 | Claude Code | `claude mcp add --transport http launch-archive https://serenatan.org/launchvideo/mcp` |
-| Claude / Cowork / Desktop | Customize → Connectors → Add custom connector. Enter the endpoint above; choose No sign in. |
-| ChatGPT | Plugins → + → Add custom MCP server. Enter the endpoint above, choose No authentication, create the plugin and install it. Account and workspace policies apply. |
+| Claude / Cowork / Desktop | Customize → Connectors → Add custom connector. Enter the endpoint above; complete the OAuth sign-in flow. |
+| ChatGPT | Plugins → + → Add custom MCP server. Enter the endpoint above, choose OAuth, create and install the plugin, then complete sign-in. Account and workspace policies apply. |
 | Cursor | Add the JSON below to `.cursor/mcp.json`, preserving other servers. |
 | Grok | https://grok.com/connectors → New Connector → Custom → enter the endpoint above. Organization admins may need to enable it. |
 | Gemini CLI | Add `{"mcpServers":{"launch-archive":{"httpUrl":"https://serenatan.org/launchvideo/mcp"}}}` to Gemini settings, preserving existing settings. |
@@ -53,7 +53,7 @@ npm run dev
 npm run verify:live # checks the deployed service with modern and legacy SDK clients
 ```
 
-`npm run deploy` deploys the Cloudflare Worker. Fixed public source locations, bounded source reads and result limits keep this a read-only catalog service. It has no database, visitor analytics, paid gate or lead collection.
+`npm run deploy` deploys the Cloudflare Worker. Fixed public source locations, bounded source reads and result limits keep this a read-only catalog service. Clerk stores account identity and verified email for authenticated MCP access. Login does not subscribe users to email updates. There is no paid gate or daily quota. See [Privacy](https://serenatan.org/launchvideo/privacy.html) and [auth rollout status](../agent-service/AUTH.md).
 
 The agent service applies a shared short-term abuse throttle of approximately 120 HTTP requests per IP per 60 seconds across MCP and `/launchvideo/agent/*`, including preflight and unsuccessful requests. It uses Cloudflare's trusted `CF-Connecting-IP`, not user-supplied forwarding headers. Exceeding the limit returns JSON with HTTP `429` and `Retry-After: 60`; clients should back off rather than immediately retry. MCP POST bodies are capped at 64 KiB, including streamed bodies without a Content-Length. The website and video assets are served by a separate Worker and are outside this throttle. There is no daily allowance or paid quota. Cloudflare's native counters are approximate per edge location, so this is not a strict global quota, distributed-bot defense or billing cap. Shared proxy IPs also share this allowance until verified user identities are available. If the rate-limit binding is missing or fails, the service returns a retryable `503` instead of silently disabling protection.
 
@@ -79,3 +79,7 @@ The bootstrap SKILL.md and installed MCP URL stay fixed. Each invocation reads t
 Changes appear on the next read. Already-generated chat messages are not rewritten automatically. The seven SDK tests include both modern and legacy clients kept connected while synthetic catalog, manifest, workflow and structure changes are applied. Synthetic references stay in tests and are never published into the real collection.
 
 The landing page shares the canonical site header at `/shared/site-header.js` and `/shared/site-header.css`, maintained in the portfolio project. `mediaQuality` records source/delivery dimensions and encoding provenance; it is visible to existing agent connections through `additionalMetadata`.
+
+## OAuth migration
+
+Existing unauthenticated installations must update to the OAuth plugin release and reconnect once. Approve the profile and email scopes in the browser. Future video, metadata and workflow updates still require no reinstall. A 401 means sign in or refresh authorization; a 403 means reconnect with the required scopes. Do not bypass these through the public HTTP catalog.
