@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-73-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-74-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 73 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 74 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -93,6 +93,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Launch Video Hook — Layer Breakdown](#launch-hook-layer-breakdown)
 - [Paper — Rich Text Editing](#paper-rich-text)
 - [ElevenLabs — Speech Engine](#elevenlabs-speech-engine)
+- [Lifted Finance — Launch Film](#lifted-finance)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -2569,6 +2570,51 @@ https://x.com/ElevenLabsDevs/status/2057919237566407063
 | Included file | 0:54 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="lifted-finance"></a>
+
+### Lifted Finance — Launch Film
+
+https://github.com/user-attachments/assets/baaee9a0-ba32-4317-adff-edeb5e316b50
+
+**0:34 · 16:9 · 2.7K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/81.mp4) · [MP4 file](videos/lifted-finance.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-81)
+
+Minimal white typography introduces a yield question on a black canvas, with thin chart lines and outlined financial symbols. Animated spread curves and a leverage gauge illustrate the product before a compact Lifted Finance logo end card.
+
+```text
+clone this video 1:1 for my product
+https://x.com/BuffetDesigns/status/2117225648595022031
+```
+
+*Source: [@BuffetDesigns](https://x.com/BuffetDesigns/status/2117225648595022031) · 2026-11-02*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @BuffetDesigns |
+| Post date | 2026-11-02 |
+| Stats snapshot (PT) | 2026-11-06 |
+| Post impressions | 2,704 |
+| Video plays | — |
+| Likes | 66 |
+| Bookmarks | 39 |
+| Reposts | 10 |
+| Replies | 8 |
+| Quotes | 1 |
+| Account followers | 6,317 |
+| Original duration | 0:34 |
+| Included file | 0:34 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>

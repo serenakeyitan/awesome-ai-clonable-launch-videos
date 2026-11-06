@@ -4652,5 +4652,67 @@
       "verifiedAt": "2026-11-06"
     },
     "githubVideoUrl": "https://github.com/user-attachments/assets/e16e1f0b-f036-4059-a897-1c0e9c60e0d8"
+  },
+  {
+    "id": 81,
+    "title": "Lifted Finance — Launch Film",
+    "originalTitle": "Lifted Finance — Launch Film",
+    "account": "@BuffetDesigns",
+    "followers": 6317,
+    "category": "Startup launch",
+    "seed": false,
+    "impressions": 2704,
+    "views": null,
+    "likes": 66,
+    "bookmarks": 39,
+    "reposts": 10,
+    "replies": 8,
+    "quotes": 1,
+    "originalSeconds": 34.048,
+    "clipSeconds": 34.048,
+    "excerpt": false,
+    "ratio": "16:9",
+    "date": "2026-11-02",
+    "width": 1920,
+    "height": 1080,
+    "hasAudio": true,
+    "source": "https://x.com/BuffetDesigns/status/2117225648595022031",
+    "quote": "Launch video we did for Lifted Finance.",
+    "styles": [
+      "Kinetic type",
+      "Charts",
+      "Abstract motion"
+    ],
+    "notes": [
+      "Minimal white typography introduces a yield question on a black canvas, with thin chart lines and outlined financial symbols.",
+      "Animated spread curves and a leverage gauge illustrate the product before a compact Lifted Finance logo end card."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/lifted-finance.mp4",
+    "poster": "previews/lifted-finance.jpg",
+    "snapshotDate": "2026-11-06",
+    "collectionSource": "https://x.com/BuffetDesigns/status/2117225648595022031",
+    "metricSources": [
+      "https://api.fxtwitter.com/BuffetDesigns/status/2117225648595022031",
+      "https://cdn.syndication.twimg.com/tweet-result?id=2117225648595022031&lang=en&token=0"
+    ],
+    "statsNote": "Video play count is unavailable. Post impressions and engagement are a dated public-source snapshot. Launch date is the reference-post date (PT).",
+    "slug": "lifted-finance",
+    "readmeCategory": "typography-abstract-motion",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/81.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-81",
+    "remakePrompt": "clone this video 1:1 for my product\nhttps://x.com/BuffetDesigns/status/2117225648595022031",
+    "mediaQuality": {
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "deliveryWidth": 1920,
+      "deliveryHeight": 1080,
+      "codec": "H.264",
+      "deliveryMethod": "Highest-resolution original MP4 stream, remuxed for fast start",
+      "upscaled": false,
+      "verifiedAt": "2026-11-06"
+    },
+    "githubVideoUrl": "https://github.com/user-attachments/assets/baaee9a0-ba32-4317-adff-edeb5e316b50"
   }
 ]
