@@ -1,6 +1,6 @@
 # Clerk OAuth rollout
 
-Status: Clerk Google OAuth is enabled in production. Anonymous MCP requests receive a 401 challenge. Plugin 0.1.2 is published with OAuth and the existing private audience. DNS, certificates, mail records and Google production credentials are verified. Real Google sign-in and authenticated tool calls are pending completion of the account owner’s local Touch ID verification.
+Status: Clerk Google OAuth is enabled in production. Anonymous MCP requests receive a 401 challenge. Plugin 0.1.2 is published with OAuth and the existing private audience. DNS, certificates, mail records and Google production credentials are verified. Real Google sign-in, PKCE token exchange and authenticated calls to all three tools passed with both modern and legacy MCP clients, each reading the current 74-video catalog.
 
 The public gallery and video assets remain accessible without signing in. MCP uses Clerk OAuth with `profile` and `email`; Clerk stores the account and verified email. Authentication does not subscribe the user to email updates. No email or token is returned to the agent.
 
@@ -43,5 +43,5 @@ References: [Clerk MCP authentication](https://clerk.com/docs/expressjs/guides/a
 
 - 18 automated tests pass, including signed Clerk OAuth-token fixtures and signature, expiry, scope and audience rejection. Wrangler packaging passes.
 - Production MCP rejects anonymous calls with a 401 and the correct resource metadata challenge. Discovery and dynamic client registration succeed with the official MCP SDK; browser CORS preflight permits Authorization.
-- The native Chrome sign-in flow reaches Google account verification. A real access token and authenticated tool calls are not yet verified; do not treat protocol checks as a completed sign-in.
+- The account owner completed Google passkey verification and consent in ordinary Chrome. PKCE token exchange succeeded. Modern and legacy official MCP clients initialized, listed all three tools, retrieved context, searched references and fetched video details. Both read 74 videos and verified a fresh catalog fetch on a repeated call within the same connection.
 - Plugin 0.1.2 was published under the existing plugin identity and source read-back confirms OAuth declarations. Existing installations must reconnect once.
