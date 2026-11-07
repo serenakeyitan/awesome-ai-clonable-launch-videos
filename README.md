@@ -19,7 +19,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 ## Use with your agent
 
 ```text
-Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp using OAuth.
+Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.
 ```
 
 [Connect Claude, ChatGPT, Codex, Cursor, Grok & more](agent/README.md) · [Live MCP endpoint](https://serenatan.org/launchvideo/mcp) · [Plugin package](plugin/launch-archive)

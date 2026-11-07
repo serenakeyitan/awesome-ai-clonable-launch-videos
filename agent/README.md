@@ -3,7 +3,7 @@
 Use Quick connect on the website, or send this to an agent that can configure MCP:
 
 ```text
-Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp using OAuth.
+Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.
 ```
 
 Chat apps may require you to add a connector in settings. Reading a setup guide or saving a skill does not install an MCP connection.
