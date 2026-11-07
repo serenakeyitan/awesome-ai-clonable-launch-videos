@@ -1,7 +1,7 @@
 'use strict';
 (() => {
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
-  const setup = 'Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp using OAuth.';
+  const setup = 'Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.';
   const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const config = JSON.stringify({mcpServers:{'launch-archive':{url:endpoint}}},null,2);
   const clients = {
