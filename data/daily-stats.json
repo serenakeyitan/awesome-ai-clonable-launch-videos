@@ -1,0 +1,20 @@
+{
+  "timeZone": "America/Los_Angeles",
+  "metricMeaning": "Collection totals; changes include newly added references and updated source snapshots, not daily site traffic or same-post daily growth.",
+  "snapshots": [
+    {
+      "date": "2026-11-05",
+      "videos": 47,
+      "impressions": 50994264,
+      "plays": 9283194,
+      "sourceRevision": "3346e6695dbb71c6a8114a24dc690ceaa55be3ff"
+    },
+    {
+      "date": "2026-11-06",
+      "videos": 74,
+      "impressions": 73883883,
+      "plays": 9283194,
+      "catalogHash": "964bffe12d66997dd8d194b895d0f68332f80e82fd2dc8846f5fdbf437370447"
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 # Connect your agent
 
-Send this to an agent with web access:
+Use Quick connect on the website, or send this to an agent that can configure MCP:
 
 ```text
-set up https://serenatan.org/launchvideo/agent/SKILL.md
+Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp using OAuth.
 ```
+
+Chat apps may require you to add a connector in settings. Reading a setup guide or saving a skill does not install an MCP connection.
 
 Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP and read-only, with Clerk OAuth sign-in. Sign in and approve access in your client’s browser flow; never paste credentials into chat. The gallery and videos remain public.
 
@@ -83,3 +85,7 @@ The landing page shares the canonical site header at `/shared/site-header.js` an
 ## OAuth migration
 
 Existing unauthenticated installations must update to the OAuth plugin release and reconnect once. Approve the profile and email scopes in the browser. Future video, metadata and workflow updates still require no reinstall. A 401 means sign in or refresh authorization; a 403 means reconnect with the required scopes. Do not bypass these through the public HTTP catalog.
+
+## Daily collection totals
+
+The homepage compares the current collection against its previous-day closing totals in Pacific time. Additions and updated source snapshots contribute to the change; this is not daily traffic or same-post exposure growth. `scripts/build_readme.py` and `scripts/build_site.py` refresh `data/daily-stats.json`, preserving earlier dates. Unchanged days carry the last published totals forward; missing baselines stay unavailable.

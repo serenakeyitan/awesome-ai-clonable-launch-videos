@@ -4,17 +4,17 @@
     "email": "serenatan1125@gmail.com",
     "name": "Serena Tan"
   },
-  "description": "Find playable launch-video references and current remake workflows from the live Launch Archive.",
+  "description": "Find playable launch-video references and current remake workflows from the live Serena Launch.",
   "extensions": {
     "com.openai": {
       "interface": {
         "capabilities": [],
         "category": "Creativity",
-        "composerIcon": "./assets/logo.svg",
+        "composerIcon": "./assets/serena-popcorn.png",
         "defaultPrompt": "Find launch-video references for my product and help me remake one.",
         "developerName": "Serena Tan",
-        "displayName": "Launch Archive",
-        "logo": "./assets/logo.svg",
+        "displayName": "Serena Launch",
+        "logo": "./assets/serena-popcorn.png",
         "longDescription": "Search the live library of launch-video references, inspect metadata and dated stats, and get a copyable prompt with the original source. Every tool fetches the current catalog and workflow. Rendering uses your existing video tools.",
         "shortDescription": "Launch videos for your agent"
       }
@@ -30,5 +30,5 @@
   "license": "MIT",
   "name": "launch-archive",
   "repository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

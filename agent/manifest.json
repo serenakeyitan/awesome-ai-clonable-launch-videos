@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "name": "Launch Archive",
+  "name": "Serena Launch",
   "homepage": "https://serenatan.org/launchvideo/",
   "mcpUrl": "https://serenatan.org/launchvideo/mcp",
   "workflowUrl": "https://serenatan.org/launchvideo/agent/workflow.md",
@@ -74,5 +74,6 @@
     "breakingChanges": "Renamed core fields or a new major schema need a server adapter. Changed tool names, endpoint URLs or permissions may require client refresh or reconnect.",
     "website": "Website layout and media assets use their publishing pipeline; the agent reads the published catalog and workflow.",
     "authenticationMigration": "Existing unauthenticated installations must reconnect once for OAuth. Future catalog and workflow updates keep the same connection."
-  }
+  },
+  "statisticsUrl": "https://serenatan.org/launchvideo/daily-stats.json"
 }

@@ -1,15 +1,17 @@
 ---
 name: launch-archive
-description: Find launch-video references and help remake one for a product using the latest Launch Archive.
+description: Find launch-video references and help remake one for a product using the latest Serena Launch.
 ---
 
-# Launch Archive
+# Serena Launch
+
+This is an MCP setup guide, not a request to create or package a downloadable skill. Connect the existing remote service. Do not generate a .skill file unless the user explicitly asks for one. If this client cannot configure MCP from chat, give its shortest supported connector-settings path and the server URL; do not present a saved skill as a completed connection.
 
 Connect once to https://serenatan.org/launchvideo/mcp using Streamable HTTP and OAuth. Let the user complete sign-in and approve access in their browser; never ask them to paste a password, client secret or access token into chat. Use the client's supported connector or MCP settings; preserve its existing configuration. Do not claim connection until initialize, tools/list, and get_launch_context succeed.
 
 Before EVERY launch-video task, including for returning users, call get_launch_context. Read its current workflow, formats and facets, then search_launch_videos and get_launch_video as needed. Never save the catalog or current workflow into permanent plugin instructions. Every tool response includes a fresh version and workflow.
 
-Follow the current workflow and manifest accessPolicy for request limits; do not save numeric limits into permanent instructions. Make requests sequentially and reuse results within the current task. On HTTP 429, pause all Launch Archive requests, honor Retry-After (wait 60 seconds if absent), and retry at most twice after waiting. Do not switch to HTTP fallback, change identity or launch parallel requests to evade throttling. If the runtime cannot wait, tell the user when to retry. On retryable 503, honor Retry-After and retry at most twice; never run an immediate retry loop. On 413, reduce the request body instead of repeating it.
+Follow the current workflow and manifest accessPolicy for request limits; do not save numeric limits into permanent instructions. Make requests sequentially and reuse results within the current task. On HTTP 429, pause all Serena Launch requests, honor Retry-After (wait 60 seconds if absent), and retry at most twice after waiting. Do not switch to HTTP fallback, change identity or launch parallel requests to evade throttling. If the runtime cannot wait, tell the user when to retry. On retryable 503, honor Retry-After and retry at most twice; never run an immediate retry loop. On 413, reduce the request body instead of repeating it.
 
 On HTTP 401, complete or renew the client's OAuth connection. On 403, reconnect with the required profile and email scopes. Do not use HTTP fallback to bypass authentication or scope requirements. Existing unauthenticated installations need to reconnect once after the OAuth rollout.
 

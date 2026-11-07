@@ -1,6 +1,7 @@
 """Build the visual, prompt-first README from the attributed video metadata."""
 from pathlib import Path
 import json
+from build_daily_stats import update_daily_stats
 
 ROOT = Path(__file__).resolve().parent.parent
 VIDEOS = json.loads((ROOT / 'data/videos.json').read_text())
@@ -71,7 +72,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 ## Use with your agent
 
 ```text
-set up https://serenatan.org/launchvideo/agent/SKILL.md
+Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp using OAuth.
 ```
 
 [Connect Claude, ChatGPT, Codex, Cursor, Grok & more](agent/README.md) · [Live MCP endpoint](https://serenatan.org/launchvideo/mcp) · [Plugin package](plugin/launch-archive)
@@ -156,3 +157,5 @@ for video in VIDEOS:
 (ROOT / 'README.md').write_text('\n'.join(parts))
 (ROOT / 'data/videos.json').write_text(json.dumps(VIDEOS, ensure_ascii=False, indent=2) + '\n')
 print(f'Built README with {len(VIDEOS)} previews, prompts, local MP4 links, source credits, and metadata tables.')
+
+update_daily_stats()

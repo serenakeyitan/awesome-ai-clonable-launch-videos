@@ -48,6 +48,9 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .summary > div { display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
 .summary strong { font-size: 15px; font-weight: 400; }
 .summary span { color: var(--muted); font-size: 13px; }
+.summary .stat-delta { color: #20743a; font-size: 12px; margin-left: 3px; }
+.summary .stat-delta[data-direction="flat"] { color: var(--muted); }
+.summary .stat-delta[data-direction="down"] { color: #a3342b; }
 .section { margin-top: 56px; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 12px; }
 .section-heading h2 { font-size: 18px; }

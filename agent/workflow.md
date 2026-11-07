@@ -1,4 +1,4 @@
-# Launch Archive workflow
+# Serena Launch workflow
 
 1. Read the current context before every launch-video task. Use the returned styles, categories, aspect ratios and formats rather than assuming a fixed taxonomy. Search by the user's product, visual preferences and intended duration; offer a few relevant references with playable links.
 2. For a chosen reference, get its full record. Keep its X/Twitter source attached. The copyable prompt is exactly one line: `clone this video 1:1 for my product <SOURCE_URL>`.
@@ -18,4 +18,4 @@ Read the current manifest updatePolicy and any catalogMetadata. Inspect addition
 
 ## Request policy
 
-Read the current manifest accessPolicy rather than assuming an installed copy of the service limits. Make Launch Archive requests sequentially and reuse results within the current task; refresh at the next task. On HTTP 429, pause all archive requests and honor Retry-After (wait 60 seconds if absent). Retry at most twice after waiting. If the runtime cannot wait, tell the user when to retry. Never bypass throttling through HTTP fallback, parallel retries or a changed identity: MCP and HTTP discovery share the allowance. On retryable 503, honor Retry-After and retry at most twice. On 413, reduce the request body instead of repeating it. A temporarily limited request is not evidence that the agent cannot connect. There is no daily allowance; short-term protection is approximate per Cloudflare location, and users on a shared proxy IP share its allowance.
+Read the current manifest accessPolicy rather than assuming an installed copy of the service limits. Make Serena Launch requests sequentially and reuse results within the current task; refresh at the next task. On HTTP 429, pause all archive requests and honor Retry-After (wait 60 seconds if absent). Retry at most twice after waiting. If the runtime cannot wait, tell the user when to retry. Never bypass throttling through HTTP fallback, parallel retries or a changed identity: MCP and HTTP discovery share the allowance. On retryable 503, honor Retry-After and retry at most twice. On 413, reduce the request body instead of repeating it. A temporarily limited request is not evidence that the agent cannot connect. There is no daily allowance; short-term protection is approximate per Cloudflare location, and users on a shared proxy IP share its allowance.
