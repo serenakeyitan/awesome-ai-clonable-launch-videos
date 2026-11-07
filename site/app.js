@@ -1,4 +1,5 @@
 'use strict';
+import {dailyChanges} from './daily-stats.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -212,6 +213,18 @@ fetch('videos.json').then(response => {
   $('#total-videos').textContent = videos.length;
   $('#total-impressions').textContent = compact(videos.reduce((n,v) => n + v.impressions, 0));
   $('#total-views').textContent = compact(videos.reduce((n,v) => n + v.views, 0));
+  fetch('daily-stats.json').then(r => { if (!r.ok) throw new Error('No daily snapshot'); return r.json(); }).then(history => {
+    const comparison = dailyChanges(videos, history);
+    if (!comparison) return;
+    for (const [metric, change] of Object.entries(comparison.changes)) {
+      const badge = $(`#delta-${metric}`);
+      badge.textContent = change > 0 ? `↑ +${compact(change)}` : change < 0 ? `↓ −${compact(-change)}` : '0';
+      badge.dataset.direction = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
+      badge.title = `Collection total vs yesterday (${comparison.yesterday}, PT). Includes newly added references; not daily traffic or same-post growth.`;
+      badge.setAttribute('aria-label', `${metric}: ${change > 0 ? '+' : ''}${change.toLocaleString('en-US')} vs yesterday`);
+      badge.hidden = false;
+    }
+  }).catch(() => {});
   setFeature(3);
   renderCollection();
   const match = location.hash.match(/^#video-(\d+)$/);

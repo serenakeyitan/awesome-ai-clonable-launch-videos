@@ -2,10 +2,12 @@
 from pathlib import Path
 import json
 import shutil
+from build_daily_stats import update_daily_stats
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'site-dist'
 OUT.mkdir(exist_ok=True)
+shutil.copy2(update_daily_stats(), OUT / 'daily-stats.json')
 for source in (ROOT / 'site').iterdir():
     if source.is_file():
         shutil.copy2(source, OUT / source.name)
