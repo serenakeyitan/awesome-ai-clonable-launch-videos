@@ -8,6 +8,7 @@ This separate public-upload copy was derived from the owned private plugin `plug
 
 - Portable plugin source with the existing remote OAuth MCP endpoint and skill.
 - Creativity listing, existing popcorn branding, five positive cases and three negative boundary cases.
+- The owner clarified that the enlarged-popcorn illustration is for the plugin application, not the website. Both `logo` and `composerIcon` use this submission-only avatar. The website's original mascot and framing are restored; the existing private plugin and Clerk account-portal logo are unchanged.
 - Current catalog and tool metadata were verified through the official MCP SDK; that evidence is in `../claude/protocol-check.json`. This is not a ChatGPT native conversation test.
 - Homepage, privacy policy, support and owner-approved terms pages are live and content-verified. Support was deployed as gallery Worker version `97dbe31a-092c-4783-8c22-95a8e35ab2c5`; terms were deployed as `f1c833ce-ca71-44ea-9d95-084e68521dba`. Each deployment added only its respective static page.
 - The owner confirmed an individual publisher, Serena Tan, all available countries, current free access without commerce, Personal organization, and base terms for users aged 13 and older. The package records this targeting and commerce declaration.

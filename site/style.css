@@ -29,7 +29,7 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .intro-tagline { font-size: 15px; line-height: 1.6; color: #2a2a2a; }
 .intro-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .intro-mascot { position: relative; align-self: end; justify-self: end; width: 210px; height: 205px; overflow: hidden; pointer-events: none; user-select: none; }
-.intro-mascot img { position: absolute; right: 5px; bottom: -18px; width: 200px; height: 200px; max-width: none; transform: scaleX(-1) rotate(-3deg); transform-origin: 50% 90%; }
+.intro-mascot img { position: absolute; right: -5px; bottom: -18px; width: 220px; height: 220px; max-width: none; transform: scaleX(-1) rotate(-6deg); transform-origin: 50% 90%; }
 .solid-link, .solid-button, .client-buttons > a, .client-buttons > button, .copy-config, .sort-tools > button, .dialog-header button {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   background: var(--button); color: var(--ink); border: 1px solid var(--line);
@@ -184,7 +184,7 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
 @media (max-width: 900px) {
   .intro { grid-template-columns: minmax(0, 1fr) 170px; gap: 24px; }
   .intro-mascot { width: 170px; height: 180px; }
-  .intro-mascot img { right: 3px; width: 164px; height: 164px; }
+  .intro-mascot img { width: 190px; height: 190px; }
   .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filter-bar { display: grid; grid-template-columns: 1fr 1fr; }
   .search-label { grid-column: 1/-1; }
@@ -198,7 +198,7 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
   .intro { grid-template-columns: minmax(0, 1fr) 112px; gap: 24px 18px; padding-top: 28px; }
   .intro-copy { grid-column: 1 / -1; }
   .intro-mascot { grid-column: 2; grid-row: 2; align-self: end; width: 112px; height: 120px; }
-  .intro-mascot img { right: 4px; bottom: -10px; width: 104px; height: 104px; }
+  .intro-mascot img { right: -3px; bottom: -10px; width: 128px; height: 128px; }
   h1 { font-size: 34px; line-height: 1.15; }
   .intro-bottom { grid-column: 1; grid-row: 2; align-items: flex-start; flex-direction: column; gap: 12px; }
   .intro-tagline { font-size: 14px; }
