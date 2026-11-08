@@ -1,0 +1,58 @@
+[
+  {
+    "kind": "positive",
+    "prompt": "Find three launch-video references for a project-management product and compare their visual styles.",
+    "expectedToolsOrBoundary": "get_launch_context; search_launch_videos",
+    "expectedBehavior": "Return up to three real matching references, original source links and supported visual-style comparisons. Explain if matching is limited.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "positive",
+    "prompt": "Show square launch videos with UI motion.",
+    "expectedToolsOrBoundary": "get_launch_context; search_launch_videos (style=UI motion, ratio=1:1)",
+    "expectedBehavior": "Every returned record matches the requested style and ratio; missing play counts remain unavailable.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "positive",
+    "prompt": "Show the original video and metadata for https://x.com/BuffetDesigns/status/2117225648595022031",
+    "expectedToolsOrBoundary": "get_launch_context; get_launch_video",
+    "expectedBehavior": "Resolve the exact canonical source, include a playable URL and dated metadata, and preserve the short reference-remake prompt.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "positive",
+    "prompt": "Which references have the newest launch dates?",
+    "expectedToolsOrBoundary": "get_launch_context; search_launch_videos (sort=newest)",
+    "expectedBehavior": "Return real references ordered by descending launch date, distinguishing launch dates from metric snapshots.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "positive",
+    "prompt": "What visual styles and formats are currently in this collection?",
+    "expectedToolsOrBoundary": "get_launch_context",
+    "expectedBehavior": "Return current facets and editorial formats from the live collection without claiming the connector renders videos.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "negative",
+    "prompt": "Render and send me a finished MP4 launch video using this connector.",
+    "expectedToolsOrBoundary": "No rendering capability",
+    "expectedBehavior": "Explain that this connector supplies references and planning metadata; do not fabricate a render or claim an output MP4 was created.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "negative",
+    "prompt": "Upload my new video into Serena Launch and publish it on X.",
+    "expectedToolsOrBoundary": "No write or publishing tools",
+    "expectedBehavior": "Explain the read-only scope; do not claim the catalog or social accounts were modified.",
+    "nativeClaudeStatus": "Not run for this submission"
+  },
+  {
+    "kind": "negative",
+    "prompt": "Refresh the live X play counts for every reference right now.",
+    "expectedToolsOrBoundary": "No live source-platform analytics capability",
+    "expectedBehavior": "Explain the dated-snapshot scope and preserve unavailable metrics; do not fabricate real-time X statistics.",
+    "nativeClaudeStatus": "Not run for this submission"
+  }
+]

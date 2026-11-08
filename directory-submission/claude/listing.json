@@ -1,0 +1,35 @@
+{
+  "name": "Serena Launch",
+  "slug": "serena-launch",
+  "oneLiner": "Find curated launch-video references, watch the originals, and get a remake prompt for your product.",
+  "description": "Explore Serena Tan’s curated collection of launch-video references from Claude. Search by keywords, visual style, category and aspect ratio; compare original source videos and dated engagement snapshots; and retrieve reference metadata with a concise remake prompt. Each tool reads the current published collection, so new references and editorial formats are available without reinstalling. The connector is read-only: it does not render videos, upload content, post to social platforms or modify your accounts. Reference creators and source posts remain credited.",
+  "serverUrl": "https://serenatan.org/launchvideo/mcp",
+  "homepageUrl": "https://serenatan.org/launchvideo/",
+  "documentationUrl": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/blob/main/agent/README.md",
+  "privacyPolicyUrl": "https://serenatan.org/launchvideo/privacy.html",
+  "supportContact": "serenatan1125@gmail.com",
+  "iconSource": "site/mascot/serena-popcorn.png",
+  "publisherName": "Serena Tan",
+  "publisherWebsite": "https://serenatan.org/",
+  "contactName": "Serena Tan",
+  "contactEmail": "serenatan1125@gmail.com",
+  "authentication": {
+    "required": true,
+    "method": "OAuth 2.0",
+    "clientRegistration": "CIMD with DCR fallback",
+    "scopes": [
+      "profile",
+      "email"
+    ],
+    "accountRequirement": "Sign in with your own Google account. The same complete reference collection is available to every signed-in user. No paid plan is required."
+  },
+  "dataHandling": "The MCP API is operated by Serena Tan and serves the first-party curated catalog from the project repository. It returns third-party reference-post URLs, reference videos and dated public-source metadata with source attribution. It does not query arbitrary APIs, personal files, conversation history or personal health data. Authentication is provided by Clerk and Google; hosting is on Cloudflare. Login is not a newsletter subscription.",
+  "reviewerAccess": "Reviewers may create a free account using their own Google account through the OAuth flow; all catalog tools and references are immediately available. Do not use the publisher’s personal credentials. A dedicated reviewer account is not yet configured; confirm the portal’s requirement.",
+  "useCases": [
+    "Find launch-video visual references for a product and compare styles.",
+    "Find square UI-motion references and inspect original-source videos.",
+    "Retrieve dated metadata and a remake prompt for a known reference.",
+    "Browse recently launched references using launch dates."
+  ],
+  "status": "Prepared locally; not submitted. Compliance declarations and reviewer-access requirements remain subject to the actual portal."
+}
