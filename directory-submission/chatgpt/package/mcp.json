@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "launch-archive": {
+      "type": "streamable-http",
+      "url": "https://serenatan.org/launchvideo/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "cimd"
+            },
+            "baseScopes": [
+              "profile",
+              "email"
+            ],
+            "defaultScopes": [
+              "profile",
+              "email",
+              "offline_access"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
