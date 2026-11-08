@@ -12,3 +12,5 @@ Verify the saved recording by playback, then host it at a reviewer-accessible UR
 ## Current rehearsal evidence
 
 The existing private release 0.1.3 is visible in Chrome at its original plugin URL. Its launch action currently opens a ChatGPT desktop-app deep link. It is not present in this browser account's installed Work plugin picker (search “Serena” returned “No plugins found”). This is not a successful native connection test. Resolve installation in the intended host before recording.
+
+Attempting to select the existing ChatGPT desktop app through the supported Computer tool was rejected: “Computer Use is not allowed to use the app 'com.openai.codex' for safety reasons.” No alternate automation method was used to bypass this restriction. Desktop rehearsal/recording requires the owner's manual operation or an explicitly supported host path. No demo was recorded or fabricated.
