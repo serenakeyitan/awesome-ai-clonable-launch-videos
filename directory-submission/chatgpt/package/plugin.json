@@ -19,7 +19,8 @@
         "shortDescription": "Launch videos for your agent",
         "websiteURL": "https://serenatan.org/launchvideo/",
         "privacyPolicyURL": "https://serenatan.org/launchvideo/privacy.html",
-        "supportURL": "https://serenatan.org/launchvideo/support.html"
+        "supportURL": "https://serenatan.org/launchvideo/support.html",
+        "termsOfServiceURL": "https://serenatan.org/launchvideo/terms.html"
       },
       "review": {
         "prompts": [
@@ -76,10 +77,13 @@
               "prompt": "Refresh the live X play counts for every reference right now."
             }
           ]
-        }
+        },
+        "commerce": false,
+        "commerce_description": "Current access is free. Serena Launch has no payments, purchases, checkout, or subscription billing."
       },
       "publication": {
-        "release_notes": "Initial public directory submission of Serena Launch: current launch-video reference search, reference details, and editorial context through the authenticated read-only MCP service."
+        "release_notes": "Initial public directory submission of Serena Launch: current launch-video reference search, reference details, and editorial context through the authenticated read-only MCP service.",
+        "countries": []
       }
     }
   },

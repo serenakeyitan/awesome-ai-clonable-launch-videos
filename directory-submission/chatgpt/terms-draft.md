@@ -1,6 +1,6 @@
-# Proposed Serena Launch terms — owner review required
+# Serena Launch terms — approved source wording
 
-This draft is not published and does not establish the owner's agreement. Items below need Serena's approval before use as the public terms.
+The owner confirmed this base wording on November 8, 2026, including an age rule of 13 and older. The published policy is https://serenatan.org/launchvideo/terms.html. This source note is not a substitute for the published page.
 
 ## Service
 
@@ -26,7 +26,7 @@ The collection, source availability and service may change. Engagement metrics a
 
 For support, account questions or a content concern, contact serenatan1125@gmail.com. Include the relevant source link or video title; do not send passwords or access tokens.
 
-## Owner decisions still required
+## Approval scope
 
-- Approve or revise the service, rights and acceptable-use wording above.
-- Confirm whether the service should specify an age eligibility rule and any other legal terms before publication. No governing-law, liability, warranty, refund or dispute-resolution commitment has been invented here.
+- The owner approved the service, rights, acceptable-use wording and age rule. No governing-law, liability, warranty, refund or dispute-resolution commitment was added.
+- This approval does not pre-complete the exact final attestations in either platform's submission portal.

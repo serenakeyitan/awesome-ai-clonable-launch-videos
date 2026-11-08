@@ -25,5 +25,13 @@
     "correctBrand": true,
     "hasContact": true,
     "checkedAt": "2026-11-08T19:11:10.494Z"
+  },
+  {
+    "field": "termsOfServiceURL",
+    "url": "https://serenatan.org/launchvideo/terms.html",
+    "status": 200,
+    "correctBrand": true,
+    "containsApprovedAgeRule": true,
+    "checkedAt": "2026-11-08T21:13:42.899Z"
   }
 ]
