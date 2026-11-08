@@ -29,6 +29,7 @@ test('an existing MCP connection sees new videos, formats and workflow without r
     for (const tool of toolsBefore.tools) {
       assert.equal(typeof tool.title,'string');
       assert.ok(tool.title.length > 0);
+      assert.equal(tool.annotations.title,tool.title);
       assert.equal(tool.annotations.readOnlyHint,true);
       assert.equal(tool.annotations.destructiveHint,false);
       assert.equal(tool.annotations.idempotentHint,true);

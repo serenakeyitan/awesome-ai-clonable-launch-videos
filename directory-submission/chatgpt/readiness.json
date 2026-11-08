@@ -14,10 +14,18 @@
   "remaining": [
     "verified native ChatGPT demo recording and URL",
     "dedicated reviewer mailbox sign-in verification",
-    "Personal organization individual identity verification (Persona; owner step)",
+    "OpenAI individual identity review approval; official portal blocks even draft upload",
     "saved submission connection/domain/scans/tests",
     "owner exact platform policy attestations and final submission"
   ],
   "supportDeploymentVersion": "97dbe31a-092c-4783-8c22-95a8e35ab2c5",
-  "termsDeploymentVersion": "f1c833ce-ca71-44ea-9d95-084e68521dba"
+  "termsDeploymentVersion": "f1c833ce-ca71-44ea-9d95-084e68521dba",
+  "publisherVerification": {
+    "organization": "Personal",
+    "ownerCompletedPersona": true,
+    "observedPlatformStatus": "Identity in review",
+    "observedDate": "2026-11-08",
+    "uploadAttemptResult": "Complete identity verification: You need a verified developer identity before you can create or upload a plugin.",
+    "approved": false
+  }
 }

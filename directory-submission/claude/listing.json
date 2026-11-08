@@ -31,5 +31,12 @@
     "Retrieve dated metadata and a remake prompt for a known reference.",
     "Browse recently launched references using launch dates."
   ],
-  "status": "Prepared locally; not submitted. Compliance declarations and reviewer-access requirements remain subject to the actual portal."
+  "status": "Browser-tab application draft filled and live connection/native tools verified; owner policy acknowledgements and final submission remain. No submission receipt.",
+  "categories": [
+    "Creative",
+    "Sales and marketing"
+  ],
+  "iconUrl": "https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/directory-submission/assets/serena-popcorn.png",
+  "sponsoredContent": false,
+  "sponsoredContentConfirmation": "Owner confirmed no paid inclusion, sponsorship or advertising arrangements on November 8, 2026."
 }
