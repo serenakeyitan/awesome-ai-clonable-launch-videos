@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-08T18:17:24.013Z",
+  "kind": "Official SDK protocol check, not a native Claude conversation",
+  "totalVideos": 74,
+  "sourceRevision": "71b8b2203ebf73e422fab06be73049fc11144495",
+  "tools": [
+    {
+      "name": "get_launch_context",
+      "title": "Browse current launch-video collection",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "search_launch_videos",
+      "title": "Search launch-video references",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_launch_video",
+      "title": "Get launch-video reference details",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    }
+  ],
+  "squareUiMotionMatches": [
+    3,
+    45,
+    49
+  ],
+  "canonicalSourceResolved": "https://x.com/BuffetDesigns/status/2117225648595022031",
+  "oauthRefreshSucceeded": true
+}
