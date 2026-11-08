@@ -25,6 +25,15 @@ test('an existing MCP connection sees new videos, formats and workflow without r
   await client.connect(b);
   try {
     const toolsBefore = await client.listTools();
+    assert.equal(toolsBefore.tools.length,3);
+    for (const tool of toolsBefore.tools) {
+      assert.equal(typeof tool.title,'string');
+      assert.ok(tool.title.length > 0);
+      assert.equal(tool.annotations.readOnlyHint,true);
+      assert.equal(tool.annotations.destructiveHint,false);
+      assert.equal(tool.annotations.idempotentHint,true);
+      assert.equal(tool.annotations.openWorldHint,true);
+    }
     const before = (await client.callTool({name:'get_launch_context',arguments:{}})).structuredContent;
     assert.equal(before.totalVideos,1);
     f.state.videos.push({...f.state.videos[0],id:2,slug:'new-demo',title:'Fresh illustrated launch',styles:['New style'],source:'https://x.com/demo/status/456'});
