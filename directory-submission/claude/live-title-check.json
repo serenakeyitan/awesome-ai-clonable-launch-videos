@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-11-08T22:27:26.103Z",
+  "workerVersion": "d53216e1-3f6c-470e-8306-5e7ac1f89090",
+  "tools": [
+    {
+      "name": "get_launch_context",
+      "title": "Browse current launch-video collection",
+      "annotations": {
+        "title": "Browse current launch-video collection",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "search_launch_videos",
+      "title": "Search launch-video references",
+      "annotations": {
+        "title": "Search launch-video references",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "get_launch_video",
+      "title": "Get launch-video reference details",
+      "annotations": {
+        "title": "Get launch-video reference details",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    }
+  ],
+  "state": "Live metadata matches both modern and legacy title fields"
+}

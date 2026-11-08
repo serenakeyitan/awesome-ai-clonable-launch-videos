@@ -11,14 +11,16 @@
     "prompt": "Show square launch videos with UI motion.",
     "expectedToolsOrBoundary": "get_launch_context; search_launch_videos (style=UI motion, ratio=1:1)",
     "expectedBehavior": "Every returned record matches the requested style and ratio; missing play counts remain unavailable.",
-    "nativeClaudeStatus": "Not run for this submission"
+    "nativeClaudeStatus": "Passed",
+    "nativeEvidence": "Combined native Claude Chat prompt returned IDs 3, 45 and 49 for square UI motion; missing video plays remained unavailable."
   },
   {
     "kind": "positive",
     "prompt": "Show the original video and metadata for https://x.com/BuffetDesigns/status/2117225648595022031",
     "expectedToolsOrBoundary": "get_launch_context; get_launch_video",
     "expectedBehavior": "Resolve the exact canonical source, include a playable URL and dated metadata, and preserve the short reference-remake prompt.",
-    "nativeClaudeStatus": "Not run for this submission"
+    "nativeClaudeStatus": "Passed",
+    "nativeEvidence": "Exact BuffetDesigns source resolved to Lifted Finance ID 81, playable URLs, dated metadata, unavailable play count and exact remake prompt."
   },
   {
     "kind": "positive",
