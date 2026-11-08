@@ -31,9 +31,11 @@ def prompt(video):
 
 def video_embed(video):
     # GitHub turns uploaded attachment URLs into native players in Markdown.
-    url = video['githubVideoUrl']
-    assert url.startswith('https://github.com/user-attachments/assets/'), video['slug']
-    return url
+    url = video.get('githubVideoUrl', '')
+    if url.startswith('https://github.com/user-attachments/assets/'):
+        return url
+    # Fallback: link to video file and source when GitHub URL not yet available
+    return f"[▶ View video]({video['source']})"
 
 def stats(video):
     v = video
