@@ -18,17 +18,17 @@ export function createServer(load = loadArchive) {
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
     description:'Return current collection metadata, available reference formats and visual styles, the catalog version, and the editorial remake planning outline.',
-    inputSchema:z.object({}), annotations
+    inputSchema:z.object({}), annotations:{...annotations,title:'Browse current launch-video collection'}
   }, guarded(load, archive => context(archive)));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
     description:'Find reference launch videos by keywords and current style/category/ratio. Returns dated statistics, playable URLs, copyable clone prompts, and latest workflow. Search ranks keyword matches, then impressions.',
-    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest','impressions']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations
+    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest','impressions']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
   }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)})));
   server.registerTool('get_launch_video', {
     title:'Get launch-video reference details',
     description:'Get one reference by catalog ID, slug, or original X/Twitter post URL. Includes MP4, metadata, dated stats, notes, and exact clone prompt. Does not fetch arbitrary URLs.',
-    inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations
+    inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations:{...annotations,title:'Get launch-video reference details'}
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);
     return {...context(archive), found:!!video, video:video ? record(video,true,archive.sourceRevision) : null};
