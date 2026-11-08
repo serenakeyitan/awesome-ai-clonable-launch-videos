@@ -5,14 +5,14 @@
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-74-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-77-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 74 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 77 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -69,6 +69,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Commas × HighLevel — Subscription Recovery](#commas-highlevel)
 - [Treg × Jev — Social API](#treg-social-api)
 - [Reason — Coding Agent](#reason-coding-agent)
+- [Athrix — Design-to-Code Skill](#athrix-design-to-code-skill)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -82,6 +83,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Tavus PAL](#tavus-pal)
 - [Oh Wait — With Context vs. Without Context](#oh-wait-context-comparison)
 - [AI Workspace — Motion Design Study](#ai-workspace-motion-study)
+- [Proto — Calendar UI Demo](#proto-calendar-ui-demo)
 
 ### [D. Typography & Abstract Motion](#typography-abstract-motion)
 
@@ -114,6 +116,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Instagram Reminders — Motion Concept](#instagram-reminders-motion-concept)
 - [Dnyx Studios — Imagination Upgrade](#dnyx-imagination-upgrade)
 - [LandAtlas — Real Estate Workflow](#landatlas-launch)
+- [Vainu — Company Signals](#vainu-company-signals)
 
 ### [F. Illustrated Mascot Stories](#illustrated-mascot-stories)
 
@@ -1754,6 +1757,51 @@ https://x.com/reasonmachines/status/2117986868004573695
 
 ---
 
+<a id="athrix-design-to-code-skill"></a>
+
+### Athrix — Design-to-Code Skill
+
+[▶ View video](https://x.com/athrix_codes/status/2119128567347052702)
+
+**0:35 · 16:9 · 15.1K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/82.mp4) · [MP4 file](videos/athrix-design-to-code-skill.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-82)
+
+A white dotted grid hosts split-screen design-vs-code comparisons with a bright blue scanning line. Pixel-dissolve wipe transitions connect screenshots, Figma inputs, and terminal commands for a design-to-code workflow.
+
+```text
+clone this video 1:1 for my product
+https://x.com/athrix_codes/status/2119128567347052702
+```
+
+*Source: [@athrix_codes](https://x.com/athrix_codes/status/2119128567347052702) · 2026-11-07*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @athrix_codes |
+| Post date | 2026-11-07 |
+| Stats snapshot (PT) | 2026-11-08 |
+| Post impressions | 15,052 |
+| Video plays | — |
+| Likes | 433 |
+| Bookmarks | 575 |
+| Reposts | 13 |
+| Replies | 11 |
+| Quotes | 1 |
+| Account followers | 4,118 |
+| Original duration | 0:35 |
+| Included file | 0:35 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="pastel-ui-cursor-demos"></a>
 
 ## C. Pastel UI & Cursor Demos
@@ -2204,6 +2252,51 @@ https://x.com/rajzmotion/status/2117525794637697456
 | Included file | 0:30 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="proto-calendar-ui-demo"></a>
+
+### Proto — Calendar UI Demo
+
+[▶ View video](https://x.com/BuffetDesigns/status/2119047968091451746)
+
+**0:38 · 16:9 · 3.3K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/83.mp4) · [MP4 file](videos/proto-calendar-ui-demo.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-83)
+
+Saturated solid-color backgrounds alternate with oversized cursors clicking through a calendar UI. Multiplayer cursors, AI text prompts, and 3D geometric shapes frame a sleek state-map and layout-exploration demo.
+
+```text
+clone this video 1:1 for my product
+https://x.com/BuffetDesigns/status/2119047968091451746
+```
+
+*Source: [@BuffetDesigns](https://x.com/BuffetDesigns/status/2119047968091451746) · 2026-11-07*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @BuffetDesigns |
+| Post date | 2026-11-07 |
+| Stats snapshot (PT) | 2026-11-08 |
+| Post impressions | 3,344 |
+| Video plays | — |
+| Likes | 98 |
+| Bookmarks | 54 |
+| Reposts | 11 |
+| Replies | 18 |
+| Quotes | 1 |
+| Account followers | 6,340 |
+| Original duration | 0:38 |
+| Included file | 0:38 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
@@ -3386,6 +3479,51 @@ https://x.com/abdullah4204k/status/2117285743282598063
 | Included file | 1:00 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="vainu-company-signals"></a>
+
+### Vainu — Company Signals
+
+[▶ View video](https://x.com/abdullah4204k/status/2119137996196975045)
+
+**1:04 · 16:9 · 1.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/84.mp4) · [MP4 file](videos/vainu-company-signals.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-84)
+
+A Nordic-minimal white background hosts dot-matrix statistics and green signal-line animations. City and landscape photography forms a rotating globe intro, then clean UI cards and kinetic typography close the story.
+
+```text
+clone this video 1:1 for my product
+https://x.com/abdullah4204k/status/2119137996196975045
+```
+
+*Source: [@abdullah4204k](https://x.com/abdullah4204k/status/2119137996196975045) · 2026-11-07*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @abdullah4204k |
+| Post date | 2026-11-07 |
+| Stats snapshot (PT) | 2026-11-08 |
+| Post impressions | 1,456 |
+| Video plays | — |
+| Likes | 50 |
+| Bookmarks | 33 |
+| Reposts | 0 |
+| Replies | 5 |
+| Quotes | 0 |
+| Account followers | 3,938 |
+| Original duration | 1:04 |
+| Included file | 1:04 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
