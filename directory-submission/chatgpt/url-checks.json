@@ -1,0 +1,37 @@
+[
+  {
+    "field": "websiteURL",
+    "url": "https://serenatan.org/launchvideo/",
+    "finalUrl": "https://serenatan.org/launchvideo/",
+    "status": 200,
+    "correctBrand": true,
+    "hasContact": false,
+    "checkedAt": "2026-11-08T19:09:33.625Z"
+  },
+  {
+    "field": "privacyPolicyURL",
+    "url": "https://serenatan.org/launchvideo/privacy.html",
+    "finalUrl": "https://serenatan.org/launchvideo/privacy.html",
+    "status": 200,
+    "correctBrand": true,
+    "hasContact": true,
+    "checkedAt": "2026-11-08T19:09:33.750Z"
+  },
+  {
+    "field": "supportURL",
+    "url": "https://serenatan.org/launchvideo/support.html",
+    "finalUrl": "https://serenatan.org/launchvideo/support.html",
+    "status": 200,
+    "correctBrand": true,
+    "hasContact": true,
+    "checkedAt": "2026-11-08T19:11:10.494Z"
+  },
+  {
+    "field": "termsOfServiceURL",
+    "url": "https://serenatan.org/launchvideo/terms.html",
+    "status": 200,
+    "correctBrand": true,
+    "containsApprovedAgeRule": true,
+    "checkedAt": "2026-11-08T21:13:42.899Z"
+  }
+]

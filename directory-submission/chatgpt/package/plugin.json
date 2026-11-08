@@ -1,0 +1,101 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "serenatan1125@gmail.com",
+    "name": "Serena Tan"
+  },
+  "description": "Find playable launch-video references and current remake workflows from the live Serena Launch.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "category": "Creativity",
+        "composerIcon": "./assets/serena-popcorn.png",
+        "defaultPrompt": "Find launch-video references for my product and help me remake one.",
+        "developerName": "Serena Tan",
+        "displayName": "Serena Launch",
+        "logo": "./assets/serena-popcorn.png",
+        "longDescription": "Find launch-video references for your next product launch. Search Serena Tan's curated collection by keywords, visual style, category and aspect ratio, inspect original source links and dated engagement snapshots, and get a concise reference-remake prompt. Every tool reads the current published collection. This read-only connector supplies references and planning metadata; it does not render videos, modify the collection or post to social platforms.",
+        "shortDescription": "Launch videos for your agent",
+        "websiteURL": "https://serenatan.org/launchvideo/",
+        "privacyPolicyURL": "https://serenatan.org/launchvideo/privacy.html",
+        "supportURL": "https://serenatan.org/launchvideo/support.html",
+        "termsOfServiceURL": "https://serenatan.org/launchvideo/terms.html"
+      },
+      "review": {
+        "prompts": [
+          "Find three launch-video references for a project-management product and compare their visual styles.",
+          "Show square launch videos with UI motion.",
+          "Show the original video and metadata for https://x.com/BuffetDesigns/status/2117225648595022031",
+          "Which references have the newest launch dates?",
+          "What visual styles and formats are currently in this collection?"
+        ],
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Sign in to Serena Launch. Return up to three real matching references, original source links and supported visual-style comparisons. Explain if matching is limited.",
+              "prompt": "Find three launch-video references for a project-management product and compare their visual styles.",
+              "tools_triggered": "get_launch_context; search_launch_videos",
+              "expected_behavior": "Return up to three real matching references, original source links and supported visual-style comparisons. Explain if matching is limited."
+            },
+            {
+              "description": "Sign in to Serena Launch. Every returned record matches the requested style and ratio; missing play counts remain unavailable.",
+              "prompt": "Show square launch videos with UI motion.",
+              "tools_triggered": "get_launch_context; search_launch_videos (style=UI motion, ratio=1:1)",
+              "expected_behavior": "Every returned record matches the requested style and ratio; missing play counts remain unavailable."
+            },
+            {
+              "description": "Sign in to Serena Launch. Resolve the exact canonical source, include a playable URL and dated metadata, and preserve the short reference-remake prompt.",
+              "prompt": "Show the original video and metadata for https://x.com/BuffetDesigns/status/2117225648595022031",
+              "tools_triggered": "get_launch_context; get_launch_video",
+              "expected_behavior": "Resolve the exact canonical source, include a playable URL and dated metadata, and preserve the short reference-remake prompt."
+            },
+            {
+              "description": "Sign in to Serena Launch. Return real references ordered by descending launch date, distinguishing launch dates from metric snapshots.",
+              "prompt": "Which references have the newest launch dates?",
+              "tools_triggered": "get_launch_context; search_launch_videos (sort=newest)",
+              "expected_behavior": "Return real references ordered by descending launch date, distinguishing launch dates from metric snapshots."
+            },
+            {
+              "description": "Sign in to Serena Launch. Return current facets and editorial formats from the live collection without claiming the connector renders videos.",
+              "prompt": "What visual styles and formats are currently in this collection?",
+              "tools_triggered": "get_launch_context",
+              "expected_behavior": "Return current facets and editorial formats from the live collection without claiming the connector renders videos."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No rendering capability. Explain that this connector supplies references and planning metadata; do not fabricate a render or claim an output MP4 was created.",
+              "prompt": "Render and send me a finished MP4 launch video using this connector."
+            },
+            {
+              "description": "No write or publishing tools. Explain the read-only scope; do not claim the catalog or social accounts were modified.",
+              "prompt": "Upload my new video into Serena Launch and publish it on X."
+            },
+            {
+              "description": "No live source-platform analytics capability. Explain the dated-snapshot scope and preserve unavailable metrics; do not fabricate real-time X statistics.",
+              "prompt": "Refresh the live X play counts for every reference right now."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Current access is free. Serena Launch has no payments, purchases, checkout, or subscription billing."
+      },
+      "publication": {
+        "release_notes": "Initial public directory submission of Serena Launch: current launch-video reference search, reference details, and editorial context through the authenticated read-only MCP service.",
+        "countries": []
+      }
+    }
+  },
+  "homepage": "https://serenatan.org/launchvideo/",
+  "keywords": [
+    "launch-video",
+    "video",
+    "design",
+    "remotion"
+  ],
+  "license": "MIT",
+  "name": "launch-archive",
+  "repository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
+  "version": "0.1.4"
+}

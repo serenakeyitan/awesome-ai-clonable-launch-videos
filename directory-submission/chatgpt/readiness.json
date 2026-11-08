@@ -1,0 +1,23 @@
+{
+  "state": "Incomplete preparation copy; not ready to submit",
+  "package": "serena-launch-public-draft-0.1.4.zip",
+  "files": [
+    "launch-archive/assets/serena-popcorn.png",
+    "launch-archive/mcp.json",
+    "launch-archive/plugin.json",
+    "launch-archive/skills/launch-archive/SKILL.md"
+  ],
+  "shortDescriptionLength": 28,
+  "positiveCases": 5,
+  "negativeCases": 3,
+  "missingListingFields": [],
+  "remaining": [
+    "verified native ChatGPT demo recording and URL",
+    "dedicated reviewer mailbox sign-in verification",
+    "Personal organization individual identity verification (Persona; owner step)",
+    "saved submission connection/domain/scans/tests",
+    "owner exact platform policy attestations and final submission"
+  ],
+  "supportDeploymentVersion": "97dbe31a-092c-4783-8c22-95a8e35ab2c5",
+  "termsDeploymentVersion": "f1c833ce-ca71-44ea-9d95-084e68521dba"
+}
