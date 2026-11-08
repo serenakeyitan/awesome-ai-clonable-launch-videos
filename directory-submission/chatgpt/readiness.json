@@ -26,6 +26,7 @@
     "observedPlatformStatus": "Identity in review",
     "observedDate": "2026-11-08",
     "uploadAttemptResult": "Complete identity verification: You need a verified developer identity before you can create or upload a plugin.",
-    "approved": false
+    "approved": false,
+    "lastCheckedAt": "2026-11-08T22:46:10Z"
   }
 }
