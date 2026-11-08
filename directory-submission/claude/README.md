@@ -1,3 +1,5 @@
+> Current status, November 8, 2026: **submitted and In review**, verified on the official portal. See `submission-receipt.json`. Earlier preparation notes below are historical; this is not yet a live listing.
+
 # Claude directory submission — Serena Launch
 
 Submission type: one remote MCP connector. The existing private ChatGPT plugin identity and audience are unchanged.

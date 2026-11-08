@@ -31,12 +31,13 @@
     "Retrieve dated metadata and a remake prompt for a known reference.",
     "Browse recently launched references using launch dates."
   ],
-  "status": "Browser-tab application draft filled and live connection/native tools verified; owner policy acknowledgements and final submission remain. No submission receipt.",
+  "status": "Submitted; official portal verified In review on November 8, 2026. Not yet live.",
   "categories": [
     "Creative",
     "Sales and marketing"
   ],
   "iconUrl": "https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/directory-submission/assets/serena-popcorn.png",
   "sponsoredContent": false,
-  "sponsoredContentConfirmation": "Owner confirmed no paid inclusion, sponsorship or advertising arrangements on November 8, 2026."
+  "sponsoredContentConfirmation": "Owner confirmed no paid inclusion, sponsorship or advertising arrangements on November 8, 2026.",
+  "submissionUrl": "https://claude.ai/directory/manage/serena-launch"
 }

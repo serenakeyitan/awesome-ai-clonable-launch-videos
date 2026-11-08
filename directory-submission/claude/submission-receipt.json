@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-11-08T22:46:10Z",
+  "source": "Official Claude submission detail page observed in native Chrome",
+  "name": "Serena Launch",
+  "submissionUrl": "https://claude.ai/directory/manage/serena-launch",
+  "status": "In review",
+  "progress": {
+    "submitted": "done",
+    "inReview": "current",
+    "live": "not yet"
+  },
+  "tools": [
+    "get_launch_context",
+    "get_launch_video",
+    "search_launch_videos"
+  ],
+  "serverUrl": "https://serenatan.org/launchvideo/mcp",
+  "authentication": "OAuth",
+  "publisher": "Serena Tan",
+  "categories": [
+    "Creative",
+    "Sales and marketing"
+  ],
+  "receiptText": "A reviewer is checking your listing. We\u2019ll email your primary contact if we need anything.",
+  "note": "Submission was already present when the owner returned done; it was verified rather than submitted again."
+}

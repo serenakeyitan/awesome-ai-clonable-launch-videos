@@ -17,3 +17,7 @@ A later November 8 retry completed sign-in through Claude's published CIMD ident
 The Claude wizard now contains the listing, the plugin-only enlarged-popcorn custom icon, Creative and Sales and marketing categories, three use cases, individual publisher contact, sign-in always required using CIMD, first-party API/no health data, owner-confirmed no sponsored content, and reviewer setup instructions. The only required field remaining on Review and submit was the owner's seven policy acknowledgements. The draft is saved in that browser tab; no submission receipt or backend submission ID has been obtained.
 
 The server additionally supplies annotations.title matching each top-level title, addressing the wizard's legacy-title suggestions. All 22 existing tests passed; authenticated live metadata verification confirmed all three annotations. Deployment: d53216e1-3f6c-470e-8306-5e7ac1f89090. The wizard's preexisting captured snapshot still showed the older optional title suggestions after re-selection; do not claim that cached scan was refreshed.
+
+## Official submission receipt
+
+After the owner completed the final step and replied done, the official submissions page showed one submission: Serena Launch, In review. The detail page at https://claude.ai/directory/manage/serena-launch showed Submitted (done), In review (current), Live (not yet), all three tools, OAuth, and the confirmed publisher/categories. Verified November 8, 2026 at 22:46 UTC. The agent did not submit a duplicate application.
