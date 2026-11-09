@@ -115,3 +115,14 @@ The homepage compares the current collection against its previous-day closing to
 ## Product analytics
 
 See [measurement definitions](measurement.md). Explicit browser and authenticated MCP events feed PostHog; no raw queries, prompts, email, OAuth parameters or session recordings. Task completion is agent-reported, with separate delivery checks. Authentication remains required for all MCP tools. Public-directory submission drafts must describe the reporting tool before any future resubmission.
+
+### Publishing gallery media
+
+Build the gallery catalog instead of copying `data/videos.json` directly. Repository `video` and `poster` paths are source locations; the builder converts them to published media URLs. Build directly into the existing deployment assets directory to retain its MP4s:
+
+```sh
+python3 scripts/build_site.py --output /path/to/deployment/dist
+python3 scripts/verify_site.py /path/to/deployment/dist --require-local-media
+```
+
+Only deploy after verification succeeds. The check rejects repository-only media paths and missing gallery assets. Browser playback verification is still required after deployment.
