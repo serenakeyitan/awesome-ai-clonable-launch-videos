@@ -1,41 +1,53 @@
 'use strict';
 (() => {
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
-  const setup = 'Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.';
+  const setup = `Connect to Serena Launch MCP at ${endpoint}.`;
   const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const config = JSON.stringify({mcpServers:{'serena-launch':{url:endpoint}}},null,2);
-  const clients = {
-    claude:{name:'Claude',text:'Open Customize → Connectors → Add custom connector. Name it Serena Launch, paste the server URL below, and complete sign-in when prompted.',value:endpoint,link:'https://claude.ai/settings/connectors',label:'Open Claude ↗',extra:`Claude Code: claude mcp add --transport http serena-launch ${endpoint}`},
-    chatgpt:{name:'ChatGPT',text:'Open Plugins, select + → Add custom MCP server. Paste the server URL below, choose OAuth, then create and install the plugin and complete sign-in.',value:endpoint,link:'https://chatgpt.com/#settings',label:'Open ChatGPT ↗',extra:'Custom server access depends on your account and workspace settings.'},
-    codex:{name:'Codex',text:'Run this in your terminal, then run codex mcp login serena-launch to sign in.',value:`codex mcp add serena-launch --url ${endpoint}`,link:'https://developers.openai.com/learn/docs-mcp',label:'Connection guide ↗'},
-    cursor:{name:'Cursor',text:'Add this server to .cursor/mcp.json, keeping any existing servers. Enable Serena Launch in Cursor’s MCP settings.',value:config,link:'https://cursor.com/docs/mcp',label:'Cursor setup guide ↗'},
-    grok:{name:'Grok',text:'Open Connectors → New Connector → Custom. Paste the server URL below and connect.',value:endpoint,link:'https://grok.com/connectors',label:'Open Grok connectors ↗',extra:'Business and Enterprise teams may need an admin to enable the connector.'},
-    more:{name:'Gemini, VS Code, Raft & more',text:'Add the server URL in your app’s MCP settings, then sign in with OAuth. Apps that cannot add a connector from chat require this settings step.',value:endpoint,link:'https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/blob/main/agent/README.md',label:'All setup options ↗',extra:'VS Code: MCP: Add Server → HTTP. Gemini CLI: use httpUrl in your MCP configuration. Raft: send the setup prompt.'}
+  const copyIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1"/><path d="M15 8V3H3v13h5"/></svg>';
+  const values = {
+    prompt: setup,
+    url: endpoint,
+    gemini: JSON.stringify({mcpServers:{'serena-launch':{httpUrl:endpoint}}}, null, 2),
+    codex: `codex mcp add serena-launch --url ${endpoint}\ncodex mcp login serena-launch`
   };
+  const copyButton = (key, label, visible = false) => `<button class="copy-config${visible ? ' connection-action' : ''}" data-copy="${key}" aria-label="${esc(label)}" title="${esc(label)}">${copyIcon}${visible ? `<span data-copy-label>${esc(label)}</span>` : ''}</button>`;
+  const codeBlock = (key, label) => `<div class="connection-code"><pre><code>${esc(values[key])}</code></pre>${copyButton(key,label)}</div>`;
   async function copy(value, button) {
+    const label = button.getAttribute('aria-label');
+    const text = button.querySelector('[data-copy-label]');
+    const originalText = text?.textContent;
+    const toast = document.getElementById('toast');
     try {
       if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(value);
       else {
         const input = document.createElement('textarea'); input.value=value; input.style.position='fixed';input.style.opacity='0';document.body.append(input);input.select();
         const copied = document.execCommand('copy');input.remove();if (!copied) throw new Error('Copy unavailable');
       }
-      const label = button.getAttribute('aria-label');button.setAttribute('aria-label','Copied');
-      const toast = document.getElementById('toast');toast.textContent='Copied to clipboard';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),2500);
-      button.dataset.copied='true';setTimeout(()=>{button.removeAttribute('data-copied');if(label)button.setAttribute('aria-label',label);},2000);
+      button.setAttribute('aria-label','Copied');button.dataset.copied='true';if(text)text.textContent='Copied';
+      toast.textContent='Copied to clipboard';toast.classList.add('visible');
+      setTimeout(()=>{toast.classList.remove('visible');button.removeAttribute('data-copied');if(label)button.setAttribute('aria-label',label);if(text)text.textContent=originalText;},2000);
     } catch {
-      const toast = document.getElementById('toast');toast.textContent='Copy unavailable. Select and copy the text above.';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),3500);
+      toast.textContent='Copy unavailable. Select and copy the text.';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),3500);
     }
   }
   document.getElementById('copy-setup').addEventListener('click',event=>copy(setup,event.currentTarget));
-  document.querySelectorAll('button[data-client]').forEach(button=>button.addEventListener('click',()=>{
-    const opened = button.getAttribute('aria-expanded')==='true';
-    document.querySelectorAll('button[data-client]').forEach(b=>b.setAttribute('aria-expanded','false'));
-    const panel=document.getElementById('client-setup');panel.hidden=opened;
-    if(opened)return;
-    button.setAttribute('aria-expanded','true');
-    const client=clients[button.dataset.client];
-    const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
-    panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">Copy</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${button.dataset.client==='more'?`<a class="vscode-install" href="${vsCode}" target="_blank" rel="noopener">Add to VS Code ↗</a>`:''}${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
-    panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
-  }));
+  document.querySelector('[data-client="codex"]').href = `codex://new?prompt=${encodeURIComponent(setup)}`;
+  const more = document.querySelector('button[data-client="more"]');
+  const panel = document.getElementById('client-setup');
+  const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
+  panel.innerHTML = `
+    <div class="connection-option"><h3>VS Code</h3><a class="connection-action" href="${esc(vsCode)}" target="_blank" rel="noopener">Add server <span aria-hidden="true">↗</span></a></div>
+    <details class="connection-option"><summary>Gemini CLI <span class="connection-disclosure">Configuration</span></summary><div class="connection-detail"><p>Add to <code>~/.gemini/settings.json</code>, then sign in when prompted.</p>${codeBlock('gemini','Copy Gemini configuration')}</div></details>
+    <div class="connection-option"><h3>Raft</h3>${copyButton('prompt','Copy prompt',true)}</div>
+    <div class="connection-option"><h3>Other apps</h3>${copyButton('url','Copy server URL',true)}</div>
+    <details class="connection-option"><summary>Codex CLI <span class="connection-disclosure">Terminal commands</span></summary><div class="connection-detail"><p>Run these commands in order, then complete browser sign-in.</p>${codeBlock('codex','Copy Codex commands')}</div></details>`;
+  more.addEventListener('click',()=>{
+    const opened = more.getAttribute('aria-expanded') === 'true';
+    more.setAttribute('aria-expanded',String(!opened));panel.hidden=opened;
+    more.querySelector('span').textContent=opened ? '+' : '−';
+  });
+  panel.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-copy]');
+    if(button && panel.contains(button))copy(values[button.dataset.copy],button);
+  });
 })();
