@@ -17,17 +17,17 @@ export function createServer(load = loadArchive) {
   const server = new McpServer({name:'launch-archive', version:'0.1.0'}, {instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.'});
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
-    description:'Return current collection metadata, available reference formats and visual styles, the catalog version, and the editorial remake planning outline.',
+    description:'Get the live workflow, catalog version, metadata and available facets/formats. Call before each launch-video task.',
     inputSchema:z.object({}), annotations:{...annotations,title:'Browse current launch-video collection'}
   }, guarded(load, archive => context(archive)));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
-    description:'Find reference launch videos by keywords and current style/category/ratio. Returns dated statistics, playable URLs, copyable clone prompts, and latest workflow. Search ranks keyword matches, then impressions.',
+    description:'Search by keywords and current facets. Returns playable references, dated stats and the live workflow. Default ranking: keyword match, then impressions.',
     inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest','impressions']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
   }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)})));
   server.registerTool('get_launch_video', {
     title:'Get launch-video reference details',
-    description:'Get one reference by catalog ID, slug, or original X/Twitter post URL. Includes MP4, metadata, dated stats, notes, and exact clone prompt. Does not fetch arbitrary URLs.',
+    description:'Get a reference by ID, slug or X/Twitter URL: MP4, metadata, dated stats, notes and clone prompt. Catalog references only.',
     inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations:{...annotations,title:'Get launch-video reference details'}
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);
@@ -38,18 +38,18 @@ export function createServer(load = loadArchive) {
 
 const bootstrap = `---
 name: launch-archive
-description: Find launch-video references and help remake one for a product using the latest Serena Launch.
+description: Find launch-video references and remake one using the live Serena Launch workflow.
 ---
 
 # Serena Launch
 
-This is a setup guide for an existing remote MCP server, not a request to create or package a downloadable skill.
+Connect the existing MCP server; do not package a downloadable skill.
 
-Connect once to https://serenatan.org/launchvideo/mcp using Streamable HTTP and browser OAuth. Let the user sign in and approve access in their browser; never request credentials or tokens in chat. If this client cannot configure MCP from chat, give its shortest supported connector-settings path and the server URL. Do not claim connection until initialize, tools/list and get_launch_context succeed.
+Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). The user signs in and approves access; never request credentials or tokens in chat. If chat cannot configure MCP, provide the client's connector-settings path. Claim connection only after initialize, tools/list and get_launch_context succeed.
 
-Before each launch-video task, call get_launch_context and follow the workflow it returns. Do this for returning users too. Keep the workflow and catalog live; do not copy them into permanent skill or plugin instructions.
+Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
 
-If MCP is unsupported or unavailable for reasons other than authentication, authorization or throttling, fetch https://serenatan.org/launchvideo/agent/manifest.json and read its current workflowUrl and catalogUrl before each task. Follow that workflow. Never use HTTP fallback to bypass authentication or throttling. If the current workflow is unavailable, report the failure rather than silently using an old copy.
+If MCP is unsupported or unavailable, fetch https://serenatan.org/launchvideo/agent/manifest.json and its workflowUrl and catalogUrl before each task. Never use fallback to bypass authentication, authorization or throttling. Follow the current workflow; report fetch failures instead of using a stale copy.
 `;
 
 function response(body, type = 'application/json', status = 200) {
