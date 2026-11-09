@@ -17,6 +17,7 @@ Track browser return visits separately from account retention. A browser ID is n
 | `collection_viewed` | browser | Visit; entry path, referrer host, allowlisted UTM campaign fields |
 | `reference_opened` | browser | Detail view; reference ID, surface |
 | `reference_played` | browser | Playback began; reference ID, surface |
+| `reference_failed` | browser | Media error; reference ID, surface and numeric error category |
 | `reference_engaged` | browser | At least 5 seconds of actual playback; once per video per page |
 | `reference_prompt_copied` | browser | Successful reference brief copy; reference ID |
 | `collection_filtered` | browser | Search/filter use; query length, result count, category/style/sort; no search text |
@@ -39,7 +40,7 @@ Use the free analytics plan and do not enable paid overages or session recording
 
 - Most used clients/tools: authenticated MCP calls by safe client label/tool name. Quick-connect clicks are a separate intent metric. Unknown client IDs stay `other`.
 - Most used references: web opens, 5-second engagement, copied briefs and successful MCP detail retrieval by reference ID. These measure different actions; none proves that a video was chosen for a finished render. Catalog ID maps to the current public Serena Launch detail link.
-- Explicit feedback: `reference_feedback`, rating helpful/not_helpful and optional fixed reason. The gallery offers Yes/No in reference details; the MCP accepts feedback only when explicitly stated by the user. Do not infer satisfaction or send conversation text.
+- Explicit feedback: `reference_feedback`, rating helpful/not_helpful and optional fixed reason. MCP feedback includes the task ID when supplied, linking feedback to the same creation outcome. The gallery offers Yes/No in reference details; the MCP accepts feedback only when explicitly stated by the user. Do not infer satisfaction or send conversation text.
 - Creation tasks: `launch_task_started`, `launch_task_completed`, `launch_task_failed`, joined by authenticated account + returned UUID task ID. Count unique task IDs, not reports. Repeated outcome reports use stable event UUIDs. A missing outcome is unknown, never an automatic failure.
 - Completion rate: distinct started tasks with matching completed outcomes / distinct started tasks in the same 30-day start cohort. Display pending/unreported separately and allow recent tasks time to finish. Tasks started before instrumentation are not counted in that denominator.
 - Completion is agent-reported. Individual booleans record HTML, source, MP4, music, playback and download checks; `checks_passed` requires all six. The reference service does not inspect the actual output. Agent report coverage is incomplete when clients do not call the reporting tool.

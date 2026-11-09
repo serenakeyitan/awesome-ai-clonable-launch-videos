@@ -97,7 +97,7 @@ test('task reports separate completion and checks, deduplicate retries, and requ
   assert.equal((await reportLaunchTask(env,identity,{status:'feedback',reference_ids:[1]},send)).recorded,false);
   const feedback=await reportLaunchTask(env,identity,{status:'feedback',task_id:start.task_id,reference_ids:[1],rating:'not_helpful',reason:'poor_fit'},send);
   assert.equal(feedback.recorded,true);assert.equal(sent.at(-1).event,'reference_feedback');
-  assert.equal(sent.at(-1).properties.rating,'not_helpful');
+  assert.equal(sent.at(-1).properties.rating,'not_helpful');assert.equal(sent.at(-1).properties.task_id,start.task_id);
   assert.equal((await reportLaunchTask(env,identity,{status:'failed',task_id:start.task_id},async()=>new Response('{}',{status:503}))).recorded,false);
 });
 

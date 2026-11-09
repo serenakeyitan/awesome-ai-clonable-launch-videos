@@ -13,7 +13,8 @@ const fields = {
   consent_submitted:['client','decision'],
   consent_failed:['reason'],
   mcp_tool_completed:['tool','outcome','reference_found','reference_id','duration_ms','client','query_length','result_count','category','style'],
-  reference_feedback:['reference_id','rating','reason','client'],
+  reference_feedback:['reference_id','task_id','rating','reason','client'],
+  reference_failed:['reference_id','surface','reason','error_code'],
   launch_task_started:['task_id','reference_ids','client'],
   launch_task_completed:['task_id','reference_ids','checks_passed','html','source_code','mp4','music','playback','download','client'],
   launch_task_failed:['task_id','reference_ids','reason','client']

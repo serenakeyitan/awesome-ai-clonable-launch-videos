@@ -21,7 +21,7 @@ export async function reportLaunchTask(env,identity,args,fetcher=fetch) {
   const {source:sourceCode,...checks}=args.checks ?? {};
   const name=args.status==='feedback' ? 'reference_feedback' : `launch_task_${args.status}`;
   const base={task_id:taskId,reference_ids:args.reference_ids?.join(','),...checks,source_code:sourceCode,checks_passed:!!args.checks && Object.values(args.checks).every(value=>value===true),reason:args.reason};
-  const records=args.status==='feedback' ? [...new Set(args.reference_ids)].map(reference_id=>({reference_id,rating:args.rating,reason:args.reason})) : [base];
+  const records=args.status==='feedback' ? [...new Set(args.reference_ids)].map(reference_id=>({reference_id,...(args.task_id ? {task_id:taskId} : {}),rating:args.rating,reason:args.reason})) : [base];
   const recorded=await Promise.all(records.map(async event=>{
     const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(`${identity.userId}:${taskId}:${args.status}:${event.reference_id ?? ''}`));
     const hex=Array.from(new Uint8Array(digest)).slice(0,16).map(b=>b.toString(16).padStart(2,'0')).join('');
