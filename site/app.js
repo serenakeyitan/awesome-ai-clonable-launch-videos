@@ -272,3 +272,10 @@ fetch('videos.json').then(response => {
 }).catch(() => {
   $('#collection').innerHTML = '<p class="video-error">The collection could not load. Refresh the page, or <a href="videos.json">open the metadata file</a>.</p>';
 });
+
+document.addEventListener('error',event=>{
+  const player=event.target;
+  if (!(player instanceof HTMLVideoElement)) return;
+  const id=Number(player.dataset.referenceId);
+  if(id) track('reference_failed',{reference_id:id,surface:player.dataset.surface,reason:'media_error',error_code:player.error?.code});
+},true);
