@@ -15,7 +15,7 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 | Client | Setup |
 | --- | --- |
 | Codex CLI | `codex mcp add serena-launch --url https://serenatan.org/launchvideo/mcp` |
-| Claude Code | `claude mcp add --transport http serena-launch https://serenatan.org/launchvideo/mcp` |
+| Claude Code | Use [the prefilled connection link](https://serenatan.org/launchvideo/agent/connect/claude), complete authorization with the same Claude account, then check `/mcp` in Claude Code. |
 | Claude / Cowork / Desktop | Customize → Connectors → Add custom connector. Enter the endpoint above; complete the OAuth sign-in flow. |
 | ChatGPT | Plugins → + → Add custom MCP server. Enter the endpoint above, choose OAuth, create and install the plugin, then complete sign-in. Account and workspace policies apply. |
 | Cursor | Add the JSON below to `.cursor/mcp.json`, preserving other servers. |

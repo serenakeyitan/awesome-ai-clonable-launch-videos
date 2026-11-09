@@ -43,8 +43,7 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .solid-link { border: 0; padding: 9px 0; }
 .solid-link:hover, .solid-link:active { background: transparent; text-decoration: underline; }
 .solid-link > .external-arrow { margin-left: 10px; }
-.github-stars { display: inline-flex; align-items: center; gap: 5px; margin-left: 3px; color: var(--muted); font-size: 13px; }
-.github-stars svg { width: 15px; height: 15px; }
+.github-star { display: block; flex: none; width: 17px; height: 17px; fill: #f5c542; stroke: #c99715; }
 .summary { display: flex; flex-wrap: wrap; gap: 12px 28px; }
 .summary > div { display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
 .summary strong { font-size: 24px; font-weight: 400; letter-spacing: -.04em; }
