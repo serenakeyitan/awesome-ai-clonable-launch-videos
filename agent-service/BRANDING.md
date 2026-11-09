@@ -8,6 +8,7 @@ Keep the immutable plugin package name, existing MCP server ID, rate-limit key, 
 - Collection, setup guide and auxiliary pages share the popcorn-only `site/favicon.svg`, with PNG fallbacks for browser and touch icons. Keep it separate from the full mascot and plugin avatar.
 - Clerk application: `app_3LkVh87NlDpgcVKaOkA8NuugYhi`. Application settings controls its name and uploaded logo. Account Portal → Customization uses Light mode, blue `#0000FF`, paper `#F4F4F4` and Flush elevation. Retain the existing authentication methods, OAuth resource and consent flow.
 - The website prompt explicitly requests an OAuth MCP connection. The setup guide tells clients not to manufacture a downloadable skill as a substitute for connection. Some chat clients still require their own connector-settings step.
+- Bootstrap release 0.1.6 requires the authenticated MCP service, with no anonymous HTTP or public-mirror fallback. The public setup guide stays readable before login; agent manifest/catalog/workflow endpoints require OAuth.
 - Daily badges use `data/daily-stats.json`; regenerate through the README or site builder. They compare collection totals, including new references, rather than claiming daily source-platform growth or visitor tracking.
 
 ## Compact OAuth consent

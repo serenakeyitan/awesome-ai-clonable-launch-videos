@@ -54,7 +54,7 @@ export function context(archive) {
     metricsNote:'Statistics are dated snapshots, not live counts. Impressions are post exposure; views are video plays. Missing counts remain null.'};
 }
 
-// Preserve the flat discovery links used by the original HTTP bootstrap, while
+// Preserve the flat links on the authenticated HTTP manifest, while
 // retaining the nested manifest/context shape for existing MCP/HTTP consumers.
 export function publicManifest(archive) {
   return {...archive.manifest, ...context(archive)};

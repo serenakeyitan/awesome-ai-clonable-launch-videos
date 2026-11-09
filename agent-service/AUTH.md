@@ -4,6 +4,12 @@ Status: Clerk Google OAuth is enabled in production. Anonymous MCP requests rece
 
 The public gallery and video assets remain accessible without signing in. MCP uses Clerk OAuth with `profile` and `email`; Clerk stores the account and verified email. Authentication does not subscribe the user to email updates. No email or token is returned to the agent.
 
+## Authenticated official agent access
+
+MCP and the HTTP `/launchvideo/agent/manifest.json`, `catalog.json`, and `workflow.md` routes require the same verified OAuth token and scopes. Authorization runs before loading repository content. Anonymous GET/HEAD calls receive 401 with OAuth discovery; authenticated calls retain their existing response shapes. SKILL.md, fixed connection links, OAuth discovery and CORS preflights remain public.
+
+Public and packaged bootstrap instructions stop when MCP is unavailable or disconnected and guide connection/reauthorization. They do not offer HTTP or GitHub fallback. Older bootstraps that try those HTTP agent routes now receive 401. The public gallery, website metadata and open-source repository remain public; these changes govern the official service and cannot make previously published material private.
+
 ## Provider setup
 
 - Clerk application: `app_3LkVh87NlDpgcVKaOkA8NuugYhi` (Serena Launch).

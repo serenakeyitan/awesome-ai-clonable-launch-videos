@@ -50,7 +50,7 @@ Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). 
 
 Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
 
-If MCP is unsupported or unavailable, fetch https://serenatan.org/launchvideo/agent/manifest.json and its workflowUrl and catalogUrl before each task. Never use fallback to bypass authentication, authorization or throttling. Follow the current workflow; report fetch failures instead of using a stale copy.
+If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. Do not use public catalogs, workflows, website metadata or GitHub mirrors as a substitute for the authenticated MCP service.
 `;
 
 function skillResponse(request) {
@@ -96,13 +96,15 @@ export default {
       }
       return mcp(request,env,ctx);
     }
-    if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS'}});
+    if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS','Access-Control-Allow-Headers':'Authorization, Content-Type'}});
     if (!['GET','HEAD'].includes(request.method)) return response({error:'Method not allowed'},'application/json',405);
     if (path === `${BASE}/agent/connect/claude`) return new Response(null,{status:302,headers:{Location:CLAUDE_CONNECT_URL,'Cache-Control':'no-store','Access-Control-Allow-Origin':'*'}});
     if (path === `${BASE}/agent` || path === `${BASE}/agent/`) return Response.redirect('https://serenatan.org/launchvideo/#connect',302);
     if (path === `${BASE}/agent/SKILL.md`) return skillResponse(request);
     const endpoints = [`${BASE}/agent/manifest.json`,`${BASE}/agent/catalog.json`,`${BASE}/agent/workflow.md`];
     if (!endpoints.includes(path)) return response({error:'Not found'},'application/json',404);
+    const auth = await authorizeMcp(request, env);
+    if (auth.response) return auth.response;
     try {
       const archive = await loadArchive();
       let data;

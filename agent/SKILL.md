@@ -11,4 +11,4 @@ Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). 
 
 Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
 
-If MCP is unsupported or unavailable, fetch https://serenatan.org/launchvideo/agent/manifest.json and its workflowUrl and catalogUrl before each task. Never use fallback to bypass authentication, authorization or throttling. Follow the current workflow; report fetch failures instead of using a stale copy.
+If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. Do not use public catalogs, workflows, website metadata or GitHub mirrors as a substitute for the authenticated MCP service.

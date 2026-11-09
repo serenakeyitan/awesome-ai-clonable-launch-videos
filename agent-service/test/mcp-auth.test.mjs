@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {generateKeyPairSync, createSign} from 'node:crypto';
 import {createClerkClient} from '@clerk/backend';
+import {readFile} from 'node:fs/promises';
 import worker from '../worker.mjs';
 import {authorizeMcp, MCP_RESOURCE, protectedResourceMetadata} from '../mcp-auth.mjs';
 
@@ -79,6 +80,38 @@ test('Worker enforces auth before MCP dispatch while preserving browser prefligh
   }
   const metadata=await worker.fetch(new Request('https://serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp'),configured,{});
   assert.equal(metadata.status,200);assert.equal((await metadata.json()).resource,MCP_RESOURCE);
+});
+
+test('agent HTTP catalog, manifest and workflow require OAuth before any source fetch', async () => {
+  const configured={...env,ARCHIVE_REQUEST_LIMITER:{limit:async()=>({success:true})}};
+  const originalFetch=globalThis.fetch;
+  let upstreamRequests=0;
+  globalThis.fetch=async()=>{upstreamRequests++;throw new Error('Protected source must not be loaded');};
+  try {
+    for(const path of ['catalog.json','manifest.json','workflow.md']) {
+      for(const method of ['GET','HEAD']) {
+        const r=await worker.fetch(new Request(`https://serenatan.org/launchvideo/agent/${path}`,{method}),configured,{});
+        assert.equal(r.status,401);assert.match(r.headers.get('WWW-Authenticate'),/oauth-protected-resource/);
+        assert.equal(r.headers.get('Cache-Control'),'no-store');
+        assert.doesNotMatch(await r.text(),/totalVideos|workflowUrl|clone this video/);
+      }
+      const preflight=await worker.fetch(new Request(`https://serenatan.org/launchvideo/agent/${path}`,{method:'OPTIONS'}),configured,{});
+      assert.equal(preflight.status,204);assert.match(preflight.headers.get('Access-Control-Allow-Headers'),/Authorization/);
+    }
+    assert.equal(upstreamRequests,0);
+  } finally {globalThis.fetch=originalFetch;}
+});
+
+test('all official bootstrap copies require connection and do not offer anonymous fallback', async () => {
+  const configured={...env,ARCHIVE_REQUEST_LIMITER:{limit:async()=>({success:true})}};
+  const r=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/SKILL.md'),configured,{});
+  assert.equal(r.status,200);
+  const text=await r.text();
+  assert.match(text,/401\/403, stop and guide connection or reauthorization/);
+  assert.doesNotMatch(text,/If MCP is unsupported or unavailable, fetch/);
+  for(const path of ['../../agent/SKILL.md','../../plugin/launch-archive/skills/serena-launch/SKILL.md','../../directory-submission/chatgpt/package/skills/serena-launch/SKILL.md']) {
+    assert.equal(await readFile(new URL(path,import.meta.url),'utf8'),text);
+  }
 });
 
 test('the real Clerk verifier rejects bad signatures, expiry, session tokens and wrong or missing audiences', async () => {
