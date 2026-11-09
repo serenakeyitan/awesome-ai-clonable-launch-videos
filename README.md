@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-77-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-78-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 77 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 78 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -119,6 +119,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Dnyx Studios — Imagination Upgrade](#dnyx-imagination-upgrade)
 - [LandAtlas — Real Estate Workflow](#landatlas-launch)
 - [Vainu — Company Signals](#vainu-company-signals)
+- [Nexo — Claude Opus 3D Scene](#nexo-claude-opus-3d-scene)
 
 ### [F. Illustrated Mascot Stories](#illustrated-mascot-stories)
 
@@ -3526,6 +3527,51 @@ https://x.com/abdullah4204k/status/2119137996196975045
 | Included file | 1:04 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="nexo-claude-opus-3d-scene"></a>
+
+### Nexo — Claude Opus 3D Scene
+
+[▶ View video](https://x.com/Nexoxh/status/2119823326080065850)
+
+**0:19 · 16:9 · 23.1K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/85.mp4) · [MP4 file](videos/nexo-claude-opus-3d-scene.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-85)
+
+A warm peach 3D desktop scene shows the Claude mascot block bouncing on the macOS Dock. The camera cuts to a terminal window and notification popups in a fully rendered 3D environment.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/Nexoxh/status/2119823326080065850
+```
+
+*Source: [@Nexoxh](https://x.com/Nexoxh/status/2119823326080065850) · 2026-11-09*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Nexoxh |
+| Post date | 2026-11-09 |
+| Stats snapshot (PT) | 2026-11-09 |
+| Post impressions | 23,146 |
+| Video plays | — |
+| Likes | 576 |
+| Bookmarks | 192 |
+| Reposts | 18 |
+| Replies | 8 |
+| Quotes | 0 |
+| Account followers | 5,724 |
+| Original duration | 0:19 |
+| Included file | 0:19 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1024 × 576 |
 | Audio track | Present |
 
 </details>
