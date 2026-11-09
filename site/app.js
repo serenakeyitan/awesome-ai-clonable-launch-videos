@@ -212,7 +212,7 @@ fetch('videos.json').then(response => {
     document.getElementById(id).innerHTML = `<option value="all">${label}</option>` + [...new Set(values)].sort().map(value=>`<option>${escapeHTML(value)}</option>`).join('');
   }
   $('#total-videos').textContent = videos.length;
-  $('#total-impressions').textContent = compact(videos.reduce((n,v) => n + v.impressions, 0));
+  $('#total-impressions').textContent = compact(videos.reduce((n,v) => n + (v.impressions ?? 0), 0));
   fetch('daily-stats.json').then(r => { if (!r.ok) throw new Error('No daily snapshot'); return r.json(); }).then(history => {
     const comparison = dailyChanges(videos, history);
     if (!comparison) return;

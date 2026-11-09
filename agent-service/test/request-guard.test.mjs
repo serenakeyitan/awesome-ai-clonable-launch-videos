@@ -8,7 +8,7 @@ const origin = 'https://serenatan.org';
 const allow = {ARCHIVE_REQUEST_LIMITER:{limit:async () => ({success:true})}};
 const request = (path='/launchvideo/mcp', init={}) => new Request(origin+path, {...init,headers:{Host:'serenatan.org',...Object.fromEntries(new Headers(init.headers))}});
 
-test('the shared guard blocks MCP and public fallback before either can load upstream data', async () => {
+test('the shared guard blocks MCP and agent HTTP routes before either can load upstream data', async () => {
   const keys = [];
   const env = {ARCHIVE_REQUEST_LIMITER:{limit:async ({key}) => {keys.push(key); return {success:false};}}};
   for (const [path, method] of [
@@ -76,4 +76,5 @@ test('deployment config binds the intended per-IP short-term allowance', async (
   const binding=config.ratelimits.find(b=>b.name==='ARCHIVE_REQUEST_LIMITER');
   assert.deepEqual(binding.simple,{limit:120,period:60});
   assert.equal(config.name,'serenatan-launchvideo-agent');
+  assert.equal(config.vars.CLERK_AUTH_ENABLED,'true');
 });

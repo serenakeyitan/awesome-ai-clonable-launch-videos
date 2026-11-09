@@ -25,3 +25,25 @@ for (const [name, Client, Transport] of [['modern',Modern,ModernHTTP],['legacy',
   console.log(JSON.stringify({client:name,tools:tools.tools.map(t=>t.name),videos:context.totalVideos,version:context.version,latestVideo:detail.video.title,freshFetchOnSameConnection:true}));
  } finally {await c.close();}
 }
+
+if (token) {
+ const base=new URL('/launchvideo/agent/',url);
+ for(const path of ['manifest.json','catalog.json','workflow.md']) {
+  const endpoint=new URL(path,base);
+  for(const method of ['GET','HEAD']) {
+   const anonymous=await fetch(endpoint,{method});
+   assert.equal(anonymous.status,401);assert.ok(anonymous.headers.get('WWW-Authenticate'));
+  }
+  const authorized=await fetch(endpoint,{headers:{Authorization:`Bearer ${token}`}});
+  assert.equal(authorized.status,200);assert.match(authorized.headers.get('Cache-Control'),/no-store/);
+  if(path==='workflow.md')assert.match(await authorized.text(),/^# Serena Launch workflow/);
+  else {
+   const data=await authorized.json();assert.ok(data.totalVideos>0);assert.ok(data.workflow);
+   if(path==='catalog.json')assert.equal(data.videos.length,data.totalVideos);
+  }
+ }
+ const skill=await fetch(new URL('SKILL.md',base));assert.equal(skill.status,200);
+ const text=await skill.text();assert.match(text,/401\/403, stop and guide connection or reauthorization/);
+ assert.doesNotMatch(text,/If MCP is unsupported or unavailable, fetch/);
+ console.log(JSON.stringify({authenticatedHttpRoutes:3,anonymousAgentRoutes:401,publicConnectionGuide:200}));
+}

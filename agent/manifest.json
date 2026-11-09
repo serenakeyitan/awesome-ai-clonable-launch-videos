@@ -31,7 +31,9 @@
       "email"
     ],
     "privacyUrl": "https://serenatan.org/launchvideo/privacy.html",
-    "newsletterSubscription": "Separate opt-in; never implied by login."
+    "newsletterSubscription": "Separate opt-in; never implied by login.",
+    "agentService": "OAuth required for MCP and HTTP manifest/catalog/workflow routes. No anonymous fallback.",
+    "publicBootstrap": "SKILL.md, connection links and OAuth discovery remain public."
   },
   "formats": [
     {
@@ -60,7 +62,7 @@
     }
   ],
   "updatePolicy": {
-    "refresh": "Every tool call and HTTP catalog/workflow read resolves the current published main revision.",
+    "refresh": "Every authenticated tool call and HTTP agent read resolves the current published main revision.",
     "clientBootstrap": "Keep the existing MCP endpoint and installed bootstrap skill.",
     "catalogShapes": [
       "video array",

@@ -22,7 +22,7 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 | Grok | https://grok.com/connectors → New Connector → Custom → enter the endpoint above. Organization admins may need to enable it. |
 | Gemini CLI | Add `{"mcpServers":{"serena-launch":{"httpUrl":"https://serenatan.org/launchvideo/mcp"}}}` to Gemini settings, preserving existing settings. |
 | VS Code | Run MCP: Add Server → HTTP → enter the endpoint above. |
-| Raft / other agents | Send the setup prompt above. Use remote MCP settings if supported; otherwise fetch the live manifest and catalog over HTTP. |
+| Raft / other agents | Send the setup prompt above. Use remote MCP settings if supported; otherwise explain that an MCP-capable client is required. |
 
 ```json
 {"mcpServers":{"serena-launch":{"url":"https://serenatan.org/launchvideo/mcp"}}}
@@ -30,7 +30,7 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 
 The same service has three stable tools: `get_launch_context`, `search_launch_videos`, and `get_launch_video`. Call `get_launch_context` before each task. Every tool fetches the current catalog and workflow, returns their content version, and discovers styles dynamically. Search uses keywords, not a semantic embedding model.
 
-Agents without MCP can fetch [manifest.json](https://serenatan.org/launchvideo/agent/manifest.json), its `workflowUrl`, and its `catalogUrl` before each task. On an upstream failure the service returns an explicit error, never a baked-in catalog snapshot.
+Official use requires an authenticated MCP connection. If MCP is disconnected or unsupported, stop and guide setup; do not read public mirrors as a substitute. HTTP manifest, catalog and workflow routes require the same OAuth access token and scopes as MCP. Public SKILL.md only guides connection. The gallery and public repository remain browsable; authentication does not make already-public content private.
 
 ## Updating the library
 
@@ -45,7 +45,7 @@ The remote service resolves the current main commit through Git’s uncached ref
 
 The plugin contains only a stable setup/refresh bootstrap and endpoint. Changes to permissions, transport, tool contracts, or client UI capabilities may require an updated package or reconnect. A client that does not call a tool cannot receive fresh server content. Native UI connection on each named client is separate from protocol verification.
 
-The landing-page source is in `site/`. Run `python3 scripts/build_site.py` to generate `site-dist/` with the current catalog and published media URLs. The deployed gallery also retains its local reference assets for direct playback.
+The landing-page source is in `site/`. Run `python3 scripts/build_site.py` to generate `site-dist/` with the current catalog and published media URLs. Initial hero totals and the All videos count are rendered from that same catalog snapshot, matching the client-side figures before JavaScript runs. The deployed gallery also retains its local reference assets for direct playback.
 
 ## Reading SKILL.md
 

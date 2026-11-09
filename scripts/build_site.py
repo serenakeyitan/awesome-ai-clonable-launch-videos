@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import shutil
 from build_daily_stats import update_daily_stats
+from site_summary import render_summary
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'site-dist'
@@ -14,8 +15,8 @@ for source in (ROOT / 'site').iterdir():
     elif source.is_dir():
         shutil.copytree(source, OUT / source.name, dirs_exist_ok=True)
 html = (OUT / 'index.html').read_text().replace('"assets/', '"https://serenatan.org/launchvideo/assets/')
-(OUT / 'index.html').write_text(html)
 videos = json.loads((ROOT / 'data/videos.json').read_text())
+(OUT / 'index.html').write_text(render_summary(html, videos))
 for video in videos:
     video['video'] = video['watchUrl']
     video['poster'] = 'https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/' + video['poster']
