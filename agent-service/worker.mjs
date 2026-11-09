@@ -61,7 +61,8 @@ function skillResponse(request) {
   const body = html ? `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Serena Launch — Setup guide</title>
-<link rel="icon" type="image/png" href="/launchvideo/mascot/serena-popcorn.png">
+<link rel="icon" href="/launchvideo/favicon-32.png?v=popcorn-1" type="image/png" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/launchvideo/favicon.svg?v=popcorn-1">
 <link rel="alternate" type="text/markdown" title="Raw Markdown" href="?raw=1">
 <link rel="stylesheet" href="/launchvideo/style.css"><link rel="stylesheet" href="/shared/site-header.css">
 <script src="/shared/site-header.js" defer></script>

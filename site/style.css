@@ -26,7 +26,7 @@ h1, h2, h3 { font-weight: 400; }
 .intro-copy { min-width: 0; }
 h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.04em; margin: 0 0 20px; }
 .intro-tagline { font-size: 15px; line-height: 1.6; color: #2a2a2a; }
-.intro-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.intro-bottom { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
 .intro-mascot { position: relative; align-self: end; justify-self: end; width: 210px; height: 205px; overflow: hidden; pointer-events: none; user-select: none; }
 .intro-mascot img { position: absolute; right: -5px; bottom: -18px; width: 220px; height: 220px; max-width: none; transform: scaleX(-1) rotate(-6deg); transform-origin: 50% 90%; }
 .solid-link, .solid-button, .client-buttons > a, .client-buttons > button, .copy-config, .sort-tools > button, .dialog-header button {
@@ -42,12 +42,14 @@ h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.0
 .github-mark { display: block; width: 19px; height: 19px; }
 .solid-link { border: 0; padding: 9px 0; }
 .solid-link:hover, .solid-link:active { background: transparent; text-decoration: underline; }
-.solid-link > span { margin-left: 10px; }
+.solid-link > .external-arrow { margin-left: 10px; }
+.github-stars { display: inline-flex; align-items: center; gap: 5px; margin-left: 3px; color: var(--muted); font-size: 13px; }
+.github-stars svg { width: 15px; height: 15px; }
 .summary { display: flex; flex-wrap: wrap; gap: 12px 28px; }
 .summary > div { display: flex; align-items: baseline; gap: 7px; white-space: nowrap; }
-.summary strong { font-size: 15px; font-weight: 400; }
-.summary span { color: var(--muted); font-size: 13px; }
-.summary .stat-delta { color: #20743a; font-size: 12px; margin-left: 3px; }
+.summary strong { font-size: 24px; font-weight: 400; letter-spacing: -.04em; }
+.summary span { color: var(--muted); font-size: 15px; }
+.summary .stat-delta { color: #20743a; font-size: 14px; margin-left: 3px; }
 .summary .stat-delta[data-direction="flat"] { color: var(--muted); }
 .summary .stat-delta[data-direction="down"] { color: #a3342b; }
 .section { margin-top: 56px; }
@@ -214,12 +216,14 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
   .intro-mascot img { right: -3px; bottom: -10px; width: 128px; height: 128px; }
   h1 { font-size: 34px; line-height: 1.15; }
   .intro-bottom { grid-column: 1; grid-row: 2; align-items: flex-start; flex-direction: column; gap: 12px; }
+  .intro-bottom .solid-link { flex-wrap: wrap; justify-content: flex-start; white-space: normal; }
   .intro-tagline { font-size: 14px; }
   .agent-connect { padding: 18px; }
   .summary { flex-direction: column; gap: 7px; }
   .summary > div { white-space: normal; }
-  .summary strong { font-size: 14px; }
-  .summary span { font-size: 12px; }
+  .summary strong { font-size: 20px; }
+  .summary span { font-size: 13px; }
+  .summary .stat-delta { font-size: 12px; }
   .connect-heading h2 { font-size: 18px; }
   .setup-prompt { padding: 14px; gap: 10px; }
   .setup-prompt code { font-size: 13px; }
