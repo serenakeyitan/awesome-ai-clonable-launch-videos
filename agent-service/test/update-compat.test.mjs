@@ -36,6 +36,8 @@ for (const [name, ClientType] of [['modern',Client],['legacy',LegacyClient]]) {
       f.state.manifest.rendering={preferredEngine:'Remotion',delivery:['editable source','MP4']};
       f.state.workflow='Updated workflow: use the newly published hookAnalysis and format layout.';
       f.state.wrapped=true;f.state.revision='b'.repeat(40);
+      const refreshed=(await client.callTool({name:'get_launch_context',arguments:{}})).structuredContent;
+      assert.equal(refreshed.workflow,f.state.workflow);assert.notEqual(refreshed.version,initial.version);
       const edited=(await client.callTool({name:'get_launch_video',arguments:{reference:'1'}})).structuredContent;
       assert.equal(edited.video.title,'Updated reference');assert.equal(edited.video.views,250);
       assert.equal(edited.video.watchUrl,'https://serenatan.org/launchvideo/assets/revised.mp4');
