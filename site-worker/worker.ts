@@ -56,7 +56,7 @@ export async function videoResponse(request:Request, response:Response, assetPat
   return new Response(body, { status: 206, headers });
 }
 
-const FRONTEND_PAGES:Record<string,string>={'/index.html':'/launch.html','/consent.html':'/consent.html'};
+const FRONTEND_PAGES:Record<string,string>={'/index.html':'/launch','/consent.html':'/consent'};
 export async function frontendResponse(request:Request,path:string,fetcher:typeof fetch=fetch):Promise<Response>{
   // Static UI is compiled once in serena-portfolio. Query strings, cookies and
   // OAuth authorization headers never need to be forwarded to the HTML origin.
@@ -64,6 +64,7 @@ export async function frontendResponse(request:Request,path:string,fetcher:typeo
   try {
     const upstream=await fetcher(url,{method:request.method,headers:{Accept:'text/html','Cache-Control':'no-cache'},redirect:'error'});
     if(upstream.status!==200||!upstream.headers.get('Content-Type')?.includes('text/html')) throw new Error('UI unavailable');
+    if(path==='/consent'&&!upstream.headers.get('Content-Security-Policy')) throw new Error('Consent policy unavailable');
     const headers=new Headers(upstream.headers);headers.set('Cache-Control','no-store');
     return new Response(request.method==='HEAD'?null:upstream.body,{status:200,headers});
   } catch {
