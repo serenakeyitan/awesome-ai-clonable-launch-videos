@@ -1,11 +1,12 @@
 {
   "state": "Incomplete preparation copy; not ready to submit",
-  "package": "serena-launch-public-draft-0.1.4.zip",
+  "package": "serena-launch-public-draft-0.1.6.zip",
   "files": [
-    "launch-archive/assets/serena-popcorn.png",
-    "launch-archive/mcp.json",
-    "launch-archive/plugin.json",
-    "launch-archive/skills/launch-archive/SKILL.md"
+    "assets/serena-popcorn.png",
+    "mcp.json",
+    "plugin.json",
+    "skills/serena-launch/SKILL.md",
+    "skills/serena-launch/agents/openai.yaml"
   ],
   "shortDescriptionLength": 28,
   "positiveCases": 5,
