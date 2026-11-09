@@ -6,3 +6,5 @@ node_modules/
 .env
 .env.*
 site-dist/
+
+site-worker/asset-sizes.json

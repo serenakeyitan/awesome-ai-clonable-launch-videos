@@ -3735,6 +3735,10 @@ https://x.com/nazyurtal/status/2117252549019328774
 - Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
 
+## Website publishing
+
+The portfolio and gallery share a React + TypeScript frontend in [serena-portfolio](https://github.com/serenakeyitan/serena-portfolio). This repository owns collection data, media and MCP. Publish the gallery with the checked-in [delivery Worker](site-worker/README.md).
+
 ## Contributing
 
 Suggestions are welcome! Open a PR with a public source post, a preview, a useful style breakdown, and a copyable remake prompt. Include a dated source for any stats, and label excerpts clearly. Upload the MP4 as a GitHub video attachment and add its URL as `githubVideoUrl` in `data/videos.json`, then run:

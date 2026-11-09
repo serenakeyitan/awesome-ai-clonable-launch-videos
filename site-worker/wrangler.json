@@ -1,0 +1,39 @@
+{
+  "name": "serenatan-launchvideo",
+  "account_id": "6b67f38611a3643755e71b5b02d0ffcb",
+  "main": "worker.ts",
+  "compatibility_date": "2026-10-28",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "serenatan.org/launchvideo",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    },
+    {
+      "pattern": "serenatan.org/launchvideo/*",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    }
+  ],
+  "assets": {
+    "directory": "../site-dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  },
+  "build": {
+    "command": "python3 scripts/build_site.py"
+  }
+}
