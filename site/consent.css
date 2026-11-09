@@ -7,7 +7,6 @@
 .consent-arrow { color: var(--muted); font-size: 24px; }
 #client-initial { font-size: 32px; }
 .consent-card h1 { font-size: clamp(25px, 5vw, 32px); line-height: 1.2; letter-spacing: -.04em; margin: 0 0 12px; overflow-wrap: anywhere; }
-.consent-purpose { font-size: 14px; }
 .consent-account { margin-top: 12px; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
 .consent-permissions { margin: 28px 0 24px; padding: 20px; background: #ececec; }
 .consent-permissions h2 { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
@@ -16,12 +15,10 @@
 .consent-trust { font-size: 13px; line-height: 1.6; }
 .consent-return { margin-top: 5px; }
 .consent-return strong { font-weight: 500; overflow-wrap: anywhere; }
-#consent-offline { margin-top: 8px; }
 #consent-details { margin-top: 12px; }
 #consent-details summary { width: fit-content; cursor: pointer; color: var(--muted); font-size: 12px; }
 .consent-explanation { padding-top: 12px; color: var(--muted); }
-.consent-explanation p + p { margin-top: 8px; }
-.consent-explanation dl { margin: 16px 0 0; }
+.consent-explanation dl { margin: 0; }
 .consent-explanation dt { margin-top: 12px; color: var(--ink); }
 .consent-explanation dd { margin: 3px 0 0; overflow-wrap: anywhere; white-space: pre-wrap; }
 .consent-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }

@@ -15,26 +15,24 @@
 <body class="consent-page">
   <main class="consent-card" aria-labelledby="consent-heading">
     <div class="consent-brand"><img src="favicon.svg" width="26" height="26" alt=""><span>Serena Launch</span></div>
-    <p id="consent-status" role="status">Loading your connection…</p>
+    <p id="consent-status" role="status">Loading…</p>
     <section id="consent-content" hidden>
       <div class="consent-logos" aria-hidden="true"><img id="client-logo" width="42" height="42" alt="" hidden><span id="client-initial" hidden></span><span class="consent-arrow">↔</span><img src="mascot/serena-popcorn.png" width="62" height="62" alt=""></div>
       <h1 id="consent-heading">Connect your agent</h1>
-      <p class="consent-purpose">Use Serena’s launch video collection with your agent.</p>
-      <p class="consent-account">Signed in as <span id="consent-account"></span></p>
+      <p class="consent-account" id="consent-account"></p>
       <form id="consent-form" method="POST">
         <div class="consent-permissions"><h2>Requested access</h2><ul id="consent-scopes"></ul></div>
         <div id="consent-organization" hidden><label for="organization-id">Organization</label><select id="organization-id" name="organization_id" disabled></select></div>
         <div class="consent-trust">
           <p id="consent-trust-summary"></p>
           <p class="consent-return">Return to <strong id="consent-return"></strong></p>
-          <p id="consent-offline" hidden>Stays connected until you sign out or revoke access.</p>
-          <details id="consent-details"><summary>Connection details</summary><div class="consent-explanation"><p>This app can access the account information listed above. Review the permissions before continuing.</p><p>Connecting does not subscribe you to email updates.</p><dl><dt>App website</dt><dd id="consent-app-url"></dd><dt>Client ID</dt><dd id="consent-client-id"></dd><dt>Full return URL</dt><dd id="consent-redirect-uri"></dd></dl></div></details>
+          <details id="consent-details"><summary>Details</summary><div class="consent-explanation"><dl><dt>Website</dt><dd id="consent-app-url"></dd><dt>Client ID</dt><dd id="consent-client-id"></dd><dt>Return URL</dt><dd id="consent-redirect-uri"></dd></dl></div></details>
         </div>
         <div class="consent-actions"><button type="submit" name="consented" value="false" formnovalidate>Deny</button><button type="submit" name="consented" value="true">Allow</button></div>
       </form>
-      <p class="consent-footer">Authentication by Clerk</p>
+      <p class="consent-footer">Secured by Clerk</p>
     </section>
-    <noscript><p>JavaScript is required to review and authorize this connection. Return to your agent’s connection settings to try again.</p></noscript>
+    <noscript><p>Enable JavaScript to review this connection.</p></noscript>
   </main>
 </body>
 </html>
