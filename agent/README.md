@@ -6,6 +6,8 @@ Use Quick connect on the website, or send this to an agent that can configure MC
 Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.
 ```
 
+For Claude chat, the copied prompt asks for one [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude) link when setup is needed. This opens the prefilled connector flow after a click; it does not automatically register a connector or approve OAuth.
+
 Chat apps may require you to add a connector in settings. Reading a setup guide or saving a skill does not install an MCP connection.
 
 Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP and read-only, with Clerk OAuth sign-in. Sign in and approve access in your client’s browser flow; never paste credentials into chat. The gallery and videos remain public.

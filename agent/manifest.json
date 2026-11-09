@@ -75,5 +75,8 @@
     "website": "Website layout and media assets use their publishing pipeline; the agent reads the published catalog and workflow.",
     "authenticationMigration": "Existing unauthenticated installations must reconnect once for OAuth. Future catalog and workflow updates keep the same connection."
   },
-  "statisticsUrl": "https://serenatan.org/launchvideo/daily-stats.json"
+  "statisticsUrl": "https://serenatan.org/launchvideo/daily-stats.json",
+  "setupLinks": {
+    "claude": "https://serenatan.org/launchvideo/agent/connect/claude"
+  }
 }

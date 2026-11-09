@@ -6,6 +6,7 @@ import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 
 const BASE = '/launchvideo';
+const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
 const guarded = (load, fn) => async args => {
@@ -45,7 +46,7 @@ description: Find launch-video references and remake one using the live Serena L
 
 Connect the existing MCP server; do not package a downloadable skill.
 
-Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). The user signs in and approves access; never request credentials or tokens in chat. If chat cannot configure MCP, provide the client's connector-settings path. Claim connection only after initialize, tools/list and get_launch_context succeed.
+Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). The user signs in and approves access; never request credentials or tokens in chat. If chat cannot configure MCP, give one connect link rather than a tutorial. For Claude, reply only with [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude). For other clients, use their setup link or shortest settings path. Claim connection only after initialize, tools/list and get_launch_context succeed.
 
 Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
 
@@ -76,6 +77,7 @@ export default {
     }
     if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS'}});
     if (!['GET','HEAD'].includes(request.method)) return response({error:'Method not allowed'},'application/json',405);
+    if (path === `${BASE}/agent/connect/claude`) return new Response(null,{status:302,headers:{Location:CLAUDE_CONNECT_URL,'Cache-Control':'no-store','Access-Control-Allow-Origin':'*'}});
     if (path === `${BASE}/agent` || path === `${BASE}/agent/`) return Response.redirect('https://serenatan.org/launchvideo/#connect',302);
     if (path === `${BASE}/agent/SKILL.md`) return response(request.method === 'HEAD' ? '' : bootstrap,'text/markdown');
     const endpoints = [`${BASE}/agent/manifest.json`,`${BASE}/agent/catalog.json`,`${BASE}/agent/workflow.md`];
