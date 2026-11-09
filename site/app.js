@@ -212,12 +212,12 @@ fetch('videos.json').then(response => {
   }
   $('#total-videos').textContent = videos.length;
   $('#total-impressions').textContent = compact(videos.reduce((n,v) => n + v.impressions, 0));
-  $('#total-views').textContent = compact(videos.reduce((n,v) => n + v.views, 0));
   fetch('daily-stats.json').then(r => { if (!r.ok) throw new Error('No daily snapshot'); return r.json(); }).then(history => {
     const comparison = dailyChanges(videos, history);
     if (!comparison) return;
     for (const [metric, change] of Object.entries(comparison.changes)) {
       const badge = $(`#delta-${metric}`);
+      if (!badge) continue;
       badge.textContent = change > 0 ? `↑ +${compact(change)}` : change < 0 ? `↓ −${compact(-change)}` : '0';
       badge.dataset.direction = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
       badge.title = `Collection total vs yesterday (${comparison.yesterday}, PT). Includes newly added references; not daily traffic or same-post growth.`;
