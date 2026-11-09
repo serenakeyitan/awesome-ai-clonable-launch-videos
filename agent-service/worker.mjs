@@ -23,12 +23,12 @@ export function createServer(load = loadArchive) {
   }, guarded(load, archive => context(archive)));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
-    description:'Search by keywords and current facets. Returns playable references, dated stats and the live workflow. Default ranking: keyword match, then impressions.',
-    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest','impressions']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
+    description:'Search keywords and current facets. Returns candidate MP4s, descriptive notes, duration and the live workflow. Keyword order is not a product-fit recommendation; no popularity ranking or metrics.',
+    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
   }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)})));
   server.registerTool('get_launch_video', {
     title:'Get launch-video reference details',
-    description:'Get a reference by ID, slug or X/Twitter URL: MP4, metadata, dated stats, notes and clone prompt. Catalog references only.',
+    description:'Get a reference by ID, slug or X/Twitter URL: MP4, descriptive metadata, notes and clone prompt. Catalog references only; no popularity metrics or legacy scores.',
     inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations:{...annotations,title:'Get launch-video reference details'}
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);

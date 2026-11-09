@@ -39,7 +39,7 @@ for (const [name, ClientType] of [['modern',Client],['legacy',LegacyClient]]) {
       const refreshed=(await client.callTool({name:'get_launch_context',arguments:{}})).structuredContent;
       assert.equal(refreshed.workflow,f.state.workflow);assert.notEqual(refreshed.version,initial.version);
       const edited=(await client.callTool({name:'get_launch_video',arguments:{reference:'1'}})).structuredContent;
-      assert.equal(edited.video.title,'Updated reference');assert.equal(edited.video.views,250);
+      assert.equal(edited.video.title,'Updated reference');assert.ok(!Object.hasOwn(edited.video,'views'));
       assert.equal(edited.video.watchUrl,'https://serenatan.org/launchvideo/assets/revised.mp4');
       assert.ok(edited.video.poster.includes('/'+'b'.repeat(40)+'/'));
       assert.deepEqual(edited.video.additionalMetadata.hookAnalysis,{opening:'A new product hook',durationSeconds:2});

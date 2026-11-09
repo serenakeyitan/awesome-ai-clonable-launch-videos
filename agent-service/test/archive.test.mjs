@@ -35,6 +35,7 @@ test('an existing MCP connection sees new videos, formats and workflow without r
       assert.equal(tool.annotations.idempotentHint,true);
       assert.equal(tool.annotations.openWorldHint,true);
     }
+    assert.deepEqual(toolsBefore.tools.find(t => t.name === 'search_launch_videos').inputSchema.properties.sort.enum,['relevance','newest']);
     const before = (await client.callTool({name:'get_launch_context',arguments:{}})).structuredContent;
     assert.equal(before.totalVideos,1);
     f.state.videos.push({...f.state.videos[0],id:2,slug:'new-demo',title:'Fresh illustrated launch',styles:['New style'],source:'https://x.com/demo/status/456'});
@@ -57,15 +58,46 @@ test('an existing MCP connection sees new videos, formats and workflow without r
   } finally {await client.close();await server.close();}
 });
 
-test('search preserves missing metrics, bounded results and canonical source lookup', async () => {
+test('search preserves bounded results and canonical source lookup without popularity metrics', async () => {
   const f = fixture(); const a = await f.load();
   assert.equal(search(a,{query:'cursor'}).totalMatches,1);
   assert.equal(search(a,{query:'nonexistent'}).totalMatches,0);
   assert.equal(search(a,{style:'new style'}).totalMatches,0);
-  assert.equal(record(a.videos[0]).views,null);
+  assert.ok(!Object.hasOwn(record(a.videos[0]),'views'));
   assert.equal(findVideo(a,'https://twitter.com/demo/status/123/video/1?s=46').id,1);
   assert.equal(findVideo(a,'https://evil.example/private'),undefined);
   assert.equal(record(a.videos[0]).remakePrompt,'clone this video 1:1 for my product https://x.com/demo/status/123');
+});
+
+test('reference search ignores popularity for browsing, ties and keyword relevance', async () => {
+  const f = fixture(); const archive = await f.load();
+  const first = {...archive.videos[0],id:1,title:'Feature tour',impressions:1,views:0};
+  const popular = {...first,id:2,impressions:10000000,views:5000000,likes:99999,scores:{cloneEase:5}};
+  archive.videos = [popular,first];
+  const ids = args => search(archive,args).videos.map(v => v.id);
+  assert.deepEqual(ids({}),[1,2]);
+  assert.deepEqual(ids({query:'feature tour'}),[1,2]);
+  popular.title = 'Different story';
+  assert.deepEqual(ids({query:'feature'}),[1]);
+  popular.impressions = 1; first.impressions = 99999999;
+  assert.deepEqual(ids({}),[1,2]);
+  assert.deepEqual(ids({query:'nothing-matches'}),[]);
+  assert.throws(() => search(archive,{sort:'impressions'}),/Unsupported reference sort/);
+});
+
+test('agent references expose descriptive notes but omit performance and legacy scores at both detail levels', async () => {
+  const f = fixture(); const archive = await f.load();
+  const video = {...archive.videos[0],followers:9000000,likes:12000,bookmarks:99,reposts:88,replies:77,quotes:66,scores:{cloneEase:5,similarity:5},benchmark:{engagement:100},hookAnalysis:{opening:'Show the core action'}};
+  const excluded = ['impressions','views','followers','likes','bookmarks','reposts','replies','quotes','scores','benchmark','snapshotDate'];
+  for (const detail of [false,true]) {
+    const result = record(video,detail);
+    assert.deepEqual(result.notes,video.notes);
+    for (const key of excluded) {
+      assert.ok(!Object.hasOwn(result,key),key);
+      assert.ok(!Object.hasOwn(result.additionalMetadata ?? {},key),key);
+    }
+    if (detail) assert.deepEqual(result.additionalMetadata.hookAnalysis,video.hookAnalysis);
+  }
 });
 
 test('upstream failures and oversized bodies never return a stale snapshot', async () => {
