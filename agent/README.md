@@ -57,7 +57,7 @@ The public SKILL.md endpoint returns a branded HTML reader for browser requests 
 
 Server instructions only direct the agent to fetch and follow that workflow. SKILL.md copies retain connection setup and the live-workflow handoff, without embedding production steps or numeric retry rules. The public SKILL.md route is served by the Worker, so changing its embedded bootstrap or server instructions requires a Worker deployment. Installed package text is not remotely rewritten, but existing bootstraps already request the live workflow before each task.
 
-The MCP supplies references and instructions; the client performs inspection and rendering. Instructions cannot enforce an external agent's tool use or certify a 1:1 remake by themselves.
+The MCP supplies references and instructions; the client performs inspection and rendering. Instructions guide the agent; reference inspection and output verification remain with the client.
 
 ### Reference playback check
 
@@ -125,4 +125,4 @@ python3 scripts/build_site.py --output /path/to/deployment/dist
 python3 scripts/verify_site.py /path/to/deployment/dist --require-local-media
 ```
 
-Only deploy after verification succeeds. The check rejects repository-only media paths and missing gallery assets. Browser playback verification is still required after deployment.
+Only deploy after verification succeeds. The check rejects repository-only media paths, missing gallery assets and missing browser module dependencies, including analytics configuration. Browser playback verification is still required after deployment.

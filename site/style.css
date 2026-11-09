@@ -261,3 +261,12 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
 .reference-feedback { display:flex; gap:12px; align-items:center; color:var(--muted); font-size:12px; margin:16px 0; }
 .reference-feedback button { background:none; border:0; padding:4px; text-decoration:underline; cursor:pointer; }
 .reference-feedback button:disabled { opacity:.4; cursor:default; }
+
+/* Keep the collection header focused; Serena Tan already links home. */
+.site-header[data-site-page="launch-videos"] { grid-template-columns: minmax(0,1fr) auto; padding: 12px max(24px, calc((100vw - 1180px) / 2 + 34px)); border-bottom-color: #d8d8d8; }
+.site-header[data-site-page="launch-videos"] .site-pages { display:none; }
+.site-header[data-site-page="launch-videos"] .ed-pill { background:transparent; border:0; box-shadow:none; color:var(--muted); padding:6px 8px; font-size:12px; letter-spacing:0; }
+.site-header[data-site-page="launch-videos"] .editions.open .ed-pill { background:var(--wash); box-shadow:none; }
+@media(max-width:700px) {
+  .site-header[data-site-page="launch-videos"] { grid-template-areas:"brand context"; padding:10px 18px; }
+}
