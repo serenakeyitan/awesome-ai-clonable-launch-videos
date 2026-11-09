@@ -4,7 +4,7 @@ const $ = id => document.getElementById(id);
 const showError = () => {
   $('consent-content').hidden = true;
   $('consent-status').hidden = false;
-  $('consent-status').textContent = 'This connection could not be loaded. Start again from your agent’s connection settings.';
+  $('consent-status').textContent = 'Connection unavailable. Try again from your agent.';
 };
 
 function render(info, authorization, user, clerk, preview = false) {
@@ -12,9 +12,8 @@ function render(info, authorization, user, clerk, preview = false) {
   const form = $('consent-form');
   $('consent-heading').textContent = `Connect ${model.name}`;
   $('consent-account').textContent = user.primaryEmailAddress?.emailAddress || user.primaryPhoneNumber?.phoneNumber || user.username || user.id;
-  $('consent-trust-summary').textContent = `Only allow this connection if you trust ${model.name}.`;
+  $('consent-trust-summary').textContent = `Only continue if you trust ${model.name}.`;
   $('consent-return').textContent = model.destination;
-  $('consent-offline').hidden = !model.offline;
   $('consent-client-id').textContent = authorization.clientId;
   $('consent-redirect-uri').textContent = authorization.redirectUri;
   if (model.website) {
@@ -39,7 +38,7 @@ function render(info, authorization, user, clerk, preview = false) {
     select.disabled = false; select.required = true; $('consent-organization').hidden = false;
   }
   if (preview) {
-    const label = document.createElement('p'); label.className = 'consent-account'; label.textContent = 'Design preview — no authorization will be submitted.'; form.before(label);
+    const label = document.createElement('p'); label.className = 'consent-account'; label.textContent = 'Preview · authorization disabled'; form.before(label);
     form.querySelectorAll('button').forEach(button => { button.disabled = true; });
     form.addEventListener('submit', event => event.preventDefault());
   } else {
