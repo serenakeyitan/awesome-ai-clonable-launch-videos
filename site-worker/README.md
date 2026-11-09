@@ -18,9 +18,9 @@ Media is hardlinked where supported, otherwise copied. Treat generated assets as
 read-only. References hosted elsewhere remain external.
 
 Deploy the portfolio frontend first (`npm run build`, Pages output `dist`).
-Verify `https://serenatan.org/launch.html`, `/consent.html` and their script/style
+Verify `https://serenatan.org/launch`, `/consent` and their script/style
 assets. Then deploy this Worker. It forwards collection/consent HTML to those
-entries without forwarding cookies, authorization headers or query strings.
+canonical extensionless Pages entries without forwarding cookies, authorization headers or query strings.
 Original browser URLs and OAuth parameters remain available to the client.
 An unavailable frontend returns 503; there is no alternate anonymous workflow.
 
