@@ -1,4 +1,6 @@
-# Awesome AI Clonable Launch Videos
+# Serena Launch
+
+An awesome collection of AI-clonable launch videos.
 
 ### ▶ [Watch the collection](https://serenatan.org/launchvideo/)
 

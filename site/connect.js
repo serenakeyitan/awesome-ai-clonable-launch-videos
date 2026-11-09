@@ -3,11 +3,11 @@
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
   const setup = 'Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.';
   const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const config = JSON.stringify({mcpServers:{'launch-archive':{url:endpoint}}},null,2);
+  const config = JSON.stringify({mcpServers:{'serena-launch':{url:endpoint}}},null,2);
   const clients = {
-    claude:{name:'Claude',text:'Open Customize → Connectors → Add custom connector. Name it Serena Launch, paste the server URL below, and complete sign-in when prompted.',value:endpoint,link:'https://claude.ai/settings/connectors',label:'Open Claude ↗',extra:`Claude Code: claude mcp add --transport http launch-archive ${endpoint}`},
+    claude:{name:'Claude',text:'Open Customize → Connectors → Add custom connector. Name it Serena Launch, paste the server URL below, and complete sign-in when prompted.',value:endpoint,link:'https://claude.ai/settings/connectors',label:'Open Claude ↗',extra:`Claude Code: claude mcp add --transport http serena-launch ${endpoint}`},
     chatgpt:{name:'ChatGPT',text:'Open Plugins, select + → Add custom MCP server. Paste the server URL below, choose OAuth, then create and install the plugin and complete sign-in.',value:endpoint,link:'https://chatgpt.com/#settings',label:'Open ChatGPT ↗',extra:'Custom server access depends on your account and workspace settings.'},
-    codex:{name:'Codex',text:'Run this in your terminal, then run codex mcp login launch-archive to sign in.',value:`codex mcp add launch-archive --url ${endpoint}`,link:'https://developers.openai.com/learn/docs-mcp',label:'Connection guide ↗'},
+    codex:{name:'Codex',text:'Run this in your terminal, then run codex mcp login serena-launch to sign in.',value:`codex mcp add serena-launch --url ${endpoint}`,link:'https://developers.openai.com/learn/docs-mcp',label:'Connection guide ↗'},
     cursor:{name:'Cursor',text:'Add this server to .cursor/mcp.json, keeping any existing servers. Enable Serena Launch in Cursor’s MCP settings.',value:config,link:'https://cursor.com/docs/mcp',label:'Cursor setup guide ↗'},
     grok:{name:'Grok',text:'Open Connectors → New Connector → Custom. Paste the server URL below and connect.',value:endpoint,link:'https://grok.com/connectors',label:'Open Grok connectors ↗',extra:'Business and Enterprise teams may need an admin to enable the connector.'},
     more:{name:'Gemini, VS Code, Raft & more',text:'Add the server URL in your app’s MCP settings, then sign in with OAuth. Apps that cannot add a connector from chat require this settings step.',value:endpoint,link:'https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/blob/main/agent/README.md',label:'All setup options ↗',extra:'VS Code: MCP: Add Server → HTTP. Gemini CLI: use httpUrl in your MCP configuration. Raft: send the setup prompt.'}
@@ -34,7 +34,7 @@
     if(opened)return;
     button.setAttribute('aria-expanded','true');
     const client=clients[button.dataset.client];
-    const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'launch-archive',config:JSON.stringify({type:'http',url:endpoint})});
+    const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
     panel.innerHTML=`<h3>${esc(client.name)}</h3><p>${esc(client.text)}</p><pre><code>${esc(client.value)}</code></pre><button class="copy-config" aria-label="Copy ${esc(client.name)} connection configuration">Copy</button><a href="${client.link}" target="_blank" rel="noopener">${client.label}</a>${button.dataset.client==='more'?`<a class="vscode-install" href="${vsCode}" target="_blank" rel="noopener">Add to VS Code ↗</a>`:''}${client.extra?`<p class="client-note">${esc(client.extra)}</p>`:''}`;
     panel.querySelector('.copy-config').addEventListener('click',event=>copy(client.value,event.currentTarget));
   }));

@@ -53,7 +53,9 @@ def stats(video):
     ]
     return '\n'.join(['| Metadata | Value |', '| --- | --- |'] + [f'| {key} | {value} |' for key, value in rows])
 
-parts = [f'''# Awesome AI Clonable Launch Videos
+parts = [f'''# Serena Launch
+
+An awesome collection of AI-clonable launch videos.
 
 ### ▶ [Watch the collection](https://serenatan.org/launchvideo/)
 

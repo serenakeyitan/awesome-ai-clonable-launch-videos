@@ -21,7 +21,7 @@ function json(body, status = 200, extraHeaders = {}) {
 export function protectedResourceMetadata(env) {
   if (!authEnabled(env)) return json({error:'Not found'}, 404);
   if (!env.CLERK_ISSUER) return json({error:'Authentication temporarily unavailable'}, 503);
-  return json({resource:MCP_RESOURCE, resource_name:'Launch Archive',
+  return json({resource:MCP_RESOURCE, resource_name:'Serena Launch',
     authorization_servers:[env.CLERK_ISSUER], scopes_supported:REQUIRED_SCOPES,
     bearer_methods_supported:['header'], resource_documentation:'https://serenatan.org/launchvideo/'});
 }
@@ -37,7 +37,7 @@ export async function authorizeMcp(request, env, createClient = createClerkClien
   if (!env.CLERK_SECRET_KEY || !env.CLERK_PUBLISHABLE_KEY || !env.CLERK_ISSUER) {
     return {response:json({error:'Authentication temporarily unavailable'}, 503, {'Retry-After':'10'})};
   }
-  if (!/^Bearer \S+$/i.test(request.headers.get('Authorization') || '')) return deny(401, 'Sign in to connect Launch Archive');
+  if (!/^Bearer \S+$/i.test(request.headers.get('Authorization') || '')) return deny(401, 'Sign in to connect Serena Launch');
   try {
     const clerk = createClient({secretKey:env.CLERK_SECRET_KEY, publishableKey:env.CLERK_PUBLISHABLE_KEY});
     const state = await clerk.authenticateRequest(request, {acceptsToken:'oauth_token', audience:MCP_RESOURCE});
