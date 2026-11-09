@@ -48,7 +48,7 @@ test('normal requests, MCP preflights and copied setup remain available', async 
   assert.equal((await worker.fetch(request(undefined,{method:'OPTIONS'}),allow,{})).status,200);
   const bootstrap=await worker.fetch(request('/launchvideo/agent/SKILL.md'),allow,{});
   assert.equal(bootstrap.status,200);
-  assert.match(await bootstrap.text(),/Before EVERY launch-video task/);
+  assert.match(await bootstrap.text(),/Before each launch-video task, call get_launch_context and follow the workflow it returns/);
 });
 
 test('oversized bodies are rejected by both declared length and actual streamed bytes', async () => {

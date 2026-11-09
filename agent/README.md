@@ -45,6 +45,20 @@ The plugin contains only a stable setup/refresh bootstrap and endpoint. Changes 
 
 The landing-page source is in `site/`. Run `python3 scripts/build_site.py` to generate `site-dist/` with the current catalog and published media URLs. The deployed gallery also retains its local reference assets for direct playback.
 
+## Updating instructions
+
+`agent/workflow.md` is the single source for video-making instructions, reference inspection, fidelity, verification and request policy. Every `get_launch_context` response (and the other two tools) loads it from the current main revision. Merging a workflow change makes it available on the next call, including on an existing connection; no Worker deployment or reconnect is required for that file.
+
+Server instructions only direct the agent to fetch and follow that workflow. SKILL.md copies retain connection setup and the live-workflow handoff, without embedding production steps or numeric retry rules. The public SKILL.md route is served by the Worker, so changing its embedded bootstrap or server instructions requires a Worker deployment. Installed package text is not remotely rewritten, but existing bootstraps already request the live workflow before each task.
+
+The MCP supplies references and instructions; the client performs inspection and rendering. Instructions cannot enforce an external agent's tool use or certify a 1:1 remake by themselves.
+
+### Reference playback check
+
+On November 8, 2026 (Pacific time), Sidehoe's published H.264/AAC MP4 was played end to end with Playwright 1.65.0 in headless bundled Chromium 158.0.8127.18 and installed Chrome 157.0.8103.38 (`channel: "chrome"`). Both reached 31.184399 seconds, decoded 778 frames and reported zero dropped frames. Seeking to 1, 8, 16, 24 and 30 seconds also succeeded. See the [measured report](../agent-service/verification/reference-playback-2026-11-08.json).
+
+This verifies playback for that clip on this macOS environment, not every browser build or soundtrack quality; playback was muted. Installed Chrome remains a fallback when bundled-browser decoding fails. [Playwright's browser documentation](https://playwright.dev/docs/browsers#google-chrome--microsoft-edge) describes branded channels and codec differences.
+
 ## Service development
 
 ```bash

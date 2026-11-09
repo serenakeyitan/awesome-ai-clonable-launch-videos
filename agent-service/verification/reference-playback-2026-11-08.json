@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-11-09T04:23:10.790Z",
+  "playwrightVersion": "1.65.0",
+  "reports": [
+    {
+      "name": "bundled-chromium",
+      "version": "158.0.8127.18",
+      "url": "https://serenatan.org/launchvideo/assets/03.mp4",
+      "metadata": {
+        "duration": 31.184399,
+        "width": 2000,
+        "height": 2000,
+        "error": null,
+        "readyState": 4
+      },
+      "playback": {
+        "ended": true,
+        "currentTime": 31.184399,
+        "frames": 778,
+        "droppedFrames": 0
+      }
+    },
+    {
+      "name": "installed-chrome",
+      "version": "157.0.8103.38",
+      "url": "https://serenatan.org/launchvideo/assets/03.mp4",
+      "metadata": {
+        "duration": 31.184399,
+        "width": 2000,
+        "height": 2000,
+        "error": null,
+        "readyState": 4
+      },
+      "playback": {
+        "ended": true,
+        "currentTime": 31.184399,
+        "frames": 778,
+        "droppedFrames": 0
+      }
+    }
+  ]
+}
