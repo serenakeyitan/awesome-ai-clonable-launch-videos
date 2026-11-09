@@ -5,7 +5,7 @@ import json
 import shutil
 from build_daily_stats import update_daily_stats
 from site_summary import render_summary
-from verify_site import verify_site
+from verify_site import verify_site, verify_runtime_assets
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
@@ -26,4 +26,5 @@ for video in videos:
     video['poster'] = 'https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/' + video['poster']
 (OUT / 'videos.json').write_text(json.dumps(videos, ensure_ascii=False) + '\n')
 verify_site(OUT)
+verify_runtime_assets(OUT)
 print(f'Built {OUT} with {len(videos)} published playable references.')

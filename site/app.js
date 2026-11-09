@@ -1,6 +1,7 @@
 'use strict';
 import {dailyChanges} from './daily-stats.mjs';
-import {track} from './analytics.mjs';
+const telemetry = import('./analytics.mjs').catch(() => null);
+const track = (...args) => telemetry.then(api => api?.track(...args) ?? false).catch(() => false);
 
 const $ = (selector) => document.querySelector(selector);
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

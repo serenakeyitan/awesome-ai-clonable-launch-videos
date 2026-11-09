@@ -1,6 +1,11 @@
 import {readAuthorization, consentModel, consentAction} from './consent-model.mjs';
-import {track,identify} from './analytics.mjs';
-import {clientName} from './analytics-events.mjs';
+const telemetry = import('./analytics.mjs').catch(() => null);
+const track = (...args) => telemetry.then(api => api?.track(...args) ?? false).catch(() => false);
+const identify = (...args) => telemetry.then(api => api?.identify(...args) ?? false).catch(() => false);
+const clientName = clientId => {
+  try { const host = new URL(clientId).hostname; return ['claude.ai','chatgpt.com','cursor.com','grok.com'].includes(host) ? host : 'other'; }
+  catch { return 'other'; }
+};
 
 const $ = id => document.getElementById(id);
 const showError = (reason = 'load_failed') => {

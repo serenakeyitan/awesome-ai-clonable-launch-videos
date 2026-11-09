@@ -1,5 +1,6 @@
 'use strict';
-import {track} from './analytics.mjs';
+const telemetry = import('./analytics.mjs').catch(() => null);
+const track = (...args) => telemetry.then(api => api?.track(...args) ?? false).catch(() => false);
 (() => {
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
   const setup = `Connect to Serena Launch MCP at ${endpoint}.`;
