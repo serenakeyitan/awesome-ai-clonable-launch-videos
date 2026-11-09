@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-78-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-79-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 78 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 79 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -98,6 +98,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Paper — Rich Text Editing](#paper-rich-text)
 - [ElevenLabs — Speech Engine](#elevenlabs-speech-engine)
 - [Lifted Finance — Launch Film](#lifted-finance)
+- [Varcyyyy — Do Dots Kinetic Type](#varcyyyy-do-dots-kinetic-type)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -2709,6 +2710,51 @@ https://x.com/BuffetDesigns/status/2117225648595022031
 | Account followers | 6,317 |
 | Original duration | 0:34 |
 | Included file | 0:34 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="varcyyyy-do-dots-kinetic-type"></a>
+
+### Varcyyyy — Do Dots Kinetic Type
+
+[▶ View video](https://x.com/Varcyyyy/status/2119820234236596709)
+
+**0:13 · 16:9 · 1.9K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/86.mp4) · [MP4 file](videos/varcyyyy-do-dots-kinetic-type.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-86)
+
+White-canvas kinetic type with flat 2D mascots — a blue beret cloud, pink heart with sunglasses, and pink blob with headphones — perched on bold "do" / "dots" letterforms. Mid section cuts to real product UI: iPhone lock-screen Gmail banner, a color-block week calendar over a scenic landscape photo wallpaper, then a chat thread with the cloud as reply avatar.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/Varcyyyy/status/2119820234236596709
+```
+
+*Source: [@Varcyyyy](https://x.com/Varcyyyy/status/2119820234236596709) · 2026-11-09*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Varcyyyy |
+| Post date | 2026-11-09 |
+| Stats snapshot (PT) | 2026-11-09 |
+| Post impressions | 1,888 |
+| Video plays | — |
+| Likes | 54 |
+| Bookmarks | 37 |
+| Reposts | 0 |
+| Replies | 8 |
+| Quotes | 0 |
+| Account followers | 8,297 |
+| Original duration | 0:13 |
+| Included file | 0:13 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
