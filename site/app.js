@@ -56,7 +56,8 @@ function renderCollection() {
     const haystack = [v.title,v.originalTitle,v.account,v.category,...v.styles,...v.notes,...v.originalNotes].join(' ').toLowerCase();
     return (!query || haystack.includes(query)) && (category === 'all' || category === v.category) && (style === 'all' || v.styles.includes(style));
   }).sort((a,b) => sort === 'date' ? b.date.localeCompare(a.date) : sort === 'oldest' ? a.date.localeCompare(b.date) : b[sort] - a[sort]);
-  $('#result-count').textContent = `${filtered.length} videos`;
+  $('#result-count').textContent = filtered.length;
+  $('#result-count').setAttribute('aria-label', `${filtered.length} videos`);
   $('#collection').classList.toggle('table-view', tableView);
   $('#collection').innerHTML = filtered.length ? (tableView ? table() : filtered.map(card).join('')) : '';
   $('#empty').hidden = filtered.length > 0;
@@ -71,7 +72,6 @@ function setFeature(id) {
   player.src = v.video;
   player.setAttribute('aria-label', `${v.title} launch video`);
   $('#featured-duration').textContent = displayDuration(v);
-  $('#featured-source').href = v.source;
   $('#featured-info').innerHTML = `<h3>${escapeHTML(v.title)}</h3><div class="byline">${escapeHTML(v.account)}</div><div class="launch-date" title="Date of the original launch post (PT)">Launch date · <time datetime="${escapeHTML(v.date)}">${launchDate(v.date)}</time></div><div class="featured-stats"><div><strong>${compact(v.impressions)}</strong><span>Impressions</span></div><div><strong>${compact(v.views)}</strong><span>Video plays</span></div></div><button class="text-link" data-open="${v.id}">View details ↗</button>`;
   document.querySelectorAll('[data-feature]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.feature) === id)));
 }
@@ -196,8 +196,9 @@ $('#reset-filters').addEventListener('click', () => {
 });
 $('#view-toggle').addEventListener('click', () => {
   tableView = !tableView;
-  $('#view-toggle').textContent = tableView ? 'Grid' : 'Table';
+  $('#view-toggle').innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${tableView ? '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>' : '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/>'}</svg>`;
   $('#view-toggle').setAttribute('aria-label', tableView ? 'Switch to grid view' : 'Switch to table view');
+  $('#view-toggle').title = tableView ? 'Switch to grid view' : 'Switch to table view';
   renderCollection();
 });
 $('#featured-video').addEventListener('error', () => notify('Unable to play the reference file. Open the original post.'));

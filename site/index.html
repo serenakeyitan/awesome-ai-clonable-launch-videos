@@ -46,31 +46,29 @@
     </section>
 
     <section class="featured section numbered" data-line="004" aria-labelledby="featured-title">
-      <div class="section-heading"><h2 id="featured-title">Featured</h2></div>
-      <div class="featured-layout">
-        <div class="featured-media">
-          <video id="featured-video" controls playsinline preload="metadata" poster="assets/03.jpg" src="assets/03.mp4" aria-label="Sidehoe launch video"></video>
-          <div class="media-caption"><span id="featured-duration">00:31 / 1:1 / Audio</span><a id="featured-source" href="https://x.com/maximusgrave/status/2102800008982777902" target="_blank" rel="noopener">Original post ↗</a></div>
-        </div>
-        <div class="featured-info" id="featured-info"></div>
-      </div>
-      <div class="desk-selector" aria-label="Choose a featured video">
+      <div class="section-heading"><h2 id="featured-title">Featured</h2><div class="desk-selector" aria-label="Choose a featured video">
         <button data-feature="3" aria-pressed="true">Sidehoe</button>
         <button data-feature="11" aria-pressed="false">Strawberry</button>
         <button data-feature="9" aria-pressed="false">Krea 3</button>
+      </div></div>
+      <div class="featured-layout">
+        <div class="featured-media">
+          <video id="featured-video" controls playsinline preload="metadata" poster="assets/03.jpg" src="assets/03.mp4" aria-label="Sidehoe launch video"></video>
+          <div class="media-caption"><span id="featured-duration">00:31 / 1:1 / Audio</span></div>
+        </div>
+        <div class="featured-info" id="featured-info"></div>
       </div>
+
     </section>
 
     <section class="archive section numbered" id="archive" data-line="005" aria-labelledby="archive-title">
-      <div class="section-heading"><h2 id="archive-title">All videos</h2></div>
+      <div class="section-heading"><h2 id="archive-title">All videos</h2><span id="result-count" role="status" aria-live="polite">77</span></div>
       <div class="filter-bar">
-        <label class="search-label"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search videos, creators, or styles…" aria-label="Search the collection"></label>
+        <label class="search-label"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="search" type="search" placeholder="Search videos…" aria-label="Search videos, creators or styles"></label>
         <label><span class="sr-only">Category</span><select id="category"><option value="all">All categories</option><option>Startup launch</option><option>AI launch</option><option>Feature clip</option></select></label>
         <label><span class="sr-only">Visual style</span><select id="style"><option value="all">All styles</option><option>UI motion</option><option>Device motion</option><option>Kinetic type</option><option>Mixed media</option><option>Abstract motion</option><option>Image collage</option><option>Terminal</option><option>Charts</option><option>Logo motion</option><option>Character animation</option></select></label>
-      </div>
-      <div class="collection-toolbar">
-        <span id="result-count" role="status" aria-live="polite">74 videos</span>
-        <div class="sort-tools"><label for="sort">Sort by</label><select id="sort" aria-label="Sort videos"><option value="impressions">Impressions ↓</option><option value="views">Video plays ↓</option><option value="bookmarks">Bookmarks ↓</option><option value="likes">Likes ↓</option><option value="date">Launch date: newest</option><option value="oldest">Launch date: oldest</option></select><button id="view-toggle" aria-label="Switch to table view" title="Switch to table view">Table</button></div>
+        <label><span class="sr-only">Sort videos</span><select id="sort"><option value="impressions">Impressions ↓</option><option value="views">Plays ↓</option><option value="bookmarks">Bookmarks ↓</option><option value="likes">Likes ↓</option><option value="date">Newest launches</option><option value="oldest">Oldest launches</option></select></label>
+        <button id="view-toggle" type="button" aria-label="Switch to table view" title="Switch to table view"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/></svg></button>
       </div>
       <div id="collection" class="video-grid" aria-label="Launch video collection"><p class="loading">Loading the archive…</p></div>
       <div id="empty" class="empty" hidden><p>No matching references.</p><button id="reset-filters">Reset filters ↗</button></div>
