@@ -60,14 +60,15 @@ const FRONTEND_PAGES:Record<string,string>={'/index.html':'/launch','/consent.ht
 export async function frontendResponse(request:Request,path:string,fetcher:typeof fetch=fetch):Promise<Response>{
   // Static UI is compiled once in serena-portfolio. Query strings, cookies and
   // OAuth authorization headers never need to be forwarded to the HTML origin.
-  const url=new URL(path,'https://serenatan.org');
+  const url=new URL(path,'https://serena-portfolio-bzs.pages.dev');
   try {
     const upstream=await fetcher(url,{method:request.method,headers:{Accept:'text/html','Cache-Control':'no-cache'},redirect:'error'});
-    if(upstream.status!==200||!upstream.headers.get('Content-Type')?.includes('text/html')) throw new Error('UI unavailable');
+    if(upstream.status!==200||!upstream.headers.get('Content-Type')?.includes('text/html')) throw new Error(`UI origin returned ${upstream.status}`);
     if(path==='/consent'&&!upstream.headers.get('Content-Security-Policy')) throw new Error('Consent policy unavailable');
     const headers=new Headers(upstream.headers);headers.set('Cache-Control','no-store');
     return new Response(request.method==='HEAD'?null:upstream.body,{status:200,headers});
-  } catch {
+  } catch (error) {
+    console.error(JSON.stringify({message:'Shared frontend unavailable',path,error:error instanceof Error?error.message:'Unknown origin error'}));
     return new Response(request.method==='HEAD'?null:'This page is temporarily unavailable. Please try again.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-store','Retry-After':'10'}});
   }
 }
