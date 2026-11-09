@@ -47,6 +47,10 @@ The plugin contains only a stable setup/refresh bootstrap and endpoint. Changes 
 
 The landing-page source is in `site/`. Run `python3 scripts/build_site.py` to generate `site-dist/` with the current catalog and published media URLs. The deployed gallery also retains its local reference assets for direct playback.
 
+## Reading SKILL.md
+
+The public SKILL.md endpoint returns a branded HTML reader for browser requests accepting `text/html`, including the Serena Launch favicon and shared site header. Agents using the default or Markdown Accept header still receive the original Markdown. Append `?raw=1` to force Markdown with any Accept header. Both views contain identical instructions, require no login and use `Cache-Control: no-store` with `Vary: Accept`.
+
 ## Updating instructions
 
 `agent/workflow.md` is the single source for video-making instructions, reference inspection, fidelity, verification and request policy. Every `get_launch_context` response (and the other two tools) loads it from the current main revision. Merging a workflow change makes it available on the next call, including on an existing connection; no Worker deployment or reconnect is required for that file.

@@ -52,6 +52,21 @@ test('Worker enforces auth before MCP dispatch while preserving browser prefligh
   assert.equal(preflight.status,200);
   const skill=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/SKILL.md'),configured,{});
   assert.equal(skill.status,200);
+  const markdown=await skill.text();assert.match(skill.headers.get('Content-Type'),/^text\/markdown/);
+  for (const method of ['GET','HEAD']) {
+    const page=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/SKILL.md',{method,headers:{Accept:'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8'}}),configured,{});
+    assert.equal(page.status,200);assert.match(page.headers.get('Content-Type'),/^text\/html/);assert.equal(page.headers.get('Vary'),'Accept');
+    const html=await page.text();
+    if(method==='GET'){
+      assert.match(html,/<link rel="icon" type="image\/png" href="\/launchvideo\/mascot\/serena-popcorn.png">/);
+      const source=html.match(/<pre class="skill-source">([\s\S]*?)<\/pre>/)[1].replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&amp;','&');
+      assert.equal(source,markdown);
+    }else assert.equal(html,'');
+  }
+  for(const [suffix,accept] of [['?raw=1','text/html'],['','text/markdown'],['','text/html;q=0, text/markdown']]){
+    const raw=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/SKILL.md'+suffix,{headers:{Accept:accept}}),configured,{});
+    assert.match(raw.headers.get('Content-Type'),/^text\/markdown/);assert.equal(await raw.text(),markdown);
+  }
   for (const method of ['GET','HEAD']) {
     const connect=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/connect/claude?redirect_uri=https://untrusted.example',{method}),configured,{});
     assert.equal(connect.status,302);assert.equal(connect.headers.get('Cache-Control'),'no-store');
