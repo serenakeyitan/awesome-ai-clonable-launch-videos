@@ -4904,5 +4904,69 @@
       "upscaled": false,
       "verifiedAt": "2026-11-08"
     }
+  },
+  {
+    "id": 85,
+    "title": "Nexo — Claude Opus 3D Scene",
+    "originalTitle": "Claude Opus 5.5, wtf🤯",
+    "account": "@Nexoxh",
+    "followers": 5724,
+    "category": "Launch video",
+    "seed": false,
+    "impressions": 23146,
+    "views": null,
+    "likes": 576,
+    "bookmarks": 192,
+    "reposts": 18,
+    "replies": 8,
+    "quotes": 0,
+    "originalSeconds": 19.03,
+    "clipSeconds": 19.03,
+    "excerpt": false,
+    "ratio": "16:9",
+    "date": "2026-11-09",
+    "width": 1024,
+    "height": 576,
+    "hasAudio": true,
+    "source": "https://x.com/Nexoxh/status/2119823326080065850",
+    "quote": "Claude Opus 5.5, wtf🤯",
+    "styles": [
+      "3D animation",
+      "UI motion",
+      "Character animation"
+    ],
+    "notes": [
+      "A warm peach 3D desktop scene shows the Claude mascot block bouncing on the macOS Dock.",
+      "The camera cuts to a terminal window and notification popups in a fully rendered 3D environment."
+    ],
+    "originalNotes": [],
+    "flag": "",
+    "video": "videos/nexo-claude-opus-3d-scene.mp4",
+    "poster": "previews/nexo-claude-opus-3d-scene.jpg",
+    "snapshotDate": "2026-11-09",
+    "collectionSource": "manual-addition",
+    "referenceGroup": "⑤ 深色 / 渐变 / 混合素材",
+    "scores": {
+      "similarity": null,
+      "polish": 5,
+      "cloneEase": 2
+    },
+    "benchmark": false,
+    "slug": "nexo-claude-opus-3d-scene",
+    "readmeCategory": "dark-gradient-mixed-media",
+    "watchUrl": "https://serenatan.org/launchvideo/assets/85.mp4",
+    "detailUrl": "https://serenatan.org/launchvideo/#video-85",
+    "remakePrompt": "Remake this video's motion and vibe for my product:\nhttps://x.com/Nexoxh/status/2119823326080065850",
+    "githubVideoUrl": "",
+    "mediaQuality": {
+      "sourceWidth": 1024,
+      "sourceHeight": 576,
+      "deliveryWidth": 1024,
+      "deliveryHeight": 576,
+      "codec": "H.264",
+      "deliveryMethod": "X delivery",
+      "upscaled": false,
+      "verifiedAt": "2026-11-09"
+    }
   }
 ]
