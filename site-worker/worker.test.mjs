@@ -5,7 +5,7 @@ test('shared UI forwarding strips OAuth query strings and credentials while pres
  let seen;
  const request=new Request('https://serenatan.org/launchvideo/consent.html?state=private',{headers:{Authorization:'Bearer private',Cookie:'private'}});
  const response=await frontendResponse(request,'/consent',async(url,options)=>{seen={url:String(url),options};return new Response('<html>UI</html>',{headers:{'Content-Type':'text/html','Content-Security-Policy':"default-src 'self'"}});});
- assert.equal(seen.url,'https://serena-portfolio-bzs.pages.dev/consent');assert.ok(!JSON.stringify(seen).includes('private'));assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');assert.equal(response.headers.get('Content-Security-Policy'),"default-src 'self'");
+ assert.equal(seen.url,'https://serena-portfolio-bzs.pages.dev/consent');assert.ok(!JSON.stringify(seen).includes('private'));assert.equal(seen.options.redirect,'manual');assert.equal(response.status,200);assert.equal(response.headers.get('Cache-Control'),'no-store');assert.equal(response.headers.get('Content-Security-Policy'),"default-src 'self'");
 });
 test('missing frontend yields an explicit error and no alternate page',async()=>{const response=await frontendResponse(new Request('https://serenatan.org/launchvideo/'),'/launch.html',async()=>new Response('missing',{status:404}));assert.equal(response.status,503);assert.equal(response.headers.get('Retry-After'),'10');assert.match(await response.text(),/temporarily unavailable/);});
 test('HEAD frontend reads remain empty',async()=>{const response=await frontendResponse(new Request('https://serenatan.org/launchvideo/',{method:'HEAD'}),'/launch.html',async()=>new Response(null,{headers:{'Content-Type':'text/html'}}));assert.equal(await response.text(),'');});
@@ -19,3 +19,5 @@ test('public gallery and consent routes use canonical Pages URLs without redirec
  for(const path of ['/launchvideo/','/launchvideo/consent.html?state=private']){const response=await worker.fetch(new Request('https://serenatan.org'+path),env);assert.equal(response.status,200);}
  assert.deepEqual(targets,['https://serena-portfolio-bzs.pages.dev/launch','https://serena-portfolio-bzs.pages.dev/consent']);
 });
+
+test('redirecting origins are rejected instead of followed',async()=>{const response=await frontendResponse(new Request('https://serenatan.org/launchvideo/'),'/launch',async(_url,options)=>{assert.equal(options.redirect,'manual');return new Response(null,{status:308,headers:{Location:'https://unrelated.example/'}});});assert.equal(response.status,503);});

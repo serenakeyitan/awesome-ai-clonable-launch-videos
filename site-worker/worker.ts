@@ -62,7 +62,7 @@ export async function frontendResponse(request:Request,path:string,fetcher:typeo
   // OAuth authorization headers never need to be forwarded to the HTML origin.
   const url=new URL(path,'https://serena-portfolio-bzs.pages.dev');
   try {
-    const upstream=await fetcher(url,{method:request.method,headers:{Accept:'text/html','Cache-Control':'no-cache'},redirect:'error'});
+    const upstream=await fetcher(url,{method:request.method,headers:{Accept:'text/html','Cache-Control':'no-cache'},redirect:'manual'});
     if(upstream.status!==200||!upstream.headers.get('Content-Type')?.includes('text/html')) throw new Error(`UI origin returned ${upstream.status}`);
     if(path==='/consent'&&!upstream.headers.get('Content-Security-Policy')) throw new Error('Consent policy unavailable');
     const headers=new Headers(upstream.headers);headers.set('Cache-Control','no-store');
