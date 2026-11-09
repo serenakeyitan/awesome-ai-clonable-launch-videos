@@ -52,6 +52,16 @@ test('Worker enforces auth before MCP dispatch while preserving browser prefligh
   assert.equal(preflight.status,200);
   const skill=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/SKILL.md'),configured,{});
   assert.equal(skill.status,200);
+  for (const method of ['GET','HEAD']) {
+    const connect=await worker.fetch(new Request('https://serenatan.org/launchvideo/agent/connect/claude?redirect_uri=https://untrusted.example',{method}),configured,{});
+    assert.equal(connect.status,302);assert.equal(connect.headers.get('Cache-Control'),'no-store');
+    const target=new URL(connect.headers.get('Location'));
+    assert.equal(target.origin,'https://claude.ai');assert.equal(target.pathname,'/customize/connectors');
+    assert.equal(target.searchParams.get('modal'),'add-custom-connector');
+    assert.equal(target.searchParams.get('connectorName'),'Serena Launch');
+    assert.equal(target.searchParams.get('connectorUrl'),MCP_RESOURCE);
+    assert.equal(target.searchParams.has('redirect_uri'),false);
+  }
   const metadata=await worker.fetch(new Request('https://serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp'),configured,{});
   assert.equal(metadata.status,200);assert.equal((await metadata.json()).resource,MCP_RESOURCE);
 });

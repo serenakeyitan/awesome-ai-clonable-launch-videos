@@ -2,6 +2,7 @@
 (() => {
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
   const setup = `Connect to Serena Launch MCP at ${endpoint}.`;
+  const copySetup = setup + ' If setup is needed in Claude, reply only with a "Connect Serena Launch" link to https://serenatan.org/launchvideo/agent/connect/claude.';
   const esc = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const copyIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1"/><path d="M15 8V3H3v13h5"/></svg>';
   const values = {
@@ -30,7 +31,7 @@
       toast.textContent='Copy unavailable. Select and copy the text.';toast.classList.add('visible');setTimeout(()=>toast.classList.remove('visible'),3500);
     }
   }
-  document.getElementById('copy-setup').addEventListener('click',event=>copy(setup,event.currentTarget));
+  document.getElementById('copy-setup').addEventListener('click',event=>copy(copySetup,event.currentTarget));
   document.querySelector('[data-client="codex"]').href = `codex://new?prompt=${encodeURIComponent(setup)}`;
   const more = document.querySelector('button[data-client="more"]');
   const panel = document.getElementById('client-setup');
