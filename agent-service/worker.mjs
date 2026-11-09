@@ -53,6 +53,26 @@ Before each launch-video task, call get_launch_context and follow the workflow i
 If MCP is unsupported or unavailable, fetch https://serenatan.org/launchvideo/agent/manifest.json and its workflowUrl and catalogUrl before each task. Never use fallback to bypass authentication, authorization or throttling. Follow the current workflow; report fetch failures instead of using a stale copy.
 `;
 
+function skillResponse(request) {
+  const acceptsHtml = (request.headers.get('accept') ?? '').split(',').some(value =>
+    value.trim().split(';')[0].toLowerCase() === 'text/html' && !/;\s*q=0(?:\.0*)?(?:\s*;|\s*$)/i.test(value));
+  const html = acceptsHtml && new URL(request.url).searchParams.get('raw') !== '1';
+  const escaped = html ? bootstrap.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])) : '';
+  const body = html ? `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Serena Launch — Setup guide</title>
+<link rel="icon" type="image/png" href="/launchvideo/mascot/serena-popcorn.png">
+<link rel="alternate" type="text/markdown" title="Raw Markdown" href="?raw=1">
+<link rel="stylesheet" href="/launchvideo/style.css"><link rel="stylesheet" href="/shared/site-header.css">
+<script src="/shared/site-header.js" defer></script>
+<style>.skill-document{padding-top:32px;padding-bottom:64px}.skill-document h1{font-size:26px;margin:0}.skill-source{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.8 var(--mono);margin:24px 0 0}</style></head>
+<body><header class="masthead site-header" data-site-header data-site-page="launch-videos"><div class="brand"><a class="logo" href="/">Serena Tan</a></div><nav class="meta" aria-label="Page navigation"><a href="/launchvideo/">Collection ↗</a></nav></header>
+<main class="document skill-document"><div class="section-heading"><h1>Agent setup</h1><a href="?raw=1">Raw Markdown ↗</a></div><pre class="skill-source">${escaped}</pre></main></body></html>` : bootstrap;
+  const result = response(request.method === 'HEAD' ? '' : body, html ? 'text/html' : 'text/markdown');
+  result.headers.set('Vary','Accept');
+  return result;
+}
+
 function response(body, type = 'application/json', status = 200) {
   return new Response(typeof body === 'string' ? body : JSON.stringify(body), {status,headers:{'Content-Type':`${type}; charset=utf-8`, 'Cache-Control':'no-store, max-age=0', 'Access-Control-Allow-Origin':'*', 'X-Content-Type-Options':'nosniff'}});
 }
@@ -79,7 +99,7 @@ export default {
     if (!['GET','HEAD'].includes(request.method)) return response({error:'Method not allowed'},'application/json',405);
     if (path === `${BASE}/agent/connect/claude`) return new Response(null,{status:302,headers:{Location:CLAUDE_CONNECT_URL,'Cache-Control':'no-store','Access-Control-Allow-Origin':'*'}});
     if (path === `${BASE}/agent` || path === `${BASE}/agent/`) return Response.redirect('https://serenatan.org/launchvideo/#connect',302);
-    if (path === `${BASE}/agent/SKILL.md`) return response(request.method === 'HEAD' ? '' : bootstrap,'text/markdown');
+    if (path === `${BASE}/agent/SKILL.md`) return skillResponse(request);
     const endpoints = [`${BASE}/agent/manifest.json`,`${BASE}/agent/catalog.json`,`${BASE}/agent/workflow.md`];
     if (!endpoints.includes(path)) return response({error:'Not found'},'application/json',404);
     try {
