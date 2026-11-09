@@ -12,18 +12,18 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 
 | Client | Setup |
 | --- | --- |
-| Codex CLI | `codex mcp add launch-archive --url https://serenatan.org/launchvideo/mcp` |
-| Claude Code | `claude mcp add --transport http launch-archive https://serenatan.org/launchvideo/mcp` |
+| Codex CLI | `codex mcp add serena-launch --url https://serenatan.org/launchvideo/mcp` |
+| Claude Code | `claude mcp add --transport http serena-launch https://serenatan.org/launchvideo/mcp` |
 | Claude / Cowork / Desktop | Customize → Connectors → Add custom connector. Enter the endpoint above; complete the OAuth sign-in flow. |
 | ChatGPT | Plugins → + → Add custom MCP server. Enter the endpoint above, choose OAuth, create and install the plugin, then complete sign-in. Account and workspace policies apply. |
 | Cursor | Add the JSON below to `.cursor/mcp.json`, preserving other servers. |
 | Grok | https://grok.com/connectors → New Connector → Custom → enter the endpoint above. Organization admins may need to enable it. |
-| Gemini CLI | Add `{"mcpServers":{"launch-archive":{"httpUrl":"https://serenatan.org/launchvideo/mcp"}}}` to Gemini settings, preserving existing settings. |
+| Gemini CLI | Add `{"mcpServers":{"serena-launch":{"httpUrl":"https://serenatan.org/launchvideo/mcp"}}}` to Gemini settings, preserving existing settings. |
 | VS Code | Run MCP: Add Server → HTTP → enter the endpoint above. |
 | Raft / other agents | Send the setup prompt above. Use remote MCP settings if supported; otherwise fetch the live manifest and catalog over HTTP. |
 
 ```json
-{"mcpServers":{"launch-archive":{"url":"https://serenatan.org/launchvideo/mcp"}}}
+{"mcpServers":{"serena-launch":{"url":"https://serenatan.org/launchvideo/mcp"}}}
 ```
 
 The same service has three stable tools: `get_launch_context`, `search_launch_videos`, and `get_launch_video`. Call `get_launch_context` before each task. Every tool fetches the current catalog and workflow, returns their content version, and discovers styles dynamically. Search uses keywords, not a semantic embedding model.
@@ -95,6 +95,8 @@ The bootstrap SKILL.md and installed MCP URL stay fixed. Each invocation reads t
 Changes appear on the next read. Already-generated chat messages are not rewritten automatically. The seven SDK tests include both modern and legacy clients kept connected while synthetic catalog, manifest, workflow and structure changes are applied. Synthetic references stay in tests and are never published into the real collection.
 
 The landing page shares the canonical site header at `/shared/site-header.js` and `/shared/site-header.css`, maintained in the portfolio project. `mediaQuality` records source/delivery dimensions and encoding provenance; it is visible to existing agent connections through `additionalMetadata`.
+
+Existing client aliases such as `launch-archive` continue to work; do not add a duplicate server or reconnect solely to rename a local alias. New setup examples use `serena-launch`.
 
 ## OAuth migration
 

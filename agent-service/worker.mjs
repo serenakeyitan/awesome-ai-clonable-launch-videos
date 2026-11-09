@@ -14,7 +14,7 @@ const guarded = (load, fn) => async args => {
 };
 
 export function createServer(load = loadArchive) {
-  const server = new McpServer({name:'launch-archive', version:'0.1.0'}, {instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.'});
+  const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.1.0'}, {instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.'});
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
     description:'Get the live workflow, catalog version, metadata and available facets/formats. Call before each launch-video task.',
@@ -37,7 +37,7 @@ export function createServer(load = loadArchive) {
 }
 
 const bootstrap = `---
-name: launch-archive
+name: serena-launch
 description: Find launch-video references and remake one using the live Serena Launch workflow.
 ---
 

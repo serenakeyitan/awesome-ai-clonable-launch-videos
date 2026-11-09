@@ -1,5 +1,5 @@
 ---
-name: launch-archive
+name: serena-launch
 description: Find launch-video references and remake one using the live Serena Launch workflow.
 ---
 

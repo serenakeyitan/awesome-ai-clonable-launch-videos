@@ -2,7 +2,7 @@
 
 Status: preparation in progress. No official submission or publication has been confirmed.
 
-This separate public-upload copy was derived from the owned private plugin `plugins_6aeaae871e388191b7cb548314554c40`, release `pluginrel_6aee6930b8648191a47cc68290a23b5f` (0.1.3). Its private source and audience have not been changed. The public package preserves the technical name `launch-archive` and uses Serena Launch as its display name.
+This separate public-upload copy was derived from the owned private plugin `plugins_6aeaae871e388191b7cb548314554c40`, release `pluginrel_6aee6930b8648191a47cc68290a23b5f` (0.1.3). The private plugin was subsequently updated to 0.1.4 for naming consistency (release `pluginrel_6af152c2a1dc819182d97af6d027df47`): its skill is now `serena-launch`, with Serena Launch display metadata. Its existing identity, audience, MCP configuration and avatars are preserved. The public package preserves the technical name `launch-archive` and uses Serena Launch as its display name.
 
 ## Prepared
 

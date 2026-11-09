@@ -6,7 +6,7 @@ The public gallery and video assets remain accessible without signing in. MCP us
 
 ## Provider setup
 
-- Clerk application: `app_3LkVh87NlDpgcVKaOkA8NuugYhi` (Launch Archive).
+- Clerk application: `app_3LkVh87NlDpgcVKaOkA8NuugYhi` (Serena Launch).
 - Production instance: `ins_3LkVo2h1Xdi66pIhBLzzjLLUAq9`.
 - OAuth resource: `oares_3LkWAfoJkNu9faX0rpeen7rsNgo`.
 - Resource and token audience: `https://serenatan.org/launchvideo/mcp`.
