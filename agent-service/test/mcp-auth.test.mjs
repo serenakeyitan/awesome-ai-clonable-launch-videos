@@ -58,7 +58,7 @@ test('Worker enforces auth before MCP dispatch while preserving browser prefligh
     assert.equal(page.status,200);assert.match(page.headers.get('Content-Type'),/^text\/html/);assert.equal(page.headers.get('Vary'),'Accept');
     const html=await page.text();
     if(method==='GET'){
-      assert.match(html,/<link rel="icon" type="image\/png" href="\/launchvideo\/mascot\/serena-popcorn.png">/);
+      assert.match(html,/<link rel="icon" type="image\/svg\+xml" href="\/launchvideo\/favicon\.svg\?v=popcorn-1">/);
       const source=html.match(/<pre class="skill-source">([\s\S]*?)<\/pre>/)[1].replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&amp;','&');
       assert.equal(source,markdown);
     }else assert.equal(html,'');
