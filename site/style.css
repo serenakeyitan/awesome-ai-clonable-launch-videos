@@ -22,12 +22,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-weight: 400; }
 .document { max-width: 1180px; margin: 0 auto; padding: 0 34px; }
-.intro { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 24px 40px; padding-top: 44px; }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 210px; align-items: end; gap: 24px 40px; padding-top: 44px; }
 .intro-copy { min-width: 0; }
 h1 { font-size: clamp(32px, 4.1vw, 48px); line-height: 1.12; letter-spacing: -.04em; margin: 0 0 20px; }
 .intro-tagline { font-size: 15px; line-height: 1.6; color: #2a2a2a; }
-.intro-bottom { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
-.intro-mascot { position: relative; align-self: end; justify-self: end; width: 210px; height: 205px; overflow: hidden; pointer-events: none; user-select: none; }
+.intro-copy .summary { margin-top: 28px; }
+.intro-aside { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.intro-mascot { position: relative; align-self: end; justify-self: end; width: 210px; height: 180px; overflow: hidden; pointer-events: none; user-select: none; }
 .intro-mascot img { position: absolute; right: -5px; bottom: -18px; width: 220px; height: 220px; max-width: none; transform: scaleX(-1) rotate(-6deg); transform-origin: 50% 90%; }
 .solid-link, .solid-button, .client-buttons > a, .client-buttons > button, .copy-config, .dialog-header button {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -197,7 +198,7 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
 .noscript { padding: 30px; text-align: center; }
 @media (max-width: 900px) {
   .intro { grid-template-columns: minmax(0, 1fr) 170px; gap: 24px; }
-  .intro-mascot { width: 170px; height: 180px; }
+  .intro-mascot { width: 170px; height: 160px; }
   .intro-mascot img { width: 190px; height: 190px; }
   .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filter-bar { grid-template-columns: repeat(3, minmax(0, 1fr)) 42px; }
@@ -209,17 +210,19 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
 }
 @media (max-width: 700px) {
   .document { padding: 0 20px; }
-  .intro { grid-template-columns: minmax(0, 1fr) 112px; gap: 24px 18px; padding-top: 28px; }
-  .intro-copy { grid-column: 1 / -1; }
-  .intro-mascot { grid-column: 2; grid-row: 2; align-self: end; width: 112px; height: 120px; }
+  .intro { grid-template-columns: minmax(0, 1fr) 112px; align-items: start; gap: 16px 18px; padding-top: 28px; }
+  .intro-copy, .intro-aside { display: contents; }
+  .intro-copy h1 { grid-column: 1 / -1; grid-row: 1; margin-bottom: 0; }
+  .intro-tagline { grid-column: 1 / -1; grid-row: 2; }
+  .intro-copy .summary { grid-column: 1; grid-row: 3; margin-top: 0; }
+  .intro-mascot { grid-column: 2; grid-row: 3; align-self: end; width: 112px; height: 100px; }
   .intro-mascot img { right: -3px; bottom: -10px; width: 128px; height: 128px; }
   h1 { font-size: 34px; line-height: 1.15; }
-  .intro-bottom { grid-column: 1; grid-row: 2; align-items: flex-start; flex-direction: column; gap: 12px; }
-  .intro-bottom .solid-link { flex-wrap: wrap; justify-content: flex-start; white-space: normal; }
+  .intro-aside .solid-link { grid-column: 1 / -1; grid-row: 4; justify-self: start; flex-wrap: wrap; justify-content: flex-start; white-space: normal; }
   .intro-tagline { font-size: 14px; }
   .agent-connect { padding: 18px; }
   .summary { flex-direction: column; gap: 7px; }
-  .summary > div { white-space: normal; }
+  .summary > div { flex-wrap: wrap; row-gap: 0; white-space: normal; }
   .summary strong { font-size: 20px; }
   .summary span { font-size: 13px; }
   .summary .stat-delta { font-size: 12px; }
