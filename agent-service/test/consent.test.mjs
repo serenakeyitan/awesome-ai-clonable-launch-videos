@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 import {readAuthorization,consentModel,consentAction,safeHttps} from '../../site/consent-model.mjs';
+import {clientName} from '../../site/analytics-events.mjs';
 
 const query = '?client_id=https%3A%2F%2Fclaude.ai%2Foauth%2Fclient-metadata.json&redirect_uri=https%3A%2F%2Fclaude.ai%2Fcallback&scope=profile+email&state=exact-state&nonce=exact-nonce&code_challenge=exact-challenge&code_challenge_method=S256&resource=https%3A%2F%2Fserenatan.org%2Flaunchvideo%2Fmcp';
 const auth = readAuthorization(query);
@@ -59,8 +60,8 @@ function renderedConsent() {
   // Exercise the actual page handlers without starting the remote SDK or making
   // any consent request. Native navigation is represented by an uncancelled event.
   const source = readFileSync(new URL('../../site/consent.js',import.meta.url),'utf8')
-    .replace(/^import[^\n]+\n/,'').replace(/start\(\)\.catch\(showError\);\s*$/,'');
-  const sandbox = {document,window,URL,readAuthorization,consentModel,consentAction};
+    .replace(/^import[^\n]+\n/gm,'').replace(/^start\(\)\.catch[^\n]*;\s*$/m,'');
+  const sandbox = {document,window,URL,readAuthorization,consentModel,consentAction,clientName,track:()=>Promise.resolve(false),identify:()=>Promise.resolve(false)};
   runInNewContext(source+';globalThis.renderPage=render;',sandbox);
   sandbox.renderPage(info,auth,{id:'test-user'},clerk);
   const form = nodes.get('consent-form');

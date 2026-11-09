@@ -28,7 +28,7 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 {"mcpServers":{"serena-launch":{"url":"https://serenatan.org/launchvideo/mcp"}}}
 ```
 
-The same service has three stable tools: `get_launch_context`, `search_launch_videos`, and `get_launch_video`. Call `get_launch_context` before each task. Every tool fetches the current catalog and workflow, returns their content version, and discovers styles dynamically. Search uses keywords, not a semantic embedding model. Equal keyword matches sort by record ID; browsing does not rank by popularity. Reference results include descriptive notes but omit exposure, engagement and legacy scores. Public gallery statistics remain unchanged.
+The same service has three read-only reference tools: `get_launch_context`, `search_launch_videos`, and `get_launch_video`, plus optional non-destructive `report_launch_task` for creation outcomes and explicit feedback. Call `get_launch_context` before each task. Every tool fetches the current catalog and workflow, returns their content version, and discovers styles dynamically. Search uses keywords, not a semantic embedding model. Equal keyword matches sort by record ID; browsing does not rank by popularity. Reference results include descriptive notes but omit exposure, engagement and legacy scores. Public gallery statistics remain unchanged.
 
 Official use requires an authenticated MCP connection. If MCP is disconnected or unsupported, stop and guide setup; do not read public mirrors as a substitute. HTTP manifest, catalog and workflow routes require the same OAuth access token and scopes as MCP. Public SKILL.md only guides connection. The gallery and public repository remain browsable; authentication does not make already-public content private.
 
@@ -53,7 +53,7 @@ The public SKILL.md endpoint returns a branded HTML reader for browser requests 
 
 ## Updating instructions
 
-`agent/workflow.md` is the single source for video-making instructions, reference inspection, fidelity, verification and request policy. Every `get_launch_context` response (and the other two tools) loads it from the current main revision. Merging a workflow change makes it available on the next call, including on an existing connection; no Worker deployment or reconnect is required for that file.
+`agent/workflow.md` is the single source for video-making instructions, reference inspection, fidelity, verification and request policy. Every `get_launch_context` response (and the other reference tools) loads it from the current main revision. Merging a workflow change makes it available on the next call, including on an existing connection; no Worker deployment or reconnect is required for that file.
 
 Server instructions only direct the agent to fetch and follow that workflow. SKILL.md copies retain connection setup and the live-workflow handoff, without embedding production steps or numeric retry rules. The public SKILL.md route is served by the Worker, so changing its embedded bootstrap or server instructions requires a Worker deployment. Installed package text is not remotely rewritten, but existing bootstraps already request the live workflow before each task.
 
@@ -63,7 +63,7 @@ The MCP supplies references and instructions; the client performs inspection and
 
 On November 8, 2026 (Pacific time), Sidehoe's published H.264/AAC MP4 was played end to end with Playwright 1.65.0 in headless bundled Chromium 158.0.8127.18 and installed Chrome 157.0.8103.38 (`channel: "chrome"`). Both reached 31.184399 seconds, decoded 778 frames and reported zero dropped frames. Seeking to 1, 8, 16, 24 and 30 seconds also succeeded. See the [measured report](../agent-service/verification/reference-playback-2026-11-08.json).
 
-This verifies playback for that clip on this macOS environment, not every browser build or soundtrack quality; playback was muted. The workflow now uses headless Chrome directly and reports inspection failures without switching players or skipping inspection. [Playwright's browser documentation](https://playwright.dev/docs/browsers#google-chrome--microsoft-edge) describes branded channels and codec differences.
+This verifies playback for that clip on this macOS environment, not every browser build or soundtrack quality; playback was muted. The workflow requires watching the reference and inspecting the result, leaving the inspection tools to the agent. [Playwright's browser documentation](https://playwright.dev/docs/browsers#google-chrome--microsoft-edge) describes branded channels and codec differences.
 
 ## Service development
 
@@ -111,3 +111,7 @@ Existing unauthenticated installations must update to the OAuth plugin release a
 ## Daily collection totals
 
 The homepage compares the current collection against its previous-day closing totals in Pacific time. Additions and updated source snapshots contribute to the change; this is not daily traffic or same-post exposure growth. `scripts/build_readme.py` and `scripts/build_site.py` refresh `data/daily-stats.json`, preserving earlier dates. Unchanged days carry the last published totals forward; missing baselines stay unavailable.
+
+## Product analytics
+
+See [measurement definitions](measurement.md). Explicit browser and authenticated MCP events feed PostHog; no raw queries, prompts, email, OAuth parameters or session recordings. Task completion is agent-reported, with separate delivery checks. Authentication remains required for all MCP tools. Public-directory submission drafts must describe the reporting tool before any future resubmission.

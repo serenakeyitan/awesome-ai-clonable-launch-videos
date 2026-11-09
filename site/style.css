@@ -257,3 +257,7 @@ dialog::backdrop { background: rgba(0,0,0,.3); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0s !important; }
 }
+
+.reference-feedback { display:flex; gap:12px; align-items:center; color:var(--muted); font-size:12px; margin:16px 0; }
+.reference-feedback button { background:none; border:0; padding:4px; text-decoration:underline; cursor:pointer; }
+.reference-feedback button:disabled { opacity:.4; cursor:default; }

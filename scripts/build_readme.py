@@ -27,7 +27,7 @@ def compact(number):
     return f'{number / 1_000_000:.2f}M' if number >= 1_000_000 else f'{number / 1000:.1f}K' if number >= 1000 else str(number)
 
 def prompt(video):
-    return f"clone this video 1:1 for my product\n{video['source']}"
+    return f"Remake this video's motion and vibe for my product:\n{video['source']}"
 
 def video_embed(video):
     # GitHub turns uploaded attachment URLs into native players in Markdown.
@@ -65,7 +65,7 @@ An awesome collection of AI-clonable launch videos.
 [![References](https://img.shields.io/badge/video_references-{len(VIDEOS)}-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
+> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 

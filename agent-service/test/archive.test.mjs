@@ -25,14 +25,14 @@ test('an existing MCP connection sees new videos, formats and workflow without r
   await client.connect(b);
   try {
     const toolsBefore = await client.listTools();
-    assert.equal(toolsBefore.tools.length,3);
+    assert.equal(toolsBefore.tools.length,4);
     for (const tool of toolsBefore.tools) {
       assert.equal(typeof tool.title,'string');
       assert.ok(tool.title.length > 0);
       assert.equal(tool.annotations.title,tool.title);
-      assert.equal(tool.annotations.readOnlyHint,true);
+      assert.equal(tool.annotations.readOnlyHint,tool.name !== 'report_launch_task');
       assert.equal(tool.annotations.destructiveHint,false);
-      assert.equal(tool.annotations.idempotentHint,true);
+      assert.equal(tool.annotations.idempotentHint,tool.name !== 'report_launch_task');
       assert.equal(tool.annotations.openWorldHint,true);
     }
     assert.deepEqual(toolsBefore.tools.find(t => t.name === 'search_launch_videos').inputSchema.properties.sort.enum,['relevance','newest']);
@@ -66,7 +66,7 @@ test('search preserves bounded results and canonical source lookup without popul
   assert.ok(!Object.hasOwn(record(a.videos[0]),'views'));
   assert.equal(findVideo(a,'https://twitter.com/demo/status/123/video/1?s=46').id,1);
   assert.equal(findVideo(a,'https://evil.example/private'),undefined);
-  assert.equal(record(a.videos[0]).remakePrompt,'clone this video 1:1 for my product https://x.com/demo/status/123');
+  assert.equal(record(a.videos[0]).remakePrompt,"Remake this video's motion and vibe for my product: https://x.com/demo/status/123");
 });
 
 test('reference search ignores popularity for browsing, ties and keyword relevance', async () => {

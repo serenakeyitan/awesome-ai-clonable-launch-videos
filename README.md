@@ -10,7 +10,7 @@ An awesome collection of AI-clonable launch videos.
 [![References](https://img.shields.io/badge/video_references-77-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to clone them 1:1 for your product with AI.
+> A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
@@ -146,7 +146,7 @@ https://github.com/user-attachments/assets/ce0db070-1f97-4cc7-acfe-5368dfc60a0f
 A black circular mascot and one green payment-card graphic sit on a white canvas. Large captions tell one shopping feature in about eleven seconds using flat 2D shapes.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2093419921007108385
 ```
 
@@ -191,7 +191,7 @@ https://github.com/user-attachments/assets/688c0575-1c63-425e-81c2-1519321980b6
 A blue question bubble opens into three tweet cards arranged as a fan. An answer bubble and an orange keyword highlight complete a compact search-and-summary story.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2107949161878606089
 ```
 
@@ -236,7 +236,7 @@ https://github.com/user-attachments/assets/30c62885-c5f6-4aae-9ac9-0f953f134569
 Pan and zoom through an iMessage inbox, chat bubbles, maps and calendar cards. Memoji, rising feature cards and a closing app-icon grid create a product story without live-action scenes.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/interaction/status/2062575428213285352
 ```
 
@@ -281,7 +281,7 @@ https://github.com/user-attachments/assets/fe3b8890-58c6-418f-9a66-1c5bc7ca4a2e
 A cursor selects an app icon on a stylized iPhone; the icon flies into the Action Button with a ripple. Camera pans and an expanding Dynamic Island turn device interactions into a story, followed by kinetic type and a logo reveal.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2112252507762368684
 ```
 
@@ -326,7 +326,7 @@ https://github.com/user-attachments/assets/12a5ee41-2262-4752-abca-d4bc264a5667
 Login forms, password fields and a vault settings screen become clean UI cards. Orange and green full-screen gradients separate the scenes and keep the hierarchy clear.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2113717946019397910
 ```
 
@@ -371,7 +371,7 @@ https://github.com/user-attachments/assets/d6e2176f-c344-4b5c-a651-9c76b5363a3a
 White title frames introduce computer use, followed by an orange-gradient product scene. A Cursor window and iPhone simulator sit side by side as the cursor demonstrates the workflow, ending on the cube logo.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/cursor_ai/status/2113661506634305834
 ```
 
@@ -416,7 +416,7 @@ https://github.com/user-attachments/assets/6e15a51f-38d6-4b3d-86d8-6291d7cbadf6
 A black circular mascot gains a green headset, then moves into an iPhone call interface on a pale background. Large captions connect answering calls, preparing callbacks and chat bubbles, before a dark green Allo logo and integration reveal.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/allophonesystem/status/2115793573589258279
 ```
 
@@ -461,7 +461,7 @@ https://github.com/user-attachments/assets/d9116a27-f0de-4678-90ca-ebcd6f6c39be
 A folding phone opens into a wider display while the interface rearranges to match. Keep the short film focused on one device transformation, then add scrolling and keyboard interactions.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/NotionHQ/status/2113694972339986860
 ```
 
@@ -506,7 +506,7 @@ https://github.com/user-attachments/assets/af1f74ec-3526-4f8d-8aa5-4f7b94423bc0
 Floating, tilted phones on white alternate with full-screen orange gradients. Camera pans and close-ups connect reading, chat and highlighting interfaces; large captions punctuate the sequence.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/readwise/status/2079973992077902283
 ```
 
@@ -551,7 +551,7 @@ https://github.com/user-attachments/assets/d25f9e6b-9ec4-4ccb-ab51-e7d3794f2a6b
 Move from an app screen to its home-screen icon, then down to a lock-screen live-score card. Device perspective and camera motion carry a single feature; the rendered phone may need more than flat UI animation to match.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/golo_app/status/2087584902984155632
 ```
 
@@ -596,7 +596,7 @@ https://github.com/user-attachments/assets/e59e2197-20c9-4be0-99d3-5427f3741a8e
 Click Install in a floating macOS window, then transform the window into a Dock icon. Spotlight, app switching and multiple windows make each click produce a visible system response.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ManusAI/status/2115110045977583909
 ```
 
@@ -641,7 +641,7 @@ https://github.com/user-attachments/assets/e179917f-89af-4519-ae1d-810cad3aa8f3
 A floating iPhone and Grok Bot mascot introduce the product, then purple chat commands drive a real-phone TikTok publishing demo. Dark task cards expand into a grid of phone-number, app and account workflows before a gradient logo and URL end frame.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/__morse/status/2118079056851669202
 ```
 
@@ -686,7 +686,7 @@ https://github.com/user-attachments/assets/7bea875b-0f05-468e-83d7-8e85fe079023
 Four numbered steps pair bold headings with simplified iPhone settings, a MacBook and the Grok Bot mascot on a pale background. Cursor clicks, message bubbles, dotted connectors and green confirmation checks visualize each setup step, ending on an explicit send confirmation.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/texas_twins_dad/status/2117824974689890485
 ```
 
@@ -731,7 +731,7 @@ https://github.com/user-attachments/assets/357f2a1d-3d53-4442-b9b6-38c8cef14ff3
 A close-up iPhone dock opens into pastel calendar blocks, with bold feature captions on an off-white background. Calendar details and event edits lead to a family of phone, tablet and desktop mockups, then return to the app icon.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/NotionHQ/status/2118407963723567512
 ```
 
@@ -776,7 +776,7 @@ https://github.com/user-attachments/assets/1c443874-7dfe-4807-9e69-720b37042fec
 On a dark canvas, large white type introduces a library of mobile UI blocks before colorful phone mockups show animated screens. The demo moves from a block preview to copying a Swift prompt, running code and viewing the result in an iOS simulator, with yellow text highlights and short caption pills.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ngocdevv/status/2117645490057892004
 ```
 
@@ -821,7 +821,7 @@ https://github.com/user-attachments/assets/8bbf9f95-922e-464a-bf58-1a911f9ace5c
 A black device-service mark on a pale canvas leads into connecting an MCP endpoint, sending a chat prompt and operating a real iPhone interface. Phone screens, social-post panels, a weekly planner and a grid of devices demonstrate the workflow with short explanatory headlines.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/HamonPaulm/status/2118309946190172318
 ```
 
@@ -866,7 +866,7 @@ https://github.com/user-attachments/assets/b2cf2d6c-fc43-4cd9-b98c-e9b2acea36f5
 Large metallic pen-nib and ChatGPT-style marks move across a pale background before the canvas interface appears. A typed import prompt brings a dashboard onto the canvas; bright metric cards, pixel-like numerals and cursor movements lead to the pen.dev closing mark.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/tomkrcha/status/2117336830559617513
 ```
 
@@ -911,7 +911,7 @@ https://github.com/user-attachments/assets/75e4fdc6-ddf2-4140-b83d-8da1705b9c84
 Bright perspective cards combine payment notices, a piggy bank, gears, stars and colorful radial ribbons. Large typography about payout timing, fees and approvals alternates with stylized payment UI before the Opptics end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Nexoxh/status/2116053584223547792
 ```
 
@@ -962,7 +962,7 @@ https://github.com/user-attachments/assets/c9aba1cb-2a58-43d4-a50a-fc9d9d0da781
 A minimal chat request expands into a carousel of product cards, followed by a detailed shopping view on white. An oversized cursor selects a shoe size and clicks Buy now, then a receipt message resolves into the Grok Bot logo.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2117736249444507834
 ```
 
@@ -1007,7 +1007,7 @@ https://github.com/user-attachments/assets/aebd26f9-1b86-45f5-97df-a0b83820d18b
 Muted peach and cream scenes give each feature its own full-screen color. Large titles, scrolling model names and cursor clicks create a compact sequence of AI updates.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/NotionHQ/status/2112269722075242887
 ```
 
@@ -1052,7 +1052,7 @@ https://github.com/user-attachments/assets/72edc146-63f8-4239-80eb-c2491f6b927b
 Type code into a white snippet card and highlight individual lines. A short, restrained sequence uses typography and code motion to explain the SDK method.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/cursor_ai/status/2107141004482793827
 ```
 
@@ -1097,7 +1097,7 @@ https://github.com/user-attachments/assets/a069a1c4-91e1-4691-9185-3934a3b31c77
 White wireframe triangles and cubes animate on a black canvas. Small frontend/backend labels keep the twelve-second geometric story precise and restrained.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/vercel/status/2110786348131258456
 ```
 
@@ -1142,7 +1142,7 @@ https://github.com/user-attachments/assets/a42fafb1-0880-4e9f-9038-b97b6ecba7cd
 A white canvas and orange accents connect search, phone UI, two-dot eyes and a thinking state. Logo blocks spring into a stack, making the personal-assistant toolkit visible as a simple metaphor.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/browserbase/status/2114777924335554605
 ```
 
@@ -1187,7 +1187,7 @@ https://github.com/user-attachments/assets/ced7aef3-9bac-4929-9cf0-93cdd6975a25
 A blue logo frame gives way to green/red probability pills, a moving point on a chart and a countdown. Limit each scene to one focal element, then reveal a phone chart and return to the blue logo frame.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/coinbase/status/2114148184285143349
 ```
 
@@ -1232,7 +1232,7 @@ https://github.com/user-attachments/assets/3c9db2e9-af82-4198-adf3-6efe141a0230
 Type /visualize into a minimal off-white chat interface. Draw a line chart, show hover/filter interactions, then turn a follow-up question into a growing bar chart.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/cursor_ai/status/2108289748628566496
 ```
 
@@ -1277,7 +1277,7 @@ https://github.com/user-attachments/assets/ad8c8b75-de9a-48d3-824f-99b0ba33b9be
 Blue concentric circles become a row of colored dots, then a ring and an asset-allocation pie chart. Simple geometric morphs connect the story before the chart resolves inside a phone interface.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/coinbase/status/2114718467610022208
 ```
 
@@ -1322,7 +1322,7 @@ https://github.com/user-attachments/assets/7459dba7-a19b-42aa-bd34-5c6183bcdf6a
 Brand icons float above white UI cards with soft shadows. Large title frames and straightforward 2D transitions introduce bot-building across messaging platforms.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/chddaniel/status/2048402359110557714
 ```
 
@@ -1367,7 +1367,7 @@ https://github.com/user-attachments/assets/d1cee917-3816-416c-970f-363a41987474
 A minimal white chat shows an expiring internet contract, then turns a phone-call button into an animated call timer and live transcript. Orange reply bubbles, sparse intertitles and a compact call panel lead to a cancellation confirmation and a simple Grok Bot logo close.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/bot/status/2118043939592942052
 ```
 
@@ -1412,7 +1412,7 @@ https://github.com/user-attachments/assets/9fa5ec1c-2d09-4802-8a2e-cc60a318c006
 Large black headlines introduce shared memory, followed by floating terminal windows and a Notion memories database. A phone conversation and the database appear side by side, connected by a hand-drawn arrow before a simple Notion logo close.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/NotionHQ/status/2118059335930744999
 ```
 
@@ -1457,7 +1457,7 @@ https://github.com/user-attachments/assets/aec5765d-3501-4817-8829-67d42c0d4fd9
 An orange agent dot, document stacks and thin black diagrams explain how a large task splits into parallel phases and recombines. Workflow rows turn into branching lines, a result counter, a phase timeline and a budget bar on a warm off-white canvas, ending on the Claude mark.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ClaudeDevs/status/2108591328732856655
 ```
 
@@ -1502,7 +1502,7 @@ https://github.com/user-attachments/assets/8fb93e0f-22c0-4e85-bc8d-33533a8e4e1e
 An off-white opening combines serif type, broken Notion-style letter blocks and a blue horse icon before moving into a clean notes workspace. A launch checklist and Paris travel page demonstrate editing, an AI chat panel and an embedded map with changing styles, ending with free and open-source messaging and the Terminus Notes title.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/WinstonGu_/status/2117336804705927410
 ```
 
@@ -1547,7 +1547,7 @@ https://github.com/user-attachments/assets/8343e405-b9f4-4f0b-bf9e-4771d2a1abe0
 The Google mark connects to document, map, mail and video-call icons through thin branching lines. Blue text selections, a glowing prompt box, the Gemini mark and simplified document-sharing UI tell the story on a white canvas.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Nexoxh/status/2118411690970599718
 ```
 
@@ -1592,7 +1592,7 @@ https://github.com/user-attachments/assets/aa40f6f4-597f-4363-b8d1-35fb56c4ca23
 A faint grid, light-blue text selections and pixel-block transitions introduce turning design references into code. Website comparisons, a terminal checklist and a chain from the agent to the design-to-code skill lead to the install-command end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/athrix_codes/status/2117596718019789205
 ```
 
@@ -1637,7 +1637,7 @@ https://github.com/user-attachments/assets/932d6d86-7140-4de9-a23b-d23f0cdf8285
 Blue glass-like buttons, a pointer and a payment panel introduce a billing workflow on a white background. Failed-subscription copy gives way to recovery messaging, a revenue line chart and the Commas × HighLevel closing card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/abdullah4204k/status/2118417123731186095
 ```
 
@@ -1682,7 +1682,7 @@ https://github.com/user-attachments/assets/a7866910-d6ee-496d-a1c8-269fa8e4d750
 A central terminal prompt is surrounded by social-platform icons, then moves through a decoded video, mention boards and creator data. Headphones imagery, relationship diagrams, audience bars and dashboard cards lead to the Jev and Treg end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/treg_ai/status/2118660249150427243
 ```
 
@@ -1727,7 +1727,7 @@ https://github.com/user-attachments/assets/34a114e9-fb84-44de-ae04-97f5b3c41ef9
 Usage bars and a short out-of-usage headline introduce Reason on a warm off-white canvas. Side-by-side coding interfaces and benchmark-style bars compare the advertised workflow before a free-trial closing card; the claims are presented as source-video content.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/reasonmachines/status/2117986868004573695
 ```
 
@@ -1772,7 +1772,7 @@ https://x.com/reasonmachines/status/2117986868004573695
 A white dotted grid hosts split-screen design-vs-code comparisons with a bright blue scanning line. Pixel-dissolve wipe transitions connect screenshots, Figma inputs, and terminal commands for a design-to-code workflow.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/athrix_codes/status/2119128567347052702
 ```
 
@@ -1823,7 +1823,7 @@ https://github.com/user-attachments/assets/54b478bc-597d-43d5-9db8-3a42a203426c
 Alternate black and white title frames with a clean voice-input interface. AI-generated image collages expand into a visual demonstration of voice edits.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/lovart_ai/status/2033904987277774951
 ```
 
@@ -1868,7 +1868,7 @@ https://github.com/user-attachments/assets/bfa4ba44-9d9a-4d0b-81e2-c4df05da9446
 Pink-purple gradients frame iMessage inboxes, chat bubbles, Memoji and floating app icons. An oversized cursor introduces a new feature every three to four seconds.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/maximusgrave/status/2102800008982777902
 ```
 
@@ -1913,7 +1913,7 @@ https://github.com/user-attachments/assets/5b3f4a89-cf72-4684-8fbd-a42eb1e55279
 White and pale-gray scenes, a giant blue cursor and floating image cards. Pair “4x faster” charts and an Arena ranking with a precise-editing demonstration.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/krea_ai/status/2112567020353102324
 ```
 
@@ -1958,7 +1958,7 @@ https://github.com/user-attachments/assets/9265c072-cbcf-4bde-867b-d3b1d679ae91
 Cartoon characters and large kinetic titles lead into LinkedIn, calendar and meeting UI. Frequent zooms and quick scene changes create a dense product-story rhythm; the included file is a 35-second excerpt.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/charles_maddock/status/2114659351470247986
 ```
 
@@ -2003,7 +2003,7 @@ https://github.com/user-attachments/assets/9b68d56f-5ceb-4979-844f-0ea31161aa62
 Pale gray and purple full-screen frames introduce the job-search problem. Small type and an input UI carry a restrained demo, ending on the Actify logo.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ActifyAI/status/2080331695560274183
 ```
 
@@ -2048,7 +2048,7 @@ https://github.com/user-attachments/assets/ee4cf7a6-d741-4fc2-8562-48c70245bd57
 White UI with app icons, an “Opportunity Missed!” alert, tables and an oversized cursor. Conversational title frames lead into a workflow diagram and a soft-gradient close.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/CrowdReply_io/status/2105312058451570973
 ```
 
@@ -2093,7 +2093,7 @@ https://github.com/user-attachments/assets/1b912b46-54f0-430b-9235-e7cf33d1adf0
 Cream canvas and big red type introduce “Your next 100 customers are waiting.” Strike through manual, tedious and expensive; reveal tables and counters, then a logo close.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/samuel_spitz/status/2041198900791714278
 ```
 
@@ -2138,7 +2138,7 @@ https://github.com/user-attachments/assets/b8d44ce6-96ec-4156-8aa7-f0ac878099d6
 Cream and pink-orange gradients with slow-moving titles, calendar UI and meeting windows. Expanding rings link “Google Meet” to “Your PAL,” ending on Tavus branding.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/tavus/status/2074894605125026072
 ```
 
@@ -2183,7 +2183,7 @@ https://github.com/user-attachments/assets/4c9d62a2-a17e-449a-98bd-23069fea34f7
 Two iPhone mockups compare a pink checklist interface with an editorial fashion and packing experience throughout the clip. Rapid screen changes combine cut-out product and fashion photography, serif headlines, checklist rows and bottom navigation.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/jaimintf/status/2118396459150344437
 ```
 
@@ -2228,7 +2228,7 @@ https://github.com/user-attachments/assets/a2d37684-8609-4d0c-87b7-d29b969226b7
 Thermal-colored imagery and soft gradients introduce an AI workspace, followed by oversized lettering against a sky of clouds. A prompt field, image-generation progress steps and fashion-photo collages use floating panels and changing scale on a light canvas.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/rajzmotion/status/2117525794637697456
 ```
 
@@ -2273,7 +2273,7 @@ https://x.com/rajzmotion/status/2117525794637697456
 Saturated solid-color backgrounds alternate with oversized cursors clicking through a calendar UI. Multiplayer cursors, AI text prompts, and 3D geometric shapes frame a sleek state-map and layout-exploration demo.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/BuffetDesigns/status/2119047968091451746
 ```
 
@@ -2324,7 +2324,7 @@ https://github.com/user-attachments/assets/ba4ac478-1c84-48c9-8acc-6b2e084f34c8
 Cream and dark frames alternate around a “Stop burning your budget” hook. Counters, social-post UI, comment bubbles and an icon grid build toward the logo.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/aiscwork/status/2090862009008984574
 ```
 
@@ -2369,7 +2369,7 @@ https://github.com/user-attachments/assets/0453c796-297e-480a-b39d-565846afc871
 Minimal white frames with “Give your agent taste” and editorial image accents. Typography drives the story, closing on a black installation-command frame.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/LexnLin/status/2110122106537050584
 ```
 
@@ -2414,7 +2414,7 @@ https://github.com/user-attachments/assets/06d390e1-39b6-49ed-931c-43de48cb24f4
 Black canvas with rough, glowing outlines and hand-drawn-looking cards. Identity → model provider → skills → MCPs → review, in a square composition.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/NousResearch/status/2064760263224504719
 ```
 
@@ -2459,7 +2459,7 @@ https://github.com/user-attachments/assets/2fef8eb6-2738-4a1e-bdbb-aaad64f08eeb
 Minimal black, white and gray; spheres, rings, waveforms and dialogue captions. Abstract motion and model-tier labels carry a voice-product story.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ElevenLabs/status/2112550782063247521
 ```
 
@@ -2504,7 +2504,7 @@ https://github.com/user-attachments/assets/c2d2719e-aaae-4e86-b9b0-3fd73adf3f19
 Neon green panels, black grid lines and large white type frame an isometric story about teams and budgets. Colored cubes, numerical limits, expanding geometry and graph-like paths alternate between flat compositions and perspective views.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/MarkKnd/status/2118682213139001373
 ```
 
@@ -2549,7 +2549,7 @@ https://github.com/user-attachments/assets/39994253-a288-414a-b72b-d8a9de208592
 A production breakdown exposes selection boxes, motion paths, handles and overlapping layers behind an app-launch hook. Vintage cutout images, serif lettering, pixel-style pointers and colored feature requests animate on a pale yellow canvas.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Jerrythe2d/status/2118730912901042221
 ```
 
@@ -2594,7 +2594,7 @@ https://github.com/user-attachments/assets/c9121b6d-b09d-477c-a892-c239e8c44750
 Collaborative cursors and live selections turn a short line of text into a sequence of changing letterforms and contrasting type treatments. The square clip shifts between light and dark canvases, letter grids and oversized editorial layouts before the Paper mark.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/stephenhaney/status/2117333603608932710
 ```
 
@@ -2639,7 +2639,7 @@ https://github.com/user-attachments/assets/33e6f7da-09d4-4c1d-be3b-571071d0e34a
 A softly lit metallic sphere moves between dark and light compositions alongside chat bubbles and minimal captions. Integration blocks, multilingual speech examples and turn-taking labels explain the voice-agent workflow before the ElevenLabs closing mark.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/ElevenLabsDevs/status/2057919237566407063
 ```
 
@@ -2684,7 +2684,7 @@ https://github.com/user-attachments/assets/baaee9a0-ba32-4317-adff-edeb5e316b50
 Minimal white typography introduces a yield question on a black canvas, with thin chart lines and outlined financial symbols. Animated spread curves and a leverage gauge illustrate the product before a compact Lifted Finance logo end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/BuffetDesigns/status/2117225648595022031
 ```
 
@@ -2735,7 +2735,7 @@ https://github.com/user-attachments/assets/870e16d9-c055-45c7-af1f-f6f9e6d9da55
 The video is presented as an AI-generated Syren demo. Kinetic typography and brand cards mix with an AI presenter and a logo reveal.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/vriparbelli/status/2107850981614489957
 ```
 
@@ -2780,7 +2780,7 @@ https://github.com/user-attachments/assets/66360a9c-5968-4e3d-8ced-2d4bfe43e5b2
 A short laptop shot introduces desktop windows, floating prompts and a large number counter. Caption-led storytelling moves from screen chaos to an agent doing useful work.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/vida_agent/status/2069718855551955194
 ```
 
@@ -2825,7 +2825,7 @@ https://github.com/user-attachments/assets/29365212-0950-4805-aaf6-c9c113b60018
 Dark, glowing interface cards: competitor scraping, suggestions and a mascot. Large cursor clicks and ad thumbnails combine a product reveal with a funding announcement.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/arcads_ai/status/2084611105528115415
 ```
 
@@ -2870,7 +2870,7 @@ https://github.com/user-attachments/assets/b3c3d59c-4de9-476e-bd63-7e77c999b5e5
 A floating phone switches between an app launch screen, a toggle, a lock-screen notification and a reward result. A fluid multicolor gradient supplies atmosphere; much of the phone content resembles actual app footage.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/CashApp/status/2103207687127466307
 ```
 
@@ -2915,7 +2915,7 @@ https://github.com/user-attachments/assets/608cc9ed-1994-413e-973c-cbe157d049e3
 A founder introduction gives way to web-design windows, terminal scenes and a bold “DOMINATE” frame. Finish with a green gradient and the AI design engineer proposition.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Dipanjan_Dey/status/2061825199247614316
 ```
 
@@ -2960,7 +2960,7 @@ https://github.com/user-attachments/assets/ff55b978-dd52-4e5e-b872-0173e96b3732
 Dark trading terminals sit over warm gradients. Notification cards deliver a specific market signal before a “Trade with superhuman” close.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/instinct_xyz/status/2110439790961442825
 ```
 
@@ -3005,7 +3005,7 @@ https://github.com/user-attachments/assets/487d0ffe-6936-49eb-90a9-8757d0718f0f
 White, red and blue frames; TikTok cards, meme-like cutouts and big conversational captions. Fast collage pacing supports a creator-discovery demonstration.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Jibran_05/status/2033589137018917027
 ```
 
@@ -3050,7 +3050,7 @@ https://github.com/user-attachments/assets/ad79a094-f2d2-47ba-beb6-2ecf7278330f
 Dark title frames mix photo collage with an editing timeline. Later product-demo scenes include people in podcast footage.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/RiversidedotFM/status/2077770308992258493
 ```
 
@@ -3095,7 +3095,7 @@ https://github.com/user-attachments/assets/a5cb5b28-f936-4fdc-a876-479c2b22c286
 A phone interface floats at an angle against black. Code diffs and a keyboard appear in sequence before the Linear logo; perspective supplies most of the atmosphere.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/linear/status/2082856036977803595
 ```
 
@@ -3140,7 +3140,7 @@ https://github.com/user-attachments/assets/4b424985-a16c-4e98-b584-72edc11498d6
 Deep purple and magenta gradients frame an iPhone conversation and large title statements. Alternate phone UI with typography, ending on a terminal command and logo; the source notes a brief tweet screenshot.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/readwise/status/2037536421414653965
 ```
 
@@ -3185,7 +3185,7 @@ https://github.com/user-attachments/assets/75f167c7-b874-49c1-97aa-c506588abec6
 An iPhone home-screen widget introduces a round mascot, then cycles through expressive agent characters on a dark interface. The widget switches from loading files to a task-progress view, where a small mascot hammers an anvil above a growing progress bar.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Studiyoco/status/2101329629701443613
 ```
 
@@ -3230,7 +3230,7 @@ https://github.com/user-attachments/assets/720c8c6f-db8d-4d67-9a3a-073541d59fad
 A long-form showcase moves between a redesigned component library, floating reference thumbnails, large number typography and softly colored gradient scenes. The full clip includes dashboard mockups, phone screens, a launch checklist, animated logo typography and branching diagrams.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/kapish_dima/status/2118389802433163449
 ```
 
@@ -3275,7 +3275,7 @@ https://github.com/user-attachments/assets/e82542a7-d39d-47d5-9034-3ccedfa341ff
 A colorful pill-shaped word and floating image tiles introduce Holo on a bright canvas. Ads, social content, email and SEO labels transition into product images, dashboards and photography before the tryholo.ai end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/Nexoxh/status/2117911995605569654
 ```
 
@@ -3320,7 +3320,7 @@ https://github.com/user-attachments/assets/d3b6e619-4914-44c9-9671-2ff20b884d9f
 A glowing blue mark and prompt box introduce motion generation on a black canvas. A lit phone, colored editing tracks and a template gallery demonstrate moving from generated footage to editable motion, followed by a dark logo end card.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/cy_burns/status/2117633106366632007
 ```
 
@@ -3365,7 +3365,7 @@ https://github.com/user-attachments/assets/d3c2792e-d911-4606-a90c-149e4b302a43
 An Instagram-style save action expands into large gradient lettering and a speculative reminder interface. The clip mixes social-post mockups, an editing-timeline view and a warm photographic scene to deliver a personal reminder joke.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/dpratyush02/status/2118184366593757489
 ```
 
@@ -3410,7 +3410,7 @@ https://github.com/user-attachments/assets/f24e5e3c-1003-44c3-be0a-518c146f49f0
 Floating design and product thumbnails move from a warm light background to a dark assistant-prompt scene. A short prompt, cursor action, expanding inspiration collage and blurred studio wordmark finish the compact motion piece.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/thednyx/status/2118214587094814786
 ```
 
@@ -3455,7 +3455,7 @@ https://github.com/user-attachments/assets/e16e1f0b-f036-4059-a897-1c0e9c60e0d8
 Property photography gives way to a dark real-estate interface lit with teal gradients and animated map points. A builder feed, map results, exports, seller details and team-access controls form a sequential product walkthrough.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/abdullah4204k/status/2117285743282598063
 ```
 
@@ -3500,7 +3500,7 @@ https://x.com/abdullah4204k/status/2117285743282598063
 A Nordic-minimal white background hosts dot-matrix statistics and green signal-line animations. City and landscape photography forms a rotating globe intro, then clean UI cards and kinetic typography close the story.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/abdullah4204k/status/2119137996196975045
 ```
 
@@ -3551,7 +3551,7 @@ https://github.com/user-attachments/assets/0c938f7b-b211-4d3b-ad18-9b06bda73873
 An illustrated snail searches for homes overnight; floating listing cards and a morning email turn the product workflow into a character story. Sunny farmhouse, pool and seaside scenes combine property UI cards with playful 2D environments, ending on the AffordiHome Finder logo and URL.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/TimurNegru/status/2117222530620461443
 ```
 
@@ -3596,7 +3596,7 @@ https://github.com/user-attachments/assets/fc89099f-f10d-4783-827c-759db160e5da
 A restrained landing-page composition holds its typography and calls to action while small rendered figures move around bright geometric forms. The repeated crowd motion sits above the headline about someone already believing in your idea; the source clip has no audio stream.
 
 ```text
-clone this video 1:1 for my product
+Remake this video's motion and vibe for my product:
 https://x.com/nazyurtal/status/2117252549019328774
 ```
 

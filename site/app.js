@@ -1,5 +1,6 @@
 'use strict';
 import {dailyChanges} from './daily-stats.mjs';
+import {track} from './analytics.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -18,6 +19,9 @@ let activeId = null;
 let tableView = false;
 let toastTimer;
 let lastTrigger;
+let filterTimer;
+const playedReferences = new Set();
+const engagedReferences = new Set();
 const dialog = $('#video-dialog');
 
 function notify(message) {
@@ -31,7 +35,7 @@ function card(video) {
   const v = video;
   return `<article class="video-card">
     <div class="thumb inline-player">
-      <video controls playsinline preload="none" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} inline video"></video>
+      <video controls playsinline preload="none" data-reference-id="${v.id}" data-surface="grid" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} inline video"></video>
       <button class="inline-play play-icon" data-play="${v.id}" aria-label="Play ${escapeHTML(v.title)}">▶</button>
       ${v.excerpt ? '<span class="excerpt-label">Excerpt</span>' : ''}<span class="timecode">${timecode(v.clipSeconds)}</span>
     </div>
@@ -67,6 +71,8 @@ function setFeature(id) {
   const v = videos.find(v => v.id === id);
   if (!v) return;
   const player = $('#featured-video');
+  player.dataset.referenceId = String(id);
+  player.dataset.surface = 'featured';
   player.pause();
   player.poster = v.poster;
   player.src = v.video;
@@ -77,12 +83,13 @@ function setFeature(id) {
 }
 
 function brief(v) {
-  return `clone this video 1:1 for my product ${v.source}`;
+  return `Remake this video's motion and vibe for my product: ${v.source}`;
 }
 
 function openVideo(id, trigger) {
   const v = videos.find(v => v.id === id);
   if (!v) return;
+  track('reference_opened',{reference_id:id,surface:trigger ? 'collection' : 'reference_link'});
   document.querySelectorAll('video').forEach(player => player.pause());
   const oldPlayer = $('#dialog-video');
   if (oldPlayer) oldPlayer.pause();
@@ -91,12 +98,13 @@ function openVideo(id, trigger) {
   $('#dialog-ref').textContent = v.title;
   const metrics = [['impressions','Impressions'],['views','Video plays'],['likes','Likes'],['bookmarks','Bookmarks'],['reposts','Reposts'],['replies','Replies'],['quotes','Quotes'],['followers','Followers']];
   $('#dialog-content').innerHTML = `<div class="dialog-main"><div class="dialog-left">
-    <video id="dialog-video" controls playsinline preload="metadata" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} video"></video>
+    <video id="dialog-video" controls playsinline preload="metadata" data-reference-id="${v.id}" data-surface="detail" poster="${v.poster}" src="${v.video}" aria-label="${escapeHTML(v.title)} video"></video>
     <p class="video-error" id="media-error" hidden>Unable to play this file. <a href="${v.source}" target="_blank" rel="noopener">Watch the original post ↗</a></p>
     <div class="clip-note"><span>${displayDuration(v)}</span><a href="${v.source}" target="_blank" rel="noopener">Original post ↗</a></div>
     <h2 id="dialog-title">${escapeHTML(v.title)}</h2>
     <div class="byline">${escapeHTML(v.account)} · Posted ${v.date}</div>
     <div class="dialog-tags">${v.styles.map(s => escapeHTML(s)).join(' / ')}</div>
+    <div class="reference-feedback" aria-label="Was this reference useful?"><span>Useful reference?</span><button data-feedback="helpful" aria-label="Helpful reference">Yes</button><button data-feedback="not_helpful" aria-label="Not a helpful reference">No</button></div>
     <h3>What to borrow</h3><ul class="notes-list">${v.notes.map(note => `<li>${escapeHTML(note)}</li>`).join('')}</ul>
     <details><summary>Original post</summary><blockquote>${escapeHTML(v.quote)}</blockquote></details>
   </div><aside class="dialog-right"><h3 class="stats-heading">Stats</h3>
@@ -129,6 +137,7 @@ async function copyBrief() {
   const textarea = $('#remake-brief');
   try {
     await navigator.clipboard.writeText(textarea.value);
+    track('reference_prompt_copied',{reference_id:activeId});
     const button = $('#copy-brief');
     button.textContent = 'Copied ✓';
     notify('Brief copied. Make it yours.');
@@ -154,13 +163,38 @@ document.addEventListener('click', (event) => {
   const feature = event.target.closest('[data-feature]');
   if (feature) setFeature(Number(feature.dataset.feature));
   if (event.target.closest('#copy-brief')) copyBrief();
+  const feedback=event.target.closest('[data-feedback]');
+  if (feedback && !feedback.disabled) {
+    feedback.closest('.reference-feedback').querySelectorAll('button').forEach(button=>button.disabled=true);
+    track('reference_feedback',{reference_id:activeId,rating:feedback.dataset.feedback}).then(recorded=>{
+      if (recorded) notify('Thanks — noted.');
+      else {feedback.closest('.reference-feedback')?.querySelectorAll('button').forEach(button=>button.disabled=false);notify('Feedback was not sent.');}
+    });
+  }
 });
 document.addEventListener('play', (event) => {
   if (!(event.target instanceof HTMLVideoElement)) return;
+  const id = Number(event.target.dataset.referenceId);
+  if (id && !playedReferences.has(id)) {
+    playedReferences.add(id);
+    track('reference_played',{reference_id:id,surface:event.target.dataset.surface});
+  }
   document.querySelectorAll('video').forEach(player => {
     if (player !== event.target) player.pause();
   });
   event.target.closest('.inline-player')?.classList.add('is-playing');
+}, true);
+document.addEventListener('timeupdate', event => {
+  const player = event.target;
+  if (!(player instanceof HTMLVideoElement) || player.seeking) return;
+  const id = Number(player.dataset.referenceId);
+  if (!id || engagedReferences.has(id)) return;
+  let seconds = 0;
+  for (let i = 0; i < player.played.length; i++) seconds += player.played.end(i) - player.played.start(i);
+  if (seconds >= 5) {
+    engagedReferences.add(id);
+    track('reference_engaged',{reference_id:id,surface:player.dataset.surface});
+  }
 }, true);
 ['pause', 'ended'].forEach(type => document.addEventListener(type, (event) => {
   if (event.target instanceof HTMLVideoElement) event.target.closest('.inline-player')?.classList.remove('is-playing');
@@ -186,8 +220,13 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') {event.preventDefault();navigateVideo(1);}
   if (event.key === 'ArrowLeft') {event.preventDefault();navigateVideo(-1);}
 });
-$('#search').addEventListener('input', renderCollection);
-['category','style','sort'].forEach(id => $(`#${id}`).addEventListener('change', renderCollection));
+function filterChanged() {
+  renderCollection();
+  clearTimeout(filterTimer);
+  filterTimer = setTimeout(() => track('collection_filtered',{query_length:$('#search').value.trim().length,result_count:filtered.length,category:$('#category').value,style:$('#style').value,sort:$('#sort').value}),500);
+}
+$('#search').addEventListener('input', filterChanged);
+['category','style','sort'].forEach(id => $(`#${id}`).addEventListener('change', filterChanged));
 $('#reset-filters').addEventListener('click', () => {
   $('#search').value = '';
   $('#category').value = 'all';
