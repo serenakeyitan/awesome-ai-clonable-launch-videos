@@ -4,7 +4,7 @@
     "email": "serenatan1125@gmail.com",
     "name": "Serena Tan"
   },
-  "description": "Find playable launch-video references and current remake workflows from the live Serena Launch.",
+  "description": "Find playable references for product launches, demos, teasers and motion design from Serena Tan's curated video collection.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -15,20 +15,23 @@
         "developerName": "Serena Tan",
         "displayName": "Serena Launch",
         "logo": "./assets/serena-popcorn.png",
-        "longDescription": "Search the live library of launch-video references, inspect metadata and dated stats, and get a copyable prompt with the original source. Every tool fetches the current catalog and workflow. Rendering uses your existing video tools.",
-        "shortDescription": "Launch videos for your agent"
+        "longDescription": "Find real launch videos, product demos and teasers for your next release. Explore Serena Tan's curated collection by brand, product, style or aspect ratio, watch playable references and borrow pacing, transitions and vibe for your own product. Creation uses your existing tools; optional task reports and explicit feedback help improve the collection.",
+        "shortDescription": "Launch & motion references"
       }
     }
   },
   "homepage": "https://serenatan.org/launchvideo/",
   "keywords": [
-    "launch-video",
-    "video",
-    "design",
-    "remotion"
+    "product-launch",
+    "product-demo",
+    "teaser",
+    "feature-announcement",
+    "motion-design",
+    "transitions",
+    "video-reference"
   ],
   "license": "MIT",
   "name": "launch-archive",
   "repository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
-  "version": "0.1.6"
+  "version": "0.1.7"
 }

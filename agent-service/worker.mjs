@@ -4,28 +4,41 @@ import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
+import {captureMcpEvent,reportLaunchTask} from './analytics.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
-const guarded = (load, fn) => async args => {
-  try { return result(await fn(await load(), args)); }
-  catch (error) { console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message})); return {isError:true, content:[{type:'text', text:'The current published archive is unavailable. Retry later; no cached catalog was returned.'}]}; }
+const guarded = (load, fn, tool, observe) => async args => {
+  const started = Date.now();
+  const completed = properties => {
+    try { observe?.({tool,duration_ms:Math.max(0,Date.now()-started),...properties}); }
+    catch { console.warn(JSON.stringify({event:'analytics_capture_failed'})); }
+  };
+  try {
+    const value = await fn(await load(),args);
+    completed({outcome:'success',...(tool === 'get_launch_video' ? {reference_found:value.found,reference_id:value.video?.id} : {}),...(tool === 'search_launch_videos' ? {query_length:args.query?.length ?? 0,result_count:value.totalMatches,category:args.category,style:args.style} : {})});
+    return result(value);
+  } catch (error) {
+    completed({outcome:'error'});
+    console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message}));
+    return {isError:true,content:[{type:'text',text:'The current published archive is unavailable. Retry later; no cached catalog was returned.'}]};
+  }
 };
 
-export function createServer(load = loadArchive) {
+export function createServer(load = loadArchive, observe, report) {
   const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.1.0'}, {instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.'});
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
-    description:'Get the live workflow, catalog version, metadata and available facets/formats. Call before each launch-video task.',
+    description:'Start here for product launch, demo, teaser or feature-announcement videos and motion-design inspiration. Get the live collection, workflow and searchable styles.',
     inputSchema:z.object({}), annotations:{...annotations,title:'Browse current launch-video collection'}
-  }, guarded(load, archive => context(archive)));
+  }, guarded(load, archive => context(archive),'get_launch_context',observe));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
-    description:'Search keywords and current facets. Returns candidate MP4s, descriptive notes, duration and the live workflow. Keyword order is not a product-fit recommendation; no popularity ranking or metrics.',
+    description:'Find real launch, demo and teaser references by brand, product, pacing, transitions or animation style. Returns playable videos, Serena Launch preview links and notes. Keyword order is not a product-fit recommendation; no popularity ranking or metrics.',
     inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
-  }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)})));
+  }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)}),'search_launch_videos',observe));
   server.registerTool('get_launch_video', {
     title:'Get launch-video reference details',
     description:'Get a reference by ID, slug or X/Twitter URL: MP4, descriptive metadata, notes and clone prompt. Catalog references only; no popularity metrics or legacy scores.',
@@ -33,24 +46,36 @@ export function createServer(load = loadArchive) {
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);
     return {...context(archive), found:!!video, video:video ? record(video,true,archive.sourceRevision) : null};
-  }));
+  },'get_launch_video',observe));
+  server.registerTool('report_launch_task', {
+    title:'Report video task outcome or explicit feedback',
+    description:'Record a video-creation task start, completion or failure, or feedback the user explicitly gave. Returns a task ID at start; reuse it for the outcome. Completion is agent-reported, not a server render verification. No prompts, emails, output URLs or private content.',
+    inputSchema:z.object({status:z.enum(['started','completed','failed','feedback']),task_id:z.uuid().optional(),reference_ids:z.array(z.number().int().positive()).max(3).optional(),checks:z.object({html:z.boolean(),source:z.boolean(),mp4:z.boolean(),music:z.boolean(),playback:z.boolean(),download:z.boolean()}).optional(),rating:z.enum(['helpful','not_helpful']).optional(),reason:z.enum(['poor_fit','motion_quality','playback','download','other']).optional()}),
+    annotations:{title:'Report video task outcome or explicit feedback',readOnlyHint:false,destructiveHint:false,idempotentHint:false,openWorldHint:true}
+  }, async args => {
+    if (!report) return result({recorded:false,reason:'Reporting unavailable'});
+    if (args.reference_ids?.length) {
+      const archive=await load();
+      if (args.reference_ids.some(id=>!archive.videos.some(video=>video.id===id))) return {...result({recorded:false,reason:'Unknown reference ID'}),isError:true};
+    }
+    const value=await report(args);
+    return {...result(value),...(!value.recorded ? {isError:true} : {})};
+  });
   return server;
 }
 
 const bootstrap = `---
 name: serena-launch
-description: Find launch-video references and remake one using the live Serena Launch workflow.
+description: Find real video references for product launches, demos, teasers and feature announcements, or inspiration for pacing, transitions, motion design and vibe. Use when planning or making these videos, even if the user does not name Serena Launch.
 ---
 
 # Serena Launch
 
-Connect the existing MCP server; do not package a downloadable skill.
+Search Serena Tan's curated video collection and share playable Serena Launch links. Before each relevant task, call get_launch_context and follow its live workflow; keep creative decisions with the agent.
 
-Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). The user signs in and approves access; never request credentials or tokens in chat. If chat cannot configure MCP, give one connect link rather than a tutorial. For Claude, reply only with [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude). For other clients, use their setup link or shortest settings path. Claim connection only after initialize, tools/list and get_launch_context succeed.
+Use the existing MCP server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). Never request credentials or tokens in chat or package a downloadable skill. If setup is needed, offer one connect link: for Claude, [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude); otherwise the client's shortest setup path. Confirm connection only after initialize, tools/list and get_launch_context succeed.
 
-Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
-
-If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. Do not use public catalogs, workflows, website metadata or GitHub mirrors as a substitute for the authenticated MCP service.
+If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. No anonymous fallback through public files, website metadata or GitHub mirrors. Keep the catalog and workflow live rather than embedding them in permanent instructions.
 `;
 
 function skillResponse(request) {
@@ -78,7 +103,7 @@ function response(body, type = 'application/json', status = 200) {
   return new Response(typeof body === 'string' ? body : JSON.stringify(body), {status,headers:{'Content-Type':`${type}; charset=utf-8`, 'Cache-Control':'no-store, max-age=0', 'Access-Control-Allow-Origin':'*', 'X-Content-Type-Options':'nosniff'}});
 }
 
-const mcp = createMcpHandler(() => createServer(), {route:`${BASE}/mcp`, legacy:'stateless', allowedHostnames:['serenatan.org','localhost','127.0.0.1'], allowedOriginHostnames:'*'});
+const MCP_OPTIONS = {route:`${BASE}/mcp`,legacy:'stateless',allowedHostnames:['serenatan.org','localhost','127.0.0.1'],allowedOriginHostnames:'*'};
 export default {
   async fetch(request, env, ctx) {
     const guarded = await guardRequest(request, env);
@@ -90,10 +115,17 @@ export default {
       return request.method === 'HEAD' ? new Response(null, metadata) : metadata;
     }
     if (path === `${BASE}/mcp`) {
+      let identity;
       if (request.method !== 'OPTIONS') {
         const auth = await authorizeMcp(request, env);
         if (auth.response) return auth.response;
+        identity = auth.identity;
       }
+      // The SDK already creates a fresh stateless server per request. Capture
+      // verified identity in this request's closure, never in shared state.
+      const mcp = createMcpHandler(() => createServer(loadArchive,event => {
+        if (identity) ctx.waitUntil(captureMcpEvent(env,identity,event));
+      },args => reportLaunchTask(env,identity,args)),MCP_OPTIONS);
       return mcp(request,env,ctx);
     }
     if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS','Access-Control-Allow-Headers':'Authorization, Content-Type'}});

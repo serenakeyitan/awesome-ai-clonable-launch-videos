@@ -1,14 +1,12 @@
 ---
 name: serena-launch
-description: Find launch-video references and remake one using the live Serena Launch workflow.
+description: Find real video references for product launches, demos, teasers and feature announcements, or inspiration for pacing, transitions, motion design and vibe. Use when planning or making these videos, even if the user does not name Serena Launch.
 ---
 
 # Serena Launch
 
-Connect the existing MCP server; do not package a downloadable skill.
+Search Serena Tan's curated video collection and share playable Serena Launch links. Before each relevant task, call get_launch_context and follow its live workflow; keep creative decisions with the agent.
 
-Server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). The user signs in and approves access; never request credentials or tokens in chat. If chat cannot configure MCP, give one connect link rather than a tutorial. For Claude, reply only with [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude). For other clients, use their setup link or shortest settings path. Claim connection only after initialize, tools/list and get_launch_context succeed.
+Use the existing MCP server: https://serenatan.org/launchvideo/mcp (Streamable HTTP, browser OAuth). Never request credentials or tokens in chat or package a downloadable skill. If setup is needed, offer one connect link: for Claude, [Connect Serena Launch](https://serenatan.org/launchvideo/agent/connect/claude); otherwise the client's shortest setup path. Confirm connection only after initialize, tools/list and get_launch_context succeed.
 
-Before each launch-video task, call get_launch_context and follow the workflow it returns. Never embed the workflow or catalog in permanent instructions.
-
-If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. Do not use public catalogs, workflows, website metadata or GitHub mirrors as a substitute for the authenticated MCP service.
+If MCP is disconnected, unsupported, or returns 401/403, stop and guide connection or reauthorization. No anonymous fallback through public files, website metadata or GitHub mirrors. Keep the catalog and workflow live rather than embedding them in permanent instructions.

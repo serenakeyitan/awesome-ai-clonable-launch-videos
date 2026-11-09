@@ -1,7 +1,10 @@
 import {readAuthorization, consentModel, consentAction} from './consent-model.mjs';
+import {track,identify} from './analytics.mjs';
+import {clientName} from './analytics-events.mjs';
 
 const $ = id => document.getElementById(id);
-const showError = () => {
+const showError = (reason = 'load_failed') => {
+  track('consent_failed',{reason});
   $('consent-content').hidden = true;
   $('consent-status').hidden = false;
   $('consent-status').textContent = 'Connection unavailable. Try again from your agent.';
@@ -9,6 +12,11 @@ const showError = () => {
 
 function render(info, authorization, user, clerk, preview = false) {
   const model = consentModel(info, authorization);
+  const client = clientName(authorization.clientId);
+  if (!preview) {
+    identify(user.id);
+    track('consent_viewed',{client});
+  }
   const form = $('consent-form');
   $('consent-heading').textContent = `Connect ${model.name}`;
   $('consent-account').textContent = user.primaryEmailAddress?.emailAddress || user.primaryPhoneNumber?.phoneNumber || user.username || user.id;
@@ -58,6 +66,7 @@ function render(info, authorization, user, clerk, preview = false) {
     window.addEventListener('pageshow', reset);
     document.addEventListener('securitypolicyviolation', event => {
       if (event.effectiveDirective !== 'form-action') return;
+      track('consent_failed',{reason:'form_policy'});
       reset();
       status.textContent = 'Your browser blocked the connection. Start again from your agent.';
       status.hidden = false;
@@ -65,10 +74,11 @@ function render(info, authorization, user, clerk, preview = false) {
     form.addEventListener('submit', event => {
       const decision = event.submitter?.value;
       if (submitted || !['true','false'].includes(decision)) { event.preventDefault(); return; }
-      if (clerk.session?.id !== sessionId) { event.preventDefault(); showError(); return; }
+      if (clerk.session?.id !== sessionId) { event.preventDefault(); showError('session_changed'); return; }
       if (decision === 'true' && organizations.length && !organizations.some(member => member.organization.id === $('organization-id').value)) { event.preventDefault(); $('organization-id').reportValidity(); return; }
       // Leave the clicked button enabled so native form submission includes consented=true/false.
       submitted = true;
+      track('consent_submitted',{client,decision:decision === 'true' ? 'allow' : 'deny'});
       form.setAttribute('aria-busy','true');
       status.textContent = decision === 'true' ? 'Connecting…' : 'Returning…';
       status.hidden = false;
@@ -102,4 +112,4 @@ async function start() {
   const info = await clerk.oauthApplication.getConsentInfo({oauthClientId:authorization.clientId,scope:authorization.scope,redirectUri:authorization.redirectUri});
   render(info, authorization, clerk.user, clerk);
 }
-start().catch(showError);
+start().catch(() => showError());

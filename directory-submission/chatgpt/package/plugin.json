@@ -4,7 +4,7 @@
     "email": "serenatan1125@gmail.com",
     "name": "Serena Tan"
   },
-  "description": "Find playable launch-video references and current remake workflows from the live Serena Launch.",
+  "description": "Find playable references for product launches, demos, teasers and motion design from Serena Tan's curated video collection.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -15,8 +15,8 @@
         "developerName": "Serena Tan",
         "displayName": "Serena Launch",
         "logo": "./assets/serena-popcorn.png",
-        "longDescription": "Find launch-video references for your next product launch. Search Serena Tan's curated collection by keywords, visual style, category and aspect ratio, inspect original source links and dated engagement snapshots, and get a concise reference-remake prompt. Every tool reads the current published collection. This read-only connector supplies references and planning metadata; it does not render videos, modify the collection or post to social platforms.",
-        "shortDescription": "Launch videos for your agent",
+        "longDescription": "Find real launch videos, product demos and teasers for your next release. Explore Serena Tan's curated collection by brand, product, style or aspect ratio, watch playable references and borrow pacing, transitions and vibe for your own product. Creation uses your existing tools; optional task reports and explicit feedback help improve the collection.",
+        "shortDescription": "Launch & motion references",
         "websiteURL": "https://serenatan.org/launchvideo/",
         "privacyPolicyURL": "https://serenatan.org/launchvideo/privacy.html",
         "supportURL": "https://serenatan.org/launchvideo/support.html",
@@ -69,7 +69,7 @@
               "prompt": "Render and send me a finished MP4 launch video using this connector."
             },
             {
-              "description": "No write or publishing tools. Explain the read-only scope; do not claim the catalog or social accounts were modified.",
+              "description": "No catalog or social publishing tools. Explain that only optional task/feedback analytics reports can be written; do not claim the catalog or social accounts were modified.",
               "prompt": "Upload my new video into Serena Launch and publish it on X."
             },
             {
@@ -82,20 +82,23 @@
         "commerce_description": "Current access is free. Serena Launch has no payments, purchases, checkout, or subscription billing."
       },
       "publication": {
-        "release_notes": "Initial public directory submission of Serena Launch: current launch-video reference search, reference details, and editorial context through the authenticated read-only MCP service.",
+        "release_notes": "Reference discovery and playback with motion/vibe guidance, authenticated access, and optional non-destructive task outcome and explicit feedback reporting.",
         "countries": []
       }
     }
   },
   "homepage": "https://serenatan.org/launchvideo/",
   "keywords": [
-    "launch-video",
-    "video",
-    "design",
-    "remotion"
+    "product-launch",
+    "product-demo",
+    "teaser",
+    "feature-announcement",
+    "motion-design",
+    "transitions",
+    "video-reference"
   ],
   "license": "MIT",
   "name": "launch-archive",
   "repository": "https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos",
-  "version": "0.1.6"
+  "version": "0.1.7"
 }

@@ -1,4 +1,5 @@
 'use strict';
+import {track} from './analytics.mjs';
 (() => {
   const endpoint = 'https://serenatan.org/launchvideo/mcp';
   const setup = `Connect to Serena Launch MCP at ${endpoint}.`;
@@ -24,6 +25,7 @@
         const copied = document.execCommand('copy');input.remove();if (!copied) throw new Error('Copy unavailable');
       }
       button.setAttribute('aria-label','Copied');button.dataset.copied='true';if(text)text.textContent='Copied';
+      track('setup_prompt_copied',{placement:button.id === 'copy-setup' ? 'hero' : 'more',client:button.dataset.copy ?? 'agent'});
       toast.textContent='Copied to clipboard';toast.classList.add('visible');
       setTimeout(()=>{toast.classList.remove('visible');button.removeAttribute('data-copied');if(label)button.setAttribute('aria-label',label);if(text)text.textContent=originalText;},2000);
     } catch {
@@ -39,7 +41,7 @@
   const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
   const claudeWeb = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:endpoint});
   const morePanel = `
-    <div class="connection-option"><h3>Claude web</h3><a class="connection-action" href="${esc(claudeWeb)}" target="_blank" rel="noopener">Connect <span aria-hidden="true">↗</span></a></div>
+    <div class="connection-option"><h3>Claude web</h3><a class="connection-action" data-client="claude-web" href="${esc(claudeWeb)}" target="_blank" rel="noopener">Connect <span aria-hidden="true">↗</span></a></div>
     <details class="connection-option"><summary>ChatGPT <span class="connection-disclosure">Manual setup</span></summary><div class="connection-detail"><p>In <a href="https://chatgpt.com/plugins" target="_blank" rel="noopener">Plugins ↗</a>, select <strong>+ → Add custom MCP server</strong>. Name it <strong>Serena Launch</strong>, paste this URL and choose OAuth. Create, install and sign in.</p>${codeBlock('url','Copy ChatGPT server URL')}</div></details>
     <div class="connection-option"><h3>VS Code</h3><a class="connection-action" href="${esc(vsCode)}" target="_blank" rel="noopener">Add server <span aria-hidden="true">↗</span></a></div>
     <details class="connection-option"><summary>Gemini CLI <span class="connection-disclosure">Configuration</span></summary><div class="connection-detail"><p>Add to <code>~/.gemini/settings.json</code>, then run <code>/mcp auth serena-launch</code> to sign in.</p>${codeBlock('gemini','Copy Gemini configuration')}</div></details>
@@ -57,5 +59,11 @@
   panel.addEventListener('click',event=>{
     const button=event.target.closest('button[data-copy]');
     if(button && panel.contains(button))copy(values[button.dataset.copy],button);
+  });
+  document.addEventListener('click',event=>{
+    const link = event.target.closest('a[data-client]');
+    if (!link) return;
+    const url = new URL(link.href,location.href);
+    track('quick_connect_clicked',{client:link.dataset.client,destination:['claude:','codex:'].includes(url.protocol) ? 'desktop' : 'web'});
   });
 })();
