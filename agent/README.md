@@ -45,6 +45,8 @@ The remote service resolves the current main commit through Git’s uncached ref
 
 The plugin contains only a stable setup/refresh bootstrap and endpoint. Changes to permissions, transport, tool contracts, or client UI capabilities may require an updated package or reconnect. A client that does not call a tool cannot receive fresh server content. Native UI connection on each named client is separate from protocol verification.
 
+The gallery navigation reuses the portfolio’s `/shared/site-header.js` and `/shared/site-header.css`, including the retro Editions button. Header styling and behavior belong to that shared component; avoid page-specific navigation overrides.
+
 The landing-page source is in `site/`. Run `python3 scripts/build_site.py` to generate `site-dist/` with the current catalog and published media URLs. Initial hero totals and the All videos count are rendered from that same catalog snapshot, matching the client-side figures before JavaScript runs. The deployed gallery also retains its local reference assets for direct playback.
 
 ## Reading SKILL.md
