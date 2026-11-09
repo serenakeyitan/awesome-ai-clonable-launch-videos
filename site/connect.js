@@ -33,20 +33,25 @@
   }
   document.getElementById('copy-setup').addEventListener('click',event=>copy(copySetup,event.currentTarget));
   document.querySelector('[data-client="codex"]').href = `codex://new?prompt=${encodeURIComponent(setup)}`;
-  const more = document.querySelector('button[data-client="more"]');
+  const setupButtons = [...document.querySelectorAll('button[data-client]')];
   const panel = document.getElementById('client-setup');
   const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
-  panel.innerHTML = `
+  const morePanel = `
     <div class="connection-option"><h3>VS Code</h3><a class="connection-action" href="${esc(vsCode)}" target="_blank" rel="noopener">Add server <span aria-hidden="true">↗</span></a></div>
     <details class="connection-option"><summary>Gemini CLI <span class="connection-disclosure">Configuration</span></summary><div class="connection-detail"><p>Add to <code>~/.gemini/settings.json</code>, then sign in when prompted.</p>${codeBlock('gemini','Copy Gemini configuration')}</div></details>
     <div class="connection-option"><h3>Raft</h3>${copyButton('prompt','Copy prompt',true)}</div>
     <div class="connection-option"><h3>Other apps</h3>${copyButton('url','Copy server URL',true)}</div>
     <details class="connection-option"><summary>Codex CLI <span class="connection-disclosure">Terminal commands</span></summary><div class="connection-detail"><p>Run these commands in order, then complete browser sign-in.</p>${codeBlock('codex','Copy Codex commands')}</div></details>`;
-  more.addEventListener('click',()=>{
-    const opened = more.getAttribute('aria-expanded') === 'true';
-    more.setAttribute('aria-expanded',String(!opened));panel.hidden=opened;
-    more.querySelector('span').textContent=opened ? '+' : '−';
-  });
+  const chatgptPanel = `<div class="connection-option"><h3>ChatGPT setup</h3><a class="connection-action" href="https://chatgpt.com/plugins" target="_blank" rel="noopener">Open Plugins <span aria-hidden="true">↗</span></a></div>
+    <div class="connection-detail"><p>Select <strong>+ → Add custom MCP server</strong>. Name it <strong>Serena Launch</strong> and use this URL:</p>${codeBlock('url','Copy server URL')}<p class="connection-note">Choose OAuth, then create, install and sign in.</p></div>`;
+  setupButtons.forEach(button=>button.addEventListener('click',()=>{
+    const opened = button.getAttribute('aria-expanded') === 'true';
+    setupButtons.forEach(other=>{other.setAttribute('aria-expanded','false');other.querySelector('span').textContent=other.dataset.client==='more' ? '+' : '⌄';});
+    panel.hidden=opened;
+    if(opened)return;
+    button.setAttribute('aria-expanded','true');button.querySelector('span').textContent=button.dataset.client==='more' ? '−' : '⌃';
+    panel.innerHTML=button.dataset.client==='chatgpt' ? chatgptPanel : morePanel;
+  }));
   panel.addEventListener('click',event=>{
     const button=event.target.closest('button[data-copy]');
     if(button && panel.contains(button))copy(values[button.dataset.copy],button);
