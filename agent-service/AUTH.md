@@ -10,6 +10,8 @@ MCP and the HTTP `/launchvideo/agent/manifest.json`, `catalog.json`, and `workfl
 
 Public and packaged bootstrap instructions stop when MCP is unavailable or disconnected and guide connection/reauthorization. They do not offer HTTP or GitHub fallback. Older bootstraps that try those HTTP agent routes now receive 401. The public gallery, website metadata and open-source repository remain public; these changes govern the official service and cannot make previously published material private.
 
+The consent form posts natively to the SDK-generated Clerk URL, validated by `consentAction`. Its CSP deliberately omits `form-action`: Chromium can apply that directive to the subsequent OAuth redirect as well, blocking registered callbacks on other domains or in native apps. Script, connection, frame and other CSP restrictions remain in place. The page shows submission progress and resets its submission lock on back/forward restoration or a form-policy violation.
+
 ## Provider setup
 
 - Clerk application: `app_3LkVh87NlDpgcVKaOkA8NuugYhi` (Serena Launch).

@@ -48,6 +48,20 @@ function render(info, authorization, user, clerk, preview = false) {
     }
     const sessionId = clerk.session.id;
     let submitted = false;
+    const status = $('consent-submit-status');
+    const reset = () => {
+      submitted = false;
+      form.removeAttribute('aria-busy');
+      status.hidden = true;
+    };
+    // Back/forward navigation can restore this document and its submission lock.
+    window.addEventListener('pageshow', reset);
+    document.addEventListener('securitypolicyviolation', event => {
+      if (event.effectiveDirective !== 'form-action') return;
+      reset();
+      status.textContent = 'Your browser blocked the connection. Start again from your agent.';
+      status.hidden = false;
+    });
     form.addEventListener('submit', event => {
       const decision = event.submitter?.value;
       if (submitted || !['true','false'].includes(decision)) { event.preventDefault(); return; }
@@ -55,6 +69,9 @@ function render(info, authorization, user, clerk, preview = false) {
       if (decision === 'true' && organizations.length && !organizations.some(member => member.organization.id === $('organization-id').value)) { event.preventDefault(); $('organization-id').reportValidity(); return; }
       // Leave the clicked button enabled so native form submission includes consented=true/false.
       submitted = true;
+      form.setAttribute('aria-busy','true');
+      status.textContent = decision === 'true' ? 'Connecting…' : 'Returning…';
+      status.hidden = false;
     });
   }
   $('consent-status').hidden = true;

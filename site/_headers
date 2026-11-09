@@ -2,4 +2,4 @@
   Cache-Control: no-store
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://clerk.serenatan.org; connect-src 'self' https://clerk.serenatan.org https://accounts.serenatan.org; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' data:; frame-src https://clerk.serenatan.org https://accounts.serenatan.org; form-action https://clerk.serenatan.org; frame-ancestors 'none'; base-uri 'none'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://clerk.serenatan.org; connect-src 'self' https://clerk.serenatan.org https://accounts.serenatan.org; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' data:; frame-src https://clerk.serenatan.org https://accounts.serenatan.org; frame-ancestors 'none'; base-uri 'none'; object-src 'none'

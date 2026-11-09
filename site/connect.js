@@ -31,11 +31,15 @@
     }
   }
   document.getElementById('copy-setup').addEventListener('click',event=>copy(setup,event.currentTarget));
+  document.querySelector('[data-client="claude"]').href = `claude://claude.ai/new?q=${encodeURIComponent(setup)}`;
+  document.querySelector('[data-client="claude-code"]').href = `claude://code/new?q=${encodeURIComponent(setup)}`;
   document.querySelector('[data-client="codex"]').href = `codex://new?prompt=${encodeURIComponent(setup)}`;
   const setupButtons = [...document.querySelectorAll('button[data-client]')];
   const panel = document.getElementById('client-setup');
   const vsCode = 'https://vscode.dev/redirect/mcp/install?' + new URLSearchParams({name:'serena-launch',config:JSON.stringify({type:'http',url:endpoint})});
+  const claudeWeb = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:endpoint});
   const morePanel = `
+    <div class="connection-option"><h3>Claude web</h3><a class="connection-action" href="${esc(claudeWeb)}" target="_blank" rel="noopener">Connect <span aria-hidden="true">↗</span></a></div>
     <details class="connection-option"><summary>ChatGPT <span class="connection-disclosure">Manual setup</span></summary><div class="connection-detail"><p>In <a href="https://chatgpt.com/plugins" target="_blank" rel="noopener">Plugins ↗</a>, select <strong>+ → Add custom MCP server</strong>. Name it <strong>Serena Launch</strong>, paste this URL and choose OAuth. Create, install and sign in.</p>${codeBlock('url','Copy ChatGPT server URL')}</div></details>
     <div class="connection-option"><h3>VS Code</h3><a class="connection-action" href="${esc(vsCode)}" target="_blank" rel="noopener">Add server <span aria-hidden="true">↗</span></a></div>
     <details class="connection-option"><summary>Gemini CLI <span class="connection-disclosure">Configuration</span></summary><div class="connection-detail"><p>Add to <code>~/.gemini/settings.json</code>, then run <code>/mcp auth serena-launch</code> to sign in.</p>${codeBlock('gemini','Copy Gemini configuration')}</div></details>
