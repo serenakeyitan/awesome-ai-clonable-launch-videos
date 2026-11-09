@@ -50,8 +50,7 @@ export async function loadArchive(fetcher = fetch) {
 }
 
 export function context(archive) {
-  return {version:archive.version, sourceRevision:archive.sourceRevision, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, catalogMetadata:archive.catalogMetadata, workflow:archive.workflow,
-    metricsNote:'Statistics are dated snapshots, not live counts. Impressions are post exposure; views are video plays. Missing counts remain null.'};
+  return {version:archive.version, sourceRevision:archive.sourceRevision, fetchedAt:archive.fetchedAt, totalVideos:archive.videos.length, facets:archive.facets, manifest:archive.manifest, catalogMetadata:archive.catalogMetadata, workflow:archive.workflow};
 }
 
 // Preserve the flat links on the authenticated HTTP manifest, while
@@ -60,17 +59,19 @@ export function publicManifest(archive) {
   return {...archive.manifest, ...context(archive)};
 }
 
+// Performance metrics and legacy scores stay in the public gallery data, not
+// in agent reference results or their additionalMetadata.
 const KNOWN_VIDEO_FIELDS = new Set('id title originalTitle account followers category seed impressions views likes bookmarks reposts replies quotes originalSeconds clipSeconds excerpt ratio date width height hasAudio source quote styles notes originalNotes flag video poster snapshotDate collectionSource referenceGroup scores benchmark slug readmeCategory watchUrl detailUrl remakePrompt githubVideoUrl'.split(' '));
 
 export function record(v, detail = false, revision = 'main') {
   const result = {id:v.id, slug:v.slug, title:v.title, account:v.account, category:v.category, format:v.readmeCategory, styles:v.styles, ratio:v.ratio,
     clipSeconds:v.clipSeconds, originalSeconds:v.originalSeconds, excerpt:v.excerpt, hasAudio:v.hasAudio,
-    date:v.date, snapshotDate:v.snapshotDate, impressions:v.impressions, views:v.views,
+    date:v.date, notes:v.notes,
     source:v.source, watchUrl:v.watchUrl, githubVideoUrl:v.githubVideoUrl,
     poster:new URL(v.poster, `https://raw.githubusercontent.com/${REPO}/${revision}/`).href,
     detailUrl:v.detailUrl, remakePrompt:`clone this video 1:1 for my product ${v.source}`};
   if (detail) {
-    Object.assign(result, {width:v.width, height:v.height, notes:v.notes, likes:v.likes, bookmarks:v.bookmarks, reposts:v.reposts, replies:v.replies, quotes:v.quotes, followers:v.followers});
+    Object.assign(result, {width:v.width, height:v.height});
     const additionalMetadata = Object.fromEntries(Object.entries(v).filter(([key]) => !KNOWN_VIDEO_FIELDS.has(key)));
     if (Object.keys(additionalMetadata).length) result.additionalMetadata = additionalMetadata;
   }
@@ -78,13 +79,14 @@ export function record(v, detail = false, revision = 'main') {
 }
 
 export function search(archive, args = {}) {
+  if (args.sort && !['relevance','newest'].includes(args.sort)) throw new Error('Unsupported reference sort');
   const tokens = (args.query ?? '').toLowerCase().trim().split(/\s+/).filter(Boolean);
   const rows = archive.videos.map(v => {
     const title = `${v.title} ${v.account}`.toLowerCase();
     const text = `${title} ${v.category} ${v.styles.join(' ')} ${(v.notes ?? []).join(' ')}`.toLowerCase();
     return {v, score:tokens.reduce((n,t) => n + (title.includes(t) ? 3 : text.includes(t) ? 1 : 0), 0)};
   }).filter(({v,score}) => (!tokens.length || score > 0) && (!args.style || v.styles.some(s => s.toLowerCase() === args.style.toLowerCase())) && (!args.category || v.category.toLowerCase() === args.category.toLowerCase()) && (!args.ratio || v.ratio === args.ratio));
-  rows.sort((a,b) => args.sort === 'newest' ? b.v.date.localeCompare(a.v.date) : args.sort === 'impressions' ? (b.v.impressions ?? -1) - (a.v.impressions ?? -1) : b.score - a.score || (b.v.impressions ?? -1) - (a.v.impressions ?? -1));
+  rows.sort((a,b) => (args.sort === 'newest' ? b.v.date.localeCompare(a.v.date) : b.score - a.score) || a.v.id - b.v.id);
   return {totalMatches:rows.length, videos:rows.slice(0, args.limit ?? 6).map(({v}) => record(v,false,archive.sourceRevision))};
 }
 
