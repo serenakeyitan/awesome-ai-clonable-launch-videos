@@ -34,8 +34,9 @@ def video_embed(video):
     url = video.get('githubVideoUrl', '')
     if url.startswith('https://github.com/user-attachments/assets/'):
         return url
-    # Fallback: link to video file and source when GitHub URL not yet available
-    return f"[▶ View video]({video['source']})"
+    # Until the MP4 is uploaded as a GitHub attachment, show the poster and
+    # link it to the playable file on the live site.
+    return f"[![▶ Watch {video['title']}]({video['poster']})]({video['watchUrl']})"
 
 def stats(video):
     v = video
