@@ -60,7 +60,7 @@ function renderCollection() {
   filtered = videos.filter(v => {
     const haystack = [v.title,v.originalTitle,v.account,v.category,...v.styles,...v.notes,...v.originalNotes].join(' ').toLowerCase();
     return (!query || haystack.includes(query)) && (category === 'all' || category === v.category) && (style === 'all' || v.styles.includes(style));
-  }).sort((a,b) => sort === 'date' ? b.date.localeCompare(a.date) : sort === 'oldest' ? a.date.localeCompare(b.date) : b[sort] - a[sort]);
+  }).sort((a,b) => sort === 'curated' ? 0 : sort === 'date' ? b.date.localeCompare(a.date) : sort === 'oldest' ? a.date.localeCompare(b.date) : b[sort] - a[sort]);
   $('#result-count').textContent = filtered.length;
   $('#result-count').setAttribute('aria-label', `${filtered.length} videos`);
   $('#collection').classList.toggle('table-view', tableView);
