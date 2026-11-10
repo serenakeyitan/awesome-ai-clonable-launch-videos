@@ -13,7 +13,11 @@ npx wrangler deploy --config site-worker/wrangler.json
 ```
 
 The build validates canonical media and runtime module dependencies, generates
-`site-worker/asset-sizes.json`, and stages hosted MP4s in `site-dist/assets`.
+`site-worker/asset-sizes.json`, and stages the gallery in `site-public/launchvideo/` (MP4s in its `assets/`).
+The asset layer serves every file directly except the HTML entries and MP4s
+listed in `run_worker_first`: MP4s need the Worker for byte ranges, which the
+asset layer does not support. Direct asset requests are free and do not count
+toward the Workers daily request limit.
 Media is hardlinked where supported, otherwise copied. Treat generated assets as
 read-only. References hosted elsewhere remain external.
 

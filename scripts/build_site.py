@@ -12,15 +12,22 @@ from verify_site import verify_site, verify_runtime_assets
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--output', type=Path, default=ROOT / 'site-dist')
+# The deploy root mirrors public URLs: files land in <root>/launchvideo/ so the
+# asset layer can answer /launchvideo/videos.json etc. without invoking the
+# Worker (static asset requests are free and don't count toward Worker quota).
+parser.add_argument('--output', type=Path, default=ROOT / 'site-public' / 'launchvideo')
 OUT = parser.parse_args().output.resolve()
-OUT.mkdir(exist_ok=True)
+OUT.mkdir(parents=True, exist_ok=True)
 shutil.copy2(update_daily_stats(), OUT / 'daily-stats.json')
 for source in (ROOT / 'site').iterdir():
     if source.is_file():
         shutil.copy2(source, OUT / source.name)
     elif source.is_dir():
         shutil.copytree(source, OUT / source.name, dirs_exist_ok=True)
+# _headers only applies at the deploy root, with paths that include the prefix.
+headers = (OUT / '_headers').read_text()
+(OUT / '_headers').unlink()
+(OUT.parent / '_headers').write_text(re.sub(r'(?m)^/', '/launchvideo/', headers))
 html = (OUT / 'index.html').read_text().replace('"assets/', '"https://serenatan.org/launchvideo/assets/')
 videos = json.loads((ROOT / 'data/videos.json').read_text())
 (OUT / 'index.html').write_text(render_summary(html, videos))
