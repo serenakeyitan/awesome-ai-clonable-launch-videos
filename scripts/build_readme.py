@@ -145,6 +145,39 @@ parts.append('''## How to use these prompts
 
 Know a launch video worth cloning? [Suggest it in an issue](https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/issues/new?template=suggest-video.yml) with just the X link, or add it yourself in a PR. See [CONTRIBUTING.md](CONTRIBUTING.md) for what fits the collection, the entry format and the checks to run.
 
+## Deploying (maintainers)
+
+The site has three parts on Cloudflare. Always start from an up-to-date `main`: deploying from a stale checkout reverts the live configuration.
+
+| Part | What it serves | Deploy from |
+| --- | --- | --- |
+| Portfolio frontend (Pages) | Gallery UI, homepage | [serena-portfolio](https://github.com/serenakeyitan/serena-portfolio): merging to `main` deploys automatically |
+| Gallery Worker (`site-worker/`) | `/launchvideo/` HTML, `videos.json`, MP4 playback | This repository |
+| Agent service (`agent-service/`) | MCP at `/launchvideo/mcp`, `/launchvideo/agent/*` | This repository |
+
+**Gallery Worker**, after adding or changing videos:
+
+```bash
+git pull
+python3 scripts/build_site.py                            # stages site-public/launchvideo/
+python3 scripts/sync_media_r2.py                         # uploads new or changed MP4s to R2; rerun if it stops
+node --test site-worker/worker.test.mjs
+npx wrangler deploy --config site-worker/wrangler.json
+```
+
+MP4s are served from the `serenatan-launchvideo-media` R2 bucket, which handles seeking natively. A video that was not synced still plays from the bundled copy, but uses more Worker CPU. Every other static file is served directly and does not count toward the Workers daily request limit.
+
+**Agent service (MCP)**, only when `agent-service/` changes:
+
+```bash
+git pull
+cd agent-service && npm ci && npm test && npx wrangler deploy
+```
+
+The catalog, manifest and workflow are read live from `main`, so data-only changes need no agent-service deploy.
+
+**After deploying**, check `https://serenatan.org/launchvideo/`, `/launchvideo/videos.json`, a video with `curl -H "Range: bytes=0-99"` (expect `206`) and `/launchvideo/mcp` (expect `401` without login). More detail: [site-worker/README.md](site-worker/README.md) and [agent/README.md](agent/README.md).
+
 ## License & credits
 
 Original curation, prompts, and repository code are [MIT licensed](LICENSE). Third-party videos, previews, product UI, logos, and branding remain with their respective owners; the MIT license does not grant rights to those assets. Every video links to its original post.
