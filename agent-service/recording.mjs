@@ -122,10 +122,20 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
    }
    if(upload[2]==='finish'){
     if(!Number.isSafeInteger(body.last_seq)||body.last_seq!==row.last_seq||!['source_complete','stopped','incomplete'].includes(body.status))fail(409,'Source sequence does not match');
-    const status=body.status==='source_complete'?'source_complete':body.status;
-    await env.RECORDING_DB.prepare('UPDATE recording_sessions SET status=?,updated_at=? WHERE id=? AND last_seq=?').bind(status,Date.now(),row.id,row.last_seq).run();
-    observe({userId:device.user_id},'conversation_finished',{session_id:row.id,status,client:row.client});
-    return reply({status,last_seq:row.last_seq,coverage:'visible_text'});
+    // Old clients can finish and preserve their text. Only a client that
+    // verifies the final message count can claim a fully synced snapshot.
+    const status=body.status==='source_complete'&&body.message_count===undefined?'stopped':body.status;
+    const totals=await env.RECORDING_DB.prepare('SELECT COUNT(*) AS chunks, COALESCE(MAX(seq),0) AS final_seq, COALESCE(SUM(message_count),0) AS messages FROM recording_chunks WHERE session_id=?').bind(row.id).first();
+    if(totals.chunks!==row.last_seq||totals.final_seq!==row.last_seq||status==='source_complete'&&totals.messages===0
+      ||body.message_count!==undefined&&body.message_count!==totals.messages)fail(409,'Stored message count does not match the source');
+    // A lost finish acknowledgement may be retried. A closed session cannot
+    // subsequently be promoted from stopped or incomplete to source complete.
+    if(row.status!==status){
+     const updated=await env.RECORDING_DB.prepare("UPDATE recording_sessions SET status=?,updated_at=? WHERE id=? AND last_seq=? AND status='recording' AND deleted_at IS NULL AND EXISTS (SELECT 1 FROM recording_preferences WHERE user_id=? AND enabled=1 AND revision=?) RETURNING id").bind(status,Date.now(),row.id,row.last_seq,row.user_id,row.consent_revision).first();
+     if(!updated)fail(409,'Recording status changed before it could be finalized');
+     observe({userId:device.user_id},'conversation_finished',{session_id:row.id,status,client:row.client});
+    }
+    return reply({status,last_seq:row.last_seq,message_count:totals.messages,coverage:'visible_text'});
    }
    if(row.status!=='recording')fail(409,'Session is closed');
    if(!Number.isSafeInteger(body.seq)||body.seq<1||body.seq>10000||!Array.isArray(body.messages)||body.messages.length<1||body.messages.length>100)fail(400,'Invalid chunk');
@@ -200,7 +210,9 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
    await ownedSession(env,chunk[1],identity,true);
    const row=await env.RECORDING_DB.prepare('SELECT object_key,hash FROM recording_chunks WHERE session_id=? AND seq=?').bind(chunk[1],Number(chunk[2])).first();
    if(!row)fail(404,'Chunk not found');const object=await env.RECORDING_TEXT.get(row.object_key);if(!object)fail(503,'Stored text unavailable');
-   return new Response(object.body,{headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','X-Content-SHA256':row.hash,'X-Robots-Tag':'noindex, nofollow'}});
+   const original=await object.text();
+   if(await digest(original)!==row.hash)fail(503,'Stored text did not pass its integrity check');
+   return new Response(original,{headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','X-Content-SHA256':row.hash,'X-Robots-Tag':'noindex, nofollow'}});
   }
   fail(404,'Not found');
  }catch(error){

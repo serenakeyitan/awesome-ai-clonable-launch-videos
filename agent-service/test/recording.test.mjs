@@ -1,14 +1,18 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {appendFile,mkdtemp,readFile,rm,writeFile} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {Miniflare,convertV4MiniflareOptions} from 'miniflare';
 import {recordingRoutes,browserIdentity,CONSENT_VERSION,digest,cleanupDeletedRecordings} from '../recording.mjs';
 import {eventProperties} from '../../site/analytics-events.mjs';
+import {syncFile} from '../../agent/recorder.mjs';
 const BASE='https://serenatan.org/launchvideo/agent/recording';
 const fixtureIdentity=async req=>({userId:req.headers.get('x-fixture-user')||'user_a',admin:req.headers.get('x-fixture-admin')==='1'});
 test('real D1/R2 recording lifecycle enforces consent, isolation, order and deletion',async()=>{
  const mf=new Miniflare(convertV4MiniflareOptions({workers:[{name:'recording-test',modules:true,script:'export default {fetch(){return new Response("fixture")}}',compatibilityDate:'2026-11-03',d1Databases:['RECORDING_DB'],r2Buckets:['RECORDING_TEXT']}]}));
  const env=await mf.getBindings();
+ const dir=await mkdtemp(join(tmpdir(),'serena-replay-fixture-'));
  const sql=await readFile(new URL('../migrations/0001_conversation_sharing.sql',import.meta.url),'utf8');
  for(const statement of sql.split(';').filter(x=>x.trim()))await env.RECORDING_DB.prepare(statement).run();
  async function call(path,method='GET',body,token,who='user_a',admin=false){return recordingRoutes(new Request(BASE+path,{method,headers:{Origin:'https://serenatan.org','x-fixture-user':who,...(admin?{'x-fixture-admin':'1'}:{}),...(token?{Authorization:'Bearer '+token}:{}),...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})}),env,{},fixtureIdentity);}
@@ -26,6 +30,7 @@ test('real D1/R2 recording lifecycle enforces consent, isolation, order and dele
   assert.equal((await (await call('/preference','GET',null,null,'user_b')).json()).enabled,false);assert.equal((await call('/pair?code='+pair.code)).status,200);
   assert.equal((await call('/pair/approve','POST',{code:pair.code})).status,200);
   const start=await (await call('/sessions','POST',{client:'claude-code',source_session_id:'fixture',reference_ids:[87]},pair.token)).json();assert.ok(start.session_id);
+  assert.equal((await call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:0,message_count:0,status:'source_complete'},pair.token)).status,409);
   const text='  我说：逐字保存 🍿\n\n```ts\nconst x = "原文";\n```\t  ';
   const messages=[{id:'original-1',role:'user',content:[{type:'text',text}],timestamp:'2026-11-09T01:00:00Z',source_offset:42}];
   const chunk={seq:1,messages},payload={...chunk,sha256:await digest(JSON.stringify(chunk))};
@@ -33,28 +38,57 @@ test('real D1/R2 recording lifecycle enforces consent, isolation, order and dele
   assert.equal((await upload()).status,200);assert.equal((await (await upload()).json()).duplicate,true);
   assert.equal((await env.RECORDING_DB.prepare('SELECT * FROM recording_chunks').all()).results.length,1);
   const original=await (await call(`/sessions/${start.session_id}/chunks/1`)).json();assert.equal(original.messages[0].content[0].text,text);
+  const storedChunk=await env.RECORDING_DB.prepare('SELECT object_key FROM recording_chunks WHERE session_id=? AND seq=1').bind(start.session_id).first();
+  await env.RECORDING_TEXT.put(storedChunk.object_key,'{"messages":[]}');
+  const damaged=await call(`/sessions/${start.session_id}/chunks/1`);
+  assert.equal(damaged.status,503);assert.match((await damaged.json()).error,/integrity check/);
+  await env.RECORDING_TEXT.put(storedChunk.object_key,JSON.stringify(chunk));
   assert.equal((await call(`/sessions/${start.session_id}/chunks/1`,'GET',null,null,'user_b')).status,404);
   assert.equal((await call('/sessions?scope=all','GET',null,null,'user_b')).status,403);
   assert.equal((await call(`/sessions/${start.session_id}/chunks/1`,'GET',null,null,'team',true)).status,200);
   assert.equal((await call(`/sessions/${start.session_id}/chunks`,'POST',{...payload,sha256:'invalid'},pair.token)).status,400);
   const gap={seq:3,messages};gap.sha256=await digest(JSON.stringify(gap));assert.equal((await call(`/sessions/${start.session_id}/chunks`,'POST',gap,pair.token)).status,409);
   assert.equal((await call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:2,status:'source_complete'},pair.token)).status,409);
-  assert.equal((await call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:1,status:'source_complete'},pair.token)).status,200);
+  assert.equal((await call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:1,message_count:2,status:'source_complete'},pair.token)).status,409);
+  const finish=()=>call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:1,message_count:1,status:'source_complete'},pair.token);
+  const complete=await (await finish()).json();assert.deepEqual(complete,{status:'source_complete',last_seq:1,message_count:1,coverage:'visible_text'});
+  assert.deepEqual(await (await finish()).json(),complete);
+  assert.equal((await call(`/sessions/${start.session_id}/finish`,'POST',{last_seq:1,status:'stopped'},pair.token)).status,409);
   await call('/preference','PUT',pref(false));assert.equal((await (await call('/device','GET',null,pair.token)).json()).enabled,false);assert.equal((await upload()).status,403);
   await call('/preference','PUT',pref(true));assert.equal((await upload()).status,403);
   assert.equal((await call(`/sessions/${start.session_id}`,'DELETE',null,null,'user_b')).status,404);
   await env.RECORDING_TEXT.put(`sessions/${start.session_id}/interrupted-upload.json`,'synthetic orphan');
   assert.equal((await call(`/sessions/${start.session_id}`,'DELETE')).status,200);assert.equal((await env.RECORDING_TEXT.list()).objects.length,0);
   assert.equal((await call(`/sessions/${start.session_id}/chunks/1`)).status,404);
-  const next=await (await call('/sessions','POST',{client:'claude-code',source_session_id:'next'},pair.token)).json();assert.ok(next.session_id);
-  assert.equal((await call(`/sessions/${next.session_id}/chunks`,'POST',payload,pair.token)).status,200);
+  const file=join(dir,'selected.jsonl');
+  const state={path:join(dir,'state.json'),seq:0,messages:0};
+  const finalText='\t最后一句 🧪\r\n  ';
+  await writeFile(file,JSON.stringify({type:'user',uuid:'original-1',sessionId:'next',message:{content:text}})+'\n');
+  let loseAck=true;
+  const send=async(path,{method,body,token})=>{
+   const response=await call(path,method,body,token);assert.ok(response.ok);
+   if(path.endsWith('/chunks')&&loseAck){loseAck=false;throw Error('network lost after storing the first chunk');}
+   return response.json();
+  };
+  const options={file,client:'claude-code',state,token:pair.token,send,sourceId:'next'};
+  await assert.rejects(syncFile(options),/network lost/);
+  await appendFile(file,JSON.stringify({type:'assistant',uuid:'original-2',sessionId:'next',message:{content:finalText}}));
+  await syncFile({...options,final:true});
+  assert.equal(state.messages,2);assert.equal(state.seq,2);
+  const legacyFinish=await (await call(`/sessions/${state.session_id}/finish`,'POST',{last_seq:2,status:'source_complete'},pair.token)).json();
+  assert.equal(legacyFinish.status,'stopped');assert.equal(legacyFinish.message_count,2);
   // Legacy 90-day deadlines and old creation dates must not hide or purge text.
   await env.RECORDING_DB.prepare('UPDATE recording_sessions SET expires_at=1,created_at=1').run();
   await cleanupDeletedRecordings(env);
   assert.equal((await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions').all()).results.length,1);
   assert.equal((await (await call('/sessions')).json()).sessions.length,1);
-  assert.equal((await (await call(`/sessions/${next.session_id}/chunks/1`)).json()).messages[0].content[0].text,text);
-  assert.equal((await env.RECORDING_TEXT.list()).objects.length,1);
+  const replay=[];
+  for(let seq=1;seq<=state.seq;seq++){
+   const chunk=await (await call(`/sessions/${state.session_id}/chunks/${seq}`)).json();
+   replay.push(...chunk.messages.map(message=>message.content[0].text));
+  }
+  assert.deepEqual(replay,[text,finalText]);
+  assert.equal((await env.RECORDING_TEXT.list()).objects.length,2);
   const retentionMigration=await readFile(new URL('../migrations/0002_retain_conversations.sql',import.meta.url),'utf8');
   await env.RECORDING_DB.prepare(retentionMigration).run();
   assert.equal((await env.RECORDING_DB.prepare('SELECT expires_at FROM recording_sessions').first()).expires_at,Number.MAX_SAFE_INTEGER);
@@ -65,7 +99,7 @@ test('real D1/R2 recording lifecycle enforces consent, isolation, order and dele
   assert.equal((await env.RECORDING_TEXT.list()).objects.length,0);
   assert.equal((await call('/devices/'+stored.id,'DELETE')).status,200);assert.equal((await call('/device','GET',null,pair.token)).status,401);
   const large=new Request(BASE+'/preference',{method:'PUT',headers:{'Content-Type':'application/json'},body:'x'.repeat(513*1024)});assert.equal((await recordingRoutes(large,env,{},fixtureIdentity)).status,413);
- }finally{await mf.dispose();}
+ }finally{await mf.dispose();await rm(dir,{recursive:true,force:true});}
 });
 test('browser auth verifies session tokens and blocks cross-origin mutations',async()=>{
  const env={CLERK_SECRET_KEY:'fixture'};
