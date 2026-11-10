@@ -29,7 +29,7 @@ export async function browserIdentity(request,env,createClient=createClerkClient
  const allowed=['https://serenatan.org',...(env.RECORDING_DEV_ORIGIN?[env.RECORDING_DEV_ORIGIN]:[])];
  if(origin&&!allowed.includes(origin))fail(403,'Untrusted origin');
  if(!['GET','HEAD'].includes(request.method)&&!allowed.includes(origin))fail(403,'Same-origin request required');
- if(!/^Bearer \S+$/i.test(request.headers.get('Authorization')||''))fail(401,'Sign in to manage conversation sharing');
+ if(!/^Bearer \S+$/i.test(request.headers.get('Authorization')||''))fail(401,'Sign in to manage telemetry');
  if(!env.CLERK_SECRET_KEY)fail(503,'Sign-in unavailable');
  try{
   const clerk=createClient({secretKey:env.CLERK_SECRET_KEY,publishableKey:env.CLERK_PUBLISHABLE_KEY});
@@ -40,8 +40,8 @@ export async function browserIdentity(request,env,createClient=createClerkClient
  }catch(error){if(error instanceof HttpError)throw error;fail(401,'Sign in again');}
 }
 const preference=(env,userId)=>env.RECORDING_DB.prepare('SELECT * FROM recording_preferences WHERE user_id=?').bind(userId).first();
-async function requireConsent(env,userId){const pref=await preference(env,userId);if(!pref?.enabled||pref.consent_version!==CONSENT_VERSION)fail(403,'Conversation sharing is off');return pref;}
-const publicPreference=pref=>({enabled:!!pref?.enabled&&pref.consent_version===CONSENT_VERSION,consent_version:CONSENT_VERSION,updated_at:pref?.updated_at??null});
+async function requireConsent(env,userId){const pref=await preference(env,userId);if(!pref?.enabled||pref.consent_version!==CONSENT_VERSION)fail(403,'Telemetry is off');return pref;}
+const publicPreference=pref=>({enabled:!pref||(!!pref.enabled&&pref.consent_version===CONSENT_VERSION),consent_version:CONSENT_VERSION,updated_at:pref?.updated_at??null});
 async function collectorIdentity(request,env){
  const match=/^Bearer rec_([a-f0-9-]{36})\.([a-f0-9]{64})$/i.exec(request.headers.get('Authorization')||'');
  if(!match)fail(401,'Connect the recorder in your browser');
@@ -80,7 +80,7 @@ export async function cleanupDeletedRecordings(env){
 export async function recordingRoutes(request,env,ctx={},authenticate=browserIdentity){
  const url=new URL(request.url);if(!url.pathname.startsWith(BASE+'/'))return null;
  try{
-  if(!env.RECORDING_DB||!env.RECORDING_TEXT)fail(503,'Conversation sharing unavailable');
+  if(!env.RECORDING_DB||!env.RECORDING_TEXT)fail(503,'Telemetry unavailable');
   const path=url.pathname.slice(BASE.length), method=request.method;
   const observe=(identity,name,properties)=>ctx.waitUntil?.(captureEvent(env,identity,name,properties));
   if(path==='/pair'&&method==='POST'){
@@ -105,7 +105,7 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
    const now=Date.now(),id=crypto.randomUUID();
    await env.RECORDING_DB.prepare('INSERT OR IGNORE INTO recording_sessions (id,user_id,device_id,client,source_session_id,consent_revision,task_id,reference_ids,created_at,updated_at,expires_at) SELECT ?,?,?,?,?,?,?,?,?,?,? WHERE EXISTS (SELECT 1 FROM recording_preferences WHERE user_id=? AND enabled=1 AND revision=?)').bind(id,device.user_id,device.id,body.client,body.source_session_id,pref.revision,body.task_id??null,JSON.stringify(refs),now,now,LEGACY_NO_EXPIRY,device.user_id,pref.revision).run();
    const row=await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions WHERE device_id=? AND source_session_id=? AND consent_revision=? AND deleted_at IS NULL').bind(device.id,body.source_session_id,pref.revision).first();
-   if(!row)fail(403,'Sharing was turned off');
+   if(!row)fail(403,'Telemetry was turned off');
    if(row.id===id)observe({userId:device.user_id},'conversation_started',{session_id:id,client:body.client,task_id:body.task_id});
    return reply({session_id:row.id,last_seq:row.last_seq,status:row.status},201);
   }
@@ -113,7 +113,7 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
   if(upload&&method==='POST'){
    const device=await collectorIdentity(request,env);if(!device.user_id)fail(403,'Approve the recorder first');
    const pref=await requireConsent(env,device.user_id),row=await ownedSession(env,upload[1],{userId:device.user_id});
-   if(row.device_id!==device.id||row.consent_revision!==pref.revision)fail(403,'Start a new sharing session');
+   if(row.device_id!==device.id||row.consent_revision!==pref.revision)fail(403,'Start a new telemetry session');
    const body=await readJson(request);
    if(upload[2]==='metadata'){
     if(body.task_id!==undefined&&!uuid(body.task_id))fail(400,'Invalid task ID');
@@ -143,13 +143,13 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
     env.RECORDING_DB.prepare('UPDATE recording_sessions SET last_seq=?,updated_at=? WHERE id=? AND last_seq=? AND EXISTS (SELECT 1 FROM recording_chunks WHERE session_id=? AND seq=? AND hash=?)').bind(body.seq,Date.now(),row.id,body.seq-1,row.id,body.seq,hash)
    ]);
    const accepted=await env.RECORDING_DB.prepare('SELECT hash FROM recording_chunks WHERE session_id=? AND seq=?').bind(row.id,body.seq).first();
-   if(accepted?.hash!==hash){await env.RECORDING_TEXT.delete(key);fail(409,'Sharing changed; upload not accepted');}
+   if(accepted?.hash!==hash){await env.RECORDING_TEXT.delete(key);fail(409,'Telemetry changed; upload not accepted');}
    return reply({accepted:true,seq:body.seq,sha256:hash});
   }
   const identity=await authenticate(request,env);
   if(path==='/preference'&&method==='GET')return reply({...publicPreference(await preference(env,identity.userId)),admin:!!identity.admin});
   if(path==='/preference'&&method==='PUT'){
-   const body=await readJson(request);if(typeof body.enabled!=='boolean'||body.consent_version!==CONSENT_VERSION)fail(400,'Confirm the current sharing notice');
+   const body=await readJson(request);if(typeof body.enabled!=='boolean'||body.consent_version!==CONSENT_VERSION)fail(400,'Confirm the current privacy notice');
    const prev=await preference(env,identity.userId),changed=prev?.enabled!==Number(body.enabled)||prev.consent_version!==CONSENT_VERSION;
    const revision=changed?crypto.randomUUID():prev.revision;
    await env.RECORDING_DB.batch([
@@ -165,8 +165,15 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
    if(!row)fail(404,'Code expired or already used');return reply({client:row.label});
   }
   if(path==='/pair/approve'&&method==='POST'){
-   const body=await readJson(request);await requireConsent(env,identity.userId);
+   const body=await readJson(request);
    if(typeof body.code!=='string'||!/^[A-F0-9]{16}$/.test(body.code))fail(400,'Invalid connection code');
+   const pending=await env.RECORDING_DB.prepare('SELECT id FROM recording_devices WHERE code=? AND user_id IS NULL AND expires_at>? AND revoked_at IS NULL').bind(body.code,Date.now()).first();
+   if(!pending)fail(409,'Code expired or already used');
+   // Default on is a preference, not device authorization. Persist it only
+   // when this signed-in user explicitly approves a valid local recorder.
+   // INSERT OR IGNORE preserves an existing opt-out, including concurrent ones.
+   await env.RECORDING_DB.prepare('INSERT OR IGNORE INTO recording_preferences VALUES (?,?,?,?,?)').bind(identity.userId,1,crypto.randomUUID(),Date.now(),CONSENT_VERSION).run();
+   await requireConsent(env,identity.userId);
    const row=await env.RECORDING_DB.prepare('UPDATE recording_devices SET user_id=?,expires_at=? WHERE code=? AND user_id IS NULL AND expires_at>? AND revoked_at IS NULL RETURNING id,label').bind(identity.userId,Date.now()+90*DAY,body.code,Date.now()).first();
    if(!row)fail(409,'Code expired or already used');
    return reply({approved:true,client:row.label});
@@ -198,6 +205,6 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
   fail(404,'Not found');
  }catch(error){
   if(!(error instanceof HttpError))console.error(JSON.stringify({event:'recording_request_failed'}));
-  return reply({error:error instanceof HttpError?error.message:'Conversation sharing unavailable'},error instanceof HttpError?error.status:503);
+  return reply({error:error instanceof HttpError?error.message:'Telemetry unavailable'},error instanceof HttpError?error.status:503);
  }
 }
