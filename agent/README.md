@@ -19,7 +19,7 @@ Remote MCP endpoint: **https://serenatan.org/launchvideo/mcp**. Streamable HTTP 
 | Claude Desktop | Quick connect opens a desktop chat with the setup prompt prefilled. For the web connector dialog, use More → Claude web. Adding the connector and approving OAuth remain separate user actions. |
 | ChatGPT | Plugins → + → Add custom MCP server. Enter the endpoint above, choose OAuth, create and install the plugin, then complete sign-in. Account and workspace policies apply. |
 | Cursor | Add the JSON below to `.cursor/mcp.json`, preserving other servers. |
-| Grok | https://grok.com/connectors → New Connector → Custom → enter the endpoint above. Organization admins may need to enable it. |
+| Grok | Manual setup: sign in at https://grok.com/connectors → New Connector → Custom → enter the endpoint above and authorize. Organization admins may need to enable it. No publicly documented prefilled-install link was found in the official connector guide (checked November 10, 2026); this is not a Quick connect option. |
 | Gemini CLI | Add `{"mcpServers":{"serena-launch":{"httpUrl":"https://serenatan.org/launchvideo/mcp"}}}` to Gemini settings, preserving existing settings. |
 | VS Code | Run MCP: Add Server → HTTP → enter the endpoint above. |
 | Raft / other agents | Send the setup prompt above. Use remote MCP settings if supported; otherwise explain that an MCP-capable client is required. |
