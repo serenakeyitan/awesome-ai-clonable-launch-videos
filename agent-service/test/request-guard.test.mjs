@@ -74,7 +74,7 @@ test('a broken or missing protection binding fails closed with a retryable respo
 test('deployment config binds the intended per-IP short-term allowance', async () => {
   const config=JSON.parse(await readFile(new URL('../wrangler.json',import.meta.url),'utf8'));
   const binding=config.ratelimits.find(b=>b.name==='ARCHIVE_REQUEST_LIMITER');
-  assert.deepEqual(binding.simple,{limit:120,period:60});
+  assert.deepEqual(binding.simple,{limit:600,period:60});
   assert.equal(config.name,'serenatan-launchvideo-agent');
   assert.equal(config.vars.CLERK_AUTH_ENABLED,'true');
 });

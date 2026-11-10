@@ -13,7 +13,7 @@
       "name": "ARCHIVE_REQUEST_LIMITER",
       "namespace_id": "2026110501",
       "simple": {
-        "limit": 120,
+        "limit": 600,
         "period": 60
       }
     }
