@@ -136,7 +136,7 @@ test('HTTP traffic records challenges, throttles and validated clients without p
   assert.equal(response.status,status);assert.equal(await response.text(),'unchanged');
  }
  await measureMcpRequest(request,env,ctx,async observe=>{
-  observe({userId:'user_owner',clientId:'https://chatgpt.com/oauth/codex/client.json'},'tools/list');
+  observe({userId:'user_owner',clientId:'https://chatgpt.com/oauth/codex/client.json'},{method:'tools/list'});
   return new Response('{}');
  },capture);
  await Promise.all(pending);
@@ -153,11 +153,11 @@ test('HTTP observation failure never changes a successful MCP response',async()=
  assert.equal(await response.text(),'ok');await Promise.all(pending);
 });
 
-test('HTTP MCP diagnostics join tool lists and calls to their actual replies',async()=>{
+test('HTTP MCP diagnostics join requests and replies across a creation task',async()=>{
  const {createMcpHandler}=await import('agents/mcp/server');
  const {Client:Modern,StreamableHTTPClientTransport:ModernHTTP}=await import('@modelcontextprotocol/client');
  const {StreamableHTTPClientTransport:LegacyHTTP}=await import('@modelcontextprotocol/sdk/client/streamableHttp.js');
- const {captureEvent,describeMcpRequest,measureMcpRequest,observeMcpReplies}=await import('../analytics.mjs');
+ const {captureEvent,describeMcpRequest,measureMcpRequest,observeMcpReplies,reportLaunchTask}=await import('../analytics.mjs');
  const endpoint=new URL('https://serenatan.org/launchvideo/mcp');
  const env={POSTHOG_PROJECT_TOKEN:'phc_test'};
  const account={userId:'user_fixture',clientId:'https://claude.ai/client'};
@@ -172,9 +172,11 @@ test('HTTP MCP diagnostics join tool lists and calls to their actual replies',as
    request.headers.set('Host',endpoint.hostname);
    return measureMcpRequest(request,env,ctx,async observe=>{
     const rpc=await describeMcpRequest(request,true);
-    observe(account,rpc.method,rpc.traceId,rpc.tool);
+    observe(account,rpc);
     const handler=createMcpHandler(()=>{
-     const server=createServer(async()=>archive);
+     const server=createServer(async()=>archive,event=>{
+      ctx.waitUntil(captureMcpEvent(env,account,{...event,rpc_request_id:rpc.traceId},capture,{isTest:true}));
+     },args=>reportLaunchTask(env,account,args,capture,{isTest:true,rpcRequestId:rpc.traceId}));
      if(!rpc.traceId)return server;
      return observeMcpReplies(server,rpc,event=>ctx.waitUntil(captureEvent(env,account,'mcp_rpc_completed',event,capture,{isTest:true})));
     },{route:endpoint.pathname,allowedHostnames:[endpoint.hostname]});
@@ -186,21 +188,37 @@ test('HTTP MCP diagnostics join tool lists and calls to their actual replies',as
   try {
    await client.connect(transport);
    assert.equal((await client.listTools()).tools.length,4);
-   assert.ok(!(await client.callTool({name:'get_launch_context',arguments:{}})).isError);
-   assert.ok((await client.callTool({name:'get_launch_video',arguments:{reference:42}})).isError);
-   await assert.rejects(client.callTool({name:'private-unregistered-tool',arguments:{query:'private product idea'}}));
+   const start=await client.callTool({name:'report_launch_task',arguments:{status:'started'}});
+   const taskId=start.structuredContent.task_id;
+   assert.equal(start.structuredContent.recorded,true);
+   assert.ok(!(await client.callTool({name:'get_launch_context',arguments:{task_id:taskId}})).isError);
+   assert.ok((await client.callTool({name:'get_launch_video',arguments:{reference:42,task_id:taskId}})).isError);
+   assert.ok((await client.callTool({name:'get_launch_video',arguments:{reference:'1',task_id:'private product idea'}})).isError);
+   await assert.rejects(client.callTool({name:'private-unregistered-tool',arguments:{task_id:taskId}}));
+   const completed=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id:taskId,
+    checks:{html:true,source:true,mp4:true,music:true,playback:true,download:true}}});
+   assert.equal(completed.structuredContent.checks_passed,true);
    await Promise.all(pending);
    const replies=events.filter(event=>event.event==='mcp_rpc_completed').map(event=>event.properties);
    assert.deepEqual(replies.map(({rpc_method,tool,outcome,error_kind})=>[rpc_method,tool,outcome,error_kind]),[
     ['tools/list',undefined,'success',undefined],
+    ['tools/call','report_launch_task','success',undefined],
     ['tools/call','get_launch_context','success',undefined],
     ['tools/call','get_launch_video','tool_error',undefined],
-    ['tools/call','other','protocol_error','invalid_params']
+    ['tools/call','get_launch_video','tool_error',undefined],
+    ['tools/call','other','protocol_error','invalid_params'],
+    ['tools/call','report_launch_task','success',undefined]
    ]);
+   assert.deepEqual(replies.map(reply=>reply.task_id),[undefined,taskId,taskId,taskId,undefined,undefined,taskId]);
    for(const reply of replies) {
     const http=events.find(event=>event.event==='mcp_request_completed'&&event.properties.rpc_request_id===reply.rpc_request_id);
     assert.equal(http?.properties.rpc_method,reply.rpc_method);
     assert.equal(http?.properties.status_code,200);
+   }
+   for(const name of ['launch_task_started','mcp_tool_completed','launch_task_completed']) {
+    const event=events.find(event=>event.event===name);
+    assert.equal(event.properties.task_id,taskId);
+    assert.ok(replies.some(reply=>reply.task_id===taskId&&reply.rpc_request_id===event.properties.rpc_request_id));
    }
    assert.ok(events.every(event=>event.properties.is_test));
    assert.doesNotMatch(JSON.stringify(events),/private-unregistered-tool|private product idea/);

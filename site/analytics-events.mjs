@@ -2,8 +2,8 @@
 // out of analytics. Shared by the browser and authenticated MCP service.
 const fields = {
   page_viewed:['page','referrer_host','utm_source','utm_medium','utm_campaign'],
-  mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method','rpc_request_id','tool'],
-  mcp_rpc_completed:['rpc_method','rpc_request_id','tool','outcome','error_kind','duration_ms','client'],
+  mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method','rpc_request_id','tool','task_id'],
+  mcp_rpc_completed:['rpc_method','rpc_request_id','tool','outcome','error_kind','duration_ms','client','task_id'],
   conversation_sharing_changed:['enabled'],
   conversation_started:['session_id','client','task_id'],
   conversation_finished:['session_id','status','client'],
@@ -19,12 +19,12 @@ const fields = {
   consent_viewed:['client'],
   consent_submitted:['client','decision'],
   consent_failed:['reason'],
-  mcp_tool_completed:['tool','outcome','reference_found','reference_id','duration_ms','client','query_length','result_count','category','style'],
-  reference_feedback:['reference_id','task_id','rating','reason','client'],
+  mcp_tool_completed:['tool','outcome','reference_found','reference_id','duration_ms','client','query_length','result_count','category','style','task_id','rpc_request_id'],
+  reference_feedback:['reference_id','task_id','rating','reason','client','rpc_request_id'],
   reference_failed:['reference_id','surface','reason','error_code'],
-  launch_task_started:['task_id','reference_ids','client'],
-  launch_task_completed:['task_id','reference_ids','checks_passed','html','source_code','mp4','music','playback','download','client'],
-  launch_task_failed:['task_id','reference_ids','reason','client']
+  launch_task_started:['task_id','reference_ids','client','rpc_request_id'],
+  launch_task_completed:['task_id','reference_ids','checks_passed','html','source_code','mp4','music','playback','download','client','rpc_request_id'],
+  launch_task_failed:['task_id','reference_ids','reason','client','rpc_request_id']
 };
 
 export function eventProperties(name, input = {}) {

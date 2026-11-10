@@ -4,17 +4,18 @@ import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
-import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest} from './analytics.mjs';
+import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest,taskIdSchema} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
+const task_id = taskIdSchema.optional().describe('For a creation task, reuse the ID returned by report_launch_task. Omit for browsing.');
 const guarded = (load, fn, tool, observe) => async args => {
   const started = Date.now();
   const completed = properties => {
-    try { observe?.({tool,duration_ms:Math.max(0,Date.now()-started),...properties}); }
+    try { observe?.({tool,task_id:args.task_id,duration_ms:Math.max(0,Date.now()-started),...properties}); }
     catch { console.warn(JSON.stringify({event:'analytics_capture_failed'})); }
   };
   try {
@@ -33,17 +34,17 @@ export function createServer(load = loadArchive, observe, report) {
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
     description:'Start here for product launch, demo, teaser or feature-announcement videos and motion-design inspiration. Get the live collection, workflow and searchable styles.',
-    inputSchema:z.object({}), annotations:{...annotations,title:'Browse current launch-video collection'}
+    inputSchema:z.object({task_id}), annotations:{...annotations,title:'Browse current launch-video collection'}
   }, guarded(load, archive => context(archive),'get_launch_context',observe));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
     description:'Find real launch, demo and teaser references by brand, product, pacing, transitions or animation style. Returns playable videos, Serena Launch preview links and notes. Keyword order is not a product-fit recommendation; no popularity ranking or metrics.',
-    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest']).optional(), limit:z.number().int().min(1).max(12).optional()}), annotations:{...annotations,title:'Search launch-video references'}
+    inputSchema:z.object({query:z.string().max(300).optional(), style:z.string().max(100).optional(), category:z.string().max(100).optional(), ratio:z.string().max(30).optional(), sort:z.enum(['relevance','newest']).optional(), limit:z.number().int().min(1).max(12).optional(), task_id}), annotations:{...annotations,title:'Search launch-video references'}
   }, guarded(load, (archive,args) => ({...context(archive), ...search(archive,args)}),'search_launch_videos',observe));
   server.registerTool('get_launch_video', {
     title:'Get launch-video reference details',
     description:'Get a reference by ID, slug or X/Twitter URL: MP4, descriptive metadata, notes and clone prompt. Catalog references only; no popularity metrics or legacy scores.',
-    inputSchema:z.object({reference:z.string().min(1).max(500)}), annotations:{...annotations,title:'Get launch-video reference details'}
+    inputSchema:z.object({reference:z.string().min(1).max(500), task_id}), annotations:{...annotations,title:'Get launch-video reference details'}
   }, guarded(load, (archive,{reference}) => {
     const video = findVideo(archive,reference);
     return {...context(archive), found:!!video, video:video ? record(video,true,archive.sourceRevision) : null};
@@ -133,15 +134,15 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
         identity = auth.identity;
       }
       const rpc = await describeMcpRequest(request,!!identity && !!env.POSTHOG_PROJECT_TOKEN);
-      observeIdentity(identity,rpc.method,rpc.traceId,rpc.tool);
+      observeIdentity(identity,rpc);
       const isTest = request.headers.get('X-Serena-Analytics-Test') === '1';
       const started = Date.now();
       // The SDK already creates a fresh stateless server per request. Capture
       // verified identity in this request's closure, never in shared state.
       const mcp = createMcpHandler(() => {
         const server = createServer(loadArchive,event => {
-          if (identity) ctx.waitUntil(captureMcpEvent(env,identity,event,undefined,{isTest}));
-        },args => reportLaunchTask(env,identity,args,undefined,{isTest}));
+          if (identity) ctx.waitUntil(captureMcpEvent(env,identity,{...event,rpc_request_id:rpc.traceId},undefined,{isTest}));
+        },args => reportLaunchTask(env,identity,args,undefined,{isTest,rpcRequestId:rpc.traceId}));
         if (!rpc.traceId) return server;
         return observeMcpReplies(server,rpc,event => {
           ctx.waitUntil(captureEvent(env,identity,'mcp_rpc_completed',{

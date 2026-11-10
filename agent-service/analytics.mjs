@@ -1,4 +1,5 @@
 import {capturePayload,clientName} from '../site/analytics-events.mjs';
+import {z} from 'zod';
 
 const internalAccount=(env,identity)=>!!identity?.userId && (identity.userId===env.ANALYTICS_INTERNAL_USER_ID || String(env.ANALYTICS_TEST_USER_IDS||'').split(',').map(id=>id.trim()).includes(identity.userId));
 
@@ -16,6 +17,7 @@ export const captureMcpEvent=(env,identity,event,fetcher,options)=>captureEvent(
 
 const rpcMethods = new Set(['initialize','server/discover','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list']);
 const toolNames = new Set(['get_launch_context','search_launch_videos','get_launch_video','report_launch_task']);
+export const taskIdSchema = z.uuid();
 
 export async function describeMcpRequest(request, trace) {
   if (request.method !== 'POST') return {method:'other'};
@@ -26,7 +28,8 @@ export async function describeMcpRequest(request, trace) {
   const method = rpcMethods.has(body?.method) ? body.method : 'other';
   if (!trace || !['tools/list','tools/call'].includes(method) || !['number','string'].includes(typeof body.id)) return {method};
   const tool = method === 'tools/call' ? (toolNames.has(body.params?.name) ? body.params.name : 'other') : undefined;
-  return {method, tool, id:body.id, traceId:crypto.randomUUID()};
+  const taskId = tool && tool !== 'other' ? taskIdSchema.safeParse(body.params?.arguments?.task_id).data : undefined;
+  return {method, tool, taskId, id:body.id, traceId:crypto.randomUUID()};
 }
 
 // Both HTTP transports send terminal replies through McpServer.connect. Observe
@@ -41,7 +44,10 @@ export function observeMcpReplies(server, request, observe) {
       const outcome = message.error ? 'protocol_error' : message.result?.isError ? 'tool_error' : message.result ? 'success' : undefined;
       if (!outcome) return;
       const errorKind = message.error ? ({'-32602':'invalid_params','-32601':'method_not_found','-32603':'internal_error'}[message.error.code] ?? 'other_protocol_error') : undefined;
-      try { observe({rpc_method:request.method,rpc_request_id:request.traceId,tool:request.tool,outcome,error_kind:errorKind}); }
+      const taskId = request.tool === 'report_launch_task'
+        ? taskIdSchema.safeParse(message.result?.structuredContent?.task_id).data ?? request.taskId
+        : request.taskId;
+      try { observe({rpc_method:request.method,rpc_request_id:request.traceId,tool:request.tool,outcome,error_kind:errorKind,task_id:taskId}); }
       catch { console.warn(JSON.stringify({event:'analytics_capture_failed'})); }
     };
     return connect(transport);
@@ -52,15 +58,15 @@ export function observeMcpReplies(server, request, observe) {
 // HTTP volume includes discovery/auth challenges and throttles. Count requests,
 // never service:mcp as a person. Tool outcomes remain a separate measurement.
 export async function measureMcpRequest(request,env,ctx,handle,fetcher=fetch) {
-  let identity, rpcMethod='other', rpcRequestId, tool;
+  let identity, rpc = {method:'other'};
   const started=Date.now();
-  const observe=(verified,method,requestId,toolName)=>{identity=verified;if(method)rpcMethod=method;rpcRequestId=requestId;tool=toolName;};
+  const observe=(verified,description)=>{identity=verified;if(description)rpc=description;};
   const record=status=>{
     if(!env.POSTHOG_PROJECT_TOKEN)return;
     const task=(async()=>{
       try {
         const payload=capturePayload('mcp_request_completed',identity?.userId ? `account:${identity.userId}` : 'service:mcp',{
-          http_method:request.method,status_code:status,duration_ms:Math.max(0,Date.now()-started),authenticated:!!identity,client:identity ? clientName(identity.clientId) : 'unauthenticated',rpc_method:rpcMethod,rpc_request_id:rpcRequestId,tool
+          http_method:request.method,status_code:status,duration_ms:Math.max(0,Date.now()-started),authenticated:!!identity,client:identity ? clientName(identity.clientId) : 'unauthenticated',rpc_method:rpc.method,rpc_request_id:rpc.traceId,tool:rpc.tool,task_id:rpc.taskId
         },{key:env.POSTHOG_PROJECT_TOKEN,source:'mcp_http',identified:!!identity,isTest:internalAccount(env,identity)||request.headers.get('X-Serena-Analytics-Test')==='1'});
         const response=await fetcher('https://us.i.posthog.com/i/v0/e/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(3000)});
         if(!response.ok)console.warn(JSON.stringify({event:'analytics_capture_failed',status:response.status}));
@@ -73,15 +79,15 @@ export async function measureMcpRequest(request,env,ctx,handle,fetcher=fetch) {
 }
 
 // Analytics reports, not jobs. Retried account/task/status reports deduplicate.
-export async function reportLaunchTask(env,identity,args,fetcher=fetch,{isTest=false}={}) {
+export async function reportLaunchTask(env,identity,args,fetcher=fetch,{isTest=false,rpcRequestId}={}) {
   if (!identity?.userId) return {recorded:false,reason:'Sign in to report a task'};
   if (args.status!=='started' && args.status!=='feedback' && !args.task_id) return {recorded:false,reason:'Reuse the task_id returned at start'};
   if (args.status==='feedback' && (!args.rating || !args.reference_ids?.length)) return {recorded:false,reason:'Explicit feedback needs a rating and reference ID'};
   const taskId=args.task_id ?? crypto.randomUUID();
   const {source:sourceCode,...checks}=args.checks ?? {};
   const name=args.status==='feedback' ? 'reference_feedback' : `launch_task_${args.status}`;
-  const base={task_id:taskId,reference_ids:args.reference_ids?.join(','),...checks,source_code:sourceCode,checks_passed:!!args.checks && Object.values(args.checks).every(value=>value===true),reason:args.reason};
-  const records=args.status==='feedback' ? [...new Set(args.reference_ids)].map(reference_id=>({reference_id,...(args.task_id ? {task_id:taskId} : {}),rating:args.rating,reason:args.reason})) : [base];
+  const base={task_id:taskId,reference_ids:args.reference_ids?.join(','),...checks,source_code:sourceCode,checks_passed:!!args.checks && Object.values(args.checks).every(value=>value===true),reason:args.reason,rpc_request_id:rpcRequestId};
+  const records=args.status==='feedback' ? [...new Set(args.reference_ids)].map(reference_id=>({reference_id,...(args.task_id ? {task_id:taskId} : {}),rating:args.rating,reason:args.reason,rpc_request_id:rpcRequestId})) : [base];
   const recorded=await Promise.all(records.map(async event=>{
     const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(`${identity.userId}:${taskId}:${args.status}:${event.reference_id ?? ''}`));
     const hex=Array.from(new Uint8Array(digest)).slice(0,16).map(b=>b.toString(16).padStart(2,'0')).join('');
