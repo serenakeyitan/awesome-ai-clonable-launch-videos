@@ -14,7 +14,7 @@ An awesome collection of AI-clonable launch videos.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 80 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 81 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -35,7 +35,6 @@ The connector reads the current published library and workflow on every call. Ne
 - [Grok Bot — Online Shopping](#grok-bot-online-shopping)
 - [Grok Bot — Search, Read & Monitor X](#grok-bot-search-read-monitor-x)
 - [Poke — iMessage AI Assistant](#poke-imessage-ai-assistant)
-- [Photon — iMessage Agent](#photon-imessage-agent)
 - [Grok Bot — Action Button](#grok-bot-action-button)
 - [Grok Bot — Vault](#grok-bot-vault)
 - [Cursor — Computer Use](#cursor-computer-use)
@@ -51,6 +50,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [MCP for iPhone — Cloud Device Control](#mcp-for-iphone)
 - [Pen.dev — Agentic Canvas Plugin](#pen-dev-agentic-canvas)
 - [Opptics — Payments Motion Study](#opptics-payments-motion-study)
+- [Photon — iMessage Agent](#danieltian-photon-imessage-agent)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -266,51 +266,6 @@ https://x.com/interaction/status/2062575428213285352
 | Included file | 0:43 — full clip |
 | Aspect ratio | 4:3 |
 | Reference resolution | 1440 × 1080 |
-| Audio track | Present |
-
-</details>
-
----
-
-<a id="photon-imessage-agent"></a>
-
-### Photon — iMessage Agent
-
-https://github.com/user-attachments/assets/placeholder-photon-imessage-agent
-
-**0:42 · 16:9 · 1.67M impressions**
-
-[▶ Watch video](https://serenatan.org/launchvideo/assets/87.mp4) · [MP4 file](videos/danieltian-photon-imessage-agent.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-87)
-
-White iPhone frame hosts iMessage bubbles with an 'Agent >' typing indicator, then sends animated app cards: a Mail draft, Uber Eats restaurant menu with food photography, and a Today's Health ring. Mid section transitions to an isometric Jump Jump mini-game rendered in light 3D, before closing on a 'mini apps' type card and the Photon wordmark.
-
-```text
-Remake this video's motion and vibe for my product:
-https://x.com/danieltian/status/2067327329161064688
-```
-
-*Source: [@danieltian](https://x.com/danieltian/status/2067327329161064688) · 2026-06-17*
-
-<details>
-<summary>Metadata & stats</summary>
-
-| Metadata | Value |
-| --- | --- |
-| Posting account | @danieltian |
-| Post date | 2026-06-17 |
-| Stats snapshot (PT) | 2026-11-10 |
-| Post impressions | 1,673,747 |
-| Video plays | — |
-| Likes | 2,692 |
-| Bookmarks | 2,837 |
-| Reposts | 145 |
-| Replies | 219 |
-| Quotes | 88 |
-| Account followers | 2,778 |
-| Original duration | 0:42 |
-| Included file | 0:42 — full clip |
-| Aspect ratio | 16:9 |
-| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -986,6 +941,51 @@ https://x.com/Nexoxh/status/2116053584223547792
 | Included file | 0:21 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1024 × 576 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="danieltian-photon-imessage-agent"></a>
+
+### Photon — iMessage Agent
+
+[![▶ Watch Photon — iMessage Agent](previews/danieltian-photon-imessage-agent.jpg)](https://serenatan.org/launchvideo/assets/87.mp4)
+
+**0:42 · 16:9 · 1.67M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/87.mp4) · [MP4 file](videos/danieltian-photon-imessage-agent.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-87)
+
+White iPhone frame hosts iMessage bubbles with an 'Agent >' typing indicator, then sends animated app cards: a Mail draft, Uber Eats restaurant menu with food photography, and a Today's Health ring. Mid section transitions to an isometric Jump Jump mini-game rendered in light 3D, before closing on a 'mini apps' type card and the Photon wordmark.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/danieltian/status/2067327329161064688
+```
+
+*Source: [@danieltian](https://x.com/danieltian/status/2067327329161064688) · 2026-06-17*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @danieltian |
+| Post date | 2026-06-17 |
+| Stats snapshot (PT) | 2026-11-10 |
+| Post impressions | 1,673,747 |
+| Video plays | — |
+| Likes | 2,692 |
+| Bookmarks | 2,837 |
+| Reposts | 145 |
+| Replies | 219 |
+| Quotes | 88 |
+| Account followers | 2,778 |
+| Original duration | 0:42 |
+| Included file | 0:42 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
@@ -1812,7 +1812,7 @@ https://x.com/reasonmachines/status/2117986868004573695
 
 ### Athrix — Design-to-Code Skill
 
-[▶ View video](https://x.com/athrix_codes/status/2119128567347052702)
+[![▶ Watch Athrix — Design-to-Code Skill](previews/athrix-design-to-code-skill.jpg)](https://serenatan.org/launchvideo/assets/82.mp4)
 
 **0:35 · 16:9 · 15.1K impressions · — plays**
 
@@ -2313,7 +2313,7 @@ https://x.com/rajzmotion/status/2117525794637697456
 
 ### Proto — Calendar UI Demo
 
-[▶ View video](https://x.com/BuffetDesigns/status/2119047968091451746)
+[![▶ Watch Proto — Calendar UI Demo](previews/proto-calendar-ui-demo.jpg)](https://serenatan.org/launchvideo/assets/83.mp4)
 
 **0:38 · 16:9 · 3.3K impressions · — plays**
 
@@ -2769,13 +2769,13 @@ https://x.com/BuffetDesigns/status/2117225648595022031
 
 ### Varcyyyy — Do Dots Kinetic Type
 
-[▶ View video](https://x.com/Varcyyyy/status/2119820234236596709)
+[![▶ Watch Varcyyyy — Do Dots Kinetic Type](previews/varcyyyy-do-dots-kinetic-type.jpg)](https://serenatan.org/launchvideo/assets/86.mp4)
 
 **0:13 · 16:9 · 1.9K impressions · — plays**
 
 [▶ Watch video](https://serenatan.org/launchvideo/assets/86.mp4) · [MP4 file](videos/varcyyyy-do-dots-kinetic-type.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-86)
 
-White-canvas kinetic type with flat 2D mascots — a blue beret cloud, pink heart with sunglasses, and pink blob with headphones — perched on bold "do" / "dots" letterforms. Mid section cuts to real product UI: iPhone lock-screen Gmail banner, a color-block week calendar over a scenic landscape photo wallpaper, then a chat thread with the cloud as reply avatar.
+White-canvas kinetic type with flat 2D mascots — a blue beret cloud, pink heart with sunglasses, and pink blob with headphones — perched on bold 'do' / 'dots' letterforms. Mid section cuts to real product UI: iPhone lock-screen Gmail banner, a color-block week calendar over a scenic landscape photo wallpaper, then a chat thread with the cloud as reply avatar.
 
 ```text
 Remake this video's motion and vibe for my product:
@@ -2814,13 +2814,13 @@ https://x.com/Varcyyyy/status/2119820234236596709
 
 ### Photon — Omnichannel Messaging
 
-[▶ View video](https://x.com/PhotonHQ/status/2110789854242218066)
+[![▶ Watch Photon — Omnichannel Messaging](previews/photonhq-omnichannel-kinetic-type.jpg)](https://serenatan.org/launchvideo/assets/88.mp4)
 
 **0:22 · 16:9 · 448.5K impressions · — plays**
 
 [▶ Watch video](https://serenatan.org/launchvideo/assets/88.mp4) · [MP4 file](videos/photonhq-omnichannel-kinetic-type.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-88)
 
-White minimal kinetic type with a column of channel icons (Messages, WhatsApp, Telegram, Email, Phone) and floating email/chat capsules around bold copy. Transitions through "100,000+ emails" → "Unlimited iMessage/WhatsApp/Telegram" frames before closing on the Photon logo.
+White minimal kinetic type with a column of channel icons (Messages, WhatsApp, Telegram, Email, Phone) and floating email/chat capsules around bold copy. Transitions through '100,000+ emails' → 'Unlimited iMessage/WhatsApp/Telegram' frames before closing on the Photon logo.
 
 ```text
 Remake this video's motion and vibe for my product:
@@ -3630,7 +3630,7 @@ https://x.com/abdullah4204k/status/2117285743282598063
 
 ### Vainu — Company Signals
 
-[▶ View video](https://x.com/abdullah4204k/status/2119137996196975045)
+[![▶ Watch Vainu — Company Signals](previews/vainu-company-signals.jpg)](https://serenatan.org/launchvideo/assets/84.mp4)
 
 **1:04 · 16:9 · 1.5K impressions · — plays**
 
@@ -3675,7 +3675,7 @@ https://x.com/abdullah4204k/status/2119137996196975045
 
 ### Nexo — Claude Opus 3D Scene
 
-[▶ View video](https://x.com/Nexoxh/status/2119823326080065850)
+[![▶ Watch Nexo — Claude Opus 3D Scene](previews/nexo-claude-opus-3d-scene.jpg)](https://serenatan.org/launchvideo/assets/85.mp4)
 
 **0:19 · 16:9 · 23.1K impressions · — plays**
 
@@ -3826,10 +3826,6 @@ https://x.com/nazyurtal/status/2117252549019328774
 - Reference files use high-resolution source footage, with web-optimized H.264 encodes where needed. Eight entries are excerpts; their original durations are shown. Stats describe the full source posts.
 - Style notes are based on sampled frames and supplied metadata. Style categories are editorial judgments.
 - Full metadata, original Chinese notes, source links, and prompts are in [data/videos.json](data/videos.json).
-
-## Website publishing
-
-The portfolio and gallery share a React + TypeScript frontend in [serena-portfolio](https://github.com/serenakeyitan/serena-portfolio). This repository owns collection data, media and MCP. Publish the gallery with the checked-in [delivery Worker](site-worker/README.md).
 
 ## Contributing
 
