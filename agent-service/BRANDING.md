@@ -13,6 +13,12 @@ Keep the immutable plugin package name, existing MCP server ID, rate-limit key, 
 
 ## Compact OAuth consent
 
+## Authentication email status
+
+The agreed email scope is to fold Serena's welcome copy and branding into existing Clerk authentication emails, without adding Resend, a separate welcome email or a paid upgrade. This is not shipped: on November 10, 2026, saving even copy-only changes to the production verification-code template opened Clerk's upgrade prompt: "The Custom email templates feature is not available on your current plan for production instances." The edits were discarded and the unchanged template was verified after reload, with Delivered by Clerk still enabled. `emails.mjs` remains an unused design preview, not an active sender. No branded delivery test has passed. Keeping authentication emails does not guarantee a welcome email after first use: an already authenticated user can approve MCP access without triggering another email verification.
+
+## Compact OAuth consent implementation
+
 `site/consent.html` hosts the custom consent page at `/launchvideo/consent.html`. It reuses the website colors and type, with the requesting application, signed-in account, requested scopes, core trust reminder and return domain visible. Additional explanations, client ID and full return URL are inside a native, initially closed `details` element. Allow and Deny remain explicit decisions.
 
 The vanilla JavaScript flow uses Clerk's documented `oauthApplication.getConsentInfo()` and `buildConsentActionUrl()` APIs with the existing production instance. It does not change scopes, authentication, token validation, consent requirements or newsletter preferences. Native POST submission preserves the authorization parameters and includes only the user's clicked decision. Query parameters cannot supply a decision, organization or session override. Explicit analytics records consent-view/decision/error categories without authorization parameters or email addresses. The page uses no-store, anti-framing and a restricted CSP through `site/_headers`.
