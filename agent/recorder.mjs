@@ -77,10 +77,10 @@ export function batches(messages,start=0){
 async function connect(client){
  if(!['claude-code','codex'].includes(client))throw Error('Choose --client claude-code or --client codex');
  const pair=await request('/pair',{method:'POST',body:{client}});
- console.log(`Open this link and confirm code ${pair.code}:\n${pair.url}\n\nOnly approve if you started this recorder. No conversation has been uploaded.`);
+ console.log(`Open this link and confirm code ${pair.code}:\n${pair.url}\n\nOnly approve if you started this recorder. No session text has been uploaded.`);
  for(let attempt=0;attempt<119;attempt++){
   await delay(5000);const state=await request('/device',{token:pair.token});
-  if(state.approved){if(!state.enabled)throw Error('Conversation sharing is off. Enable it in Sharing settings.');await save(join(ROOT,'authorization.json'),{token:pair.token,client});console.log('Recorder connected. Select a session to share, or install the Claude Code project hook.');return;}
+  if(state.approved){if(!state.enabled)throw Error('Telemetry is off. Enable it in Sharing settings.');await save(join(ROOT,'authorization.json'),{token:pair.token,client});console.log('Recorder connected. Select a session for telemetry, or install the Claude Code project hook.');return;}
  }
  throw Error('Connection code expired. Run connect again.');
 }
@@ -88,7 +88,7 @@ export async function syncFile({file,client,state,token,send=request,sourceId,ta
  const bytes=await readFile(file),parsed=parseTranscript(bytes,client,final);
  if(!parsed.messages.length)throw Error("No supported user or AI text found; this file was not marked complete");
  if(state.source_hash&&hash(bytes.subarray(0,state.source_bytes))!==state.source_hash)throw Error('Source history changed. Stopping to avoid silently overwriting or losing text.');
- const remote=await send('/device',{token});if(!remote.approved||!remote.enabled)throw new ApiError(403,'Conversation sharing is off');
+ const remote=await send('/device',{token});if(!remote.approved||!remote.enabled)throw new ApiError(403,'Telemetry is off');
  if(!state.session_id){
   const created=await send('/sessions',{token,method:'POST',body:{client,source_session_id:sourceId||parsed.sourceSession||hash(await realpath(file)),...(taskId?{task_id:taskId}:{}),reference_ids:referenceIds}});
   if(created.last_seq!==0)throw Error('This source already has a remote history but no local checkpoint. Do not guess missing text; restore the local recorder state.');
@@ -119,7 +119,7 @@ async function watch({file,client,once=false,sourceId,taskId,referenceIds=[]}){
  // Recover an exact unacknowledged chunk before parsing more source text.
  if(state.pending){const ack=await request(`/sessions/${state.session_id}/chunks`,{token:config.token,method:'POST',body:state.pending});if(ack.sha256!==state.pending.sha256)throw Error('Recovery checksum mismatch');state.seq=state.pending.seq;state.messages+=state.pending.messages.length;delete state.pending;await save(statePath,state);}
  let stop=false;for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>{stop=true;});
- console.log('Sharing this session’s original user and AI text. Ctrl+C stops sharing. Manage or delete: https://serenatan.org/launchvideo/sharing');
+ console.log('Telemetry records this session’s original user and AI text. Ctrl+C stops it. Privacy and controls: https://serenatan.org/launchvideo/sharing');
  let lastParsed,failures=0;const started=Date.now();
  while(!stop&&Date.now()-started<6*3600000){
   const stopInfo=await load(statePath+'.stop',null);
@@ -141,7 +141,7 @@ async function watch({file,client,once=false,sourceId,taskId,referenceIds=[]}){
   const status=!lastParsed?.hasPartialLine&&(once||stopInfo?.ended)?'source_complete':'stopped';
   await request(`/sessions/${state.session_id}/finish`,{token:config.token,method:'POST',body:{last_seq:state.seq,status}});
   state.finished=true;await save(statePath,state);
-  console.log(`${state.messages} original text messages synced. ${status==='source_complete'?'Source snapshot fully synced.':'Sharing stopped.'}${state.attachments?' Images/files were not uploaded.':''}`);
+  console.log(`${state.messages} original text messages synced. ${status==='source_complete'?'Source snapshot fully synced.':'Telemetry stopped.'}${state.attachments?' Images/files were not uploaded.':''}`);
  }
 }
 export function addHooks(settings,command,project){
@@ -159,7 +159,7 @@ async function install(project,server){
  await save(join(ROOT,'projects',hash(projectRoot)+'.json'),{project:projectRoot,server});
  const settingsPath=join(projectRoot,'.claude','settings.local.json');
  const settings=await load(settingsPath,{});await save(settingsPath,addHooks(settings,`${quote(process.execPath)} ${quote(target)}`,projectRoot));
- console.log('Project hook installed. Only sessions using the configured Serena Launch MCP server will start sharing. Other projects and chats are not selected.');
+ console.log('Project hook installed. Only sessions using the configured Serena Launch MCP server will start telemetry. Other projects and chats are not selected.');
 }
 async function hook(projectRoot){
  let input='';for await(const chunk of process.stdin){input+=chunk;if(input.length>1024*1024)throw Error('Hook input too large');}
@@ -193,6 +193,6 @@ export async function main(args=process.argv.slice(2)){
  }
  if(command==='install-claude')return install(resolve(opts.project||'.'),opts.server||'serena-launch');
  if(command==='hook')return hook(opts.project);
- console.log('Optional Serena Launch conversation recorder (Node 22+)\n\nconnect --client claude-code|codex\ninstall-claude --project . [--server serena-launch]\nrecord --client claude-code|codex --file /path/to/selected-session.jsonl [--once]\n\nOnly original visible text from selected sessions is uploaded. Hidden reasoning, images and files are excluded. Message text is stored verbatim and may itself contain sensitive information. Turn sharing off or delete recordings at https://serenatan.org/launchvideo/sharing');
+ console.log('Serena Launch telemetry recorder (Node 22+)\n\nconnect --client claude-code|codex\ninstall-claude --project . [--server serena-launch]\nrecord --client claude-code|codex --file /path/to/selected-session.jsonl [--once]\n\nOnly original visible text from selected sessions is uploaded. Hidden reasoning, images and files are excluded. Message text is stored verbatim and may itself contain sensitive information. Turn telemetry off or delete recordings at https://serenatan.org/launchvideo/sharing');
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(error=>{console.error(error instanceof ApiError?error.message:'Recorder stopped: '+error.message);process.exitCode=1;});

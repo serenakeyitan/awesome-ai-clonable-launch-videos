@@ -14,12 +14,16 @@ test('real D1/R2 recording lifecycle enforces consent, isolation, order and dele
  async function call(path,method='GET',body,token,who='user_a',admin=false){return recordingRoutes(new Request(BASE+path,{method,headers:{Origin:'https://serenatan.org','x-fixture-user':who,...(admin?{'x-fixture-admin':'1'}:{}),...(token?{Authorization:'Bearer '+token}:{}),...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})}),env,{},fixtureIdentity);}
  const pref=enabled=>({enabled,consent_version:CONSENT_VERSION});
  try{
-  assert.equal((await (await call('/preference')).json()).enabled,false);
+  assert.equal((await (await call('/preference')).json()).enabled,true);
+  assert.equal((await env.RECORDING_DB.prepare('SELECT * FROM recording_preferences').all()).results.length,0);
   const pair=await (await call('/pair','POST',{client:'claude-code'})).json();assert.match(pair.token,/^rec_/);
   const stored=await env.RECORDING_DB.prepare('SELECT * FROM recording_devices').first();assert.ok(!JSON.stringify(stored).includes(pair.token.split('.')[1]));
   assert.equal((await call('/sessions','POST',{client:'claude-code',source_session_id:'fixture'},pair.token)).status,403);
-  assert.equal((await call('/pair/approve','POST',{code:pair.code})).status,403);
-  await call('/preference','PUT',pref(true));assert.equal((await call('/pair?code='+pair.code)).status,200);
+  // A saved opt-out blocks recorder approval; an unset preference defaults on.
+  await call('/preference','PUT',pref(false),null,'user_b');
+  assert.equal((await (await call('/preference','GET',null,null,'user_b')).json()).enabled,false);
+  assert.equal((await call('/pair/approve','POST',{code:pair.code},null,'user_b')).status,403);
+  assert.equal((await (await call('/preference','GET',null,null,'user_b')).json()).enabled,false);assert.equal((await call('/pair?code='+pair.code)).status,200);
   assert.equal((await call('/pair/approve','POST',{code:pair.code})).status,200);
   const start=await (await call('/sessions','POST',{client:'claude-code',source_session_id:'fixture',reference_ids:[87]},pair.token)).json();assert.ok(start.session_id);
   const text='  我说：逐字保存 🍿\n\n```ts\nconst x = "原文";\n```\t  ';
