@@ -13,6 +13,7 @@ import time
 
 ROOT = Path(__file__).resolve().parent.parent
 BUCKET = json.loads((ROOT / 'site-worker/wrangler.json').read_text())['r2_buckets'][0]['bucket_name']
+ATTEMPTS = 10  # uploads fail transiently about half the time
 STATE = ROOT / '.wrangler/r2-media-uploaded.json'
 
 parser = argparse.ArgumentParser(description=__doc__)
@@ -35,11 +36,11 @@ for path, size in sorted(sizes.items()):
     command = ['npx', 'wrangler', 'r2', 'object', 'put', f'{BUCKET}{path}', '--config', 'site-worker/wrangler.json',
                '--file', str(source), '--content-type', 'video/mp4', '--local' if args.local else '--remote']
     # Uploads occasionally fail with a transient "fetch failed"; retry each file.
-    for attempt in range(5):
+    for attempt in range(ATTEMPTS):
         if subprocess.run(command, cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0:
             break
-        print(f'Retrying {path} ({attempt + 1}/4)...', flush=True)
-        time.sleep(3 * (attempt + 1))
+        print(f'Retrying {path} ({attempt + 1}/{ATTEMPTS - 1})...', flush=True)
+        time.sleep(min(3 * (attempt + 1), 15))
     else:
         raise SystemExit(f'Could not upload {path}; rerun this script to resume.')
     print(f'Uploaded {path}', flush=True)
