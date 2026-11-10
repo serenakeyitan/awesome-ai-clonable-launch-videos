@@ -15,6 +15,12 @@
       "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
     }
   ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "serenatan-launchvideo-media"
+    }
+  ],
   "assets": {
     "directory": "../site-public",
     "binding": "ASSETS",

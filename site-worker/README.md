@@ -8,9 +8,15 @@ Run from this repository root:
 
 ```sh
 python3 scripts/build_site.py
+python3 scripts/sync_media_r2.py
 node --test site-worker/worker.test.mjs
 npx wrangler deploy --config site-worker/wrangler.json
 ```
+
+MP4s are served from the `serenatan-launchvideo-media` R2 bucket, which slices
+byte ranges natively. Slicing the bundled asset in JS used 20-300 ms CPU per
+request, past the Workers Free 10 ms limit. `sync_media_r2.py` uploads new or
+changed MP4s; a video not yet in R2 still plays from the bundled asset.
 
 The build validates canonical media and runtime module dependencies, generates
 `site-worker/asset-sizes.json`, and stages the gallery in `site-public/launchvideo/` (MP4s in its `assets/`).
