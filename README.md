@@ -24,7 +24,7 @@ Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates
 Connect to Serena Launch MCP at https://serenatan.org/launchvideo/mcp.
 ```
 
-[Connect Claude, ChatGPT, Codex, Cursor, Grok & more](agent/README.md) · [Live MCP endpoint](https://serenatan.org/launchvideo/mcp) · [Plugin package](plugin/launch-archive)
+[Connect Claude, ChatGPT, Codex, Cursor, Grok & more](agent/README.md) · [Setup guide](https://serenatan.org/launchvideo/agent/SKILL.md) · [Plugin package](plugin/launch-archive)
 
 The connector reads the current published library and workflow on every call. New videos and formats reach existing connections without reinstalling.
 
@@ -3829,11 +3829,7 @@ https://x.com/nazyurtal/status/2117252549019328774
 
 ## Contributing
 
-Suggestions are welcome! Open a PR with a public source post, a preview, a useful style breakdown, and a copyable remake prompt. Include a dated source for any stats, and label excerpts clearly. Upload the MP4 as a GitHub video attachment and add its URL as `githubVideoUrl` in `data/videos.json`, then run:
-
-```bash
-python3 scripts/build_readme.py
-```
+Know a launch video worth cloning? [Suggest it in an issue](https://github.com/serenakeyitan/awesome-ai-clonable-launch-videos/issues/new?template=suggest-video.yml) with just the X link, or add it yourself in a PR. See [CONTRIBUTING.md](CONTRIBUTING.md) for what fits the collection, the entry format and the checks to run.
 
 ## License & credits
 

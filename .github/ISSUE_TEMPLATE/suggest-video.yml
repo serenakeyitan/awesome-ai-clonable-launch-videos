@@ -1,0 +1,36 @@
+name: Suggest a launch video
+description: Recommend a launch video for the collection. Only the link is required.
+title: "Suggest: "
+labels: ["video suggestion"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: X post link
+      placeholder: https://x.com/account/status/1234567890
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What's worth borrowing?
+      description: Optional. A transition, pacing, layout or storytelling idea that makes this video worth cloning.
+  - type: dropdown
+    id: style
+    attributes:
+      label: Closest style
+      description: Optional. Pick the closest match.
+      options:
+        - Device & UI Transformations
+        - Clean UI, Data & Graphics
+        - Pastel UI & Cursor Demos
+        - Typography & Abstract Motion
+        - Dark, Gradient & Mixed Media
+        - Illustrated Mascot Stories
+        - Not sure
+  - type: checkboxes
+    id: fit
+    attributes:
+      label: Fit
+      options:
+        - label: It's publicly posted, and the motion is mostly UI, type, graphics or illustration rather than live-action footage.
