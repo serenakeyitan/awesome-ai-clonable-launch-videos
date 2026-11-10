@@ -7,7 +7,7 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-80-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-81-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
@@ -100,6 +100,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [ElevenLabs — Speech Engine](#elevenlabs-speech-engine)
 - [Lifted Finance — Launch Film](#lifted-finance)
 - [Varcyyyy — Do Dots Kinetic Type](#varcyyyy-do-dots-kinetic-type)
+- [Photon — Omnichannel Messaging](#photonhq-omnichannel-kinetic-type)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -2801,6 +2802,51 @@ https://x.com/Varcyyyy/status/2119820234236596709
 | Account followers | 8,297 |
 | Original duration | 0:13 |
 | Included file | 0:13 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="photonhq-omnichannel-kinetic-type"></a>
+
+### Photon — Omnichannel Messaging
+
+[▶ View video](https://x.com/PhotonHQ/status/2110789854242218066)
+
+**0:22 · 16:9 · 448.5K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/88.mp4) · [MP4 file](videos/photonhq-omnichannel-kinetic-type.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-88)
+
+White minimal kinetic type with a column of channel icons (Messages, WhatsApp, Telegram, Email, Phone) and floating email/chat capsules around bold copy. Transitions through "100,000+ emails" → "Unlimited iMessage/WhatsApp/Telegram" frames before closing on the Photon logo.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/PhotonHQ/status/2110789854242218066
+```
+
+*Source: [@PhotonHQ](https://x.com/PhotonHQ/status/2110789854242218066) · 2026-10-15*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @PhotonHQ |
+| Post date | 2026-10-15 |
+| Stats snapshot (PT) | 2026-11-10 |
+| Post impressions | 448,453 |
+| Video plays | — |
+| Likes | 542 |
+| Bookmarks | 529 |
+| Reposts | 55 |
+| Replies | 94 |
+| Quotes | 53 |
+| Account followers | 8,943 |
+| Original duration | 0:22 |
+| Included file | 0:22 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
