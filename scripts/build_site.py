@@ -9,6 +9,7 @@ from urllib.parse import urlparse, unquote
 from build_daily_stats import update_daily_stats
 from site_summary import render_summary
 from verify_site import verify_site, verify_runtime_assets
+from site_llms import render_llms
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
@@ -31,6 +32,7 @@ headers = (OUT / '_headers').read_text()
 html = (OUT / 'index.html').read_text().replace('"assets/', '"https://serenatan.org/launchvideo/assets/')
 videos = json.loads((ROOT / 'data/videos.json').read_text())
 (OUT / 'index.html').write_text(render_summary(html, videos))
+(OUT / 'llms.txt').write_text(render_llms(videos))
 for video in videos:
     video['video'] = video['watchUrl']
     video['poster'] = 'https://raw.githubusercontent.com/serenakeyitan/awesome-ai-clonable-launch-videos/main/' + video['poster']

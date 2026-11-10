@@ -71,6 +71,7 @@ Leave the remaining fields (`seed`, `scores`, `benchmark`, `referenceGroup`, `co
 python3 scripts/build_readme.py      # regenerates README.md and data/daily-stats.json
 python3 scripts/test_site_media.py
 python3 scripts/test_site_summary.py
+python3 scripts/test_site_llms.py
 ```
 
 Commit `README.md` and `data/daily-stats.json` along with your files. Don't edit `README.md` by hand; it is generated from `data/videos.json`.
