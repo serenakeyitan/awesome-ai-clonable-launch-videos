@@ -1812,7 +1812,7 @@ https://x.com/reasonmachines/status/2117986868004573695
 
 ### Athrix — Design-to-Code Skill
 
-[![▶ Watch Athrix — Design-to-Code Skill](previews/athrix-design-to-code-skill.jpg)](https://serenatan.org/launchvideo/assets/82.mp4)
+https://github.com/user-attachments/assets/23b184a6-491e-49c1-b12a-c801d37d06dd
 
 **0:35 · 16:9 · 15.1K impressions · — plays**
 
@@ -2313,7 +2313,7 @@ https://x.com/rajzmotion/status/2117525794637697456
 
 ### Proto — Calendar UI Demo
 
-[![▶ Watch Proto — Calendar UI Demo](previews/proto-calendar-ui-demo.jpg)](https://serenatan.org/launchvideo/assets/83.mp4)
+https://github.com/user-attachments/assets/e1749ebc-a913-408f-a8f5-ef3097ce637b
 
 **0:38 · 16:9 · 3.3K impressions · — plays**
 
@@ -2769,7 +2769,7 @@ https://x.com/BuffetDesigns/status/2117225648595022031
 
 ### Varcyyyy — Do Dots Kinetic Type
 
-[![▶ Watch Varcyyyy — Do Dots Kinetic Type](previews/varcyyyy-do-dots-kinetic-type.jpg)](https://serenatan.org/launchvideo/assets/86.mp4)
+https://github.com/user-attachments/assets/ed39d530-913b-4cdc-93b6-1b838ef0cc14
 
 **0:13 · 16:9 · 1.9K impressions · — plays**
 
@@ -2814,7 +2814,7 @@ https://x.com/Varcyyyy/status/2119820234236596709
 
 ### Photon — Omnichannel Messaging
 
-[![▶ Watch Photon — Omnichannel Messaging](previews/photonhq-omnichannel-kinetic-type.jpg)](https://serenatan.org/launchvideo/assets/88.mp4)
+https://github.com/user-attachments/assets/8849607f-3c58-43a3-bc24-f82f819aa1c4
 
 **0:22 · 16:9 · 448.5K impressions · — plays**
 
@@ -3630,7 +3630,7 @@ https://x.com/abdullah4204k/status/2117285743282598063
 
 ### Vainu — Company Signals
 
-[![▶ Watch Vainu — Company Signals](previews/vainu-company-signals.jpg)](https://serenatan.org/launchvideo/assets/84.mp4)
+https://github.com/user-attachments/assets/c7214ea4-b97a-4561-8a3e-7793731ba55b
 
 **1:04 · 16:9 · 1.5K impressions · — plays**
 
@@ -3675,7 +3675,7 @@ https://x.com/abdullah4204k/status/2119137996196975045
 
 ### Nexo — Claude Opus 3D Scene
 
-[![▶ Watch Nexo — Claude Opus 3D Scene](previews/nexo-claude-opus-3d-scene.jpg)](https://serenatan.org/launchvideo/assets/85.mp4)
+https://github.com/user-attachments/assets/427853cf-d06c-4702-bbf9-81d5a23c5d3b
 
 **0:19 · 16:9 · 23.1K impressions · — plays**
 
