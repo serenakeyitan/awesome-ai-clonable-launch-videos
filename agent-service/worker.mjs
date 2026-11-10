@@ -4,7 +4,7 @@ import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
-import {captureMcpEvent,reportLaunchTask,measureMcpRequest} from './analytics.mjs';
+import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
 
 const BASE = '/launchvideo';
@@ -132,16 +132,23 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
         if (auth.response) return auth.response;
         identity = auth.identity;
       }
-      let rpcMethod='other';
-      if(request.method==='POST'){
-        try { const method=(await request.clone().json())?.method; if(['initialize','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list'].includes(method))rpcMethod=method; } catch { /* The MCP handler reports invalid JSON. */ }
-      }
-      observeIdentity(identity,rpcMethod);
+      const rpc = await describeMcpRequest(request,!!identity && !!env.POSTHOG_PROJECT_TOKEN);
+      observeIdentity(identity,rpc.method,rpc.traceId,rpc.tool);
+      const isTest = request.headers.get('X-Serena-Analytics-Test') === '1';
+      const started = Date.now();
       // The SDK already creates a fresh stateless server per request. Capture
       // verified identity in this request's closure, never in shared state.
-      const mcp = createMcpHandler(() => createServer(loadArchive,event => {
-        if (identity) ctx.waitUntil(captureMcpEvent(env,identity,event));
-      },args => reportLaunchTask(env,identity,args)),MCP_OPTIONS);
+      const mcp = createMcpHandler(() => {
+        const server = createServer(loadArchive,event => {
+          if (identity) ctx.waitUntil(captureMcpEvent(env,identity,event,undefined,{isTest}));
+        },args => reportLaunchTask(env,identity,args,undefined,{isTest}));
+        if (!rpc.traceId) return server;
+        return observeMcpReplies(server,rpc,event => {
+          ctx.waitUntil(captureEvent(env,identity,'mcp_rpc_completed',{
+            ...event,duration_ms:Math.max(0,Date.now()-started)
+          },undefined,{isTest}));
+        });
+      },MCP_OPTIONS);
       return mcp(request,env,ctx);
     }
     if (request.method === 'OPTIONS') return new Response(null,{status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET, HEAD, OPTIONS','Access-Control-Allow-Headers':'Authorization, Content-Type'}});

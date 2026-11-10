@@ -2,7 +2,8 @@
 // out of analytics. Shared by the browser and authenticated MCP service.
 const fields = {
   page_viewed:['page','referrer_host','utm_source','utm_medium','utm_campaign'],
-  mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method'],
+  mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method','rpc_request_id','tool'],
+  mcp_rpc_completed:['rpc_method','rpc_request_id','tool','outcome','error_kind','duration_ms','client'],
   conversation_sharing_changed:['enabled'],
   conversation_started:['session_id','client','task_id'],
   conversation_finished:['session_id','status','client'],

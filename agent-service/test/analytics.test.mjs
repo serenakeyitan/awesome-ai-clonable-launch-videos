@@ -152,3 +152,58 @@ test('HTTP observation failure never changes a successful MCP response',async()=
  const response=await measureMcpRequest(new Request('https://serenatan.org/launchvideo/mcp'),{POSTHOG_PROJECT_TOKEN:'phc_test'},{waitUntil:p=>pending.push(p)},async()=>new Response('ok'),async()=>{throw Error('network');});
  assert.equal(await response.text(),'ok');await Promise.all(pending);
 });
+
+test('HTTP MCP diagnostics join tool lists and calls to their actual replies',async()=>{
+ const {createMcpHandler}=await import('agents/mcp/server');
+ const {Client:Modern,StreamableHTTPClientTransport:ModernHTTP}=await import('@modelcontextprotocol/client');
+ const {StreamableHTTPClientTransport:LegacyHTTP}=await import('@modelcontextprotocol/sdk/client/streamableHttp.js');
+ const {captureEvent,describeMcpRequest,measureMcpRequest,observeMcpReplies}=await import('../analytics.mjs');
+ const endpoint=new URL('https://serenatan.org/launchvideo/mcp');
+ const env={POSTHOG_PROJECT_TOKEN:'phc_test'};
+ const account={userId:'user_fixture',clientId:'https://claude.ai/client'};
+ const archive={videos:[],manifest:{},workflow:'Live workflow'};
+
+ for(const [Agent,Transport] of [[Modern,ModernHTTP],[Client,LegacyHTTP]]) {
+  const events=[],pending=[];
+  const capture=async(_url,options)=>{events.push(JSON.parse(options.body));return new Response('{}');};
+  const ctx={waitUntil:promise=>pending.push(promise)};
+  const dispatch=(url,options)=>{
+   const request=new Request(url,options);
+   request.headers.set('Host',endpoint.hostname);
+   return measureMcpRequest(request,env,ctx,async observe=>{
+    const rpc=await describeMcpRequest(request,true);
+    observe(account,rpc.method,rpc.traceId,rpc.tool);
+    const handler=createMcpHandler(()=>{
+     const server=createServer(async()=>archive);
+     if(!rpc.traceId)return server;
+     return observeMcpReplies(server,rpc,event=>ctx.waitUntil(captureEvent(env,account,'mcp_rpc_completed',event,capture,{isTest:true})));
+    },{route:endpoint.pathname,allowedHostnames:[endpoint.hostname]});
+    return handler(request,env,ctx);
+   },capture);
+  };
+  const client=new Agent({name:'rpc-observation-test',version:'1.0.0'});
+  const transport=new Transport(endpoint,{fetch:dispatch,requestInit:{headers:{'X-Serena-Analytics-Test':'1'}}});
+  try {
+   await client.connect(transport);
+   assert.equal((await client.listTools()).tools.length,4);
+   assert.ok(!(await client.callTool({name:'get_launch_context',arguments:{}})).isError);
+   assert.ok((await client.callTool({name:'get_launch_video',arguments:{reference:42}})).isError);
+   await assert.rejects(client.callTool({name:'private-unregistered-tool',arguments:{query:'private product idea'}}));
+   await Promise.all(pending);
+   const replies=events.filter(event=>event.event==='mcp_rpc_completed').map(event=>event.properties);
+   assert.deepEqual(replies.map(({rpc_method,tool,outcome,error_kind})=>[rpc_method,tool,outcome,error_kind]),[
+    ['tools/list',undefined,'success',undefined],
+    ['tools/call','get_launch_context','success',undefined],
+    ['tools/call','get_launch_video','tool_error',undefined],
+    ['tools/call','other','protocol_error','invalid_params']
+   ]);
+   for(const reply of replies) {
+    const http=events.find(event=>event.event==='mcp_request_completed'&&event.properties.rpc_request_id===reply.rpc_request_id);
+    assert.equal(http?.properties.rpc_method,reply.rpc_method);
+    assert.equal(http?.properties.status_code,200);
+   }
+   assert.ok(events.every(event=>event.properties.is_test));
+   assert.doesNotMatch(JSON.stringify(events),/private-unregistered-tool|private product idea/);
+  } finally {await client.close();}
+ }
+});
