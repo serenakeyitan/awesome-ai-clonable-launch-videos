@@ -21,3 +21,9 @@ test('public gallery and consent routes use canonical Pages URLs without redirec
 });
 
 test('redirecting origins are rejected instead of followed',async()=>{const response=await frontendResponse(new Request('https://serenatan.org/launchvideo/'),'/launch',async(_url,options)=>{assert.equal(options.redirect,'manual');return new Response(null,{status:308,headers:{Location:'https://unrelated.example/'}});});assert.equal(response.status,503);});
+test('MP4s are read from the prefixed asset path and keep byte ranges',async()=>{
+ const seen=[];
+ const env={ASSETS:{async fetch(req){seen.push(new URL(req.url).pathname);return new Response(new Uint8Array(100),{headers:{'Content-Length':'100','Content-Type':'video/mp4'}});}}};
+ const response=await worker.fetch(new Request('https://serenatan.org/launchvideo/assets/34.mp4',{headers:{Range:'bytes=0-9'}}),env);
+ assert.deepEqual(seen,['/launchvideo/assets/34.mp4']);assert.equal(response.status,206);assert.equal(response.headers.get('Content-Range'),'bytes 0-9/100');
+});

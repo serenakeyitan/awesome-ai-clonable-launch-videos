@@ -93,8 +93,10 @@ export default {
     const frontend = FRONTEND_PAGES[assetUrl.pathname];
     if (frontend && ['GET','HEAD'].includes(request.method)) return frontendResponse(request,frontend);
 
+    // Only HTML and MP4s reach the Worker (see run_worker_first); MP4s need it
+    // because the asset layer ignores Range. Assets live under /launchvideo/.
     try {
-      const response = await env.ASSETS.fetch(new Request(assetUrl, request));
+      const response = await env.ASSETS.fetch(new Request(url, request));
       return await videoResponse(request, response, assetUrl.pathname);
     } catch (error) {
       console.error(JSON.stringify({
