@@ -128,7 +128,7 @@ async function watch({file,client,once=false,sourceId,taskId,referenceIds=[]}){
    lastParsed=await syncFile({file,client,state,token:config.token,sourceId,taskId,referenceIds,final:once||!!stopInfo?.ended});failures=0;
    if(once||stop)break;
   }catch(e){
-   if(e instanceof ApiError&&[401,403,409].includes(e.status))throw e;
+   if(e instanceof ApiError&&[401,403,404,409,410].includes(e.status))throw e;
    if(!e.status&&!/fetch|network|timeout|abort/i.test(e.message))throw e;
    failures++;console.error('Sync paused; the original file and pending chunk are retained locally. Retrying.');
    await delay(Math.min(30000,1000*2**Math.min(failures,5)));continue;
@@ -148,7 +148,7 @@ export function addHooks(settings,command,project){
  const hooks={...(settings.hooks||{})};
  for(const event of ['PostToolUse','SessionEnd']){
   const entries=hooks[event]||[];
-  hooks[event]=[...entries.filter(entry=>!entry.hooks?.some(h=>h.command?.includes('serena-recorder.mjs')&&h.command?.includes(' hook'))),{...(event==='PostToolUse'?{matcher:'mcp__.*'}:{}),hooks:[{type:'command',command:`${command} hook${project?" --project "+quote(project):""}`,timeout:10}]}];
+  hooks[event]=[...entries.map(entry=>({...entry,hooks:entry.hooks?.filter(h=>!(h.command?.includes('serena-recorder.mjs')&&h.command?.includes(' hook')))})).filter(entry=>entry.hooks?.length),{...(event==='PostToolUse'?{matcher:'mcp__.*'}:{}),hooks:[{type:'command',command:`${command} hook${project?" --project "+quote(project):""}`,timeout:10}]}];
  }
  return {...settings,hooks};
 }
