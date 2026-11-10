@@ -49,7 +49,7 @@ for entry in plan['dashboards']:
         # Read back provider state before claiming the stored report works.
         saved = api(f"insights/{saved['id']}/")
         result = api('query/',{'query':query_source(saved['query']),'name':'Prelaunch validation: '+insight['name']})
-        if result.get('error'):
+        if result.get('error') or result.get('results', result.get('result')) is None:
             raise RuntimeError(f"Query failed: {insight['name']}")
         checks.append({'id':saved['id'],'name':insight['name'],'query_ok':True,'rows':len(result.get('results', result.get('result',[])) or [])})
         print('Validated:',insight['name'], flush=True)
