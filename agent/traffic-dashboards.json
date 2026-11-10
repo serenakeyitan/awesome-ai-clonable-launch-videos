@@ -210,7 +210,7 @@
       "insights": [
         {
           "name": "MCP · end-to-end account trace",
-          "description": "Most recent 400 observed steps in the selected dates. The account label matches Connection to first use. Browser activity appears only when an existing PostHog identity link is unambiguous. Consent submission records the browser action. Authenticated HTTP proves the Worker accepted OAuth; Clerk Application Logs show the actual authorization grant or failure. The same request ID joins HTTP, protocol and tool events on newer calls. Task and delivery reports are supplied by the agent.",
+          "description": "Latest 400 observed steps, using the same account label as Connection to first use. Linked browser activity, consent, authenticated requests, replies, tool use and agent reports. Request IDs link new calls. Clerk Application Logs show verified OAuth grants and failures.",
           "query": {
             "kind": "DataTableNode",
             "source": {
@@ -228,7 +228,7 @@
         },
         {
           "name": "MCP · creation task trace",
-          "description": "Groups by verified account and exact reported task ID. Searches and retrievals only join when the agent passes the task ID. Older lookups can remain visible in the account trace without a task ID. Reported references come from task reports. Delivery checks reflect agent reports. A task with a start and no outcome in the selected dates is awaiting a report.",
+          "description": "Verified account and exact task ID connect searches, lookups and the outcome. Older lookups without task IDs stay in the account trace. References and delivery checks are agent reported. A missing outcome in the selected dates remains pending.",
           "query": {
             "kind": "DataTableNode",
             "source": {
