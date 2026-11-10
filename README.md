@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-79-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-80-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 79 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 80 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -35,6 +35,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Grok Bot — Online Shopping](#grok-bot-online-shopping)
 - [Grok Bot — Search, Read & Monitor X](#grok-bot-search-read-monitor-x)
 - [Poke — iMessage AI Assistant](#poke-imessage-ai-assistant)
+- [Photon — iMessage Agent](#photon-imessage-agent)
 - [Grok Bot — Action Button](#grok-bot-action-button)
 - [Grok Bot — Vault](#grok-bot-vault)
 - [Cursor — Computer Use](#cursor-computer-use)
@@ -264,6 +265,51 @@ https://x.com/interaction/status/2062575428213285352
 | Included file | 0:43 — full clip |
 | Aspect ratio | 4:3 |
 | Reference resolution | 1440 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="photon-imessage-agent"></a>
+
+### Photon — iMessage Agent
+
+https://github.com/user-attachments/assets/placeholder-photon-imessage-agent
+
+**0:42 · 16:9 · 1.67M impressions**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/87.mp4) · [MP4 file](videos/danieltian-photon-imessage-agent.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-87)
+
+White iPhone frame hosts iMessage bubbles with an 'Agent >' typing indicator, then sends animated app cards: a Mail draft, Uber Eats restaurant menu with food photography, and a Today's Health ring. Mid section transitions to an isometric Jump Jump mini-game rendered in light 3D, before closing on a 'mini apps' type card and the Photon wordmark.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/danieltian/status/2067327329161064688
+```
+
+*Source: [@danieltian](https://x.com/danieltian/status/2067327329161064688) · 2026-06-17*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @danieltian |
+| Post date | 2026-06-17 |
+| Stats snapshot (PT) | 2026-11-10 |
+| Post impressions | 1,673,747 |
+| Video plays | — |
+| Likes | 2,692 |
+| Bookmarks | 2,837 |
+| Reposts | 145 |
+| Replies | 219 |
+| Quotes | 88 |
+| Account followers | 2,778 |
+| Original duration | 0:42 |
+| Included file | 0:42 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>

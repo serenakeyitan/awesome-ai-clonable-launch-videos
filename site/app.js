@@ -266,7 +266,7 @@ fetch('videos.json').then(response => {
       badge.hidden = false;
     }
   }).catch(() => {});
-  setFeature(3);
+  setFeature(87);
   renderCollection();
   const match = location.hash.match(/^#video-(\d+)$/);
   if (match) openVideo(Number(match[1]));
