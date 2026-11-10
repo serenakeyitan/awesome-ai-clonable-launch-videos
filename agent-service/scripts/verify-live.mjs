@@ -19,7 +19,7 @@ for (const [name, Client, Transport] of [['modern',Modern,ModernHTTP],['legacy',
   const search=(await c.callTool({name:'search_launch_videos',arguments:{limit:1}})).structuredContent;
   assert.equal(search.videos.length,1);
   const detail=(await c.callTool({name:'get_launch_video',arguments:{reference:String(search.videos[0].id)}})).structuredContent;
-  assert.equal(detail.video.id,search.videos[0].id);assert.equal(detail.video.remakePrompt,`Remake this video's motion and vibe for my product: ${detail.video.source}`);assert.ok(detail.video.githubVideoUrl.includes('github.com/user-attachments/'));
+  assert.equal(detail.video.id,search.videos[0].id);assert.equal(detail.video.remakePrompt,`Clone this video: ${detail.video.source}\nMake a launch video for my product, pixel by pixel, 1:1. Make sure the camera is not shaking.`);assert.ok(detail.video.githubVideoUrl.includes('github.com/user-attachments/'));
   const again=(await c.callTool({name:'get_launch_context',arguments:{}})).structuredContent;
   assert.equal(again.version,context.version);assert.notEqual(again.fetchedAt,context.fetchedAt);
   console.log(JSON.stringify({client:name,tools:tools.tools.map(t=>t.name),videos:context.totalVideos,version:context.version,latestVideo:detail.video.title,freshFetchOnSameConnection:true}));

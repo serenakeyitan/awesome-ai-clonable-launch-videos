@@ -66,7 +66,7 @@ test('search preserves bounded results and canonical source lookup without popul
   assert.ok(!Object.hasOwn(record(a.videos[0]),'views'));
   assert.equal(findVideo(a,'https://twitter.com/demo/status/123/video/1?s=46').id,1);
   assert.equal(findVideo(a,'https://evil.example/private'),undefined);
-  assert.equal(record(a.videos[0]).remakePrompt,"Remake this video's motion and vibe for my product: https://x.com/demo/status/123");
+  assert.equal(record(a.videos[0]).remakePrompt,"Clone this video: https://x.com/demo/status/123\nMake a launch video for my product, pixel by pixel, 1:1. Make sure the camera is not shaking.");
 });
 
 test('reference search ignores popularity for browsing, ties and keyword relevance', async () => {
