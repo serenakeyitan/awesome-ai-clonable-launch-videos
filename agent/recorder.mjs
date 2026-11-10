@@ -33,10 +33,14 @@ export function parseTranscript(bytes,client,final=false){
  for(;;){const end=bytes.indexOf(10,offset);if(end<0){tail=offset<bytes.length;break;}
   const start=offset;offset=end+1;const line=new TextDecoder('utf-8',{fatal:true}).decode(bytes.subarray(start,end));if(!line.trim())continue;
   let event;try{event=JSON.parse(line);}catch{throw Error(`Invalid source JSON at byte ${start}; nothing was skipped`);}
-  if(client==='codex'&&event.type==='session_meta')sourceSession=event.payload?.id??sourceSession;
-  if(client==='claude-code')sourceSession=event.sessionId??sourceSession;
+  const eventSession=client==='codex'&&event.type==='session_meta'?event.payload?.id:
+   client==='claude-code'&&!event.isSidechain&&!event.isMeta&&['user','assistant'].includes(event.type)?event.sessionId:undefined;
+  if(eventSession){
+   if(sourceSession&&sourceSession!==eventSession)throw Error('Transcript contains more than one session');
+   sourceSession=eventSession;
+  }
   let role,content,id;
-  if(client==='claude-code'&&['user','assistant'].includes(event.type)&&!event.isSidechain){role=event.type;content=event.message?.content;id=event.uuid??event.message?.id;}
+  if(client==='claude-code'&&['user','assistant'].includes(event.type)&&!event.isSidechain&&!event.isMeta){role=event.type;content=event.message?.content;id=event.uuid??event.message?.id;}
   if(client==='codex'&&event.type==='response_item'&&event.payload?.type==='message'&&['user','assistant'].includes(event.payload.role)){role=event.payload.role;content=event.payload.content;id=event.payload.id;}
   // Preserve native ask-user questions/replies too: these often appear as
   // tool items rather than ordinary chat text. Copy original payloads; never
@@ -69,7 +73,7 @@ export function parseTranscript(bytes,client,final=false){
 export function batches(messages,start=0){
  const chunks=[];let current=[];
  for(const message of messages.slice(start)){
-  if(Buffer.byteLength(JSON.stringify(message))>400000)throw Error('A message exceeds the upload limit; it has not been truncated');
+  if(message.content.length>100||message.content.some(block=>block.text.length>200000)||Buffer.byteLength(JSON.stringify(message))>400000)throw Error('A message exceeds the upload limit; it has not been truncated');
   if(current.length===100||Buffer.byteLength(JSON.stringify([...current,message]))>440000){chunks.push(current);current=[];}current.push(message);
  }
  if(current.length)chunks.push(current);return chunks;
@@ -84,15 +88,50 @@ async function connect(client){
  }
  throw Error('Connection code expired. Run connect again.');
 }
-export async function syncFile({file,client,state,token,send=request,sourceId,taskId,referenceIds=[],final=false}){
- const bytes=await readFile(file),parsed=parseTranscript(bytes,client,final);
- if(!parsed.messages.length)throw Error("No supported user or AI text found; this file was not marked complete");
- if(state.source_hash&&hash(bytes.subarray(0,state.source_bytes))!==state.source_hash)throw Error('Source history changed. Stopping to avoid silently overwriting or losing text.');
+function verifyPrefix(bytes,length,expectedHash){
+ if(length>bytes.length||hash(bytes.subarray(0,length))!==expectedHash)throw Error('Source history changed. Stopping to avoid silently overwriting or losing text.');
+}
+
+async function uploadPending(state,token,send){
+ const pending=state.pending;
+ const ack=await send(`/sessions/${state.session_id}/chunks`,{token,method:'POST',body:pending});
+ if(ack.seq!==pending.seq||ack.sha256!==pending.sha256)throw Error('Upload acknowledgement does not match the original text');
+ state.seq=pending.seq;state.messages+=pending.messages.length;
+ if(state.pending_source){
+  state.source_bytes=state.pending_source.bytes;
+  state.source_hash=state.pending_source.sha256;
+ }
+ delete state.pending;delete state.pending_source;
+ await save(state.path,state);
+}
+
+export async function syncFile({file,client,state,token,send=request,sourceId,taskId,referenceIds=[],final=false,snapshot}){
+ const bytes=snapshot??await readFile(file),parsed=parseTranscript(bytes,client,final);
+ if(sourceId&&parsed.sourceSession&&sourceId!==parsed.sourceSession)throw Error('Transcript does not match the selected session');
+ if(!parsed.messages.length){
+  if(final||state.session_id)throw Error('No supported user or AI text found; this file was not marked complete');
+  return parsed;
+ }
+ if(state.source_hash)verifyPrefix(bytes,state.source_bytes,state.source_hash);
+ if(state.messages>parsed.messages.length||state.messages&&(!state.source_hash||parsed.messages[state.messages-1].source_offset>=state.source_bytes)){
+  throw Error('The recorder cannot verify the earlier upload against this source; the session is incomplete');
+ }
+ const source={bytes:parsed.completeBytes,sha256:hash(bytes.subarray(0,parsed.completeBytes))};
  const remote=await send('/device',{token});if(!remote.approved||!remote.enabled)throw new ApiError(403,'Telemetry is off');
  if(!state.session_id){
   const created=await send('/sessions',{token,method:'POST',body:{client,source_session_id:sourceId||parsed.sourceSession||hash(await realpath(file)),...(taskId?{task_id:taskId}:{}),reference_ids:referenceIds}});
   if(created.last_seq!==0)throw Error('This source already has a remote history but no local checkpoint. Do not guess missing text; restore the local recorder state.');
   state.session_id=created.session_id;state.seq=0;state.messages=0;await save(state.path,state);
+ }
+ if(state.pending){
+  if(state.pending_source)verifyPrefix(bytes,state.pending_source.bytes,state.pending_source.sha256);
+  const original=parsed.messages.slice(state.messages,state.messages+state.pending.messages.length);
+  if(state.pending.seq!==state.seq+1||JSON.stringify(original)!==JSON.stringify(state.pending.messages)){
+   throw Error('Pending text no longer matches the source; the session is incomplete');
+  }
+  // Replay the exact persisted request even if more source messages arrived.
+  state.pending_source??=source;
+  await uploadPending(state,token,send);
  }
  const metadata=await load(state.path+'.metadata',null);
  if(metadata&&JSON.stringify(metadata)!==state.metadata_json){
@@ -103,45 +142,69 @@ export async function syncFile({file,client,state,token,send=request,sourceId,ta
   const seq=state.seq+1,sha256=hash(JSON.stringify({seq,messages}));
   // Persist exact payload before sending. A crash or network failure resends
   // the same sequence and checksum; the server acknowledges duplicates.
-  state.pending={seq,messages,sha256};await save(state.path,state);
-  const ack=await send(`/sessions/${state.session_id}/chunks`,{token,method:'POST',body:state.pending});
-  if(ack.seq!==seq||ack.sha256!==sha256)throw Error('Upload acknowledgement does not match the original text');
-  state.seq=seq;state.messages+=messages.length;delete state.pending;await save(state.path,state);
+  state.pending={seq,messages,sha256};state.pending_source=source;await save(state.path,state);
+  await uploadPending(state,token,send);
  }
- state.source_bytes=parsed.completeBytes;state.source_hash=hash(bytes.subarray(0,parsed.completeBytes));state.attachments=parsed.attachments;await save(state.path,state);
+ state.source_bytes=source.bytes;state.source_hash=source.sha256;state.attachments=parsed.attachments;await save(state.path,state);
  return parsed;
 }
+
+export async function stableSnapshot(file){
+ let previous=await readFile(file);
+ for(let attempt=0;attempt<4;attempt++){
+  await delay(500);
+  const next=await readFile(file);
+  if(next.equals(previous))return next;
+  previous=next;
+ }
+ return null;
+}
+
+async function finishSession(state,token,status){
+ const ack=await request(`/sessions/${state.session_id}/finish`,{token,method:'POST',body:{last_seq:state.seq,message_count:state.messages,status}});
+ if(ack.last_seq!==state.seq||ack.status!==status||ack.message_count!==state.messages)throw Error('The server could not confirm the final recording');
+ state.finished=true;await save(state.path,state);
+}
+
 async function watch({file,client,once=false,sourceId,taskId,referenceIds=[]}){
  const config=await auth();if(config.client!==client)throw Error('Connect the recorder for this client first');
  const statePath=join(ROOT,'sessions',hash(client+':'+await realpath(file))+'.json');
  const state=await load(statePath,{path:statePath,seq:0,messages:0});state.path=statePath;
  if(state.finished){console.log('This session is closed. No upload performed.');return;}
- // Recover an exact unacknowledged chunk before parsing more source text.
- if(state.pending){const ack=await request(`/sessions/${state.session_id}/chunks`,{token:config.token,method:'POST',body:state.pending});if(ack.sha256!==state.pending.sha256)throw Error('Recovery checksum mismatch');state.seq=state.pending.seq;state.messages+=state.pending.messages.length;delete state.pending;await save(statePath,state);}
  let stop=false;for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>{stop=true;});
  console.log('Telemetry records this session’s original user and AI text. Ctrl+C stops it. Privacy and controls: https://serenatan.org/launchvideo/sharing');
- let lastParsed,failures=0;const started=Date.now();
- while(!stop&&Date.now()-started<6*3600000){
+ let failures=0,closingSince;const started=Date.now();
+ for(;;){
   const stopInfo=await load(statePath+'.stop',null);
-  if(stopInfo){stop=true;}
+  const final=once||!!stopInfo?.ended;
+  const closing=final||stop||Date.now()-started>=6*3600000;
+  if(closing)closingSince??=Date.now();
   try{
-   lastParsed=await syncFile({file,client,state,token:config.token,sourceId,taskId,referenceIds,final:once||!!stopInfo?.ended});failures=0;
-   if(once||stop)break;
+   const snapshot=final?await stableSnapshot(file):null;
+   const parsed=await syncFile({file,client,state,token:config.token,sourceId,taskId,referenceIds,final:!!snapshot,snapshot});
+   if(closing){
+    if(!state.session_id)return;
+    const unchanged=snapshot&&(await readFile(file)).equals(snapshot);
+    if(final&&!unchanged&&Date.now()-closingSince<10000)continue;
+    const status=unchanged&&!parsed.hasPartialLine?'source_complete':final?'incomplete':'stopped';
+    await finishSession(state,config.token,status);
+    console.log(`${state.messages} original text messages synced. ${status==='source_complete'?'Source snapshot fully synced.':status==='incomplete'?'Source snapshot incomplete.':'Telemetry stopped.'}${state.attachments?' Images/files were not uploaded.':''}`);
+    return;
+   }
+   failures=0;
   }catch(e){
-   if(e instanceof ApiError&&e.status>=400&&e.status<500&&e.status!==429)throw e;
-   if(!e.status&&!/fetch|network|timeout|abort/i.test(e.message))throw e;
+   const retryable=e.status===429||e.status>=500||!e.status&&/fetch|network|timeout|abort/i.test(e.message);
+   if(!retryable){
+    if(!(e instanceof ApiError)&&state.session_id&&!state.pending&&!state.finished){
+     await finishSession(state,config.token,'incomplete').catch(()=>{});
+    }
+    throw e;
+   }
+   if(closingSince&&Date.now()-closingSince>=60000)throw e;
    failures++;console.error('Sync paused; the original file and pending chunk are retained locally. Retrying.');
    await delay(Math.min(30000,1000*2**Math.min(failures,5)));continue;
   }
   await delay(2000);
- }
- if(stop&&!once){const ended=await load(statePath+".stop",null);lastParsed=await syncFile({file,client,state,token:config.token,sourceId,taskId,referenceIds,final:!!ended?.ended});}
- if(state.session_id){
-  const stopInfo=await load(statePath+'.stop',null);
-  const status=!lastParsed?.hasPartialLine&&(once||stopInfo?.ended)?'source_complete':'stopped';
-  await request(`/sessions/${state.session_id}/finish`,{token:config.token,method:'POST',body:{last_seq:state.seq,status}});
-  state.finished=true;await save(statePath,state);
-  console.log(`${state.messages} original text messages synced. ${status==='source_complete'?'Source snapshot fully synced.':'Telemetry stopped.'}${state.attachments?' Images/files were not uploaded.':''}`);
  }
 }
 export function addHooks(settings,command,project){
@@ -167,16 +230,22 @@ async function hook(projectRoot){
  const config=await load(join(ROOT,'projects',hash(project)+'.json'),null);if(!config)return;
  if(!event.transcript_path||!event.session_id)return;
  const file=await realpath(event.transcript_path),statePath=join(ROOT,'sessions',hash('claude-code:'+file)+'.json');
- if(event.hook_event_name==='SessionEnd'){await save(statePath+'.stop',{ended:true});return;}
- const prefix=`mcp__${config.server}__`;
- if(typeof event.tool_name!=='string'||!event.tool_name.startsWith(prefix)||!['get_launch_context','search_launch_videos','get_launch_video','report_launch_task'].includes(event.tool_name.slice(prefix.length)))return;
+ let metadata=await load(statePath+'.metadata',null);
+ if(event.hook_event_name==='SessionEnd'){
+  if(!metadata)return;
+  await save(statePath+'.stop',{ended:true});
+ }else{
+  const prefix=`mcp__${config.server}__`;
+  if(typeof event.tool_name!=='string'||!event.tool_name.startsWith(prefix)||!['get_launch_context','search_launch_videos','get_launch_video','report_launch_task'].includes(event.tool_name.slice(prefix.length)))return;
+  const reference=event.tool_input?.reference,referenceId=event.tool_response?.structuredContent?.video?.id;
+  const referenceIds=/^\d+$/.test(reference||'')?[Number(reference)]:referenceId?[referenceId]:event.tool_input?.reference_ids||[];
+  const taskId=event.tool_input?.task_id||event.tool_response?.structuredContent?.task_id||metadata?.task_id;
+  metadata={...(taskId?{task_id:taskId}:{}),reference_ids:[...new Set([...(metadata?.reference_ids??[]),...referenceIds])].slice(-3)};
+  await save(statePath+'.metadata',metadata);
+ }
  // Pin to the transcript belonging to this exact session; never list or glob
  // the transcript directory. The child exits on revocation, end, or six hours.
- const priorMetadata=await load(statePath+'.metadata',{reference_ids:[]});
- const reference=event.tool_input?.reference,referenceId=event.tool_response?.structuredContent?.video?.id;
- const referenceIds=/^\d+$/.test(reference||'')?[Number(reference)]:referenceId?[referenceId]:event.tool_input?.reference_ids||[];
- const taskId=event.tool_input?.task_id||event.tool_response?.structuredContent?.task_id;
- await save(statePath+'.metadata',{...(priorMetadata.task_id?{task_id:priorMetadata.task_id}:{}),...(taskId?{task_id:taskId}:{}),reference_ids:[...new Set([...priorMetadata.reference_ids,...referenceIds])].slice(-3)});
+ const {task_id:taskId,reference_ids:referenceIds}=metadata;
  const marker=statePath+'.process',previous=await load(marker,null);
  if(previous){try{process.kill(previous.pid,0);return;}catch{}}
  if((await load(statePath,null))?.finished)return;
