@@ -1,20 +1,74 @@
 {
-  "name":"serenatan-launchvideo-agent",
-  "account_id":"6b67f38611a3643755e71b5b02d0ffcb",
-  "main":"worker.mjs",
-  "compatibility_date":"2026-11-03",
-  "compatibility_flags":["nodejs_compat"],
-  "workers_dev":false,
-  "preview_urls":false,
-  "ratelimits":[
-    {"name":"ARCHIVE_REQUEST_LIMITER","namespace_id":"2026110501","simple":{"limit":120,"period":60}}
+  "name": "serenatan-launchvideo-agent",
+  "account_id": "6b67f38611a3643755e71b5b02d0ffcb",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": [
+    "nodejs_compat"
   ],
-  "routes":[
-    {"pattern":"serenatan.org/launchvideo/mcp","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
-    {"pattern":"serenatan.org/launchvideo/agent","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
-    {"pattern":"serenatan.org/launchvideo/agent/*","zone_id":"11fc0522e36faacb75ccfb68a3a39306"},
-    {"pattern":"serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp","zone_id":"11fc0522e36faacb75ccfb68a3a39306"}
+  "workers_dev": false,
+  "preview_urls": false,
+  "ratelimits": [
+    {
+      "name": "ARCHIVE_REQUEST_LIMITER",
+      "namespace_id": "2026110501",
+      "simple": {
+        "limit": 120,
+        "period": 60
+      }
+    }
   ],
-  "vars":{"CLERK_AUTH_ENABLED":"true","CLERK_ISSUER":"https://clerk.serenatan.org","CLERK_PUBLISHABLE_KEY":"pk_live_Y2xlcmsuc2VyZW5hdGFuLm9yZyQ"},
-  "observability":{"enabled":true,"logs":{"enabled":true,"head_sampling_rate":0.1},"traces":{"enabled":true,"head_sampling_rate":0.01}}
+  "routes": [
+    {
+      "pattern": "serenatan.org/launchvideo/mcp",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    },
+    {
+      "pattern": "serenatan.org/launchvideo/agent",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    },
+    {
+      "pattern": "serenatan.org/launchvideo/agent/*",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    },
+    {
+      "pattern": "serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    }
+  ],
+  "vars": {
+    "CLERK_AUTH_ENABLED": "true",
+    "CLERK_ISSUER": "https://clerk.serenatan.org",
+    "CLERK_PUBLISHABLE_KEY": "pk_live_Y2xlcmsuc2VyZW5hdGFuLm9yZyQ"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  },
+  "d1_databases": [
+    {
+      "binding": "RECORDING_DB",
+      "database_name": "serena-launch-conversations",
+      "database_id": "f4896bfb-4316-4c7b-bacc-ee04771ba2a6",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "RECORDING_TEXT",
+      "bucket_name": "serena-launch-conversations"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "17 * * * *"
+    ]
+  }
 }

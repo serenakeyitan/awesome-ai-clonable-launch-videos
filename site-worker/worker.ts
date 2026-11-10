@@ -56,7 +56,7 @@ export async function videoResponse(request:Request, response:Response, assetPat
   return new Response(body, { status: 206, headers });
 }
 
-const FRONTEND_PAGES:Record<string,string>={'/index.html':'/launch','/consent.html':'/consent'};
+const FRONTEND_PAGES:Record<string,string>={'/index.html':'/launch','/consent.html':'/consent','/sharing':'/sharing','/sharing/':'/sharing'};
 export async function frontendResponse(request:Request,path:string,fetcher:typeof fetch=fetch):Promise<Response>{
   // Static UI is compiled once in serena-portfolio. Query strings, cookies and
   // OAuth authorization headers never need to be forwarded to the HTML origin.
