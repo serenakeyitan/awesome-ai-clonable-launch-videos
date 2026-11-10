@@ -69,7 +69,7 @@ export function record(v, detail = false, revision = 'main') {
     date:v.date, notes:v.notes,
     source:v.source, watchUrl:v.watchUrl, githubVideoUrl:v.githubVideoUrl,
     poster:new URL(v.poster, `https://raw.githubusercontent.com/${REPO}/${revision}/`).href,
-    detailUrl:v.detailUrl, remakePrompt:`Remake this video's motion and vibe for my product: ${v.source}`};
+    detailUrl:v.detailUrl, remakePrompt:`Clone this video: ${v.source}\nMake a launch video for my product, pixel by pixel, 1:1. Make sure the camera is not shaking.`};
   if (detail) {
     Object.assign(result, {width:v.width, height:v.height});
     const additionalMetadata = Object.fromEntries(Object.entries(v).filter(([key]) => !KNOWN_VIDEO_FIELDS.has(key)));

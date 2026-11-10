@@ -84,7 +84,7 @@ function setFeature(id) {
 }
 
 function brief(v) {
-  return `Remake this video's motion and vibe for my product: ${v.source}`;
+  return `Clone this video: ${v.source}\nMake a launch video for my product, pixel by pixel, 1:1. Make sure the camera is not shaking.`;
 }
 
 function openVideo(id, trigger) {
