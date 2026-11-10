@@ -4,6 +4,9 @@ import {captureEvent} from './analytics.mjs';
 const BASE='/launchvideo/agent/recording';
 export const CONSENT_VERSION='2026-11-09-v1';
 const DAY=86400000, MAX_BODY=512*1024;
+// Kept only for compatibility with the original NOT NULL schema and older
+// deployments. Conversation reads and cleanup do not use an expiry date.
+const LEGACY_NO_EXPIRY=Number.MAX_SAFE_INTEGER;
 const uuid=value=>typeof value==='string'&&/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
 const hex=bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('');
 export const digest=async value=>hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)));
@@ -55,7 +58,7 @@ function validateMessage(value){
 }
 async function ownedSession(env,id,identity,allowAdmin=false){
  if(!uuid(id))fail(404,'Session not found');
- const row=await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions WHERE id=? AND deleted_at IS NULL AND expires_at>?').bind(id,Date.now()).first();
+ const row=await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions WHERE id=? AND deleted_at IS NULL').bind(id).first();
  if(!row||(!allowAdmin||!identity.admin)&&row.user_id!==identity.userId)fail(404,'Session not found');
  return row;
 }
@@ -68,9 +71,9 @@ async function purge(env,row){
   env.RECORDING_DB.prepare('DELETE FROM recording_sessions WHERE id=?').bind(row.id)
  ]);
 }
-export async function expireRecordings(env){
+export async function cleanupDeletedRecordings(env){
  if(!env.RECORDING_DB||!env.RECORDING_TEXT)return;
- const rows=await env.RECORDING_DB.prepare('SELECT id FROM recording_sessions WHERE expires_at<=? OR deleted_at IS NOT NULL LIMIT 100').bind(Date.now()).all();
+ const rows=await env.RECORDING_DB.prepare('SELECT id FROM recording_sessions WHERE deleted_at IS NOT NULL LIMIT 100').all();
  for(const row of rows.results)await purge(env,row);
  await env.RECORDING_DB.prepare('DELETE FROM recording_devices WHERE expires_at<?').bind(Date.now()-DAY).run();
 }
@@ -100,7 +103,7 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
    const refs=body.reference_ids??[];if(!Array.isArray(refs)||refs.length>3||refs.some(id=>!Number.isSafeInteger(id)||id<=0))fail(400,'Invalid references');
    if(body.task_id!==undefined&&!uuid(body.task_id))fail(400,'Invalid task ID');
    const now=Date.now(),id=crypto.randomUUID();
-   await env.RECORDING_DB.prepare('INSERT OR IGNORE INTO recording_sessions (id,user_id,device_id,client,source_session_id,consent_revision,task_id,reference_ids,created_at,updated_at,expires_at) SELECT ?,?,?,?,?,?,?,?,?,?,? WHERE EXISTS (SELECT 1 FROM recording_preferences WHERE user_id=? AND enabled=1 AND revision=?)').bind(id,device.user_id,device.id,body.client,body.source_session_id,pref.revision,body.task_id??null,JSON.stringify(refs),now,now,now+90*DAY,device.user_id,pref.revision).run();
+   await env.RECORDING_DB.prepare('INSERT OR IGNORE INTO recording_sessions (id,user_id,device_id,client,source_session_id,consent_revision,task_id,reference_ids,created_at,updated_at,expires_at) SELECT ?,?,?,?,?,?,?,?,?,?,? WHERE EXISTS (SELECT 1 FROM recording_preferences WHERE user_id=? AND enabled=1 AND revision=?)').bind(id,device.user_id,device.id,body.client,body.source_session_id,pref.revision,body.task_id??null,JSON.stringify(refs),now,now,LEGACY_NO_EXPIRY,device.user_id,pref.revision).run();
    const row=await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions WHERE device_id=? AND source_session_id=? AND consent_revision=? AND deleted_at IS NULL').bind(device.id,body.source_session_id,pref.revision).first();
    if(!row)fail(403,'Sharing was turned off');
    if(row.id===id)observe({userId:device.user_id},'conversation_started',{session_id:id,client:body.client,task_id:body.task_id});
@@ -178,7 +181,7 @@ export async function recordingRoutes(request,env,ctx={},authenticate=browserIde
   if(path==='/sessions'&&method==='GET'){
    const admin=url.searchParams.get('scope')==='all';if(admin&&!identity.admin)fail(403,'Owner access required');
    const before=Number(url.searchParams.get('before'))||Date.now()+1;
-   const data=await env.RECORDING_DB.prepare(`SELECT id,client,task_id,reference_ids,created_at,updated_at,last_seq,status,coverage FROM recording_sessions WHERE deleted_at IS NULL AND expires_at>? AND created_at<? ${admin?'':'AND user_id=?'} ORDER BY created_at DESC LIMIT 50`).bind(Date.now(),before,...(admin?[]:[identity.userId])).all();
+   const data=await env.RECORDING_DB.prepare(`SELECT id,client,task_id,reference_ids,created_at,updated_at,last_seq,status,coverage FROM recording_sessions WHERE deleted_at IS NULL AND created_at<? ${admin?'':'AND user_id=?'} ORDER BY created_at DESC LIMIT 50`).bind(before,...(admin?[]:[identity.userId])).all();
    return reply({sessions:data.results,next_before:data.results.length===50?data.results.at(-1).created_at:null});
   }
   const session=/^\/sessions\/([^/]+)$/.exec(path);

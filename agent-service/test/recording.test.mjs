@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {Miniflare,convertV4MiniflareOptions} from 'miniflare';
-import {recordingRoutes,browserIdentity,CONSENT_VERSION,digest,expireRecordings} from '../recording.mjs';
+import {recordingRoutes,browserIdentity,CONSENT_VERSION,digest,cleanupDeletedRecordings} from '../recording.mjs';
 import {eventProperties} from '../../site/analytics-events.mjs';
 const BASE='https://serenatan.org/launchvideo/agent/recording';
 const fixtureIdentity=async req=>({userId:req.headers.get('x-fixture-user')||'user_a',admin:req.headers.get('x-fixture-admin')==='1'});
@@ -43,8 +43,22 @@ test('real D1/R2 recording lifecycle enforces consent, isolation, order and dele
   assert.equal((await call(`/sessions/${start.session_id}`,'DELETE')).status,200);assert.equal((await env.RECORDING_TEXT.list()).objects.length,0);
   assert.equal((await call(`/sessions/${start.session_id}/chunks/1`)).status,404);
   const next=await (await call('/sessions','POST',{client:'claude-code',source_session_id:'next'},pair.token)).json();assert.ok(next.session_id);
-  await env.RECORDING_DB.prepare('UPDATE recording_sessions SET expires_at=1').run();await expireRecordings(env);
+  assert.equal((await call(`/sessions/${next.session_id}/chunks`,'POST',payload,pair.token)).status,200);
+  // Legacy 90-day deadlines and old creation dates must not hide or purge text.
+  await env.RECORDING_DB.prepare('UPDATE recording_sessions SET expires_at=1,created_at=1').run();
+  await cleanupDeletedRecordings(env);
+  assert.equal((await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions').all()).results.length,1);
+  assert.equal((await (await call('/sessions')).json()).sessions.length,1);
+  assert.equal((await (await call(`/sessions/${next.session_id}/chunks/1`)).json()).messages[0].content[0].text,text);
+  assert.equal((await env.RECORDING_TEXT.list()).objects.length,1);
+  const retentionMigration=await readFile(new URL('../migrations/0002_retain_conversations.sql',import.meta.url),'utf8');
+  await env.RECORDING_DB.prepare(retentionMigration).run();
+  assert.equal((await env.RECORDING_DB.prepare('SELECT expires_at FROM recording_sessions').first()).expires_at,Number.MAX_SAFE_INTEGER);
+  // Only an explicit deletion tombstone is eligible for scheduled cleanup.
+  await env.RECORDING_DB.prepare('UPDATE recording_sessions SET deleted_at=1').run();
+  await cleanupDeletedRecordings(env);
   assert.equal((await env.RECORDING_DB.prepare('SELECT * FROM recording_sessions').all()).results.length,0);
+  assert.equal((await env.RECORDING_TEXT.list()).objects.length,0);
   assert.equal((await call('/devices/'+stored.id,'DELETE')).status,200);assert.equal((await call('/device','GET',null,pair.token)).status,401);
   const large=new Request(BASE+'/preference',{method:'PUT',headers:{'Content-Type':'application/json'},body:'x'.repeat(513*1024)});assert.equal((await recordingRoutes(large,env,{},fixtureIdentity)).status,413);
  }finally{await mf.dispose();}
