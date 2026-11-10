@@ -124,3 +124,31 @@ test('recording events keep client attribution and opaque task/session joins wit
  await captureEvent({POSTHOG_PROJECT_TOKEN:'phc_test'},{userId:'user_fixture'},'conversation_started',{client:'claude-code',session_id:crypto.randomUUID(),task_id:crypto.randomUUID(),text:'PRIVATE'},async(_url,options)=>{payload=JSON.parse(options.body);return new Response('{}');});
  assert.equal(payload.properties.client,'claude-code');assert.equal(payload.properties.source,'recording');assert.ok(payload.properties.session_id);assert.ok(payload.properties.task_id);assert.ok(!JSON.stringify(payload).includes('PRIVATE'));
 });
+
+test('HTTP traffic records challenges, throttles and validated clients without private request data',async()=>{
+ const {measureMcpRequest}=await import('../analytics.mjs');
+ const env={POSTHOG_PROJECT_TOKEN:'phc_test',ANALYTICS_TEST_USER_IDS:'user_owner'},sent=[],pending=[];
+ const ctx={waitUntil:task=>pending.push(task)};
+ const capture=async(_url,options)=>{sent.push(JSON.parse(options.body));return new Response('{}');};
+ const request=new Request('https://serenatan.org/launchvideo/mcp?private=secret',{method:'POST',headers:{Authorization:'Bearer private-token','X-Serena-Analytics-Test':'1'},body:JSON.stringify({params:{arguments:{prompt:'PRIVATE PRODUCT'}}})});
+ for(const status of [401,429]){
+  const response=await measureMcpRequest(request,env,ctx,async()=>new Response('unchanged',{status}),capture);
+  assert.equal(response.status,status);assert.equal(await response.text(),'unchanged');
+ }
+ await measureMcpRequest(request,env,ctx,async observe=>{
+  observe({userId:'user_owner',clientId:'https://chatgpt.com/oauth/codex/client.json'},'tools/list');
+  return new Response('{}');
+ },capture);
+ await Promise.all(pending);
+ assert.deepEqual(sent.map(e=>e.properties.status_code),[401,429,200]);
+ assert.equal(sent[0].distinct_id,'service:mcp');assert.equal(sent[0].properties.authenticated,false);
+ assert.equal(sent[2].properties.client,'codex');assert.equal(sent[2].properties.rpc_method,'tools/list');
+ assert.equal(sent[2].distinct_id,'account:user_owner');assert.ok(sent.every(e=>e.properties.is_test));
+ assert.ok(!/PRIVATE PRODUCT|private-token|private=secret/.test(JSON.stringify(sent)));
+});
+
+test('HTTP observation failure never changes a successful MCP response',async()=>{
+ const {measureMcpRequest}=await import('../analytics.mjs');const pending=[];
+ const response=await measureMcpRequest(new Request('https://serenatan.org/launchvideo/mcp'),{POSTHOG_PROJECT_TOKEN:'phc_test'},{waitUntil:p=>pending.push(p)},async()=>new Response('ok'),async()=>{throw Error('network');});
+ assert.equal(await response.text(),'ok');await Promise.all(pending);
+});

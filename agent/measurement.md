@@ -2,6 +2,17 @@
 
 Owner: Serena Tan. Purpose: understand discovery, connection, activation and return use. These are product events, not the X impression/play snapshots in the gallery.
 
+## Launch traffic dashboards
+
+`agent/traffic-dashboards.json` is the reviewed definition for the private PostHog website and MCP traffic dashboards. Run `python3 scripts/configure_analytics.py` to upsert them and execute every saved query, or `--check-only` to validate provider state. Credentials are read from the existing local PostHog CLI file and never stored in this repository. All dates use the project's America/Los_Angeles timezone.
+
+- Website PV counts `page_viewed` on `/` and `/launchvideo/` only. UV uses PostHog identities: initially random browser identifiers, merged across devices after sign-in when linkable, not verified people; sessions share a locally stored ID until 30 minutes of inactivity. New/returning browser counts may overlap within a date range. Static assets, authorization pages and settings are not page views. These new fields start collecting at this release, with no invented historical baseline.
+- The primary website cards require `traffic_type=browser`, `is_test=false` and exclude people marked `$internal_or_test_user`. `navigator.webdriver` and recognized crawler/headless user agents produce a separate `automation` category; raw user-agent strings are not uploaded. This is a known-automation exclusion, not a guarantee of human identity. Non-JavaScript crawlers and raw edge requests remain visible through Cloudflare analytics. DNT, GPC, blocked storage and blockers can prevent browser measurement.
+- `?analytics_test=1` persists an internal QA choice in that browser; `?analytics_test=0` clears it. Localhost is always test traffic. Never turn a QA visit into an invented organic user. Signed-in owner accounts are separately marked internal in PostHog; a new unlinked browser must still be marked for testing.
+- MCP HTTP traffic is `mcp_request_completed`: method, allowlisted RPC method, verified client when available, authentication state, status code and time to response headers. It includes normal 401 discovery challenges and 429 throttles. Anonymous requests use a service identity that is never counted as a user. Raw body, arguments, IP, tokens and complete URLs are excluded. `X-Serena-Analytics-Test: 1` marks synthetic HTTP diagnostics only and does not authorize any access.
+- MCP usage is separately measured by `mcp_tool_completed`: calls, errors, existing-reference retrieval, video ID, and unique accounts from verified OAuth tokens. HTTP 200 is not tool success; reference retrieval is not video completion. OAuth clients can be shared across runtimes, so unknown or shared identities are not guessed from user-agent headers.
+- PostHog capture is best effort and must not break the application. Use the `serenatan-launchvideo-agent` Cloudflare Worker Metrics page for infrastructure request volume and platform failures; those counts include transport/discovery requests and will differ from successful tool use.
+
 ## Main measures
 
 - **Browser connection funnel:** unique browser visitors → quick-connect clicked → signed-in consent page viewed → consent submitted. A click or an Allow submission is not proof that OAuth completed.

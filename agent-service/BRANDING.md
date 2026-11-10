@@ -11,13 +11,11 @@ Keep the immutable plugin package name, existing MCP server ID, rate-limit key, 
 - Bootstrap release 0.1.6 requires the authenticated MCP service, with no anonymous HTTP or public-mirror fallback. The public setup guide stays readable before login; agent manifest/catalog/workflow endpoints require OAuth.
 - Daily badges use `data/daily-stats.json`; regenerate through the README or site builder. They compare collection totals, including new references, rather than claiming daily source-platform growth or visitor tracking.
 
-## Compact OAuth consent
-
 ## Authentication email status
 
 The agreed email scope is to fold Serena's welcome copy and branding into existing Clerk authentication emails, without adding Resend, a separate welcome email or a paid upgrade. This is not shipped: on November 10, 2026, saving even copy-only changes to the production verification-code template opened Clerk's upgrade prompt: "The Custom email templates feature is not available on your current plan for production instances." The edits were discarded and the unchanged template was verified after reload, with Delivered by Clerk still enabled. `emails.mjs` remains an unused design preview, not an active sender. No branded delivery test has passed. Keeping authentication emails does not guarantee a welcome email after first use: an already authenticated user can approve MCP access without triggering another email verification.
 
-## Compact OAuth consent implementation
+## Compact OAuth consent
 
 `site/consent.html` hosts the custom consent page at `/launchvideo/consent.html`. It reuses the website colors and type, with the requesting application, signed-in account, requested scopes, core trust reminder and return domain visible. Additional explanations, client ID and full return URL are inside a native, initially closed `details` element. Allow and Deny remain explicit decisions.
 
