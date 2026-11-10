@@ -119,3 +119,8 @@ test('reporting MCP tool returns an accepted task ID and rejects private fields'
     const missing=await client.callTool({name:'report_launch_task',arguments:{status:'completed'}});assert.equal(missing.isError,true);
   } finally {await client.close();await server.close();}
 });
+test('recording events keep client attribution and opaque task/session joins without original text',async()=>{
+ const {captureEvent}=await import('../analytics.mjs');let payload;
+ await captureEvent({POSTHOG_PROJECT_TOKEN:'phc_test'},{userId:'user_fixture'},'conversation_started',{client:'claude-code',session_id:crypto.randomUUID(),task_id:crypto.randomUUID(),text:'PRIVATE'},async(_url,options)=>{payload=JSON.parse(options.body);return new Response('{}');});
+ assert.equal(payload.properties.client,'claude-code');assert.equal(payload.properties.source,'recording');assert.ok(payload.properties.session_id);assert.ok(payload.properties.task_id);assert.ok(!JSON.stringify(payload).includes('PRIVATE'));
+});

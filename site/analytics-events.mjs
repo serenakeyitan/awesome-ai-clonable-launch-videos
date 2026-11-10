@@ -1,6 +1,10 @@
 // Explicit event allowlists keep prompts, email addresses and OAuth parameters
 // out of analytics. Shared by the browser and authenticated MCP service.
 const fields = {
+  conversation_sharing_changed:['enabled'],
+  conversation_started:['session_id','client','task_id'],
+  conversation_finished:['session_id','status','client'],
+  conversation_deleted:['session_id'],
   collection_viewed:['entry','referrer_host','utm_source','utm_medium','utm_campaign'],
   reference_opened:['reference_id','surface'],
   reference_played:['reference_id','surface'],
