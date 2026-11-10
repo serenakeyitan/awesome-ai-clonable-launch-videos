@@ -20,7 +20,7 @@ Claude/ChatGPT ordinary web chats cannot supply a whole transcript through a rem
 - Browser API accepts verified Clerk **session** tokens from the site's authorized origin. Existing MCP OAuth tokens cannot read recordings. Recorder credentials can only upload sessions belonging to that device/account; they cannot read stored conversations or change consent.
 - Users read/delete their records. The existing `ANALYTICS_INTERNAL_USER_ID` account can review all opted-in sessions in Team view. No role can expose R2 keys as a public URL. Page rendering uses React escaped text, never raw HTML/Markdown execution.
 - Raw text is not sent to PostHog, the catalog, tool responses or application logs. PostHog receives sharing enabled/disabled, session started/finished/deleted, opaque session/task IDs and the client/status only.
-- Records expire after 90 days. Hourly cron purges expired/deleted sessions (100 per pass). A failed deletion leaves a tombstone and is retried; the owner cannot read a tombstoned record. Cloudflare backups have their own retention.
+- Conversation text is retained until the user explicitly deletes it. There is no automatic age-based deletion or expiry filter, and R2 must have no object-expiration rule for `sessions/`. The hourly job only retries explicitly requested deletions (100 per pass) and removes expired device authorizations. Failed deletion leaves a tombstone and is retried; the owner cannot read a tombstoned record. The legacy session `expires_at` column is unused by retention and set to the maximum safe integer for compatibility with older deployments. Cloudflare backups have their own retention.
 
 ## Fidelity and operational limits
 

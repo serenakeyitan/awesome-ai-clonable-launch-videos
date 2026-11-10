@@ -5,7 +5,7 @@ import {loadArchive, context, publicManifest, search, record, findVideo} from '.
 import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 import {captureMcpEvent,reportLaunchTask} from './analytics.mjs';
-import {recordingRoutes,expireRecordings} from './recording.mjs';
+import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
@@ -106,7 +106,7 @@ function response(body, type = 'application/json', status = 200) {
 
 const MCP_OPTIONS = {route:`${BASE}/mcp`,legacy:'stateless',allowedHostnames:['serenatan.org','localhost','127.0.0.1'],allowedOriginHostnames:'*'};
 export default {
-  async scheduled(_controller,env,ctx) { ctx.waitUntil(expireRecordings(env)); },
+  async scheduled(_controller,env,ctx) { ctx.waitUntil(cleanupDeletedRecordings(env)); },
   async fetch(request, env, ctx) {
     const guarded = await guardRequest(request, env);
     if (guarded.response) return guarded.response;
