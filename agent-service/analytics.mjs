@@ -1,16 +1,41 @@
 import {capturePayload,clientName} from '../site/analytics-events.mjs';
 
+const internalAccount=(env,identity)=>!!identity?.userId && (identity.userId===env.ANALYTICS_INTERNAL_USER_ID || String(env.ANALYTICS_TEST_USER_IDS||'').split(',').map(id=>id.trim()).includes(identity.userId));
+
 export async function captureEvent(env, identity, name, event, fetcher = fetch, uuid) {
   if (!env.POSTHOG_PROJECT_TOKEN || !identity?.userId) return false;
   try {
     const payload=capturePayload(name,`account:${identity.userId}`,{...event,client:name.startsWith('conversation_') ? event.client : clientName(identity.clientId)},
-      {key:env.POSTHOG_PROJECT_TOKEN,source:name.startsWith('conversation_') ? 'recording' : 'mcp',identified:true,isTest:identity.userId===env.ANALYTICS_INTERNAL_USER_ID,...(uuid ? {uuid} : {})});
+      {key:env.POSTHOG_PROJECT_TOKEN,source:name.startsWith('conversation_') ? 'recording' : 'mcp',identified:true,isTest:internalAccount(env,identity),...(uuid ? {uuid} : {})});
     const response=await fetcher('https://us.i.posthog.com/i/v0/e/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(3000)});
     if (!response.ok) console.warn(JSON.stringify({event:'analytics_capture_failed',status:response.status}));
     return response.ok;
   } catch {console.warn(JSON.stringify({event:'analytics_capture_failed'}));return false;}
 }
 export const captureMcpEvent=(env,identity,event,fetcher)=>captureEvent(env,identity,'mcp_tool_completed',event,fetcher);
+
+// HTTP volume includes discovery/auth challenges and throttles. Count requests,
+// never service:mcp as a person. Tool outcomes remain a separate measurement.
+export async function measureMcpRequest(request,env,ctx,handle,fetcher=fetch) {
+  let identity, rpcMethod='other';
+  const started=Date.now();
+  const observe=(verified,method)=>{identity=verified;if(method)rpcMethod=method;};
+  const record=status=>{
+    if(!env.POSTHOG_PROJECT_TOKEN)return;
+    const task=(async()=>{
+      try {
+        const payload=capturePayload('mcp_request_completed',identity?.userId ? `account:${identity.userId}` : 'service:mcp',{
+          http_method:request.method,status_code:status,duration_ms:Math.max(0,Date.now()-started),authenticated:!!identity,client:identity ? clientName(identity.clientId) : 'unauthenticated',rpc_method:rpcMethod
+        },{key:env.POSTHOG_PROJECT_TOKEN,source:'mcp_http',identified:!!identity,isTest:internalAccount(env,identity)||request.headers.get('X-Serena-Analytics-Test')==='1'});
+        const response=await fetcher('https://us.i.posthog.com/i/v0/e/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(3000)});
+        if(!response.ok)console.warn(JSON.stringify({event:'analytics_capture_failed',status:response.status}));
+      } catch { console.warn(JSON.stringify({event:'analytics_capture_failed'})); }
+    })();
+    ctx.waitUntil?.(task);
+  };
+  try {const response=await handle(observe);record(response.status);return response;}
+  catch(error){record(500);throw error;}
+}
 
 // Analytics reports, not jobs. Retried account/task/status reports deduplicate.
 export async function reportLaunchTask(env,identity,args,fetcher=fetch) {

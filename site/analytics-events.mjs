@@ -1,6 +1,8 @@
 // Explicit event allowlists keep prompts, email addresses and OAuth parameters
 // out of analytics. Shared by the browser and authenticated MCP service.
 const fields = {
+  page_viewed:['page','referrer_host','utm_source','utm_medium','utm_campaign'],
+  mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method'],
   conversation_sharing_changed:['enabled'],
   conversation_started:['session_id','client','task_id'],
   conversation_finished:['session_id','status','client'],
@@ -45,7 +47,8 @@ export function capturePayload(name, distinctId, properties, {key,source,isTest 
 
 export function clientName(clientId = '') {
   try {
-    const host = new URL(clientId).hostname;
+    const url = new URL(clientId), host=url.hostname;
+    if(host==='chatgpt.com' && url.pathname==='/oauth/codex/client.json')return 'codex';
     return ['claude.ai','chatgpt.com','cursor.com','grok.com'].includes(host) ? host : 'other';
   } catch { return 'other'; }
 }

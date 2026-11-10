@@ -1,0 +1,342 @@
+{
+  "project_id": 722063,
+  "timezone": "America/Los_Angeles",
+  "dashboards": [
+    {
+      "name": "Serena Launch · website traffic",
+      "description": "Website page views, browser candidates, sessions and acquisition for serenatan.org and Launch. Known automation, test events and marked internal people are excluded from product cards. A browser ID is not a verified human. New page-view coverage starts at release.",
+      "insights": [
+        {
+          "name": "Website · PV, browsers and sessions",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT count() AS page_views, uniqExact(distinct_id) AS browsers, uniqExact(properties.session_id) AS sessions, uniqExactIf(distinct_id, properties.visitor_type = 'new') AS new_browsers, uniqExactIf(distinct_id, properties.visitor_type = 'returning') AS returning_browsers FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event = 'page_viewed' AND properties.traffic_type = 'browser'"
+            },
+            "full": true
+          },
+          "description": "Home and Launch pages, last 30 days. Browser identifiers are not verified people; storage clearing/devices affect counts. Sessions expire after 30 minutes inactivity. New/returning categories may overlap during the period."
+        },
+        {
+          "name": "Website · daily page views and browsers",
+          "query": {
+            "kind": "InsightVizNode",
+            "source": {
+              "kind": "TrendsQuery",
+              "series": [
+                {
+                  "kind": "EventsNode",
+                  "event": "page_viewed",
+                  "math": "total",
+                  "properties": []
+                },
+                {
+                  "kind": "EventsNode",
+                  "event": "page_viewed",
+                  "math": "dau",
+                  "properties": []
+                }
+              ],
+              "properties": [
+                {
+                  "type": "event",
+                  "key": "app",
+                  "operator": "exact",
+                  "value": "serena-launch"
+                },
+                {
+                  "type": "event",
+                  "key": "is_test",
+                  "operator": "exact",
+                  "value": false
+                },
+                {
+                  "type": "hogql",
+                  "key": "coalesce(person.properties.$internal_or_test_user, false) = false"
+                },
+                {
+                  "type": "event",
+                  "key": "traffic_type",
+                  "operator": "exact",
+                  "value": "browser"
+                }
+              ],
+              "filterTestAccounts": true,
+              "dateRange": {
+                "date_from": "-30d"
+              },
+              "interval": "day",
+              "trendsFilter": {
+                "display": "ActionsLineGraph"
+              }
+            }
+          },
+          "description": "Daily browser candidates after known automation, internal accounts and test events are excluded. Not a guarantee that all sophisticated bots are removed. New event coverage starts at this release; no backfilled history."
+        },
+        {
+          "name": "Website · pages",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.page AS page, count() AS page_views, uniqExact(distinct_id) AS browsers, uniqExact(properties.session_id) AS sessions FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event = 'page_viewed' AND properties.traffic_type = 'browser' GROUP BY page ORDER BY page_views DESC"
+            },
+            "full": true
+          },
+          "description": "Separate portfolio homepage / and Launch /launchvideo/. Private consent/settings routes and asset requests are not page views."
+        },
+        {
+          "name": "Website · session acquisition",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT acquisition, count() AS sessions, uniqExact(browser) AS browsers FROM (SELECT properties.session_id AS session, any(distinct_id) AS browser, argMin(coalesce(nullIf(properties.utm_source, ''), nullIf(properties.referrer_host, ''), 'Direct'), timestamp) AS acquisition FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event = 'page_viewed' AND properties.traffic_type = 'browser' GROUP BY session) GROUP BY acquisition ORDER BY sessions DESC LIMIT 30"
+            },
+            "full": true
+          },
+          "description": "UTM source or referrer hostname from the first observed page view in each session; otherwise Direct. Query strings and referrer paths are not collected."
+        },
+        {
+          "name": "Website · campaigns",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.utm_source AS source, properties.utm_medium AS medium, properties.utm_campaign AS campaign, uniqExact(properties.session_id) AS sessions, uniqExact(distinct_id) AS browsers FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event = 'page_viewed' AND properties.traffic_type = 'browser' AND notEmpty(properties.utm_source) GROUP BY source,medium,campaign ORDER BY sessions DESC LIMIT 30"
+            },
+            "full": true
+          },
+          "description": "Allowlisted UTM labels only. Missing campaigns are not inferred."
+        },
+        {
+          "name": "Website · known automation, kept separate",
+          "query": {
+            "kind": "InsightVizNode",
+            "source": {
+              "kind": "TrendsQuery",
+              "series": [
+                {
+                  "kind": "EventsNode",
+                  "event": "page_viewed",
+                  "math": "total",
+                  "properties": []
+                }
+              ],
+              "properties": [
+                {
+                  "type": "event",
+                  "key": "app",
+                  "operator": "exact",
+                  "value": "serena-launch"
+                },
+                {
+                  "type": "event",
+                  "key": "is_test",
+                  "operator": "exact",
+                  "value": false
+                },
+                {
+                  "type": "hogql",
+                  "key": "coalesce(person.properties.$internal_or_test_user, false) = false"
+                },
+                {
+                  "type": "event",
+                  "key": "traffic_type",
+                  "operator": "exact",
+                  "value": "automation"
+                }
+              ],
+              "filterTestAccounts": true,
+              "dateRange": {
+                "date_from": "-30d"
+              },
+              "interval": "day",
+              "trendsFilter": {
+                "display": "ActionsLineGraph"
+              }
+            }
+          },
+          "description": "webdriver and recognized crawler/headless user agents. No raw user-agent string or IP is stored by this instrumentation. Bots that never run JavaScript require Cloudflare request analytics."
+        },
+        {
+          "name": "Website · traffic measurement audit",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.traffic_type AS traffic_type, properties.is_test AS is_test, count() AS page_views FROM events WHERE properties.app='serena-launch' AND event='page_viewed' AND timestamp >= now()-INTERVAL 30 DAY GROUP BY traffic_type,is_test ORDER BY page_views DESC"
+            },
+            "full": true
+          },
+          "description": "Diagnostic intentionally includes QA to prove the production exclusion. Use the other website cards for product traffic."
+        }
+      ]
+    },
+    {
+      "name": "Serena Launch · MCP traffic",
+      "description": "Separate HTTP ingress from tool executions, verified active accounts and activation. Excludes test events and marked internal accounts. PostHog is best effort; compare all HTTP requests with Cloudflare Worker Metrics.",
+      "insights": [
+        {
+          "name": "MCP · HTTP request status",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.status_code AS status, properties.http_method AS method, properties.authenticated AS authenticated, count() AS requests, round(avg(properties.duration_ms),1) AS average_response_ms FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event='mcp_request_completed' GROUP BY status,method,authenticated ORDER BY requests DESC"
+            },
+            "full": true
+          },
+          "description": "HTTP ingress including OPTIONS, authorization challenges (401), rate limits (429) and server errors. A 401 challenge can be a normal OAuth discovery step. HTTP 200 does not imply tool success. Time is to response headers, not entire streamed body."
+        },
+        {
+          "name": "MCP · daily HTTP requests and tool calls",
+          "query": {
+            "kind": "InsightVizNode",
+            "source": {
+              "kind": "TrendsQuery",
+              "series": [
+                {
+                  "kind": "EventsNode",
+                  "event": "mcp_request_completed",
+                  "math": "total",
+                  "properties": []
+                },
+                {
+                  "kind": "EventsNode",
+                  "event": "mcp_tool_completed",
+                  "math": "total",
+                  "properties": []
+                }
+              ],
+              "properties": [
+                {
+                  "type": "event",
+                  "key": "app",
+                  "operator": "exact",
+                  "value": "serena-launch"
+                },
+                {
+                  "type": "event",
+                  "key": "is_test",
+                  "operator": "exact",
+                  "value": false
+                },
+                {
+                  "type": "hogql",
+                  "key": "coalesce(person.properties.$internal_or_test_user, false) = false"
+                }
+              ],
+              "filterTestAccounts": true,
+              "dateRange": {
+                "date_from": "-30d"
+              },
+              "interval": "day",
+              "trendsFilter": {
+                "display": "ActionsLineGraph"
+              }
+            }
+          },
+          "description": "Requests and executed tools are different volumes: initialize, tools/list and HTTP transport requests are not tool usage. Best-effort PostHog ingestion; Cloudflare Worker Metrics is the infrastructure source for all requests."
+        },
+        {
+          "name": "MCP · active accounts and successful reference users",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT uniqExact(distinct_id) AS accounts_using_tools, count() AS tool_calls, countIf(properties.outcome='error') AS tool_errors, uniqExactIf(distinct_id, properties.tool='get_launch_video' AND properties.reference_found=true AND properties.outcome='success') AS activated_accounts FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event='mcp_tool_completed'"
+            },
+            "full": true
+          },
+          "description": "Only accounts from verified OAuth tokens. Browser visitors and service:mcp transport events are never counted as accounts. Activation means retrieving an existing reference, not rendering a finished video."
+        },
+        {
+          "name": "MCP · verified clients",
+          "query": {
+            "kind": "InsightVizNode",
+            "source": {
+              "kind": "TrendsQuery",
+              "series": [
+                {
+                  "kind": "EventsNode",
+                  "event": "mcp_tool_completed",
+                  "math": "total",
+                  "properties": []
+                }
+              ],
+              "properties": [
+                {
+                  "type": "event",
+                  "key": "app",
+                  "operator": "exact",
+                  "value": "serena-launch"
+                },
+                {
+                  "type": "event",
+                  "key": "is_test",
+                  "operator": "exact",
+                  "value": false
+                },
+                {
+                  "type": "hogql",
+                  "key": "coalesce(person.properties.$internal_or_test_user, false) = false"
+                }
+              ],
+              "filterTestAccounts": true,
+              "dateRange": {
+                "date_from": "-30d"
+              },
+              "interval": "day",
+              "trendsFilter": {
+                "display": "ActionsLineGraph"
+              },
+              "breakdownFilter": {
+                "breakdown": "client",
+                "breakdown_type": "event"
+              }
+            }
+          },
+          "description": "Attribution comes from the verified OAuth client, never a caller-supplied runtime label. Codex metadata is recognized; some runtimes share the same client ID and unknown clients stay other."
+        },
+        {
+          "name": "MCP · tool use and errors",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.tool AS tool, count() AS calls, uniqExact(distinct_id) AS accounts, countIf(properties.outcome='error') AS errors, countIf(properties.tool='search_launch_videos' AND properties.result_count=0) AS zero_result_searches, round(avg(properties.duration_ms),1) AS average_ms FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event='mcp_tool_completed' GROUP BY tool ORDER BY calls DESC"
+            },
+            "full": true
+          },
+          "description": "Tools, accounts, zero-result searches and tool failures. No tool arguments, product prompts or query text are stored."
+        },
+        {
+          "name": "MCP · most retrieved references",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.reference_id AS reference, count() AS retrievals, uniqExact(distinct_id) AS accounts FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event='mcp_tool_completed' AND properties.tool='get_launch_video' AND properties.reference_found=true AND properties.outcome='success' GROUP BY reference ORDER BY retrievals DESC LIMIT 50"
+            },
+            "full": true
+          },
+          "description": "Reference IDs map to https://serenatan.org/launchvideo/#video-ID. Retrieval is not proof the reference was selected for a final video."
+        },
+        {
+          "name": "MCP · protocol requests",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT properties.rpc_method AS rpc_method, count() AS requests FROM events WHERE properties.app = 'serena-launch' AND properties.is_test = false AND coalesce(person.properties.$internal_or_test_user, false) = false AND timestamp >= now() - INTERVAL 30 DAY AND event='mcp_request_completed' AND properties.authenticated=true GROUP BY rpc_method ORDER BY requests DESC"
+            },
+            "full": true
+          },
+          "description": "Allowlisted JSON-RPC method names only, from size-validated request bodies. No arguments, credentials, full URLs or caller-supplied account IDs."
+        }
+      ]
+    }
+  ]
+}

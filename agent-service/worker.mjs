@@ -4,7 +4,7 @@ import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
 import {guardRequest} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
-import {captureMcpEvent,reportLaunchTask} from './analytics.mjs';
+import {captureMcpEvent,reportLaunchTask,measureMcpRequest} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
 
 const BASE = '/launchvideo';
@@ -107,7 +107,14 @@ function response(body, type = 'application/json', status = 200) {
 const MCP_OPTIONS = {route:`${BASE}/mcp`,legacy:'stateless',allowedHostnames:['serenatan.org','localhost','127.0.0.1'],allowedOriginHostnames:'*'};
 export default {
   async scheduled(_controller,env,ctx) { ctx.waitUntil(cleanupDeletedRecordings(env)); },
-  async fetch(request, env, ctx) {
+  async fetch(request,env,ctx) {
+    if(new URL(request.url).pathname===`${BASE}/mcp`)
+      return measureMcpRequest(request,env,ctx,observe=>handleRequest(request,env,ctx,observe));
+    return handleRequest(request,env,ctx);
+  }
+};
+
+async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
     const guarded = await guardRequest(request, env);
     if (guarded.response) return guarded.response;
     request = guarded.request;
@@ -125,6 +132,11 @@ export default {
         if (auth.response) return auth.response;
         identity = auth.identity;
       }
+      let rpcMethod='other';
+      if(request.method==='POST'){
+        try { const method=(await request.clone().json())?.method; if(['initialize','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list'].includes(method))rpcMethod=method; } catch { /* The MCP handler reports invalid JSON. */ }
+      }
+      observeIdentity(identity,rpcMethod);
       // The SDK already creates a fresh stateless server per request. Capture
       // verified identity in this request's closure, never in shared state.
       const mcp = createMcpHandler(() => createServer(loadArchive,event => {
@@ -150,5 +162,4 @@ export default {
       data.headers.set('X-Launch-Archive-Version',archive.version);
       return request.method === 'HEAD' ? new Response(null,data) : data;
     } catch (error) { console.error(JSON.stringify({event:'archive_source_unavailable',message:error.message})); return response({error:'Current published archive unavailable. No cached catalog returned.'},'application/json',503); }
-  }
-};
+}
