@@ -11,7 +11,7 @@
     "authentication": "oauth2",
     "dailyQuota": "none",
     "shortTermThrottle": {
-      "requests": 120,
+      "requests": 600,
       "periodSeconds": 60,
       "key": "Cloudflare ingress IP",
       "scope": "Approximate per Cloudflare location; shared by MCP and HTTP agent routes, including preflight and failed requests. Shared proxy IPs share the allowance."
