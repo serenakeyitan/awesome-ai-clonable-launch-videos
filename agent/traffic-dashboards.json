@@ -209,6 +209,42 @@
       "description": "Separate HTTP ingress from tool executions, verified active accounts and activation. Excludes test events and marked internal accounts. PostHog is best effort; compare all HTTP requests with Cloudflare Worker Metrics.",
       "insights": [
         {
+          "name": "MCP · connection to first use",
+          "description": "One row per account and client in the selected dates. Shows tool listing, first call, success and first reference retrieval. Earlier tool-list events only confirm HTTP 2xx. No call means no tool call reached Serena Launch in this window. A caller can return later. Marked internal accounts and QA events are excluded.",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT\n  account, client,\n  multiIf(\n    first_reference_at IS NOT NULL, 'Reference retrieved',\n    first_success_at IS NOT NULL, 'Tool succeeded',\n    call_failed > 0, 'Tool call failed',\n    first_call_at IS NOT NULL, 'Call received, outcome unavailable',\n    first_tool_list_at IS NOT NULL, 'Tool list returned, no call',\n    list_failed > 0, 'Tool listing failed',\n    'Authenticated, no tool list'\n  ) AS stage,\n  first_tool_list_at, first_call_at, first_success_at, first_reference_at,\n  if(first_call_at >= first_tool_list_at, dateDiff('second', first_tool_list_at, first_call_at), NULL) AS seconds_to_first_call,\n  call_failed > 0 AS saw_call_error,\n  last_seen_at\nFROM (\n  SELECT\n    substring(hex(MD5(distinct_id)), 1, 10) AS account,\n    coalesce(properties.client, 'other') AS client,\n    nullIf(minIf(timestamp,\n      properties.rpc_method = 'tools/list'\n      AND ((event = 'mcp_rpc_completed' AND properties.outcome = 'success')\n        OR (event = 'mcp_request_completed' AND properties.status_code BETWEEN 200 AND 299\n          AND empty(coalesce(properties.rpc_request_id, ''))))\n    ), toDateTime(0)) AS first_tool_list_at,\n    nullIf(minIf(timestamp,\n      properties.rpc_method = 'tools/call' OR event = 'mcp_tool_completed'\n    ), toDateTime(0)) AS first_call_at,\n    nullIf(minIf(timestamp,\n      properties.outcome = 'success'\n      AND (event = 'mcp_tool_completed' OR (event = 'mcp_rpc_completed' AND properties.rpc_method = 'tools/call'))\n    ), toDateTime(0)) AS first_success_at,\n    nullIf(minIf(timestamp,\n      event = 'mcp_tool_completed' AND properties.outcome = 'success'\n      AND properties.tool = 'get_launch_video' AND properties.reference_found = true\n    ), toDateTime(0)) AS first_reference_at,\n    countIf(\n      (event = 'mcp_tool_completed' AND properties.outcome = 'error')\n      OR (properties.rpc_method = 'tools/call'\n        AND (properties.status_code >= 400 OR properties.outcome IN ('tool_error', 'protocol_error')))\n    ) AS call_failed,\n    countIf(properties.rpc_method = 'tools/list'\n      AND (properties.status_code >= 400 OR properties.outcome IN ('tool_error', 'protocol_error'))) AS list_failed,\n    max(timestamp) AS last_seen_at\n  FROM events\n  WHERE properties.app = 'serena-launch'\n  AND properties.is_test = false\n  AND coalesce(person.properties.$internal_or_test_user, false) = false\n  AND distinct_id NOT IN (\n    SELECT distinct_id FROM person_distinct_ids WHERE person.properties.$internal_or_test_user = true\n  )\n  AND startsWith(distinct_id, 'account:')\n  AND {filters}\n    AND ((event = 'mcp_request_completed' AND properties.authenticated = true)\n      OR event IN ('mcp_tool_completed', 'mcp_rpc_completed'))\n  GROUP BY distinct_id, client\n)\nORDER BY last_seen_at DESC\nLIMIT 100",
+              "filters": {
+                "dateRange": {
+                  "date_from": "-30d"
+                },
+                "filterTestAccounts": true
+              }
+            },
+            "full": true
+          }
+        },
+        {
+          "name": "MCP · tool and connection errors",
+          "description": "Groups tool-list and tool-call attempts by their server response. An MCP error can arrive inside HTTP 200. Outcome unavailable means a request was observed and a matching response was not recorded in the selected dates. Coverage starts with response instrumentation. No raw tool arguments or error messages.",
+          "query": {
+            "kind": "DataTableNode",
+            "source": {
+              "kind": "HogQLQuery",
+              "query": "SELECT client, rpc_method, tool,\n  multiIf(rpc_outcome != '', rpc_outcome, status_code >= 400, 'http_error', 'outcome_unavailable') AS outcome,\n  error_kind, nullIf(status_code, 0) AS http_status,\n  count() AS attempts, uniqExact(account) AS accounts, max(last_seen) AS last_seen_at\nFROM (\n  SELECT distinct_id AS account,\n    properties.rpc_request_id AS trace_id,\n    coalesce(properties.client, 'other') AS client,\n    properties.rpc_method AS rpc_method,\n    coalesce(properties.tool, '') AS tool,\n    maxIf(toInt64OrZero(toString(properties.status_code)), event = 'mcp_request_completed') AS status_code,\n    anyIf(coalesce(properties.outcome, ''), event = 'mcp_rpc_completed') AS rpc_outcome,\n    anyIf(coalesce(properties.error_kind, ''), event = 'mcp_rpc_completed') AS error_kind,\n    max(timestamp) AS last_seen\n  FROM events\n  WHERE properties.app = 'serena-launch'\n  AND properties.is_test = false\n  AND coalesce(person.properties.$internal_or_test_user, false) = false\n  AND distinct_id NOT IN (\n    SELECT distinct_id FROM person_distinct_ids WHERE person.properties.$internal_or_test_user = true\n  )\n  AND startsWith(distinct_id, 'account:')\n  AND {filters}\n    AND event IN ('mcp_request_completed', 'mcp_rpc_completed')\n    AND notEmpty(coalesce(properties.rpc_request_id, ''))\n  GROUP BY account, trace_id, client, rpc_method, tool\n)\nWHERE rpc_outcome != 'success'\nGROUP BY client, rpc_method, tool, outcome, error_kind, http_status\nORDER BY last_seen_at DESC\nLIMIT 100",
+              "filters": {
+                "dateRange": {
+                  "date_from": "-30d"
+                },
+                "filterTestAccounts": true
+              }
+            },
+            "full": true
+          }
+        },
+        {
           "name": "MCP · HTTP request status",
           "query": {
             "kind": "DataTableNode",
