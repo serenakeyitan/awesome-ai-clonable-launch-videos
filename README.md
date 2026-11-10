@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-81-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-82-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 81 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 82 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -73,6 +73,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Treg × Jev — Social API](#treg-social-api)
 - [Reason — Coding Agent](#reason-coding-agent)
 - [Athrix — Design-to-Code Skill](#athrix-design-to-code-skill)
+- [Claude — Whiteboards, Sheets and Data](#claudeai-whiteboards-sheets-data)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -1847,6 +1848,51 @@ https://x.com/athrix_codes/status/2119128567347052702
 | Included file | 0:35 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="claudeai-whiteboards-sheets-data"></a>
+
+### Claude — Whiteboards, Sheets and Data
+
+[![▶ Watch Claude — Whiteboards, Sheets and Data](previews/claudeai-whiteboards-sheets-data.jpg)](https://serenatan.org/launchvideo/assets/89.mp4)
+
+**0:58 · 16:9 · 3.10M impressions · 1.06M plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/89.mp4) · [MP4 file](videos/claudeai-whiteboards-sheets-data.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-89)
+
+Warm off-white paper-like look with large serif type, showcasing real product UI with push-in and pull-out camera moves. Demonstrates Claude Whiteboards, Sheets and Data features with smooth UI transitions, similar visual vibe to Notion Agents.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/claudeai/status/2120206365759094857
+```
+
+*Source: [@claudeai](https://x.com/claudeai/status/2120206365759094857) · 2026-11-10*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @claudeai |
+| Post date | 2026-11-10 |
+| Stats snapshot (PT) | 2026-11-10 |
+| Post impressions | 3,095,952 |
+| Video plays | 1,064,851 |
+| Likes | 27,724 |
+| Bookmarks | 11,265 |
+| Reposts | 1,637 |
+| Replies | 739 |
+| Quotes | 1,467 |
+| Account followers | 2,040,378 |
+| Original duration | 0:58 |
+| Included file | 0:58 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
