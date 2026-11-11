@@ -2,7 +2,7 @@ import {McpServer} from '@modelcontextprotocol/server';
 import {createMcpHandler} from 'agents/mcp/server';
 import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
-import {guardRequest} from './request-guard.mjs';
+import {guardRequest,guardAccount} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest,taskIdSchema} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
@@ -132,6 +132,8 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
         const auth = await authorizeMcp(request, env);
         if (auth.response) return auth.response;
         identity = auth.identity;
+        const limited = await guardAccount(identity, env);
+        if (limited) return limited;
       }
       const rpc = await describeMcpRequest(request,!!identity && !!env.POSTHOG_PROJECT_TOKEN);
       observeIdentity(identity,rpc);
@@ -161,6 +163,8 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
     if (!endpoints.includes(path)) return response({error:'Not found'},'application/json',404);
     const auth = await authorizeMcp(request, env);
     if (auth.response) return auth.response;
+    const limited = await guardAccount(auth.identity, env);
+    if (limited) return limited;
     try {
       const archive = await loadArchive();
       let data;

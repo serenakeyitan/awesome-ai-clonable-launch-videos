@@ -16,6 +16,14 @@
         "limit": 600,
         "period": 60
       }
+    },
+    {
+      "name": "ACCOUNT_REQUEST_LIMITER",
+      "namespace_id": "2026111101",
+      "simple": {
+        "limit": 120,
+        "period": 60
+      }
     }
   ],
   "routes": [

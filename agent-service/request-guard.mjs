@@ -29,6 +29,24 @@ export async function guardRequest(request, env) {
     return {response:reject(503, 'Request protection temporarily unavailable. Retry shortly.', 10)};
   }
 
+  return readBoundedBody(request);
+}
+
+// Shared egress (every claude.ai user arrives from Anthropic's IPs) means the
+// IP bucket alone lets one busy account crowd out everyone else on that client.
+// After Clerk verifies the token, each account also gets its own bucket.
+export async function guardAccount(identity, env) {
+  if (!identity?.userId || !env?.ACCOUNT_REQUEST_LIMITER) return null;
+  try {
+    const {success} = await env.ACCOUNT_REQUEST_LIMITER.limit({key:`launch-archive-account:${identity.userId}`});
+    return success ? null : reject(429, 'Too many requests for this account. Retry after 60 seconds.', RETRY_SECONDS);
+  } catch {
+    console.error(JSON.stringify({event:'account_rate_limiter_unavailable'}));
+    return reject(503, 'Request protection temporarily unavailable. Retry shortly.', 10);
+  }
+}
+
+async function readBoundedBody(request) {
   if (request.method !== 'POST' || new URL(request.url).pathname !== '/launchvideo/mcp') return {request};
   const declaredLength = request.headers.get('Content-Length');
   if (declaredLength !== null && (!/^\d+$/.test(declaredLength) || Number(declaredLength) > MAX_MCP_BODY_BYTES)) {

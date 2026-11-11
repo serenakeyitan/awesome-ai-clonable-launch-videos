@@ -225,3 +225,13 @@ test('HTTP MCP diagnostics join requests and replies across a creation task',asy
   } finally {await client.close();}
  }
 });
+
+test('stateless clients\' listen and resource calls are named instead of counted as other', async () => {
+  const {describeMcpRequest}=await import('../analytics.mjs');
+  for (const method of ['server/discover','subscriptions/listen','resources/read','prompts/get']) {
+    const r=new Request('https://serenatan.org/launchvideo/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:1,method})});
+    assert.equal((await describeMcpRequest(r,false)).method,method);
+  }
+  const unknown=new Request('https://serenatan.org/launchvideo/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:1,method:'x/private-name'})});
+  assert.equal((await describeMcpRequest(unknown,false)).method,'other');
+});
