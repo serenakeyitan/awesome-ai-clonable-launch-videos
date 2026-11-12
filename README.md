@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-83-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-84-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 83 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 84 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -102,6 +102,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Lifted Finance — Launch Film](#lifted-finance)
 - [Varcyyyy — Do Dots Kinetic Type](#varcyyyy-do-dots-kinetic-type)
 - [Photon — Omnichannel Messaging](#photonhq-omnichannel-kinetic-type)
+- [Higgsfield — SuperComputer](#hazene-higgsfield-supercomputer)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -2894,6 +2895,51 @@ https://x.com/PhotonHQ/status/2110789854242218066
 | Account followers | 8,943 |
 | Original duration | 0:22 |
 | Included file | 0:22 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="hazene-higgsfield-supercomputer"></a>
+
+### Higgsfield — SuperComputer
+
+[![▶ Watch Higgsfield — SuperComputer](previews/hazene-higgsfield-supercomputer.jpg)](https://serenatan.org/launchvideo/assets/91.mp4)
+
+**0:29 · 16:9 · 4.1K impressions · 1.5K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/91.mp4) · [MP4 file](videos/hazene-higgsfield-supercomputer.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-91)
+
+Lime-green and black type on a soft white-to-lime gradient asks “What if one AI launches an entire campaign?” as product photos of eyewear, apparel and people orbit into a collage. Cuts to a dark dotted chat UI: a prompt bar (Fable 5 Medium) types “Turn my script into motion graphics” and “Build a landing page…”, then a skill-loading transcript and an Approve button over negative-prompt rules. The generated ARC “Pure Collection” shop UI and product stills explode into a floating asset grid around the Higgsfield icon, then the film closes on “Higgsfield SuperComputer” and a HAZENE end card. Contains real-person product photos.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/Hazene_Edit/status/2120547103348772919
+```
+
+*Source: [@Hazene_Edit](https://x.com/Hazene_Edit/status/2120547103348772919) · 2026-11-11*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Hazene_Edit |
+| Post date | 2026-11-11 |
+| Stats snapshot (PT) | 2026-11-12 |
+| Post impressions | 4,106 |
+| Video plays | 1,517 |
+| Likes | 160 |
+| Bookmarks | 124 |
+| Reposts | 1 |
+| Replies | 17 |
+| Quotes | 1 |
+| Account followers | 1,063 |
+| Original duration | 0:29 |
+| Included file | 0:29 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
