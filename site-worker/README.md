@@ -20,6 +20,10 @@ changed MP4s; a video not yet in R2 still plays from the bundled asset.
 
 The build validates canonical media and runtime module dependencies, generates
 `site-worker/asset-sizes.json`, and stages the gallery in `site-public/launchvideo/` (MP4s in its `assets/`).
+`daily-stats.json` also contains timestamped catalog observations from the main
+history (last 48 hours plus a preceding state). Build from a Git checkout with
+that history available. The UI compares the current catalog to its state 24 hours
+ago; dated end-of-day snapshots are retained for historical consumers only.
 The asset layer serves every file directly except the HTML entries and MP4s
 listed in `run_worker_first`: MP4s need the Worker for byte ranges, which the
 asset layer does not support. Direct asset requests are free and do not count
