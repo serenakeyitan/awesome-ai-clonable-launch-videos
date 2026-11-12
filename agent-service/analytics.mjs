@@ -6,7 +6,7 @@ const internalAccount=(env,identity)=>!!identity?.userId && (identity.userId===e
 export async function captureEvent(env, identity, name, event, fetcher = fetch, {uuid, isTest = false} = {}) {
   if (!env.POSTHOG_PROJECT_TOKEN || !identity?.userId) return false;
   try {
-    const payload=capturePayload(name,`account:${identity.userId}`,{...event,client:name.startsWith('conversation_') ? event.client : clientName(identity.clientId)},
+    const payload=capturePayload(name,`account:${identity.userId}`,{...event,client:name.startsWith('conversation_') ? event.client : name.startsWith('community_')&&identity.clientId==='recording-browser' ? 'browser' : clientName(identity.clientId)},
       {key:env.POSTHOG_PROJECT_TOKEN,source:name.startsWith('conversation_') ? 'recording' : name.startsWith('community_') ? 'community' : 'mcp',identified:true,isTest:isTest || internalAccount(env,identity),...(uuid ? {uuid} : {})});
     const response=await fetcher('https://us.i.posthog.com/i/v0/e/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(3000)});
     if (!response.ok) console.warn(JSON.stringify({event:'analytics_capture_failed',status:response.status}));

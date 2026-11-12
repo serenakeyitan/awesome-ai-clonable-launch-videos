@@ -31,6 +31,7 @@ test('consented public uploads enforce ownership, actual media, atomic replaceme
   const result=await publishCommunityVideo(env,creator,upload.upload_id);
   assert.equal(result.published,true);assert.equal(result.post.title,args.title);
   assert.equal((await publishCommunityVideo(env,creator,upload.upload_id)).published,true);
+  assert.equal((await publishCommunityVideo(env,creator,upload.upload_id)).replaced,false);
   assert.equal((await raw(upload)).status,401);
   const listed=await (await call('/posts')).json();assert.equal(listed.posts.length,1);assert.ok(!JSON.stringify(listed).includes('user_a'));assert.ok(!JSON.stringify(listed).includes('token='));
   assert.equal((await call(origin+result.post.media_url,'HEAD')).headers.get('Content-Length'),String(bytes.length));
@@ -47,6 +48,7 @@ test('consented public uploads enforce ownership, actual media, atomic replaceme
   const replacement=await createCommunityUpload(env,creator,{...args,post_id:upload.post_id});
   assert.equal((await call(origin+result.post.media_url)).status,200);
   assert.equal((await raw(replacement)).status,200);
+  assert.equal((await publishCommunityVideo(env,creator,replacement.upload_id)).replaced,true);
   assert.equal((await publishCommunityVideo(env,creator,replacement.upload_id)).replaced,true);
   assert.equal((await call(origin+result.post.media_url)).status,404);
   assert.equal((await call(`/posts/${upload.post_id}`,'DELETE',null,'user_a')).status,200);
