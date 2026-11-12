@@ -15,7 +15,7 @@ export async function captureEvent(env, identity, name, event, fetcher = fetch, 
 }
 export const captureMcpEvent=(env,identity,event,fetcher,options)=>captureEvent(env,identity,'mcp_tool_completed',event,fetcher,options);
 
-const rpcMethods = new Set(['initialize','server/discover','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list']);
+const rpcMethods = new Set(['initialize','server/discover','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list','subscriptions/listen','resources/templates/list','resources/read','prompts/get','notifications/cancelled']);
 const toolNames = new Set(['get_launch_context','search_launch_videos','get_launch_video','report_launch_task']);
 export const taskIdSchema = z.uuid();
 

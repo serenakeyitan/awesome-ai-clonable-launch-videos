@@ -2,13 +2,17 @@ import {McpServer} from '@modelcontextprotocol/server';
 import {createMcpHandler} from 'agents/mcp/server';
 import {z} from 'zod';
 import {loadArchive, context, publicManifest, search, record, findVideo} from './catalog.mjs';
-import {guardRequest} from './request-guard.mjs';
+import {guardRequest,guardAccount} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest,taskIdSchema} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
+export const LIST_CACHE_HINTS = Object.freeze({
+  'server/discover':{ttlMs:60*60*1000, cacheScope:'private'},
+  'tools/list':{ttlMs:60*60*1000, cacheScope:'private'}
+});
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
 const task_id = taskIdSchema.optional().describe('For a creation task, reuse the ID returned by report_launch_task. Omit for browsing.');
@@ -30,7 +34,13 @@ const guarded = (load, fn, tool, observe) => async args => {
 };
 
 export function createServer(load = loadArchive, observe, report) {
-  const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.1.0'}, {instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.'});
+  const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.1.0'}, {
+    instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.',
+    // Without hints the SDK stamps ttlMs:0 ("immediately stale") on 2026-era
+    // discover and tools/list results, so clients such as claude.ai re-run
+    // server/discover + tools/list before every use. Both only change on deploy.
+    cacheHints:LIST_CACHE_HINTS
+  });
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
     description:'Start here for product launch, demo, teaser or feature-announcement videos and motion-design inspiration. Get the live collection, workflow and searchable styles.',
@@ -132,6 +142,8 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
         const auth = await authorizeMcp(request, env);
         if (auth.response) return auth.response;
         identity = auth.identity;
+        const limited = await guardAccount(identity, env);
+        if (limited) return limited;
       }
       const rpc = await describeMcpRequest(request,!!identity && !!env.POSTHOG_PROJECT_TOKEN);
       observeIdentity(identity,rpc);
@@ -161,6 +173,8 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
     if (!endpoints.includes(path)) return response({error:'Not found'},'application/json',404);
     const auth = await authorizeMcp(request, env);
     if (auth.response) return auth.response;
+    const limited = await guardAccount(auth.identity, env);
+    if (limited) return limited;
     try {
       const archive = await loadArchive();
       let data;

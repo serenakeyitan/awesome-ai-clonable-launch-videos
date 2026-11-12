@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import worker from '../worker.mjs';
-import {guardRequest, MAX_MCP_BODY_BYTES} from '../request-guard.mjs';
+import {guardRequest, guardAccount, MAX_MCP_BODY_BYTES} from '../request-guard.mjs';
 
 const origin = 'https://serenatan.org';
 const allow = {ARCHIVE_REQUEST_LIMITER:{limit:async () => ({success:true})}};
@@ -77,4 +77,33 @@ test('deployment config binds the intended per-IP short-term allowance', async (
   assert.deepEqual(binding.simple,{limit:600,period:60});
   assert.equal(config.name,'serenatan-launchvideo-agent');
   assert.equal(config.vars.CLERK_AUTH_ENABLED,'true');
+});
+
+test('verified accounts get their own bucket so one busy account cannot drain a shared client IP', async () => {
+  const keys=[];
+  const env={ACCOUNT_REQUEST_LIMITER:{limit:async ({key})=>{keys.push(key);return {success:key.endsWith('user_ok')};}}};
+  assert.equal(await guardAccount({userId:'user_ok',clientId:'claude'},env),null);
+  const r=await guardAccount({userId:'user_busy',clientId:'claude'},env);
+  assert.equal(r.status,429);
+  assert.equal(r.headers.get('retry-after'),'60');
+  assert.match(r.headers.get('access-control-expose-headers'),/Retry-After/);
+  assert.deepEqual(keys,['launch-archive-account:user_ok','launch-archive-account:user_busy']);
+});
+
+test('the account bucket only applies to verified identities and fails closed when it errors', async () => {
+  let calls=0;
+  const counting={ACCOUNT_REQUEST_LIMITER:{limit:async()=>{calls++;return {success:false};}}};
+  assert.equal(await guardAccount(undefined,counting),null);
+  assert.equal(await guardAccount({},counting),null);
+  assert.equal(calls,0);
+  const broken=await guardAccount({userId:'user_x'},{ACCOUNT_REQUEST_LIMITER:{limit:async()=>{throw new Error('private diagnostics');}}});
+  assert.equal(broken.status,503);
+  assert.doesNotMatch(await broken.text(),/private diagnostics/);
+});
+
+test('deployment config binds the per-account allowance', async () => {
+  const config=JSON.parse(await readFile(new URL('../wrangler.json',import.meta.url),'utf8'));
+  const binding=config.ratelimits.find(b=>b.name==='ACCOUNT_REQUEST_LIMITER');
+  assert.deepEqual(binding.simple,{limit:120,period:60});
+  assert.notEqual(binding.namespace_id,config.ratelimits.find(b=>b.name==='ARCHIVE_REQUEST_LIMITER').namespace_id);
 });
