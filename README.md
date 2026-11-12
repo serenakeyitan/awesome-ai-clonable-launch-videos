@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-82-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-83-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 82 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 83 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -129,6 +129,7 @@ The connector reads the current published library and workflow on every call. Ne
 
 - [AffordiHome Finder — Illustrated Launch](#affordihome-finder-illustrated-launch)
 - [Someone Believes in Your Idea — Landing Motion](#idea-backing-landing-motion)
+- [Grok Bot — 1.0](#grok-bot-1-0)
 
 ---
 
@@ -3853,6 +3854,51 @@ https://x.com/nazyurtal/status/2117252549019328774
 | Aspect ratio | 4:3 |
 | Reference resolution | 960 × 720 |
 | Audio track | None |
+
+</details>
+
+---
+
+<a id="grok-bot-1-0"></a>
+
+### Grok Bot — 1.0
+
+[![▶ Watch Grok Bot — 1.0](previews/grok-bot-1-0.jpg)](https://serenatan.org/launchvideo/assets/90.mp4)
+
+**1:19 · 16:9 · 9.65M impressions · 1.06M plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/90.mp4) · [MP4 file](videos/grok-bot-1-0.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-90)
+
+Big purple logo badge and colorful blob mascot avatars pop in on white; successive push-ins show real chat, meeting, chart and canvas UI. Same series as earlier @bot launch videos; contains a few segments with real people on video calls and portrait photos, so not 100% code-clonable.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/bot/status/2120582957782200586
+```
+
+*Source: [@bot](https://x.com/bot/status/2120582957782200586) · 2026-11-11*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @bot |
+| Post date | 2026-11-11 |
+| Stats snapshot (PT) | 2026-11-11 |
+| Post impressions | 9,648,361 |
+| Video plays | 1,064,358 |
+| Likes | 7,357 |
+| Bookmarks | 1,923 |
+| Reposts | 590 |
+| Replies | 1,103 |
+| Quotes | 404 |
+| Account followers | 529,603 |
+| Original duration | 1:19 |
+| Included file | 1:19 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
 
 </details>
 
