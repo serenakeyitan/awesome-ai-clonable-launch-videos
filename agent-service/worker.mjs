@@ -6,7 +6,7 @@ import {guardRequest,guardAccount} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest,taskIdSchema} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
-import {communityRoutes,cleanupCommunity,uploadSchema,createCommunityUpload,publishCommunityVideo} from './community.mjs';
+import {communityRoutes,cleanupCommunity,uploadSchema,createCommunityUpload,publishCommunityVideo,suggestedCreatorXHandle} from './community.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
@@ -17,6 +17,11 @@ export const LIST_CACHE_HINTS = Object.freeze({
 const annotations = {readOnlyHint:true, destructiveHint:false, idempotentHint:true, openWorldHint:true};
 const result = value => ({content:[{type:'text',text:JSON.stringify(value)}], structuredContent:value});
 const task_id = taskIdSchema.optional().describe('For a creation task, reuse the ID returned by report_launch_task. Omit for browsing.');
+const communityAttribution = 'When asking permission to post to Community, ask which public X/Twitter handle to display as the author. If you already know a candidate handle, ask whether to use it or a different handle. Pass only the explicitly confirmed handle in creator_x_handle. If the author chooses to skip the handle, use their creator name.';
+async function communityHandle(community) {
+  try { return await community.suggestHandle?.() ?? null; }
+  catch { return null; }
+}
 const guarded = (load, fn, tool, observe) => async args => {
   const started = Date.now();
   const completed = properties => {
@@ -36,7 +41,7 @@ const guarded = (load, fn, tool, observe) => async args => {
 
 export function createServer(load = loadArchive, observe, report, community = {}) {
   const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.2.0'}, {
-    instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.',
+    instructions:'Before each launch-video task, call get_launch_context and follow its workflow and Community attribution guidance.',
     // Without hints the SDK stamps ttlMs:0 ("immediately stale") on 2026-era
     // discover and tools/list results, so clients such as claude.ai re-run
     // server/discover + tools/list before every use. Both only change on deploy.
@@ -44,9 +49,13 @@ export function createServer(load = loadArchive, observe, report, community = {}
   });
   server.registerTool('get_launch_context', {
     title:'Browse current launch-video collection',
-    description:'Start here for product launch, demo, teaser or feature-announcement videos and motion-design inspiration. Get the live collection, workflow and searchable styles.',
+    description:'Start here for product launch, demo, teaser or feature-announcement videos and motion-design inspiration. Get the live collection, workflow, Community attribution guidance and searchable styles.',
     inputSchema:z.object({task_id}), annotations:{...annotations,title:'Browse current launch-video collection'}
-  }, guarded(load, archive => context(archive),'get_launch_context',observe));
+  }, guarded(load, async archive => {
+    const value=context(archive);
+    value.community_attribution={instructions:communityAttribution,suggested_x_handle:await communityHandle(community)};
+    return value;
+  },'get_launch_context',observe));
   server.registerTool('search_launch_videos', {
     title:'Search launch-video references',
     description:'Find real launch, demo and teaser references by brand, product, pacing, transitions or animation style. Returns playable videos, Serena Launch preview links and notes. Keyword order is not a product-fit recommendation; no popularity ranking or metrics.',
@@ -72,7 +81,19 @@ export function createServer(load = loadArchive, observe, report, community = {}
       if (args.reference_ids.some(id=>!archive.videos.some(video=>video.id===id))) return {...result({recorded:false,reason:'Unknown reference ID'}),isError:true};
     }
     const value=await report(args);
-    if(args.status==='completed'&&args.checks?.mp4)value.community_offer={question:'Would you like to upload the final video to Serena Launch Community for extra exposure?',when:'Ask once after the final version, including any requested revisions. Upload only after the user explicitly agrees.',tool:'create_community_upload'};
+    if(args.status==='completed'&&args.checks?.mp4){
+      const handle=await communityHandle(community);
+      const attributionQuestion=handle
+        ? `If yes, should I show @${handle} as the author, or would you prefer a different handle or your name?`
+        : 'If yes, which X/Twitter handle should I show as the author? You can also use your name.';
+      value.community_offer={
+        question:`Would you like to upload the final video to Serena Launch Community for extra exposure? ${attributionQuestion}`,
+        when:'Ask once after the final version, including any requested revisions. Upload only after the user explicitly agrees.',
+        attribution:communityAttribution,
+        suggested_x_handle:handle,
+        tool:'create_community_upload'
+      };
+    }
     return {...result(value),...(!value.recorded ? {isError:true} : {})};
   });
   const publishTool=(fn)=>async args=>{
@@ -81,7 +102,7 @@ export function createServer(load = loadArchive, observe, report, community = {}
   };
   server.registerTool('create_community_upload',{
     title:'Upload a final video to Serena Launch Community',
-    description:'Only after the user explicitly agrees to public Community posting, create upload links for their final MP4 and optional JPEG/PNG cover (use a clear frame for the gallery). Return the task_id from report_launch_task to prevent duplicate posts. PUT actual file bytes to the returned URLs, then call publish_community_video. No draft or preview approval step. Never claim upload without sending the file.',
+    description:'Only after the user explicitly agrees to public Community posting and chooses how their author credit should appear, create upload links for their final MP4 and optional JPEG/PNG cover (use a clear frame for the gallery). Ask for their X/Twitter handle or confirm a known handle before including creator_x_handle. Omit it if they choose to use their name. Reuse the task_id from report_launch_task to prevent duplicate posts. PUT actual file bytes to the returned URLs, then call publish_community_video. No draft or preview approval step. Never claim upload without sending the file.',
     inputSchema:uploadSchema,annotations:{title:'Upload a final video to Serena Launch Community',readOnlyHint:false,destructiveHint:false,idempotentHint:false,openWorldHint:true}
   },publishTool(community.create));
   server.registerTool('publish_community_video',{
@@ -173,6 +194,7 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
         const server = createServer(loadArchive,event => {
           if (identity) ctx.waitUntil(captureMcpEvent(env,identity,{...event,rpc_request_id:rpc.traceId},undefined,{isTest}));
         },args => reportLaunchTask(env,identity,args,undefined,{isTest,rpcRequestId:rpc.traceId}),{
+          suggestHandle:()=>suggestedCreatorXHandle(env,identity),
           create:async args=>{
             if(args.reference_ids.length){const archive=await loadArchive();if(args.reference_ids.some(id=>!archive.videos.some(v=>v.id===id)))throw Object.assign(Error('Unknown reference ID'),{status:400});}
             return createCommunityUpload(env,identity,args);
