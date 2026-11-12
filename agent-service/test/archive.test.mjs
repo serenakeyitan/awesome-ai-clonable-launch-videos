@@ -25,14 +25,14 @@ test('an existing MCP connection sees new videos, formats and workflow without r
   await client.connect(b);
   try {
     const toolsBefore = await client.listTools();
-    assert.equal(toolsBefore.tools.length,4);
+    assert.equal(toolsBefore.tools.length,6);
     for (const tool of toolsBefore.tools) {
       assert.equal(typeof tool.title,'string');
       assert.ok(tool.title.length > 0);
       assert.equal(tool.annotations.title,tool.title);
-      assert.equal(tool.annotations.readOnlyHint,tool.name !== 'report_launch_task');
+      assert.equal(tool.annotations.readOnlyHint,!['report_launch_task','create_community_upload','publish_community_video'].includes(tool.name));
       assert.equal(tool.annotations.destructiveHint,false);
-      assert.equal(tool.annotations.idempotentHint,tool.name !== 'report_launch_task');
+      assert.equal(tool.annotations.idempotentHint,!['report_launch_task','create_community_upload'].includes(tool.name));
       assert.equal(tool.annotations.openWorldHint,true);
     }
     assert.deepEqual(toolsBefore.tools.find(t => t.name === 'search_launch_videos').inputSchema.properties.sort.enum,['relevance','newest']);

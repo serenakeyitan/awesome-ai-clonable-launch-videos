@@ -42,6 +42,10 @@
     {
       "pattern": "serenatan.org/.well-known/oauth-protected-resource/launchvideo/mcp",
       "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
+    },
+    {
+      "pattern": "serenatan.org/launchvideo/community/*",
+      "zone_id": "11fc0522e36faacb75ccfb68a3a39306"
     }
   ],
   "vars": {
@@ -72,6 +76,10 @@
     {
       "binding": "RECORDING_TEXT",
       "bucket_name": "serena-launch-conversations"
+    },
+    {
+      "binding": "COMMUNITY_MEDIA",
+      "bucket_name": "serenatan-launchvideo-media"
     }
   ],
   "triggers": {

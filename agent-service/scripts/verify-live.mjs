@@ -13,7 +13,7 @@ for (const [name, Client, Transport] of [['modern',Modern,ModernHTTP],['legacy',
  const c = new Client({name:`launch-archive-${name}-verification`,version:'1.0.0'});
  try {
   await c.connect(new Transport(new URL(url),transportOptions));
-  const tools=await c.listTools();assert.equal(tools.tools.length,4);
+  const tools=await c.listTools();assert.equal(tools.tools.length,6);
   const initial=await c.callTool({name:'get_launch_context',arguments:{}});assert.ok(!initial.isError,initial.content?.[0]?.text);const context=initial.structuredContent;
   assert.ok(context.totalVideos>0);assert.ok(Array.isArray(context.facets.styles));
   const search=(await c.callTool({name:'search_launch_videos',arguments:{limit:1}})).structuredContent;

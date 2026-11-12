@@ -6,6 +6,7 @@ import {guardRequest,guardAccount} from './request-guard.mjs';
 import {authorizeMcp, protectedResourceMetadata, RESOURCE_METADATA_PATH} from './mcp-auth.mjs';
 import {captureEvent,captureMcpEvent,describeMcpRequest,observeMcpReplies,reportLaunchTask,measureMcpRequest,taskIdSchema} from './analytics.mjs';
 import {recordingRoutes,cleanupDeletedRecordings} from './recording.mjs';
+import {communityRoutes,cleanupCommunity,uploadSchema,createCommunityUpload,publishCommunityVideo} from './community.mjs';
 
 const BASE = '/launchvideo';
 const CLAUDE_CONNECT_URL = 'https://claude.ai/customize/connectors?' + new URLSearchParams({modal:'add-custom-connector',connectorName:'Serena Launch',connectorUrl:'https://serenatan.org/launchvideo/mcp'});
@@ -33,8 +34,8 @@ const guarded = (load, fn, tool, observe) => async args => {
   }
 };
 
-export function createServer(load = loadArchive, observe, report) {
-  const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.1.0'}, {
+export function createServer(load = loadArchive, observe, report, community = {}) {
+  const server = new McpServer({name:'launch-archive', title:'Serena Launch', version:'0.2.0'}, {
     instructions:'Before each launch-video task, call get_launch_context and follow the workflow it returns.',
     // Without hints the SDK stamps ttlMs:0 ("immediately stale") on 2026-era
     // discover and tools/list results, so clients such as claude.ai re-run
@@ -71,8 +72,23 @@ export function createServer(load = loadArchive, observe, report) {
       if (args.reference_ids.some(id=>!archive.videos.some(video=>video.id===id))) return {...result({recorded:false,reason:'Unknown reference ID'}),isError:true};
     }
     const value=await report(args);
+    if(value.recorded&&args.status==='completed'&&args.checks?.mp4)value.community_offer={question:'Would you like to upload the final video to Serena Launch Community for extra exposure?',when:'Ask once after the final version, including any requested revisions. Upload only after the user explicitly agrees.',tool:'create_community_upload'};
     return {...result(value),...(!value.recorded ? {isError:true} : {})};
   });
+  const publishTool=(fn)=>async args=>{
+    try{if(!fn)return {...result({error:'Community publishing unavailable'}),isError:true};return result(await fn(args));}
+    catch(error){return {...result({error:error.status?error.message:'Community is temporarily unavailable. Try again.'}),isError:true};}
+  };
+  server.registerTool('create_community_upload',{
+    title:'Upload a final video to Serena Launch Community',
+    description:'Only after the user explicitly agrees to public Community posting, create upload links for their final MP4 and optional cover. Return the task_id from report_launch_task to prevent duplicate posts. PUT actual file bytes to the returned URLs, then call publish_community_video. No draft or preview approval step. Never claim upload without sending the file.',
+    inputSchema:uploadSchema,annotations:{title:'Upload a final video to Serena Launch Community',readOnlyHint:false,destructiveHint:false,idempotentHint:false,openWorldHint:true}
+  },publishTool(community.create));
+  server.registerTool('publish_community_video',{
+    title:'Publish the uploaded final video',
+    description:'Finish the already-consented Community post after uploading actual MP4 and cover bytes. Returns the public share URL. Do not ask the user for a second approval. Authors can edit, replace or delete their upload on the Community tab.',
+    inputSchema:z.object({upload_id:z.uuid()}),annotations:{title:'Publish the uploaded final video',readOnlyHint:false,destructiveHint:false,idempotentHint:true,openWorldHint:true}
+  },publishTool(community.publish));
   return server;
 }
 
@@ -117,7 +133,7 @@ function response(body, type = 'application/json', status = 200) {
 
 const MCP_OPTIONS = {route:`${BASE}/mcp`,legacy:'stateless',allowedHostnames:['serenatan.org','localhost','127.0.0.1'],allowedOriginHostnames:'*'};
 export default {
-  async scheduled(_controller,env,ctx) { ctx.waitUntil(cleanupDeletedRecordings(env)); },
+  async scheduled(_controller,env,ctx) { ctx.waitUntil(Promise.all([cleanupDeletedRecordings(env),cleanupCommunity(env)])); },
   async fetch(request,env,ctx) {
     if(new URL(request.url).pathname===`${BASE}/mcp`)
       return measureMcpRequest(request,env,ctx,observe=>handleRequest(request,env,ctx,observe));
@@ -130,6 +146,8 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
     if (guarded.response) return guarded.response;
     request = guarded.request;
     const path = new URL(request.url).pathname;
+    const community = await communityRoutes(request,env,ctx);
+    if (community) return community;
     const recording = await recordingRoutes(request,env,ctx);
     if (recording) return recording;
     if (path === RESOURCE_METADATA_PATH && ['GET','HEAD'].includes(request.method)) {
@@ -154,7 +172,13 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
       const mcp = createMcpHandler(() => {
         const server = createServer(loadArchive,event => {
           if (identity) ctx.waitUntil(captureMcpEvent(env,identity,{...event,rpc_request_id:rpc.traceId},undefined,{isTest}));
-        },args => reportLaunchTask(env,identity,args,undefined,{isTest,rpcRequestId:rpc.traceId}));
+        },args => reportLaunchTask(env,identity,args,undefined,{isTest,rpcRequestId:rpc.traceId}),{
+          create:async args=>{
+            if(args.reference_ids.length){const archive=await loadArchive();if(args.reference_ids.some(id=>!archive.videos.some(v=>v.id===id)))throw Object.assign(Error('Unknown reference ID'),{status:400});}
+            return createCommunityUpload(env,identity,args);
+          },
+          publish:async args=>{const published=await publishCommunityVideo(env,identity,args.upload_id);ctx.waitUntil(captureEvent(env,identity,published.replaced?'community_video_replaced':'community_post_published',{post_id:published.post.id,kind:published.post.kind,task_id:published.task_id,reference_ids:published.post.reference_ids.join(',')},undefined,{isTest}));return published;}
+        });
         if (!rpc.traceId) return server;
         return observeMcpReplies(server,rpc,event => {
           ctx.waitUntil(captureEvent(env,identity,'mcp_rpc_completed',{
