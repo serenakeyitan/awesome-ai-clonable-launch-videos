@@ -46,10 +46,10 @@
     },
     {
       "date": "2026-11-12",
-      "videos": 84,
-      "impressions": 88799388,
-      "plays": 11413920,
-      "catalogHash": "b9c46a9b8dca968b8f8f87dedc5e44d7ab7c19cbc56578ecaa0393708a58cdcf"
+      "videos": 85,
+      "impressions": 88899005,
+      "plays": 11450223,
+      "catalogHash": "876f6ff6d092f8325d698233bdcf7167490d9accc9e43601c69019dfe62c0653"
     }
   ],
   "observations": [
@@ -78,9 +78,15 @@
       "sourceRevision": "cbeba7f150d9ca7b72c3bebfd4f7f8cf9c2b2bc6"
     },
     {
-      "recordedAt": "2026-11-12T22:28:15.669106+00:00",
+      "recordedAt": "2026-11-12T22:29:00+00:00",
       "videos": 84,
-      "impressions": 88799388
+      "impressions": 88799388,
+      "sourceRevision": "818f610778a4b4b5f9f7c81486d8182e5677b02f"
+    },
+    {
+      "recordedAt": "2026-11-12T22:44:02.188696+00:00",
+      "videos": 85,
+      "impressions": 88899005
     }
   ]
 }
