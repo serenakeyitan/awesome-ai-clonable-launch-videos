@@ -237,13 +237,21 @@ test('stateless clients\' listen and resource calls are named instead of counted
 });
 
 test('final MP4 completion offers public posting, schema blocks unconsented upload and failure never fabricates publication',async()=>{
- const archive={videos:[],manifest:{},workflow:'Live workflow'};let creates=0;
- const server=createServer(async()=>archive,undefined,async args=>({recorded:true,task_id:args.task_id??crypto.randomUUID()}),{create:async()=>{creates++;return {upload_id:crypto.randomUUID()};},publish:async()=>{throw Error('storage unavailable');}});
+ const archive={videos:[],manifest:{},workflow:'Live workflow'};let creates=0,handle=null;
+ const server=createServer(async()=>archive,undefined,async args=>({recorded:true,task_id:args.task_id??crypto.randomUUID()}),{suggestHandle:async()=>handle,create:async()=>{creates++;return {upload_id:crypto.randomUUID()};},publish:async()=>{throw Error('storage unavailable');}});
  const client=new Client({name:'community-offer-test',version:'1.0.0'}),[a,b]=InMemoryTransport.createLinkedPair();await server.connect(a);await client.connect(b);
  try{
   const task_id=crypto.randomUUID(),checks={html:true,source:true,mp4:true,music:true,playback:true,download:true};
   const done=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id,checks}});
   assert.match(done.structuredContent.community_offer.question,/extra exposure/);assert.match(done.structuredContent.community_offer.when,/Ask once/);assert.equal(creates,0);
+  assert.match(done.structuredContent.community_offer.question,/which X\/Twitter handle/);
+  assert.equal(done.structuredContent.community_offer.suggested_x_handle,null);
+  handle='Creator_1';
+  const known=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id,checks}});
+  assert.match(known.structuredContent.community_offer.question,/should I show @Creator_1/);
+  const context=await client.callTool({name:'get_launch_context',arguments:{}});
+  assert.equal(context.structuredContent.community_attribution.suggested_x_handle,'Creator_1');
+  assert.match(context.structuredContent.community_attribution.instructions,/explicitly confirmed handle/);
   const noVideo=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id,checks:{...checks,mp4:false}}});assert.equal(noVideo.structuredContent.community_offer,undefined);
   const denied=await client.callTool({name:'create_community_upload',arguments:{title:'Test',video_bytes:12,user_confirmed:false}});assert.equal(denied.isError,true);assert.equal(creates,0);
   const accepted=await client.callTool({name:'create_community_upload',arguments:{title:'Test',video_bytes:12,user_confirmed:true,task_id}});assert.equal(accepted.isError,undefined);assert.equal(creates,1);
