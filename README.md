@@ -953,7 +953,7 @@ https://x.com/Nexoxh/status/2116053584223547792
 
 ### Photon — iMessage Agent
 
-[![▶ Watch Photon — iMessage Agent](previews/danieltian-photon-imessage-agent.jpg)](https://serenatan.org/launchvideo/assets/87.mp4)
+https://github.com/user-attachments/assets/0ce7dfa3-8abd-4057-b6a0-c016f7342fb4
 
 **0:42 · 16:9 · 1.67M impressions · — plays**
 
@@ -1859,7 +1859,7 @@ https://x.com/athrix_codes/status/2119128567347052702
 
 ### Claude — Whiteboards, Sheets and Data
 
-[![▶ Watch Claude — Whiteboards, Sheets and Data](previews/claudeai-whiteboards-sheets-data.jpg)](https://serenatan.org/launchvideo/assets/89.mp4)
+https://github.com/user-attachments/assets/687c23c8-626b-4d79-aeb3-84514389b3cf
 
 **0:58 · 16:9 · 3.10M impressions · 1.06M plays**
 
@@ -3863,7 +3863,7 @@ https://x.com/nazyurtal/status/2117252549019328774
 
 ### Grok Bot — 1.0
 
-[![▶ Watch Grok Bot — 1.0](previews/grok-bot-1-0.jpg)](https://serenatan.org/launchvideo/assets/90.mp4)
+https://github.com/user-attachments/assets/b8b3a7f9-117a-4dcf-8394-168287272524
 
 **1:19 · 16:9 · 9.65M impressions · 1.06M plays**
 
