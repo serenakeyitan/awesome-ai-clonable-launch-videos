@@ -7,7 +7,7 @@ export async function captureEvent(env, identity, name, event, fetcher = fetch, 
   if (!env.POSTHOG_PROJECT_TOKEN || !identity?.userId) return false;
   try {
     const payload=capturePayload(name,`account:${identity.userId}`,{...event,client:name.startsWith('conversation_') ? event.client : clientName(identity.clientId)},
-      {key:env.POSTHOG_PROJECT_TOKEN,source:name.startsWith('conversation_') ? 'recording' : 'mcp',identified:true,isTest:isTest || internalAccount(env,identity),...(uuid ? {uuid} : {})});
+      {key:env.POSTHOG_PROJECT_TOKEN,source:name.startsWith('conversation_') ? 'recording' : name.startsWith('community_') ? 'community' : 'mcp',identified:true,isTest:isTest || internalAccount(env,identity),...(uuid ? {uuid} : {})});
     const response=await fetcher('https://us.i.posthog.com/i/v0/e/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(3000)});
     if (!response.ok) console.warn(JSON.stringify({event:'analytics_capture_failed',status:response.status}));
     return response.ok;
@@ -16,7 +16,7 @@ export async function captureEvent(env, identity, name, event, fetcher = fetch, 
 export const captureMcpEvent=(env,identity,event,fetcher,options)=>captureEvent(env,identity,'mcp_tool_completed',event,fetcher,options);
 
 const rpcMethods = new Set(['initialize','server/discover','tools/list','tools/call','notifications/initialized','ping','resources/list','prompts/list','subscriptions/listen','resources/templates/list','resources/read','prompts/get','notifications/cancelled']);
-const toolNames = new Set(['get_launch_context','search_launch_videos','get_launch_video','report_launch_task']);
+const toolNames = new Set(['get_launch_context','search_launch_videos','get_launch_video','report_launch_task','create_community_upload','publish_community_video']);
 export const taskIdSchema = z.uuid();
 
 export async function describeMcpRequest(request, trace) {
@@ -44,7 +44,7 @@ export function observeMcpReplies(server, request, observe) {
       const outcome = message.error ? 'protocol_error' : message.result?.isError ? 'tool_error' : message.result ? 'success' : undefined;
       if (!outcome) return;
       const errorKind = message.error ? ({'-32602':'invalid_params','-32601':'method_not_found','-32603':'internal_error'}[message.error.code] ?? 'other_protocol_error') : undefined;
-      const taskId = request.tool === 'report_launch_task'
+      const taskId = ['report_launch_task','publish_community_video','create_community_upload'].includes(request.tool)
         ? taskIdSchema.safeParse(message.result?.structuredContent?.task_id).data ?? request.taskId
         : request.taskId;
       try { observe({rpc_method:request.method,rpc_request_id:request.traceId,tool:request.tool,outcome,error_kind:errorKind,task_id:taskId}); }

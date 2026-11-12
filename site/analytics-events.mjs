@@ -1,6 +1,15 @@
 // Explicit event allowlists keep prompts, email addresses and OAuth parameters
 // out of analytics. Shared by the browser and authenticated MCP service.
 const fields = {
+  community_tab_viewed:[],
+  community_post_opened:['post_id','kind'],
+  community_post_played:['post_id','kind'],
+  community_post_engaged:['post_id','kind'],
+  community_product_clicked:['post_id','kind'],
+  community_post_published:['post_id','kind','task_id','reference_ids','client'],
+  community_video_replaced:['post_id','kind','task_id','reference_ids','client'],
+  community_post_updated:['post_id','kind','client'],
+  community_post_deleted:['post_id','client'],
   page_viewed:['page','referrer_host','utm_source','utm_medium','utm_campaign'],
   mcp_request_completed:['http_method','status_code','duration_ms','authenticated','client','rpc_method','rpc_request_id','tool','task_id'],
   mcp_rpc_completed:['rpc_method','rpc_request_id','tool','outcome','error_kind','duration_ms','client','task_id'],

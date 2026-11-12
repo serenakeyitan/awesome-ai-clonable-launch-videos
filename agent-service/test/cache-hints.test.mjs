@@ -22,7 +22,7 @@ test('2026-era discover and tools/list are cacheable so clients stop re-listing 
   for (let refresh=0; refresh<3; refresh++) {
     const client=new Client({name:'cache-test',version:'1'},{versionNegotiation:{mode:'auto'},responseCacheStore});
     await client.connect(transport());
-    assert.equal((await client.listTools()).tools.length,4);
+    assert.equal((await client.listTools()).tools.length,6);
     await client.close();
   }
   const lists=seen.filter(r=>r.method==='tools/list');
@@ -37,7 +37,7 @@ test('2025-era clients keep the legacy handshake with no cache fields', async ()
   const {seen,transport}=harness();
   const client=new Client({name:'legacy-test',version:'1'});
   await client.connect(transport());
-  assert.equal((await client.listTools()).tools.length,4);
+  assert.equal((await client.listTools()).tools.length,6);
   await client.close();
   assert.equal(seen[0].method,'initialize');
   assert.doesNotMatch(seen.find(r=>r.method==='tools/list').body,/ttlMs/);

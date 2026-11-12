@@ -187,7 +187,7 @@ test('HTTP MCP diagnostics join requests and replies across a creation task',asy
   const transport=new Transport(endpoint,{fetch:dispatch,requestInit:{headers:{'X-Serena-Analytics-Test':'1'}}});
   try {
    await client.connect(transport);
-   assert.equal((await client.listTools()).tools.length,4);
+   assert.equal((await client.listTools()).tools.length,6);
    const start=await client.callTool({name:'report_launch_task',arguments:{status:'started'}});
    const taskId=start.structuredContent.task_id;
    assert.equal(start.structuredContent.recorded,true);
@@ -234,4 +234,19 @@ test('stateless clients\' listen and resource calls are named instead of counted
   }
   const unknown=new Request('https://serenatan.org/launchvideo/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:1,method:'x/private-name'})});
   assert.equal((await describeMcpRequest(unknown,false)).method,'other');
+});
+
+test('final MP4 completion offers public posting, schema blocks unconsented upload and failure never fabricates publication',async()=>{
+ const archive={videos:[],manifest:{},workflow:'Live workflow'};let creates=0;
+ const server=createServer(async()=>archive,undefined,async args=>({recorded:true,task_id:args.task_id??crypto.randomUUID()}),{create:async()=>{creates++;return {upload_id:crypto.randomUUID()};},publish:async()=>{throw Error('storage unavailable');}});
+ const client=new Client({name:'community-offer-test',version:'1.0.0'}),[a,b]=InMemoryTransport.createLinkedPair();await server.connect(a);await client.connect(b);
+ try{
+  const task_id=crypto.randomUUID(),checks={html:true,source:true,mp4:true,music:true,playback:true,download:true};
+  const done=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id,checks}});
+  assert.match(done.structuredContent.community_offer.question,/extra exposure/);assert.match(done.structuredContent.community_offer.when,/Ask once/);assert.equal(creates,0);
+  const noVideo=await client.callTool({name:'report_launch_task',arguments:{status:'completed',task_id,checks:{...checks,mp4:false}}});assert.equal(noVideo.structuredContent.community_offer,undefined);
+  const denied=await client.callTool({name:'create_community_upload',arguments:{title:'Test',video_bytes:12,user_confirmed:false}});assert.equal(denied.isError,true);assert.equal(creates,0);
+  const accepted=await client.callTool({name:'create_community_upload',arguments:{title:'Test',video_bytes:12,user_confirmed:true,task_id}});assert.equal(accepted.isError,undefined);assert.equal(creates,1);
+  const failed=await client.callTool({name:'publish_community_video',arguments:{upload_id:accepted.structuredContent.upload_id}});assert.equal(failed.isError,true);assert.equal(failed.structuredContent.published,undefined);
+ }finally{await client.close();await server.close();}
 });

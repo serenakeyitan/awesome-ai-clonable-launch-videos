@@ -80,5 +80,19 @@
   "statisticsUrl": "https://serenatan.org/launchvideo/daily-stats.json",
   "setupLinks": {
     "claude": "https://serenatan.org/launchvideo/agent/connect/claude"
+  },
+  "community": {
+    "url": "https://serenatan.org/launchvideo/?tab=community",
+    "publication": "Ask once after final delivery. Public posting requires explicit user agreement. Upload final file bytes and publish immediately; no draft or second approval.",
+    "tools": [
+      "create_community_upload",
+      "publish_community_video"
+    ],
+    "maxVideoBytes": 100000000,
+    "authorControls": [
+      "edit",
+      "replace",
+      "delete"
+    ]
   }
 }
