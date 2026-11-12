@@ -72,7 +72,7 @@ export function createServer(load = loadArchive, observe, report, community = {}
       if (args.reference_ids.some(id=>!archive.videos.some(video=>video.id===id))) return {...result({recorded:false,reason:'Unknown reference ID'}),isError:true};
     }
     const value=await report(args);
-    if(value.recorded&&args.status==='completed'&&args.checks?.mp4)value.community_offer={question:'Would you like to upload the final video to Serena Launch Community for extra exposure?',when:'Ask once after the final version, including any requested revisions. Upload only after the user explicitly agrees.',tool:'create_community_upload'};
+    if(args.status==='completed'&&args.checks?.mp4)value.community_offer={question:'Would you like to upload the final video to Serena Launch Community for extra exposure?',when:'Ask once after the final version, including any requested revisions. Upload only after the user explicitly agrees.',tool:'create_community_upload'};
     return {...result(value),...(!value.recorded ? {isError:true} : {})};
   });
   const publishTool=(fn)=>async args=>{
@@ -81,7 +81,7 @@ export function createServer(load = loadArchive, observe, report, community = {}
   };
   server.registerTool('create_community_upload',{
     title:'Upload a final video to Serena Launch Community',
-    description:'Only after the user explicitly agrees to public Community posting, create upload links for their final MP4 and optional cover. Return the task_id from report_launch_task to prevent duplicate posts. PUT actual file bytes to the returned URLs, then call publish_community_video. No draft or preview approval step. Never claim upload without sending the file.',
+    description:'Only after the user explicitly agrees to public Community posting, create upload links for their final MP4 and optional JPEG/PNG cover (use a clear frame for the gallery). Return the task_id from report_launch_task to prevent duplicate posts. PUT actual file bytes to the returned URLs, then call publish_community_video. No draft or preview approval step. Never claim upload without sending the file.',
     inputSchema:uploadSchema,annotations:{title:'Upload a final video to Serena Launch Community',readOnlyHint:false,destructiveHint:false,idempotentHint:false,openWorldHint:true}
   },publishTool(community.create));
   server.registerTool('publish_community_video',{
@@ -177,7 +177,7 @@ async function handleRequest(request,env,ctx,observeIdentity=()=>{}) {
             if(args.reference_ids.length){const archive=await loadArchive();if(args.reference_ids.some(id=>!archive.videos.some(v=>v.id===id)))throw Object.assign(Error('Unknown reference ID'),{status:400});}
             return createCommunityUpload(env,identity,args);
           },
-          publish:async args=>{const published=await publishCommunityVideo(env,identity,args.upload_id);ctx.waitUntil(captureEvent(env,identity,published.replaced?'community_video_replaced':'community_post_published',{post_id:published.post.id,kind:published.post.kind,task_id:published.task_id,reference_ids:published.post.reference_ids.join(',')},undefined,{isTest}));return published;}
+          publish:async args=>{const published=await publishCommunityVideo(env,identity,args.upload_id);ctx.waitUntil(captureEvent(env,identity,published.replaced?'community_video_replaced':'community_post_published',{post_id:published.post.id,kind:published.post.kind,task_id:published.task_id,reference_ids:published.post.reference_ids.join(',')},undefined,{isTest,uuid:args.upload_id}));return published;}
         });
         if (!rpc.traceId) return server;
         return observeMcpReplies(server,rpc,event => {

@@ -67,7 +67,7 @@ export async function publishCommunityVideo(env,identity,id){
  requireStorage(env);if(!validId(id)||!identity?.userId)fail(404,'Upload not found');
  const row=await env.RECORDING_DB.prepare('SELECT * FROM community_uploads WHERE id=? AND user_id=?').bind(id,identity.userId).first();if(!row)fail(404,'Upload not found');
  const post=await owned(env,row.post_id,identity);
- if(post.active_upload_id===id&&post.status==='published')return {published:true,task_id:post.task_id,post:publicPost({...post,cover_bytes:row.cover_bytes})};
+ if(post.active_upload_id===id&&post.status==='published')return {published:true,replaced:row.created_at>post.published_at,task_id:post.task_id,post:publicPost({...post,cover_bytes:row.cover_bytes})};
  if(row.status!=='pending'||row.expires_at<Date.now())fail(409,'Upload expired. Create another upload');
  await validateMedia(env,row);const now=Date.now(),old=post.active_upload_id;
  await env.RECORDING_DB.batch([
@@ -128,11 +128,11 @@ export async function communityRoutes(request,env,ctx={},authenticate=browserIde
   const single=/^\/posts\/([a-f0-9-]{36})$/.exec(path);
   if(single&&method==='GET'){const row=await env.RECORDING_DB.prepare(publishedSelect+' AND p.id=?').bind(single[1]).first();if(!row)fail(404,'Post not found');return reply({post:publicPost(row)});}
   const identity=await authenticate(request,env);
-  const observe=(name,value)=>ctx.waitUntil?.(captureEvent(env,identity,name,value,undefined,{isTest:request.headers.get('X-Serena-Analytics-Test')==='1'}));
+  const observe=(name,value,uuid)=>ctx.waitUntil?.(captureEvent(env,identity,name,value,undefined,{isTest:request.headers.get('X-Serena-Analytics-Test')==='1',uuid}));
   if(path==='/mine'&&method==='GET'){const found=await env.RECORDING_DB.prepare(publishedSelect+' AND p.user_id=? ORDER BY p.published_at DESC LIMIT 100').bind(identity.userId).all();return reply({posts:found.results.map(publicPost)});}
   if(path==='/uploads'&&method==='POST')return reply(await createCommunityUpload(env,identity,await readJson(request)),201);
   const publish=/^\/uploads\/([a-f0-9-]{36})\/publish$/.exec(path);
-  if(publish&&method==='POST'){const result=await publishCommunityVideo(env,identity,publish[1]);observe(result.replaced?'community_video_replaced':'community_post_published',{post_id:result.post.id,kind:result.post.kind,task_id:result.task_id,reference_ids:result.post.reference_ids.join(',')});return reply(result);}
+  if(publish&&method==='POST'){const result=await publishCommunityVideo(env,identity,publish[1]);observe(result.replaced?'community_video_replaced':'community_post_published',{post_id:result.post.id,kind:result.post.kind,task_id:result.task_id,reference_ids:result.post.reference_ids.join(',')},publish[1]);return reply(result);}
   if(single&&method==='PATCH'){
    const row=await owned(env,single[1],identity),input=await readJson(request),parsed=parse(postSchema.partial(),input),patch=Object.fromEntries(Object.entries(parsed).filter(([name])=>Object.hasOwn(input,name))),data={...row,...patch,reference_ids:JSON.stringify(patch.reference_ids??JSON.parse(row.reference_ids))};
    await env.RECORDING_DB.prepare("UPDATE community_posts SET title=?,description=?,product_url=?,creator_name=?,kind=?,reference_ids=?,updated_at=? WHERE id=? AND user_id=? AND status='published'").bind(data.title,data.description,data.product_url,data.creator_name,data.kind,data.reference_ids,Date.now(),row.id,identity.userId).run();
