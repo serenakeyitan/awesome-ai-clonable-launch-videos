@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-85-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-86-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 85 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 86 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -51,6 +51,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Pen.dev — Agentic Canvas Plugin](#pen-dev-agentic-canvas)
 - [Opptics — Payments Motion Study](#opptics-payments-motion-study)
 - [Photon — iMessage Agent](#danieltian-photon-imessage-agent)
+- [Cero — The Upside of Spending](#leomeethewoo-cero-upside)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -996,6 +997,51 @@ https://x.com/danieltian/status/2067327329161064688
 
 ---
 
+<a id="leomeethewoo-cero-upside"></a>
+
+### Cero — The Upside of Spending
+
+https://github.com/user-attachments/assets/e8a70984-38c5-4b4b-916d-02796b1a5a53
+
+**0:35 · 16:9 · 5.1K impressions · 2.0K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/93.mp4) · [MP4 file](videos/leomeethewoo-cero-upside.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-93)
+
+A lime Cero pack is tossed up between brick buildings, then lands in iPhone UI — "Your purchase is covered!" and a McDonald's charge tagged FREE — before live-action checkout scenes at a food-truck stand and a water-park kiosk. Kinetic type ("opened the packs / for the upside") and a 3D Cero candy pack burst into a lime starburst of a sports car, cash, a basketball, a watch and a MEGAPOT $1,100,000 title; a Score gauge climbs, a lock-screen notice says the salary of $3,200 was paid, and a prize wheel spins the salary figure upward. Credit factors (Cash held, On-chain Wallets, Socials, Card Spending, CEX Accounts, Bank accounts) assemble around a 1000 Score, then a Credit line unlocks to $339 / $500 left. Closes on a circle collage of real checkout moments, "The upside of spending," and a cero. wordmark. Contains real-person lifestyle footage.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/leomeethewoo/status/2120826755489669439
+```
+
+*Source: [@leomeethewoo](https://x.com/leomeethewoo/status/2120826755489669439) · 2026-11-12*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @leomeethewoo |
+| Post date | 2026-11-12 |
+| Stats snapshot (PT) | 2026-11-12 |
+| Post impressions | 5,123 |
+| Video plays | 1,983 |
+| Likes | 144 |
+| Bookmarks | 98 |
+| Reposts | 4 |
+| Replies | 9 |
+| Quotes | 1 |
+| Account followers | 11,301 |
+| Original duration | 0:35 |
+| Included file | 0:35 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="clean-ui-data-graphics"></a>
 
 ## B. Clean UI, Data & Graphics
@@ -1906,7 +1952,7 @@ https://x.com/claudeai/status/2120206365759094857
 
 ### Granola — Agent Briefs
 
-[![▶ Watch Granola — Agent Briefs](previews/meetgranola-agent-briefs.jpg)](https://serenatan.org/launchvideo/assets/92.mp4)
+https://github.com/user-attachments/assets/35e5308e-daf3-4782-8f6c-165d89c958c4
 
 **0:35 · 16:9 · 99.6K impressions · 36.3K plays**
 
@@ -2953,7 +2999,7 @@ https://x.com/PhotonHQ/status/2110789854242218066
 
 ### Higgsfield — SuperComputer
 
-[![▶ Watch Higgsfield — SuperComputer](previews/hazene-higgsfield-supercomputer.jpg)](https://serenatan.org/launchvideo/assets/91.mp4)
+https://github.com/user-attachments/assets/c6dbf432-bd6a-4fe5-9f6a-7bc3d84ce031
 
 **0:29 · 16:9 · 4.1K impressions · 1.5K plays**
 
