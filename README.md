@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-86-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-87-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 86 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 87 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -133,6 +133,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [AffordiHome Finder — Illustrated Launch](#affordihome-finder-illustrated-launch)
 - [Someone Believes in Your Idea — Landing Motion](#idea-backing-landing-motion)
 - [Grok Bot — 1.0](#grok-bot-1-0)
+- [Krea — Bots](#krea-ai-bots)
 
 ---
 
@@ -4034,6 +4035,51 @@ https://x.com/bot/status/2120582957782200586
 | Account followers | 529,603 |
 | Original duration | 1:19 |
 | Included file | 1:19 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="krea-ai-bots"></a>
+
+### Krea — Bots
+
+https://github.com/user-attachments/assets/860d3dce-a378-4cfa-be24-0e55e89a99a2
+
+**0:31 · 16:9 · 2.19M impressions · 32.0K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/94.mp4) · [MP4 file](videos/krea-ai-bots.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-94)
+
+Opens on a white field with black sans type, "Introducing Krea Bots." A glassy marble that reflects a cloudy skyline settles into a glossy white sphere with mesh-dot eyes; gray chat bubbles say "Hey!" and "Your launch video:" before a black LED dot-matrix board types "Real," amber "creative," then "work." In a white studio, colored 3D bot orbs tour floating work boards: a white bot beside a dotted "Krea Bots" screen, a blue "Love it!" pill and a "Memory updated" chip, labeled "Motion graphics"; a purple bot with a winter train, a skydiver and "More epic," labeled "AI films"; a red bot with "New logo?" and a grid of logo tiles, labeled "Branding"; a light-blue bot with a CTR sparkline climbing from 2.3% to 4.8%, a "Try UGC" pill and UGC-style portraits, labeled "Meta ads." The boards pull back into a constellation over reflective type, "Your new creative crew," then a black Krea "K" mark on white. Contains 3D character animation; media cards include real-looking people (a shirtless skydiver, street-style UGC portraits).
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/krea_ai/status/2120917039435198863
+```
+
+*Source: [@krea_ai](https://x.com/krea_ai/status/2120917039435198863) · 2026-11-12*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @krea_ai |
+| Post date | 2026-11-12 |
+| Stats snapshot (PT) | 2026-11-13 |
+| Post impressions | 2,191,363 |
+| Video plays | 31,995 |
+| Likes | 1,492 |
+| Bookmarks | 1,415 |
+| Reposts | 109 |
+| Replies | 103 |
+| Quotes | 100 |
+| Account followers | 125,567 |
+| Original duration | 0:31 |
+| Included file | 0:31 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
