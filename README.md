@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-88-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-89-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 88 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 89 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -106,6 +106,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Varcyyyy — Do Dots Kinetic Type](#varcyyyy-do-dots-kinetic-type)
 - [Photon — Omnichannel Messaging](#photonhq-omnichannel-kinetic-type)
 - [Higgsfield — SuperComputer](#hazene-higgsfield-supercomputer)
+- [EarnEdits — Agency Level](#flamefxi-earnedits)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -3081,6 +3082,51 @@ https://x.com/Hazene_Edit/status/2120547103348772919
 | Included file | 0:29 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="flamefxi-earnedits"></a>
+
+### EarnEdits — Agency Level
+
+https://github.com/user-attachments/assets/9c9ec794-d94f-4239-9fc2-bac42b19e3d3
+
+**0:23 · 16:9 · 4.1K impressions · 1.7K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/96.mp4) · [MP4 file](videos/flamefxi-earnedits.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-96)
+
+Opens on a white typographic grid with hairline rules and black corner handles. Sans type sets “Every,” then “Every great video,” before a small metallic square grows in the gap as the words fade. Iridescent gradient orbs in magenta, lime, cyan, and amber drift in around the line “past the sketch,” then collapse into a glowing clustered sphere. Nested rounded-square paths zoom in around a single “E,” which resolves into the EARNEDITS wordmark. A pink-and-teal gradient card labeled “Browse Projects” fills with floating UI tiles: a Chat/Cowork panel, a node graph, a dollar-bill illustration, a “When something…” prompt with “Create a AI website land,” and a dark editor showing “Draw to video,” “Reframe,” and “Edit video.” A dotted globe with a blue-to-pink fill sits between the words “agency” and “level.” A gray metallic square on a pink-and-black grid expands into a Desktop 1200 mock of a “NeuraFlow” site — first a bright blue header, then a dark landing that reads “Supercharge Your Business with AI-Powered Intelligence,” with a Get Started for Free button, a Reports dashboard (Marketing +75%, Purchase +80%, Sales +67%), and a white “Post” pill underneath. Glossy capsule buttons shuffle: a blue “Tutorials” pill in front of a fading “Project Files,” then a silver “Project Files” over a navy “Tutorials.” Blue gradient type says “Make it yours,” briefly overtaken by a “Subscribe Today” capsule that scales into a full-bleed blue field with a bright upper sheen. The end card holds the white EARNEDITS wordmark beside a pill reading earnedits.com. No people appear; the piece is typography, abstract gradient motion, and UI mockups.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/flamefxi/status/2121154825283154137
+```
+
+*Source: [@flamefxi](https://x.com/flamefxi/status/2121154825283154137) · 2026-11-13*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @flamefxi |
+| Post date | 2026-11-13 |
+| Stats snapshot (PT) | 2026-11-14 |
+| Post impressions | 4,141 |
+| Video plays | 1,725 |
+| Likes | 229 |
+| Bookmarks | 135 |
+| Reposts | 4 |
+| Replies | 14 |
+| Quotes | 0 |
+| Account followers | 240 |
+| Original duration | 0:23 |
+| Included file | 0:23 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
