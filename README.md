@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-87-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-88-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 87 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 88 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -52,6 +52,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Opptics — Payments Motion Study](#opptics-payments-motion-study)
 - [Photon — iMessage Agent](#danieltian-photon-imessage-agent)
 - [Cero — The Upside of Spending](#leomeethewoo-cero-upside)
+- [Fastlane — Claude for Ads](#usefastlane-claude-for-ads)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -1037,6 +1038,51 @@ https://x.com/leomeethewoo/status/2120826755489669439
 | Included file | 0:35 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="usefastlane-claude-for-ads"></a>
+
+### Fastlane — Claude for Ads
+
+https://github.com/user-attachments/assets/f19ada11-70f2-41b4-8f14-6a59e8fa27f3
+
+**1:06 · 16:9 · 9.57M impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/95.mp4) · [MP4 file](videos/usefastlane-claude-for-ads.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-95)
+
+Opens on a close shot of a Mac-like desktop with an AG1 leaf wallpaper, cluttered campaign folders, and a Slack-style #growth notification — first Ava (Support) saying an agency quoted "$20k for 5 vids," then Maya (Manager) asking "@Sarah can you sort all this by EOD?" A pink wash and kinetic type introduce Fastlane, then a dotted racetrack POV under a start-finish gantry, a helmeted "SENNA" avatar, the line "Enter the Fastlane, Sarah," and a prompt field. A soft-pink "AG1 Brand" board labeled "1. Competitor Ads & Organic Posts" fills with a grid of live-action UGC (Huel, Grün, iced-coffee nutrition, a grocery-cart "Expectation" clip). "2. Market reviews" types a checklist: AG1 wins on convenience and trust; competitors lose on taste and 3pm energy. Agent Senna chats that ads are fatiguing after the Andromeda update, offers 30 ads and a $5k broad campaign; Sarah types "Yes pls!" Phone mockups remix a shopping-cart video and a "Want 40g protein before your 9am meeting?" Huel static into AG1 versions. Senna presents an "ASSETS — video" strip: a podcast with an AG1 pouch, a tower of supplement tubs, a chalkboard, an illustrated picnic, a news-anchor "Tonight's development," and a baby in studio headphones. A floating collage adds memes, a nutrition-ranking card, iMessage bubbles, and a shirtless beach lifestyle still. Sarah replies "Insane!! Let's launch them!" A "car yapper" UGC ad sits beside ticking thumbstop / hold rate / CPA / 4.3x ROAS chips; Senna then generates six in-car variations of the winner. A dark Slack-like window has Maya ask "@Sarah how did you do all this??" as someone types FASTLANE. Closes on the LED racetrack with a 5.4x ROAS chip, then the Fastlane wordmark, "Try for free today," and usefastlane. Contains extensive live-action UGC with real-looking adults, a baby in a parody podcast ad, and a shirtless fitness portrait.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/UseFastlane/status/2116024172430156062
+```
+
+*Source: [@UseFastlane](https://x.com/UseFastlane/status/2116024172430156062) · 2026-10-29*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @UseFastlane |
+| Post date | 2026-10-29 |
+| Stats snapshot (PT) | 2026-11-13 |
+| Post impressions | 9,573,912 |
+| Video plays | — |
+| Likes | 1,107 |
+| Bookmarks | 1,099 |
+| Reposts | 41 |
+| Replies | 19 |
+| Quotes | 7 |
+| Account followers | 17,867 |
+| Original duration | 1:06 |
+| Included file | 1:06 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
 | Audio track | Present |
 
 </details>
