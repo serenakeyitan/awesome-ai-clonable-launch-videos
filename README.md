@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-89-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-90-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 89 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 90 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -107,6 +107,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Photon — Omnichannel Messaging](#photonhq-omnichannel-kinetic-type)
 - [Higgsfield — SuperComputer](#hazene-higgsfield-supercomputer)
 - [EarnEdits — Agency Level](#flamefxi-earnedits)
+- [Square Kiosk — Try Asking](#designedgepro-square-kiosk)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -3125,6 +3126,51 @@ https://x.com/flamefxi/status/2121154825283154137
 | Account followers | 240 |
 | Original duration | 0:23 |
 | Included file | 0:23 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="designedgepro-square-kiosk"></a>
+
+### Square Kiosk — Try Asking
+
+https://github.com/user-attachments/assets/d1d72086-ff5d-45d3-972b-66325012f630
+
+**0:17 · 16:9 · 4.2K impressions · 1.4K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/97.mp4) · [MP4 file](videos/designedgepro-square-kiosk.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-97)
+
+Opens on an extreme close-up of a silver-edged, pill-shaped Square Kiosk: a front camera and mesh speaker grille sit in the bezel against a field of Square blue and the dark glass. The camera drops to the lower edge of the display, where “Receipt” and “Done” pills sit above a status LED and a horizontal card slot. A hard cut places the full kiosk on its stand in front of oversized, interlocking white typography that reads “Your order is ready.” The screen shows the Square mark, “Thanks for your order,” a blue name card for “Natalie” with a “For here” bag icon, and the same Receipt and Done buttons. On an off-white field inside a blue rounded frame, three vertical capsules of restaurant photography bloom into five: hands tearing into a sausage platter, a churro held over ketchup and fries, a smiling man in a red shirt with chopsticks, a roast bird being carved, and a man in a yellow sweater laughing mid-bite. The kiosk then stands alone on the right of a blue field, its screen reading “Order here” under a blue app icon of two cartoon bakery characters. The camera pushes in past a second unit on a blue pedestal and settles on a “Welcome to Joy Bakeshop” home screen with a white “Start order” button. A collage gathers around the Natalie thank-you screen: a pink #10 receipt for Marquia dated Oct 14, 2026 at 4:02:31 PM and listing “1 × French Frie…,” a burger photo with a green “$5 OFF” starburst, a loaded hot dog, a cook at the pass, a woman in a blue shirt drinking, a black “What’s good here?” voice bubble, an “Add extra dressing” chip, a quantity stepper, and a heart sticker that says “MAKE IT A COMBO.” Giant white “kiosk” lettering assembles on blue, the top of the device overlapping the word so the Square mark, twin capsule cuts in the upper bezel, and back/volume icons sit in front of the type. A three-quarter rear view of the stand and finished back splits into a three-panel hardware study: a tight shot of the curved grille and brushed metal, the rear elevation on blue, and a close-up of the stand joint. A low-angle look up the bezel shows the “For here” banner, Receipt and Done buttons, LED, and card slot. The piece ends on an off-white card with a blue border: the kiosk, still on Natalie’s thank-you screen, stands between a rounded “Try” pill and a rectangular “Asking” frame. Live-action diners appear in the photo capsules and collage; the kiosk itself is a product render.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/designedgepro/status/2121273188709720308
+```
+
+*Source: [@designedgepro](https://x.com/designedgepro/status/2121273188709720308) · 2026-11-13*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @designedgepro |
+| Post date | 2026-11-13 |
+| Stats snapshot (PT) | 2026-11-15 |
+| Post impressions | 4,182 |
+| Video plays | 1,424 |
+| Likes | 170 |
+| Bookmarks | 101 |
+| Reposts | 7 |
+| Replies | 5 |
+| Quotes | 1 |
+| Account followers | 169 |
+| Original duration | 0:17 |
+| Included file | 0:17 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
 | Audio track | Present |
