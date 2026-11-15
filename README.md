@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-91-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-92-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 91 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 92 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -53,6 +53,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Photon — iMessage Agent](#danieltian-photon-imessage-agent)
 - [Cero — The Upside of Spending](#leomeethewoo-cero-upside)
 - [Fastlane — Claude for Ads](#usefastlane-claude-for-ads)
+- [Shipper — Idea to Shipped](#isaacedits-shipper)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -1086,6 +1087,51 @@ https://x.com/UseFastlane/status/2116024172430156062
 | Included file | 1:06 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="isaacedits-shipper"></a>
+
+### Shipper — Idea to Shipped
+
+https://github.com/user-attachments/assets/4d8a18e2-ad98-407a-ab5d-77a69c2cdb1b
+
+**1:03 · 16:9 · 1.0K impressions · 371 plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/99.mp4) · [MP4 file](videos/isaacedits-shipper.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-99)
+
+Sage-green “right now” typography wipes across a white field, then the camera lands on rolling sunlit hills under a macOS-style menu bar dated Mon Jun 10, 9:41 AM. Frosted Wallet toasts stack in the center, each with a wallet icon and the on-screen typo “Paymet received”: first “You have received $5,000 from Kes…,” then a second toast that ticks from $60 to “$60,000 from Trex.” A dotted white globe rises into frame, ringed by soft business-category cards — Hotels, Salons, Clinics, Bars, Retail, Restaurants, Real estate, Gyms — under the line “Any business in the world,” which is replaced by “Nobody knows this…” A live-action montage keeps the caption “Over 98% of” while a trailing pill names the trade: golden cliffs, a nighttime café terrace packed with diners (“Restaurants”), a barber mid-cut (“Saloons”), a black-and-white gym (“Gyms”), and a motion-blurred London transit hall marked “London Travel Information” (“Local services”). A browser opens https://stevespizza.com on a pale dotted field and fails: a red warning badge, “Website Failed,” and “Error: Website outdated..” The same window rebuilds as Serene Spaces Design Co. at https://serenespaces.co, a dark-green homepage reading “Custom Your Design Interior,” with a Get Started button, an arched interior photo, a $20,000 earnings badge, and a “6 months” timer. White title cards follow: “Prove them wrong,” then “Get paid for it” with gold sparkles on “paid.” Scattered glyphs and symbols collapse into a navy serif “Shipper” wordmark. The film cuts to a San Francisco map over Mission Dolores, where an orange “Agent T” pin sits among place cards for The Roastery (4.5 stars), CHP Florist (4.8), and Jane Bakery (4.8). An orange checklist ticks off “Mass-produces websites,” “Create apps,” and “Send a personalized pitch.” “On Autopilot” appears in a warm orange-green bloom, then “While you sleep” on a dark blue field as tiny airplanes drift past. A product form over a grassy live plate fills City with “Restaurants in New Jersey,” highlights the Restaurants business type, and shows Quick example chips for Restaurants in Rome, Hotels in NYC, Salons in Paris, and Gyms in Lagos; the primary button reads “Searching on Google.” A results list of New Jersey restaurants (Harbor Kitchen in Stone Harbor, “No dish photos,” “Last updated 8 months ago”; Maple Tavern in Jersey City, “PDF menu only”; Nonna Pasta in Vineland) gives way to a “Building your sample sites” panel — “This takes about 60 seconds per business” — with Garden State Burger, Cedar & Lantern Bistro, and Harbor Kitchen marked Done and Maple Tavern and Nonna Pasta still Building. Review & Send previews Garden State Burger at 51 D Midlano Ave, Paramus, New Jersey (4.6 stars, 1,927 reviews) on shipper.now/preview/gardenstate.com, with menu tiles for an Angus Beef Burger ($35), Crispy Chicken Burger ($15), Garden Special ($20), and French Fries ($5). The cursor hits Send pitch, the button switches to “Sending,” and a title card with a purple envelope badge reads “The invoice writes itself.” Back on the hills, an Email toast (“THIS. IS. AMAZING!” / “WOW, Thank you! Here’s $3,00”) is joined by a correctly spelled Wallet toast: “Payment received / You have received $3,000 from Mark.” Rounded client portraits gather on a green-gold ribbon as “10 clients” appears and a dollar total races through $21,086, $30,000, and $35,000 to $40,000. A Shipper workspace titled “Develop a car rental dashboard” sits beside a published Carsale page, a red Porsche under giant “ELOVA” type, over the lines “Zero Fees” and “No Equity.” A message card with a young man’s portrait types “We’re looking to hire you!” plus a briefcase emoji. A collage of Shipper surfaces — “Chat it into Existence,” the interior-design site, a Your Projects grid, and the sample-site builder — frames a rising “Free credits” count (2,510, then 7,141). A close-up of an X-style post shows 95 replies, 1.3K reposts, and 1.3K likes. The film ends on a pill-shaped composer with a suited portrait and the word “Shipper,” the send control turning into a green check. Lifestyle shots include real people in the café, barbershop, gym, and transit hall; the product UI is designed.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/isaacedits_/status/2121892930596274446
+```
+
+*Source: [@isaacedits_](https://x.com/isaacedits_/status/2121892930596274446) · 2026-11-15*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @isaacedits_ |
+| Post date | 2026-11-15 |
+| Stats snapshot (PT) | 2026-11-15 |
+| Post impressions | 1,018 |
+| Video plays | 371 |
+| Likes | 34 |
+| Bookmarks | 21 |
+| Reposts | 1 |
+| Replies | 9 |
+| Quotes | 0 |
+| Account followers | 3,033 |
+| Original duration | 1:03 |
+| Included file | 1:03 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
