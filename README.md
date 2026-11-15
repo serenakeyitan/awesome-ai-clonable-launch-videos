@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-90-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-91-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 90 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 91 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -108,6 +108,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Higgsfield — SuperComputer](#hazene-higgsfield-supercomputer)
 - [EarnEdits — Agency Level](#flamefxi-earnedits)
 - [Square Kiosk — Try Asking](#designedgepro-square-kiosk)
+- [Motionstash — They Remember](#motionstashco-they-remember)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -3173,6 +3174,51 @@ https://x.com/designedgepro/status/2121273188709720308
 | Included file | 0:17 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1280 × 720 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="motionstashco-they-remember"></a>
+
+### Motionstash — They Remember
+
+https://github.com/user-attachments/assets/7fdf4897-6c88-462c-86dd-b2c8ca5e26f2
+
+**0:22 · 16:9 · 1.1K impressions · 394 plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/98.mp4) · [MP4 file](videos/motionstashco-they-remember.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-98)
+
+Opens on a cream, paper-textured field with faint pencil arcs and axis marks. Soft, washed-out stills drift in: a workspace, a person at a canvas, a bearded man in a white shirt at a desk, a hand drawing with a pen, an outdoor fountain, and hands at a table. Centered sans type sets “You built…” with an orange ellipsis, then “You built something brilliant.” with an orange period. A hard cut drops the camera into a top-down 3D shaft: pink-lavender walls rotate toward orange against blue geometric sides, and devices float in the well — an open silver laptop with a wavy blue-and-pink wallpaper, a gold iPhone, an iPad in a black folio, a colorful “mini” tablet, a stylus, and a pen. Type in the bright well reads “But brilliant,” then types “doesn’t sell itself” with a blinking caret. The camera comes to rest in a sunlit 3D office: vertical wood slats and a white door panel labeled “ponin,” a monstera in a gray pot, a terracotta rug, an orange armchair, a white-and-terracotta desk, orange sticky notes around a wall clock, a chrome-and-brass floor lamp, a glowing orb light, and a white dresser. An iMac-style display shows an aerial forest meeting turquoise water under the line “MOTION THAT MAKES PEOPLE LOOK TWICE,” with a row of dock icons. White caption type builds from “So” to “So we make it” to “So we make it move” as over-ear headphones, a small potted plant, and sticky notes lift off the desk and wall. Translucent mint, teal, and pink glass UI panels — bar blocks, a square, and striped color bars — drift past a hanging plant. On a cream field, “We make it.” sits between rounded live-action clips: a person holding up an iPhone, a woman outdoors, the back of a silver desktop, and a café table with a croissant, a coffee cup, and a tablet. Stacked, slightly offset lines of “something” and “Mean something” fill the frame; a still of forest and autumn trees wipes through the middle with “Mean something.” in white and an orange period. The type slams into a giant black “Because,” then “people” in orange, then black “people” and “don’t” beside an orange square and small photos — a red dirt road under blue sky, a grassy plain, hazy mountains, green hills, and a close-up of a dark circuit board. The tiles tighten and resolve into a small, centered “Feature.” with an orange period on speckled cream. A cut opens on misty rolling green hills; a wooden desk, a green chair, and an open laptop sit in the grass while white type builds “They remember how it felt.” The desk sinks away and a pair of cartoon googly eyes appears on the fog. The background snaps to a bright, Windows XP–like hillside of green grass, white flowers, and puffy clouds; the eyes tumble, glance around, and flash sweat-drop surprise marks before their pupils become the two dots in the white “Motionstash” wordmark, with “Studio” fading in underneath. The end card holds that wordmark on the hillside. Live-action people appear in the opening stills and the “We make it” clips; the office, shaft, and landscapes are 3D or stylized.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/motionstashco/status/2122045021935263855
+```
+
+*Source: [@motionstashco](https://x.com/motionstashco/status/2122045021935263855) · 2026-11-15*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @motionstashco |
+| Post date | 2026-11-15 |
+| Stats snapshot (PT) | 2026-11-15 |
+| Post impressions | 1,150 |
+| Video plays | 394 |
+| Likes | 22 |
+| Bookmarks | 19 |
+| Reposts | 1 |
+| Replies | 3 |
+| Quotes | 0 |
+| Account followers | 531 |
+| Original duration | 0:22 |
+| Included file | 0:22 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1916 × 1078 |
 | Audio track | Present |
 
 </details>
