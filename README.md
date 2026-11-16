@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-92-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-93-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 92 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 93 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -54,6 +54,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Cero — The Upside of Spending](#leomeethewoo-cero-upside)
 - [Fastlane — Claude for Ads](#usefastlane-claude-for-ads)
 - [Shipper — Idea to Shipped](#isaacedits-shipper)
+- [Yab — Now Open-Source](#yab-browser-open-source)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -1130,6 +1131,51 @@ https://x.com/isaacedits_/status/2121892930596274446
 | Account followers | 3,033 |
 | Original duration | 1:03 |
 | Included file | 1:03 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="yab-browser-open-source"></a>
+
+### Yab — Now Open-Source
+
+https://github.com/user-attachments/assets/5b9ad176-1290-4f29-a97e-218e40465fcf
+
+**0:08 · 16:9 · 29.0K impressions · 12.1K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/100.mp4) · [MP4 file](videos/yab-browser-open-source.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-100)
+
+Opens close on a frosted, macOS-style Dock sliding right across a black field of flowing, glassy silk ribbons. Rounded app tiles pass in a single row, each with a white running-app dot underneath: Arc’s bright-blue smiling face, the Safari compass, a blue Mail envelope, a green Messages bubble, Claude’s terracotta starburst on black, a red-rimmed Raycast tile with its diamond mark and the word “raycast,” then Yab’s own glossy cyan blob — a short vertical dash, a longer diagonal wink, and a small highlight dot — followed by Dia’s silver circle sliced into a large upper-right disc and three diagonal bars, and Figma’s multicolor F. The Yab icon lifts out of the Dock and settles in the center as the other tiles and the bar fade into the dark, leaving a soft blue glow around the rounded-square mark. White sans type fades in beneath it on two lines, “Yab is now” and “open-source.”, and a hand-drawn blue underline sketches itself under “open-source,” ending in a blue dot at the period. The end card holds to the close. No people appear; the piece is a Dock pan, logo motion, and a typographic lockup. An AAC stereo track is present but silent.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/yab_browser/status/2122021205116936508
+```
+
+*Source: [@yab_browser](https://x.com/yab_browser/status/2122021205116936508) · 2026-11-15*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @yab_browser |
+| Post date | 2026-11-15 |
+| Stats snapshot (PT) | 2026-11-15 |
+| Post impressions | 29,033 |
+| Video plays | 12,135 |
+| Likes | 619 |
+| Bookmarks | 353 |
+| Reposts | 40 |
+| Replies | 47 |
+| Quotes | 10 |
+| Account followers | 1,238 |
+| Original duration | 0:08 |
+| Included file | 0:08 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
