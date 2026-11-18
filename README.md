@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-95-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-96-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 95 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 96 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -55,6 +55,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Fastlane — Claude for Ads](#usefastlane-claude-for-ads)
 - [Shipper — Idea to Shipped](#isaacedits-shipper)
 - [Yab — Now Open-Source](#yab-browser-open-source)
+- [Aave — Android Early Access](#aave-android-early-access)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -1178,6 +1179,51 @@ https://x.com/yab_browser/status/2122021205116936508
 | Account followers | 1,238 |
 | Original duration | 0:08 |
 | Included file | 0:08 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="aave-android-early-access"></a>
+
+### Aave — Android Early Access
+
+https://github.com/user-attachments/assets/a80a5b23-210f-4e5c-8e78-0a3e2e5d21c8
+
+**0:37 · 16:9 · 61.8K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/103.mp4) · [MP4 file](videos/aave-android-early-access.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-103)
+
+Opens on the Aave mobile app interface showcasing the Android early access release, with smooth device mockup transitions and UI demonstrations. Highlights key mobile app features with clean motion design typical of fintech product launches, emphasizing the DeFi protocol's expansion to mobile platforms.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/aave/status/2122737878983934053
+```
+
+*Source: [@aave](https://x.com/aave/status/2122737878983934053) · 2026-11-17*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @aave |
+| Post date | 2026-11-17 |
+| Stats snapshot (PT) | 2026-11-18 |
+| Post impressions | 61,839 |
+| Video plays | — |
+| Likes | 449 |
+| Bookmarks | 74 |
+| Reposts | 60 |
+| Replies | 59 |
+| Quotes | 46 |
+| Account followers | 701,945 |
+| Original duration | 0:37 |
+| Included file | 0:37 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
