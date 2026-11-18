@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-93-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-95-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 93 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 95 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -79,6 +79,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Athrix — Design-to-Code Skill](#athrix-design-to-code-skill)
 - [Claude — Whiteboards, Sheets and Data](#claudeai-whiteboards-sheets-data)
 - [Granola — Agent Briefs](#meetgranola-agent-briefs)
+- [Granola — Notes for Agents](#meetgranola-notes-for-agents)
 
 ### [C. Pastel UI & Cursor Demos](#pastel-ui-cursor-demos)
 
@@ -111,6 +112,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [EarnEdits — Agency Level](#flamefxi-earnedits)
 - [Square Kiosk — Try Asking](#designedgepro-square-kiosk)
 - [Motionstash — They Remember](#motionstashco-they-remember)
+- [Varcyyyy — Grok Bot Kinetic Type](#varcyyyy-grok-bot-kinetic-type)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -2135,6 +2137,51 @@ https://x.com/meetgranola/status/2120551910789046391
 
 ---
 
+<a id="meetgranola-notes-for-agents"></a>
+
+### Granola — Notes for Agents
+
+https://github.com/user-attachments/assets/d703ec2c-1c33-4471-ac26-e1ab8b8577e4
+
+**0:46 · 16:9 · 35.1K impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/101.mp4) · [MP4 file](videos/meetgranola-notes-for-agents.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-101)
+
+Opens on the Granola interface showing meeting notes being accessed by AI agents, with animated counters displaying the scale of note consumption across the platform. Demonstrates the MCP integration: expanded notes flow into agent context windows, with visual callouts highlighting enriched context like person identification and project updates. Closes on the Granola wordmark with the tagline emphasizing agents staying up-to-date with your work through always-current meeting intelligence.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/meetgranola/status/2122745908614037906
+```
+
+*Source: [@meetgranola](https://x.com/meetgranola/status/2122745908614037906) · 2026-11-17*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @meetgranola |
+| Post date | 2026-11-17 |
+| Stats snapshot (PT) | 2026-11-18 |
+| Post impressions | 35,100 |
+| Video plays | — |
+| Likes | 315 |
+| Bookmarks | 151 |
+| Reposts | 14 |
+| Replies | 12 |
+| Quotes | 13 |
+| Account followers | 28,026 |
+| Original duration | 0:46 |
+| Included file | 0:46 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="pastel-ui-cursor-demos"></a>
 
 ## C. Pastel UI & Cursor Demos
@@ -3311,6 +3358,51 @@ https://x.com/motionstashco/status/2122045021935263855
 | Included file | 0:22 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1916 × 1078 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="varcyyyy-grok-bot-kinetic-type"></a>
+
+### Varcyyyy — Grok Bot Kinetic Type
+
+https://github.com/user-attachments/assets/ae84f16f-0294-4aaf-a046-8ceca7d6f669
+
+**0:15 · 16:9 · 948 impressions · — plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/102.mp4) · [MP4 file](videos/varcyyyy-grok-bot-kinetic-type.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-102)
+
+Bold kinetic typography animates across the frame, showcasing Grok Bot branding with dynamic letter transformations and motion trails. The piece demonstrates human-crafted motion design with precise timing and typographic flourishes that emphasize the creator's thesis about AI limitations in video production.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/Varcyyyy/status/2122711481473261705
+```
+
+*Source: [@Varcyyyy](https://x.com/Varcyyyy/status/2122711481473261705) · 2026-11-17*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Varcyyyy |
+| Post date | 2026-11-17 |
+| Stats snapshot (PT) | 2026-11-18 |
+| Post impressions | 948 |
+| Video plays | — |
+| Likes | 19 |
+| Bookmarks | 8 |
+| Reposts | 0 |
+| Replies | 1 |
+| Quotes | 0 |
+| Account followers | 8,315 |
+| Original duration | 0:15 |
+| Included file | 0:15 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
