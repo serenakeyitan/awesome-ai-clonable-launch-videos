@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {Miniflare,convertV4MiniflareOptions} from 'miniflare';
 import {build} from 'esbuild';
 import {fileURLToPath} from 'node:url';
-import {communityRoutes,createCommunityUpload,publishCommunityVideo,cleanupCommunity} from '../community.mjs';
+import {communityRoutes,createCommunityUpload,publishCommunityVideo,cleanupCommunity,suggestedCreatorXHandle} from '../community.mjs';
 const origin='https://serenatan.org',base=origin+'/launchvideo/community';
 const authenticate=async req=>{const userId=req.headers.get('x-fixture-user');if(!userId)throw Object.assign(Error('Sign in'),{status:401});return {userId};};
 const bytes=Uint8Array.from([0,0,0,16,102,116,121,112,105,115,111,109,0,0,0,0]);
@@ -13,12 +13,16 @@ test('consented public uploads enforce ownership, actual media, atomic replaceme
  const bundle=await build({entryPoints:[fileURLToPath(new URL('./community.fixture.mjs',import.meta.url))],bundle:true,format:'esm',platform:'neutral',conditions:['workerd','worker','browser'],mainFields:['browser','module','main'],external:['node:*'],write:false});
  const mf=new Miniflare(convertV4MiniflareOptions({workers:[{name:'community-fixture',modules:true,script:bundle.outputFiles[0].text,compatibilityDate:'2026-11-03',compatibilityFlags:['nodejs_compat'],d1Databases:['RECORDING_DB'],r2Buckets:['COMMUNITY_MEDIA']}]}));
  const env=await mf.getBindings();
- for(const s of (await readFile(new URL('../migrations/0003_community.sql',import.meta.url),'utf8')).split(';').filter(x=>x.trim()))await env.RECORDING_DB.prepare(s).run();
+ for(const migration of ['0003_community.sql','0004_community_creator_x_handle.sql']){
+  const sql=await readFile(new URL('../migrations/'+migration,import.meta.url),'utf8');
+  for(const statement of sql.split(';').filter(value=>value.trim()))await env.RECORDING_DB.prepare(statement).run();
+ }
  const call=(path,method='GET',body,user)=>mf.dispatchFetch(path.startsWith('http')?path:base+path,{method,headers:{Origin:origin,...(user?{'x-fixture-user':user}:{}),...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});
- const args={title:'My motion ad',kind:'ad',user_confirmed:true,video_bytes:bytes.length,description:'Keep this description',task_id:crypto.randomUUID()};
+ const args={title:'My motion ad',kind:'ad',user_confirmed:true,video_bytes:bytes.length,description:'Keep this description',creator_x_handle:' @Creator_1 ',task_id:crypto.randomUUID()};
  const raw=upload=>mf.dispatchFetch(upload.video_upload_url,{method:'PUT',headers:{'Content-Type':'video/mp4','Content-Length':String(bytes.length)},body:bytes});
  try{
   await assert.rejects(createCommunityUpload(env,creator,{...args,user_confirmed:false}),e=>e.status===400);
+  await assert.rejects(createCommunityUpload(env,creator,{...args,creator_x_handle:'x.com/Creator_1'}),e=>e.status===400);
   assert.equal((await call('/uploads','POST',args)).status,401);
   const upload=await createCommunityUpload(env,creator,args);
   assert.ok(upload.video_upload_url.includes('token='));
@@ -30,6 +34,9 @@ test('consented public uploads enforce ownership, actual media, atomic replaceme
   assert.equal((await raw(upload)).status,200);
   const result=await publishCommunityVideo(env,creator,upload.upload_id);
   assert.equal(result.published,true);assert.equal(result.post.title,args.title);
+  assert.equal(result.post.creator_x_handle,'Creator_1');
+  assert.equal(await suggestedCreatorXHandle(env,creator),'Creator_1');
+  assert.equal(await suggestedCreatorXHandle(env,{userId:'user_b'}),null);
   assert.equal((await publishCommunityVideo(env,creator,upload.upload_id)).published,true);
   assert.equal((await publishCommunityVideo(env,creator,upload.upload_id)).replaced,false);
   assert.equal((await raw(upload)).status,401);
@@ -43,6 +50,11 @@ test('consented public uploads enforce ownership, actual media, atomic replaceme
   assert.equal((await call(`/posts/${upload.post_id}`,'DELETE',null,'user_b')).status,404);
   assert.equal((await call(`/posts/${upload.post_id}`,'PATCH',{title:'New title'},'user_a')).status,200);
   const changed=await (await call(`/posts/${upload.post_id}`)).json();assert.equal(changed.post.description,'Keep this description');assert.equal(changed.post.title,'New title');
+  assert.equal(changed.post.creator_x_handle,'Creator_1');
+  assert.equal((await call(`/posts/${upload.post_id}`,'PATCH',{creator_x_handle:'@Replacement_2'},'user_a')).status,200);
+  assert.equal((await (await call(`/posts/${upload.post_id}`)).json()).post.creator_x_handle,'Replacement_2');
+  assert.equal((await call(`/posts/${upload.post_id}`,'PATCH',{creator_x_handle:null},'user_a')).status,200);
+  assert.equal((await (await call(`/posts/${upload.post_id}`)).json()).post.creator_x_handle,null);
   assert.equal((await call(`/posts/${upload.post_id}`,'PATCH',{product_url:'javascript:alert(1)'},'user_a')).status,400);
   assert.equal((await createCommunityUpload(env,creator,args)).already_published,true);
   const replacement=await createCommunityUpload(env,creator,{...args,post_id:upload.post_id});
