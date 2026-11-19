@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-96-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-99-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 96 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 99 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -56,6 +56,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Shipper — Idea to Shipped](#isaacedits-shipper)
 - [Yab — Now Open-Source](#yab-browser-open-source)
 - [Aave — Android Early Access](#aave-android-early-access)
+- [Grok Bot — Travel Booking](#grok-bot-travel-booking)
 
 ### [B. Clean UI, Data & Graphics](#clean-ui-data-graphics)
 
@@ -114,6 +115,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Square Kiosk — Try Asking](#designedgepro-square-kiosk)
 - [Motionstash — They Remember](#motionstashco-they-remember)
 - [Varcyyyy — Grok Bot Kinetic Type](#varcyyyy-grok-bot-kinetic-type)
+- [Contra Labs — Frontier Design Benchmark](#contraben-contra-labs-design-benchmark)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -143,6 +145,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Someone Believes in Your Idea — Landing Motion](#idea-backing-landing-motion)
 - [Grok Bot — 1.0](#grok-bot-1-0)
 - [Krea — Bots](#krea-ai-bots)
+- [dusk bot — Launch](#exm7777-dusk-bot)
 
 ---
 
@@ -1224,6 +1227,51 @@ https://x.com/aave/status/2122737878983934053
 | Account followers | 701,945 |
 | Original duration | 0:37 |
 | Included file | 0:37 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="grok-bot-travel-booking"></a>
+
+### Grok Bot — Travel Booking
+
+https://github.com/user-attachments/assets/b6d6044a-8f0b-45b4-b467-f4c8b10b9e1a
+
+**0:36 · 16:9 · 500.0K impressions · 146.3K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/104.mp4) · [MP4 file](videos/grok-bot-travel-booking.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-104)
+
+The film opens on a tight collage of trip artifacts — a Southwest Airlines 7:00–8:30 AM nonstop chip at $142.80, a map of desert hotels, a dark blue Alaska Airlines boarding pass to LAX, and a Hotel Soleil confirmation — around a pale rounded pill that reads “Enjoy the trip!” It then cuts to a clean white search field with a plus button; “Find nonstop flights from SFO to LAX” types in, a mic and black send control at the right. The camera pulls back onto a light-blue field as a white iPhone-style device rises, status bar 9:41, a “Grok Bot” pill with the blue two-dot mark in the nav, and a black bubble repeating the prompt. A “Thinking” state with the animated mark is followed by a reply: “Three nonstops on Sat, Dec 5. Southwest is my pick: it leaves at 4:30 PM, so you still get most of the day in SF.” A “SFO → LAX / Sat, Dec 5 · 2 adults · Economy” card lists Recommended $156.80 and Cheapest $88.80, then Southwest Airlines Basic 4:30–6:05 PM (1h 35m, Nonstop) at $156.80, Frontier Economy 9:31–11:04 PM at $88.80, and American Airlines Basic Economy 4:10–5:47 PM at $161.80, over an “Ask Grok Bot” composer and a “Choose returning flight” button. The return list (Recommended $142.80, Cheapest $74.80) highlights Frontier 1:15–2:41 PM at $74.80, American 9:40–11:12 AM at $118.80, and Southwest 7:00–8:30 AM at $142.80, with Back and Confirm. A zoomed itinerary shows Southwest Airlines Basic $142.80, “Return · Sun, Dec 6,” 7:00 AM LAX Los Angeles International (1 hr 30 min) to 8:30 AM SFO San Francisco International, “Boeing 737-800 · WN 2109,” then Bags with a green check (“1 carry-on, check…”), and Changes and Refunds with info icons. A full-frame “Select flight” button gives way to a typographic card, “Book” in black and “hotels” in Grok blue. A second chat asks: “Find a desert hotel near Joshua Tree for Fri, Mar 12 to Mon, Mar 15.” Grok Bot answers “On it.” A results sheet headed “Joshua Tree · Mar 12 – 15 · 3 nights” (6 hotels) leads with a real photograph of a desert pool and spa under a sun-flared ramada, “Hotel Soleil,” $245/night, 4.7 from 860 reviews, “Adults-only suites, saltwater pool and spa,” Pioneertown, and a Show map control. A closer sheet repeats hotelsoleil.com · Pioneertown and the same photo; an About blurb describes an adults-only retreat among the boulders with a saltwater pool, spa, and chef’s kitchen, beside a $735-for-3-nights Book control. After a brief empty Grok Bot chat, a confirmation bubble reads “You’re staying at Hotel Soleil!” over a Joshua Tree card, Confirmation # 48213, dates Mar 12 – Mar 15, and the same pool photograph. A dark boarding pass for Alaska Airlines AS 1398 on Fri, Mar 12 fills the next phone: SFO 8:05 AM to LAX 9:35 AM (1h 30m), Terminal 1, Gate C8, Boards 7:25 AM, Group C, Seat 12A, with a large QR code. The trip collage returns around “Enjoy the trip!” then a title card, “Your next trip, handled.” The Grok Bot black-orb mark grows into the wordmark on white. Official @bot feature film; the post also mentions rental cars, but this cut shows flights and hotels only. Contains a real hotel photograph (and a map with property photos). An AAC 48 kHz stereo track is present and audible (mean −17.3 dB, peak −3.8 dB).
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/bot/status/2123121401762918718
+```
+
+*Source: [@bot](https://x.com/bot/status/2123121401762918718) · 2026-11-18*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @bot |
+| Post date | 2026-11-18 |
+| Stats snapshot (PT) | 2026-11-19 |
+| Post impressions | 499,977 |
+| Video plays | 146,302 |
+| Likes | 3,567 |
+| Bookmarks | 747 |
+| Reposts | 260 |
+| Replies | 466 |
+| Quotes | 130 |
+| Account followers | 556,698 |
+| Original duration | 0:36 |
+| Included file | 0:36 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
@@ -3455,6 +3503,51 @@ https://x.com/Varcyyyy/status/2122711481473261705
 
 ---
 
+<a id="contraben-contra-labs-design-benchmark"></a>
+
+### Contra Labs — Frontier Design Benchmark
+
+https://github.com/user-attachments/assets/14796dee-8b33-4224-a94b-6f8264367837
+
+**0:40 · 16:9 · 418.9K impressions · 101.5K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/106.mp4) · [MP4 file](videos/contraben-contra-labs-design-benchmark.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-106)
+
+On a warm off-white field, serif type assembles “Beauty / in the eye / of the machine” among labeled photographic specimens — 02 APPLE +1.7, 05 HAND +0.8, 04 FACE +0.6, 08 BIRD +0.4, 06 PEONY +1.0. Those fragments snap into a grayscale collage of a high-collared figure holding peonies, with a parrot at the shoulder and a cockatoo at the right, while blue annotation boxes and leader lines (06 peony 0.38, 02 apple 0.47) connect to a sidebar of the same stills. The layout becomes a “SPECIMENS / parrots / WHERE EACH ONE WAS FOUND” plate (7 of 16), the composite at the top and seven cutouts — bird, flower, face, hand, peony, parrot, apple — scored along the bottom. “Making something look finished” is stated as peony, fruit, leaf, and apple chips drift, then a Dutch still-life (“PLATE 05 / bouquet”) is tagged with numbered detections (fruit, peony, apple, flower, leaf) in a right-hand inventory. A split comparison of fruit-and-sky paintings pixelates on the right under the line “Isn't the same as getting it right.” A counter inside a wreath of collage fragments ticks from 595 to a large 1000 as “Design is a / 1000 / decisions.” The wreath dissolves into a field of gray dots with a few blue ones, “is a thousand decisions.” “What to emphasize.” isolates a glowing peony among smaller fruits; “What to leave out.” (LEFT OUT 6 / 39) peels fragments — a painted portrait in a ruff, a pink sculpted ram, globes, a starfish, a pink triangle — away from a collage, one chip labeled 0156 TRIANGLE 0.15. Cut-out painted heads and floral shards form an oval around “How it all comes together.” A faint log of “render” lines fills the background as “AI can generate the [page]”: a frontier STUDIO mock (Work / Image / Research / Journal) builds “Every pixel, decided.” beside a stacked-face collage with detection boxes (HAIR 0.79, EYE 0.98, CHEEK 0.84, NOSE 0.8, EAR 0.91, RENDER 70%), then settles with element tiles for Face, Lips, and Peony. A score ruler under “But how well does it make those decisions?” marks 0.34 on a 0–1.00 scale, the mock labeled EVALUATING. “Hierarchy.” boxes the word itself (01 WORD) over the parrot-and-peony collage, with FACE and PEONY callouts and a note that words come first, then faces, then area and score. “Typography.” is drawn as a specimen in Source Serif 4, with cap height 0.67, x-height 0.475, baseline, descender −0.25, kern −24, and tracking −3%, the terminal y in blue. “The Details.” and “Does the whole feel considered?” hold isolated fabric and painting fragments in light frames. “A higher bar for AI design.” plots dozens of those fragments on a 0–1.00 grid beneath a blue 0233 BENCHMARK 1.00 line (ELEMENT 0001 + 0232). A boxed title, “INTRODUCING / The Frontier Design Benchmark.,” gains a 0233 BENCHMARK 1.00 chip and CONTRALABS.COM/FRONTIERDESIGN, then resolves to a teal ribbon mark, “contra LABS,” “Building AI with creatives, for creatives,” and CONTRALABS.COM. Posted by @contraben, introducing a Contra Labs product. Uses extensive painted and photographic collage, including real and painted human faces. An AAC 48 kHz stereo track is present and audible (mean −11.1 dB, peak 0.0 dB).
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/contraben/status/2123144312494178479
+```
+
+*Source: [@contraben](https://x.com/contraben/status/2123144312494178479) · 2026-11-18*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @contraben |
+| Post date | 2026-11-18 |
+| Stats snapshot (PT) | 2026-11-19 |
+| Post impressions | 418,853 |
+| Video plays | 101,454 |
+| Likes | 1,989 |
+| Bookmarks | 1,689 |
+| Reposts | 274 |
+| Replies | 505 |
+| Quotes | 219 |
+| Account followers | 17,473 |
+| Original duration | 0:40 |
+| Included file | 0:40 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
 <a id="dark-gradient-mixed-media"></a>
 
 ## E. Dark, Gradient & Mixed Media
@@ -4494,6 +4587,51 @@ https://x.com/krea_ai/status/2120917039435198863
 | Account followers | 125,567 |
 | Original duration | 0:31 |
 | Included file | 0:31 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="exm7777-dusk-bot"></a>
+
+### dusk bot — Launch
+
+https://github.com/user-attachments/assets/15ec6eef-5413-4729-914a-675008c19f4c
+
+**0:42 · 16:9 · 85.0K impressions · 33.9K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/105.mp4) · [MP4 file](videos/exm7777-dusk-bot.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-105)
+
+On white, centered type reads “the best free grok bot alternative,” with “free” in a hot-pink rectangle, as a row of nine colorful pixel mascots (a blue face, purple cat, cyan rabbit, gold TV-headed figure, purple ghost, pink blob, cyan robot, green frog, green sprout) marches along the bottom with tiny colored squares and a postage-stamp pixel sky. A purple pixel-dissolve wipes the title away, revealing a pill composer (“Message Nova”) under a pastel paper plane; a cursor types “book me a flight to lisbon.” The headline “a crew of bots you text like teammates.” sits over a light desktop chat: the sidebar lists Moss, Basil, Juno, Echo, Tally, Rivet, Quill (with a “Waiting for you” badge), and Nova, plus Shop standup and Give feedback group chats and a Connect apps row. Juno, a red house-shaped bot, answers “Plan the trip to the spring craft fair in Ghent, two days” with a Friday–Saturday itinerary and a ~310 budget. The same shell flips to dark mode on Quill: a purple prompt “Draft the holiday gift email for the newsletter” yields body copy about winter mugs (Frost, Ember and Pine), a four-option subject-line poll, and a right-hand inspector showing a paused “Thursday newsletter draft” routine and Model: Claude Sonnet 5. A three-panel pixel landscape introduces jobs — NOVA / INBOX and QUILL / NOTES, then PEPPER / RESEARCH and MOSS / BACKUPS — as window-like tiles slide through pastel hills and clouds. On black, “give each bot a job.” sits beside a chat list (Quill, Nova, Rivet, Moss, Basil, Juno) while a cursor tagged “juno” hovers on Moss. Loose stickers (a photographic daisy field on blue, a magenta flower cutout, a red paper plane, a teapot, a halftone coffee cup) drift around the line “every bot has,” then a stacked blue computer card reads “every bot has / its own computer.” A black tablet shows the dusk.bot/download page (“download dusk bot,” Download for Mac) next to “each bot gets its own computer.” On magenta, a pixel-speech bubble fills with memory chips — “aisle seat,” “oat milk,” “no meetings before 10,” “window in winter,” “pays in euros,” “mum's birthday,” “gym on tuesdays,” “no cilantro,” “prefers trains,” “replies short,” “hates mondays,” “dark mode,” “decaf after 3,” “invoice on fridays” — over “every bot has a memory.” A permission sheet for sending an email (a lease note to ourlets.com) offers Deny and Allow once, beside “it asks before the scary stuff,” with the cursor tagged “you.” “ask once and it becomes a routine.” captions a Routines card: “Monday fare check / Every Monday at 9 AM” on, “Inbox sweep / Paused” off, a pixel alarm clock at the side. A split frame — pixel moon over a sleeping laptop, “the laptop can sleep.” / “the bots don't.” — shows a dark Nova chat planning three days in Lisbon under €400, with a walking itinerary and a follow-up about booking the Sintra train. A connector grid (ChatGPT, Claude already Connected, Grok, Cursor, GitHub Copilot, OpenRouter, Local model) is labeled “bring the ai you already pay for,” with a pixel plug. A “Shop standup” thread (Nova, Quill, Rivet, Echo reporting shipping, a holiday email, a checkout fix, and breakage claims) is captioned “free for personal use.” The piece ends on blue with the dusk bot logomark, “meet your first bot,” a dusk.bot pill, and the mascots in a ring. Unofficial launch by @EXM7777 (Machina) for dusk bot, positioned as a free Grok Bot alternative; not from the official @bot account. Includes photographic flower cutouts among the pixel stickers. An AAC 48 kHz stereo track is present and audible (mean −15.4 dB, peak −5.0 dB).
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/EXM7777/status/2123060367320588375
+```
+
+*Source: [@EXM7777](https://x.com/EXM7777/status/2123060367320588375) · 2026-11-18*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @EXM7777 |
+| Post date | 2026-11-18 |
+| Stats snapshot (PT) | 2026-11-19 |
+| Post impressions | 84,993 |
+| Video plays | 33,902 |
+| Likes | 946 |
+| Bookmarks | 742 |
+| Reposts | 48 |
+| Replies | 135 |
+| Quotes | 19 |
+| Account followers | 161,613 |
+| Original duration | 0:42 |
+| Included file | 0:42 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
