@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-100-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-101-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 100 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 101 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -139,6 +139,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [LandAtlas — Real Estate Workflow](#landatlas-launch)
 - [Vainu — Company Signals](#vainu-company-signals)
 - [Nexo — Claude Opus 3D Scene](#nexo-claude-opus-3d-scene)
+- [Lovable — Make It Yourself](#lovable-make-it-yourself)
 
 ### [F. Illustrated Mascot Stories](#illustrated-mascot-stories)
 
@@ -4449,6 +4450,51 @@ https://x.com/Nexoxh/status/2119823326080065850
 | Included file | 0:19 — full clip |
 | Aspect ratio | 16:9 |
 | Reference resolution | 1024 × 576 |
+| Audio track | Present |
+
+</details>
+
+---
+
+<a id="lovable-make-it-yourself"></a>
+
+### Lovable — Make It Yourself
+
+https://github.com/user-attachments/assets/78a6fe9a-ccf2-4765-8644-ed075224a1c1
+
+**0:30 · 16:9 · 35.6K impressions · 13.4K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/108.mp4) · [MP4 file](videos/lovable-make-it-yourself.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-108)
+
+Opens on a brief blue field, then tight white type on black with baseline guides and a pink scribble: “would you” grows inside a dashed selection box into “would you be happy in.” The film cuts to a paper cutout of thick red eyeglasses on a blue gradient, labeled “glasses with” and then “the wrong,” before the word “prescription?” blooms in chromatic blur over the lenses. The glasses flatten into a white ink outline, tilt, and shrink inside a pale bounding box with corner handles. “How about” precedes a red running-shoe cutout; a real hand sweeps past as the type reads “the wrong size?” The shoe likewise becomes a white silhouette in a bounding box and shrinks away. “will you swap” is boxed in a rough pink stroke. A real hand holds a cut-out espresso cup and saucer (“coffee,” then “coffee for a”) and draws out a paper strip of flavor words — skinny, mocha, maple, mint, almond, soy, milk — that trail across a speckled white field toward a whipped-cream milkshake cutout and the line “made for Megan?” A magenta Bezier warp pinches the milkshake into a white stencil with “sorry Megan ;)” beside it. An orange card reads “Of course not.”; the letters scatter. On a dark grid, a pixel-art desktop computer sits between “so why are you” and “running your work.” A pixel pointer clicks the screen, and a retro window titled “PLEASE HOLD...” types “on someone else’s software?” before a cluster of red “ERROR!” dialogs piles up. The error windows drop off a pink-to-blue gradient as the official Lovable composer appears: “Build something Lovable” over “Bring a new product, internal tool, or entire company to life.” A pixel cursor types “With Lovable, you can make exactly what’s right for you.” into a pill input (plus, Build menu, mic). Real hands then place slightly curled UI boards on a checkerboard: first a dark Freightline logistics dashboard (Tracking tab, a Porto–Marseille–Genoa–Milan route map, Load density 4 / 159 / 297, driver card “Luca Ferri,” Mei Tanaka as Ops Lead, consignment counts), then a beige “Feature: Slow Materials” mood-board with cobalt-vase and green-armchair photographs, glaze swatches, tasks, and a Noor/Albert comment thread. A red-field collage of other product UIs follows — a property dashboard, a calendar that includes “Mikaelia’s Birthday!” with a child’s photograph, maps, a cat, and other lifestyle photos. The closer is “Make it yourself” on a black field with pink-blue glow, an orange scribble around the gradient heart mark, then the Lovable wordmark on white and on black. Official @Lovable brand film. Not 100% code-clonable: it uses a real hand, photo cutouts, a driver portrait, a child’s photo, and other lifestyle photography. An AAC 48 kHz stereo track is present and audible (mean −10.9 dB, peak 0.0 dB).
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/Lovable/status/2125246535353192897
+```
+
+*Source: [@Lovable](https://x.com/Lovable/status/2125246535353192897) · 2026-11-24*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @Lovable |
+| Post date | 2026-11-24 |
+| Stats snapshot (PT) | 2026-11-24 |
+| Post impressions | 35,628 |
+| Video plays | 13,425 |
+| Likes | 427 |
+| Bookmarks | 270 |
+| Reposts | 27 |
+| Replies | 26 |
+| Quotes | 17 |
+| Account followers | 160,060 |
+| Original duration | 0:30 |
+| Included file | 0:30 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
 | Audio track | Present |
 
 </details>
