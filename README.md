@@ -7,14 +7,14 @@ An awesome collection of AI-clonable launch videos.
 ![Launch video collection](assets/collection.png)
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![References](https://img.shields.io/badge/video_references-99-black)](#table-of-contents)
+[![References](https://img.shields.io/badge/video_references-100-black)](#table-of-contents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > A visual collection of launch videos worth studying — with playable MP4s, performance data, and copyable prompts to borrow their motion and vibe for your product with AI.
 
 For founders, designers, and builders making their next product launch. Browse a style, watch a reference, then copy the prompt and make it yours.
 
-**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 99 high-resolution reference files are also included in [videos/](videos/).
+**Every entry includes an inline video player, the video file, a remake prompt, and credit to the original creator.** The [live site](https://serenatan.org/launchvideo/) plays videos directly in the cards; all 100 high-resolution reference files are also included in [videos/](videos/).
 
 Inspired by the visual + copyable-prompt format of [Awesome NotebookLM Templates](https://github.com/serenakeyitan/awesome-notebookLM-prompts).
 
@@ -116,6 +116,7 @@ The connector reads the current published library and workflow on every call. Ne
 - [Motionstash — They Remember](#motionstashco-they-remember)
 - [Varcyyyy — Grok Bot Kinetic Type](#varcyyyy-grok-bot-kinetic-type)
 - [Contra Labs — Frontier Design Benchmark](#contraben-contra-labs-design-benchmark)
+- [Filippo Carnevale — Everyone Can Build a Product](#filippocarnvl-everyone-can-build-a-product)
 
 ### [E. Dark, Gradient & Mixed Media](#dark-gradient-mixed-media)
 
@@ -3543,6 +3544,51 @@ https://x.com/contraben/status/2123144312494178479
 | Aspect ratio | 16:9 |
 | Reference resolution | 1920 × 1080 |
 | Audio track | Present |
+
+</details>
+
+---
+
+<a id="filippocarnvl-everyone-can-build-a-product"></a>
+
+### Filippo Carnevale — Everyone Can Build a Product
+
+https://github.com/user-attachments/assets/40cc2831-3766-455a-a1c6-b9ad29b98145
+
+**0:05 · 16:9 · 12.8K impressions · 4.5K plays**
+
+[▶ Watch video](https://serenatan.org/launchvideo/assets/107.mp4) · [MP4 file](videos/filippocarnvl-everyone-can-build-a-product.mp4) · [Browse with stats](https://serenatan.org/launchvideo/#video-107)
+
+The film opens on a fisheye field of TV-test color squares — cyan, magenta, yellow, black, white, and mid greys — with a bold white “&&” sitting in a black cell at the center. The mosaic dissolves into a ring of glossy, candy-colored halftone dots on black as the type morphs, first a partial “In 1[”, then a clean white “In 2021”, then “In 2027”. The year breaks apart into a dotted bitmap “2027” that sheds particles and briefly reforms as abstract white-dot figures before cutting away. A tight, barrel-distorted 3D view of a dark AZERTY keyboard (Tab, Caps Lock, accented keys such as é and è, and a £ key) flies across the frame; a single white key lights in sequence to type E-V-E-R-Y-O-N-E. The keyboard then tears into a harsh black-and-white ink outline and scatters into sparse white and red dots on black. The last beat is a bright halftone field with the lowercase line “can build a product” fixed on the left while the right-hand icon swaps, in rapid cuts, through a pixel heart (red to purple), an orange split-circle / sunset mark, a black pixelated profile silhouette, a rainbow four-point sparkle, a white “b”-like mark in a black rounded square, and a purple Pac-Man-style ghost.
+
+```text
+Remake this video's motion and vibe for my product:
+https://x.com/filippocarnvl/status/2124924756122059233
+```
+
+*Source: [@filippocarnvl](https://x.com/filippocarnvl/status/2124924756122059233) · 2026-11-23*
+
+<details>
+<summary>Metadata & stats</summary>
+
+| Metadata | Value |
+| --- | --- |
+| Posting account | @filippocarnvl |
+| Post date | 2026-11-23 |
+| Stats snapshot (PT) | 2026-11-24 |
+| Post impressions | 12,762 |
+| Video plays | 4,494 |
+| Likes | 439 |
+| Bookmarks | 317 |
+| Reposts | 11 |
+| Replies | 26 |
+| Quotes | 4 |
+| Account followers | 2,157 |
+| Original duration | 0:05 |
+| Included file | 0:05 — full clip |
+| Aspect ratio | 16:9 |
+| Reference resolution | 1920 × 1080 |
+| Audio track | None |
 
 </details>
 
