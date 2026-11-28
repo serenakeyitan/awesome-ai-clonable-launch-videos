@@ -7,8 +7,10 @@ export const COMMUNITY_BASE='/launchvideo/community';
 const ORIGIN='https://serenatan.org';
 const MAX_VIDEO=100000000, MAX_COVER=2000000, UPLOAD_LIFETIME=30*60000;
 const validId=id=>typeof id==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id);
+const creatorXHandle=z.string().trim().regex(/^(?:@?[A-Za-z0-9_]{1,15})?$/,'Use an X handle with up to 15 letters, numbers, or underscores').nullable().default(null).describe('The public X/Twitter handle the author explicitly approved for this Community post. Omit or use null if the author chose no handle.');
+const normalizeCreatorXHandle=value=>value?.replace(/^@/,'')||null;
 const productUrl=z.string().max(2000).refine(value=>{if(!value)return true;try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password;}catch{return false;}},'Use an HTTPS product URL');
-export const postSchema=z.object({title:z.string().trim().min(1).max(120),description:z.string().trim().max(600).default(''),product_url:productUrl.default(''),creator_name:z.string().trim().min(1).max(80).default('Creator'),kind:z.enum(['launch','ad']).default('launch'),reference_ids:z.array(z.number().int().positive()).max(3).default([])});
+export const postSchema=z.object({title:z.string().trim().min(1).max(120),description:z.string().trim().max(600).default(''),product_url:productUrl.default(''),creator_name:z.string().trim().min(1).max(80).default('Creator'),creator_x_handle:creatorXHandle,kind:z.enum(['launch','ad']).default('launch'),reference_ids:z.array(z.number().int().positive()).max(3).default([])});
 export const uploadSchema=postSchema.extend({user_confirmed:z.literal(true),task_id:z.uuid().optional(),post_id:z.uuid().optional(),video_bytes:z.number().int().min(12).max(MAX_VIDEO),cover_bytes:z.number().int().min(0).max(MAX_COVER).default(0),cover_type:z.enum(['image/jpeg','image/png']).default('image/jpeg')});
 class CommunityError extends Error{constructor(status,message){super(message);this.status=status;}}
 const fail=(status,message)=>{throw new CommunityError(status,message);};
@@ -18,8 +20,14 @@ const key=(id,part)=>`community/${id}/${part}`;
 const same=(a,b)=>a.length===b.length&&timingSafeEqual(new TextEncoder().encode(a),new TextEncoder().encode(b));
 function requireStorage(env){if(!env.RECORDING_DB||!env.COMMUNITY_MEDIA)fail(503,'Community is temporarily unavailable');}
 async function owned(env,id,user){if(!validId(id))fail(404,'Upload not found');const row=await env.RECORDING_DB.prepare("SELECT * FROM community_posts WHERE id=? AND user_id=? AND status!='deleted'").bind(id,user.userId).first();if(!row)fail(404,'Upload not found');return row;}
-const publicPost=row=>({id:row.id,title:row.title,description:row.description,product_url:row.product_url,creator_name:row.creator_name,kind:row.kind,reference_ids:JSON.parse(row.reference_ids),published_at:row.published_at,updated_at:row.updated_at,media_url:`${COMMUNITY_BASE}/media/${row.active_upload_id}/video`,poster_url:row.cover_bytes?`${COMMUNITY_BASE}/media/${row.active_upload_id}/cover`:null,url:`${ORIGIN}/launchvideo/?tab=community&post=${row.id}`});
+const publicPost=row=>({id:row.id,title:row.title,description:row.description,product_url:row.product_url,creator_name:row.creator_name,creator_x_handle:row.creator_x_handle??null,kind:row.kind,reference_ids:JSON.parse(row.reference_ids),published_at:row.published_at,updated_at:row.updated_at,media_url:`${COMMUNITY_BASE}/media/${row.active_upload_id}/video`,poster_url:row.cover_bytes?`${COMMUNITY_BASE}/media/${row.active_upload_id}/cover`:null,url:`${ORIGIN}/launchvideo/?tab=community&post=${row.id}`});
 const publishedSelect="SELECT p.*,u.cover_bytes FROM community_posts p JOIN community_uploads u ON u.id=p.active_upload_id WHERE p.status='published'";
+
+export async function suggestedCreatorXHandle(env,identity){
+ if(!env.RECORDING_DB||!identity?.userId)return null;
+ const row=await env.RECORDING_DB.prepare("SELECT creator_x_handle FROM community_posts WHERE user_id=? AND status='published' AND creator_x_handle IS NOT NULL ORDER BY updated_at DESC,id DESC LIMIT 1").bind(identity.userId).first();
+ return row?.creator_x_handle??null;
+}
 
 export async function createCommunityUpload(env,identity,input){
  requireStorage(env);if(!identity?.userId)fail(401,'Sign in to post to Community');const args=parse(uploadSchema,input),now=Date.now();
@@ -29,7 +37,7 @@ export async function createCommunityUpload(env,identity,input){
  if(post?.status==='published'&&!args.post_id){const media=await env.RECORDING_DB.prepare('SELECT cover_bytes FROM community_uploads WHERE id=?').bind(post.active_upload_id).first();return {already_published:true,task_id:post.task_id,post:publicPost({...post,cover_bytes:media?.cover_bytes??0})};}
  if(!post){
   const id=crypto.randomUUID();
-  await env.RECORDING_DB.prepare("INSERT OR IGNORE INTO community_posts(id,user_id,task_id,title,description,product_url,creator_name,kind,reference_ids,created_at,updated_at) SELECT ?,?,?,?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM community_posts WHERE user_id=? AND status!='deleted')<100").bind(id,identity.userId,args.task_id??null,args.title,args.description,args.product_url,args.creator_name,args.kind,JSON.stringify(args.reference_ids),now,now,identity.userId).run();
+  await env.RECORDING_DB.prepare("INSERT OR IGNORE INTO community_posts(id,user_id,task_id,title,description,product_url,creator_name,creator_x_handle,kind,reference_ids,created_at,updated_at) SELECT ?,?,?,?,?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM community_posts WHERE user_id=? AND status!='deleted')<100").bind(id,identity.userId,args.task_id??null,args.title,args.description,args.product_url,args.creator_name,normalizeCreatorXHandle(args.creator_x_handle),args.kind,JSON.stringify(args.reference_ids),now,now,identity.userId).run();
   post=args.task_id?await env.RECORDING_DB.prepare("SELECT * FROM community_posts WHERE user_id=? AND task_id=? AND status!='deleted'").bind(identity.userId,args.task_id).first():await env.RECORDING_DB.prepare('SELECT * FROM community_posts WHERE id=?').bind(id).first();
   if(!post)fail(429,'You have reached the upload limit');
  }
@@ -134,8 +142,8 @@ export async function communityRoutes(request,env,ctx={},authenticate=browserIde
   const publish=/^\/uploads\/([a-f0-9-]{36})\/publish$/.exec(path);
   if(publish&&method==='POST'){const result=await publishCommunityVideo(env,identity,publish[1]);observe(result.replaced?'community_video_replaced':'community_post_published',{post_id:result.post.id,kind:result.post.kind,task_id:result.task_id,reference_ids:result.post.reference_ids.join(',')},publish[1]);return reply(result);}
   if(single&&method==='PATCH'){
-   const row=await owned(env,single[1],identity),input=await readJson(request),parsed=parse(postSchema.partial(),input),patch=Object.fromEntries(Object.entries(parsed).filter(([name])=>Object.hasOwn(input,name))),data={...row,...patch,reference_ids:JSON.stringify(patch.reference_ids??JSON.parse(row.reference_ids))};
-   await env.RECORDING_DB.prepare("UPDATE community_posts SET title=?,description=?,product_url=?,creator_name=?,kind=?,reference_ids=?,updated_at=? WHERE id=? AND user_id=? AND status='published'").bind(data.title,data.description,data.product_url,data.creator_name,data.kind,data.reference_ids,Date.now(),row.id,identity.userId).run();
+   const row=await owned(env,single[1],identity),input=await readJson(request),parsed=parse(postSchema.partial(),input),patch=Object.fromEntries(Object.entries(parsed).filter(([name])=>Object.hasOwn(input,name))),data={...row,...patch,creator_x_handle:normalizeCreatorXHandle(Object.hasOwn(patch,'creator_x_handle')?patch.creator_x_handle:row.creator_x_handle),reference_ids:JSON.stringify(patch.reference_ids??JSON.parse(row.reference_ids))};
+   await env.RECORDING_DB.prepare("UPDATE community_posts SET title=?,description=?,product_url=?,creator_name=?,creator_x_handle=?,kind=?,reference_ids=?,updated_at=? WHERE id=? AND user_id=? AND status='published'").bind(data.title,data.description,data.product_url,data.creator_name,data.creator_x_handle,data.kind,data.reference_ids,Date.now(),row.id,identity.userId).run();
    observe('community_post_updated',{post_id:row.id,kind:data.kind});return reply({updated:true});
   }
   if(single&&method==='DELETE'){const result=await deleteCommunityPost(env,identity,single[1]);observe('community_post_deleted',{post_id:single[1]});return reply(result);}
